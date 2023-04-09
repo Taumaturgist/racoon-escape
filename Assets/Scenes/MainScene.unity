@@ -168,4 +168,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDevelopMode: 0
-  playerAccountConfig: {fileID: 11400000, guid: 5f9abaf22e8913e44a35ad5c0c6371ea, type: 2}
+  PlayerAccountConfig: {fileID: 0}
+  EnvironmentConfig: {fileID: 11400000, guid: d33b379b4b82b7a4e8f48e2382533f70, type: 2}
