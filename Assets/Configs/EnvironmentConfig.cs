@@ -4,4 +4,5 @@ using UnityEngine;
 public class EnvironmentConfig : ScriptableObject
 {
     public Light DirectionalLight;
+    public Quaternion LightQuaternion;
 }
