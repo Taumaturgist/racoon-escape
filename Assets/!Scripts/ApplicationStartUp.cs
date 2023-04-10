@@ -9,7 +9,8 @@ public class ApplicationStartUp : MonoBehaviour
     public EnvironmentConfig EnvironmentConfig;
     
     private void Awake()
-    {        
+    {
+        gameObject.AddComponent<PlayerAccount>();
         gameObject.AddComponent<Environment>();            
     }
 }

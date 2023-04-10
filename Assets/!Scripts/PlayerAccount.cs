@@ -4,8 +4,11 @@ public class PlayerAccount : MonoBehaviour
 {
     private PlayerAccountConfig _playerAccountConfig;
 
-    public PlayerAccount(PlayerAccountConfig playerAccountConfig)
+    private void Awake()
     {
-        _playerAccountConfig = playerAccountConfig;
+        _playerAccountConfig = GetComponent<ApplicationStartUp>().PlayerAccountConfig;
+
+        var go = Instantiate(_playerAccountConfig.PlayerActiveCar, _playerAccountConfig.PACSpawnPosition, transform.rotation);
+        go.Launch(_playerAccountConfig);
     }
 }

@@ -13,3 +13,17 @@ MonoBehaviour:
   m_Name: PlayerAccountConfig
   m_EditorClassIdentifier: 
   PlayerID: 0
+  PlayerActiveCar: {fileID: -603158850229641492, guid: 96fb2e0db858f014c968b2151bd0c855, type: 3}
+  PACSpawnPosition: {x: 0, y: 0, z: 0}
+  CarMotorForce: 100
+  CarMass: 1500
+  MaxSteerAngle: 30
+  RestoreDirectionSpeed: 100
+  WheelDampingRate: 0.25
+  SuspensionDistance: 0.1
+  Spring: 3500
+  Damper: 3500
+  TargetPosition: 0.5
+  CarAcceleration: 0
+  MaxYRotationAngle: 0
+  TurnSpeed: 0
