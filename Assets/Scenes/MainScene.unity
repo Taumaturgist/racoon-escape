@@ -170,3 +170,4 @@ MonoBehaviour:
   isDevelopMode: 0
   PlayerAccountConfig: {fileID: 11400000, guid: 5f9abaf22e8913e44a35ad5c0c6371ea, type: 2}
   EnvironmentConfig: {fileID: 11400000, guid: d33b379b4b82b7a4e8f48e2382533f70, type: 2}
+  DebugConfig: {fileID: 11400000, guid: dd0621cf0515644498566d04c6524014, type: 2}

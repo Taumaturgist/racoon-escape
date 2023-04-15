@@ -5,4 +5,6 @@ public class EnvironmentConfig : ScriptableObject
 {
     public Light DirectionalLight;
     public Quaternion LightQuaternion;
+
+    public GameObject UIMainPrefab;
 }
