@@ -5,6 +5,9 @@ public class PlayerActiveCar : MonoBehaviour
 	[SerializeField] private WheelCollider frontLeftW, frontRightW, rearLeftW, rearRightW;
 	[SerializeField] private Transform frontLeftT, frontRightT, rearLeftT, rearRightT;
 
+	private Transform _carTransform;
+	private Rigidbody _carRigidbody;
+
 	private float _motorForce;
 	private float _maxSteerAngle;
 	private float _restoreDirectionSpeed;
@@ -18,17 +21,28 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private bool _isActive;
 
+	private float speed;
+
 	public void Launch(PlayerAccountConfig playerAccountConfig)
 	{
 		_motorForce = playerAccountConfig.CarMotorForce;
 		_maxSteerAngle = playerAccountConfig.MaxSteerAngle;
-		_restoreDirectionSpeed = playerAccountConfig.RestoreDirectionSpeed;	
-		GetComponent<Rigidbody>().mass = playerAccountConfig.CarMass;
+		_restoreDirectionSpeed = playerAccountConfig.RestoreDirectionSpeed;
+		
+		_carRigidbody = GetComponent<Rigidbody>();
+		_carRigidbody.mass = playerAccountConfig.CarMass;
 
 		SetSuspension(playerAccountConfig);
 
+		_carTransform = GetComponent<Transform>();
+
 		_isActive = true;
 	}
+
+	public int GetSpeed()
+    {
+		return Mathf.RoundToInt(speed);
+    }
 	private void FixedUpdate()
 	{
 		if (!_isActive)
@@ -41,6 +55,8 @@ public class PlayerActiveCar : MonoBehaviour
 		RestoreCarOrientation();
 		AccelerateAuto();
 		UpdateWheelPoses();
+
+		speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
 	}
 	private void GetInput()
 	{
