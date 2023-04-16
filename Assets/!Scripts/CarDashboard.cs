@@ -4,16 +4,22 @@ using TMPro;
 public class CarDashboard : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI carSpeedInfo;
+    [SerializeField] TextMeshProUGUI carCurrentRideDistance;
+    [SerializeField] TextMeshProUGUI carOdometer;
 
-    private PlayerActiveCar activeCarInfo;
+    private PlayerActiveCar _activeCarInfo;
+    private PlayerAccount _playerAccount;
 
     private void Awake()
     {
-        activeCarInfo = FindFirstObjectByType<PlayerActiveCar>();
+        _activeCarInfo = FindFirstObjectByType<PlayerActiveCar>();
+        _playerAccount = FindFirstObjectByType<PlayerAccount>();
     }
 
     private void Update()
     {
-        carSpeedInfo.text = $"Speed Km/H: {activeCarInfo.GetSpeed()}";
+        carSpeedInfo.text = $"Speed Km/H: {_activeCarInfo.GetSpeed()}";
+        carCurrentRideDistance.text = $"Current Ride Distance, m: {_activeCarInfo.GetCurrentRideDistance()}";
+        carOdometer.text = $"Odometer, m: {_playerAccount.GetOdometer()}";
     }
 }

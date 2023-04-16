@@ -21,7 +21,10 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private bool _isActive;
 
-	private float speed;
+	private float _speed;
+
+	private float _currentRideDistance;
+	private Vector3 _startPosition;
 
 	public void Launch(PlayerAccountConfig playerAccountConfig)
 	{
@@ -35,13 +38,19 @@ public class PlayerActiveCar : MonoBehaviour
 		SetSuspension(playerAccountConfig);
 
 		_carTransform = GetComponent<Transform>();
+		_startPosition = _carTransform.position;
 
 		_isActive = true;
 	}
 
 	public int GetSpeed()
     {
-		return Mathf.RoundToInt(speed);
+		return Mathf.RoundToInt(_speed);
+    }
+
+	public int GetCurrentRideDistance()
+    {
+		return Mathf.RoundToInt(_currentRideDistance);
     }
 	private void FixedUpdate()
 	{
@@ -56,7 +65,8 @@ public class PlayerActiveCar : MonoBehaviour
 		AccelerateAuto();
 		UpdateWheelPoses();
 
-		speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
+		_speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
+		_currentRideDistance = Vector3.Distance(_startPosition, _carTransform.position);
 	}
 	private void GetInput()
 	{

@@ -4,7 +4,7 @@ public class CameraSettings : MonoBehaviour
 {
 	[SerializeField] private Transform objectToFollow;
 	[SerializeField] private Vector3 offsetShoulderView;
-	//[SerializeField] private Quaternion rotationShoulderView;
+	[SerializeField] private Quaternion rotationShoulderView;
 
 	[SerializeField] private float followSpeed;
 	[SerializeField] private float lookSpeed;
