@@ -17,6 +17,7 @@ MonoBehaviour:
   PACSpawnPosition: {x: 0, y: 0, z: 0}
   CarMotorForce: 300
   CarMass: 1500
+  CarMaxSpeed: 100
   MaxSteerAngle: 30
   RestoreDirectionSpeed: 100
   WheelDampingRate: 0.25

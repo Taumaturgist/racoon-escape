@@ -19,9 +19,11 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _damper;
 	private float _targetPos;
 
-	private bool _isActive;
+	private bool _isActive = true;
+	[SerializeField] private bool _isAccelerating = true;
 
 	private float _speed;
+	private float _speedLimit;
 
 	private float _currentRideDistance;
 	private Vector3 _startPosition;
@@ -37,10 +39,10 @@ public class PlayerActiveCar : MonoBehaviour
 
 		SetSuspension(playerAccountConfig);
 
+		_speedLimit = playerAccountConfig.CarMaxSpeed;
+
 		_carTransform = GetComponent<Transform>();
 		_startPosition = _carTransform.position;
-
-		_isActive = true;
 	}
 
 	public int GetSpeed()
@@ -63,7 +65,7 @@ public class PlayerActiveCar : MonoBehaviour
 		Steer();
 		RestoreCarOrientation();
 		AccelerateAuto();
-		UpdateWheelPoses();
+		UpdateWheelPoses();		
 
 		_speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
 		_currentRideDistance = Vector3.Distance(_startPosition, _carTransform.position);
@@ -91,8 +93,13 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private void AccelerateAuto()
 	{
-		frontLeftW.motorTorque = _motorForce;
-		frontRightW.motorTorque = _motorForce;
+		LimitMaxSpeed();
+
+		var _currentMotorForce = _isAccelerating ? _motorForce : 0;
+
+		frontLeftW.motorTorque = _currentMotorForce;
+		frontRightW.motorTorque = _currentMotorForce;
+			
 	}
 
 	private void UpdateWheelPoses()
@@ -133,4 +140,16 @@ public class PlayerActiveCar : MonoBehaviour
 			wheelCollider.suspensionSpring = suspensionSpring;
 		}
 	}
+
+	private void LimitMaxSpeed()
+    {
+		if (_speed >= _speedLimit)
+		{
+			_isAccelerating = false;
+		}
+		else
+        {
+			_isAccelerating = true;
+        }
+    }
 }

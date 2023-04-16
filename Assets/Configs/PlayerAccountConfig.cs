@@ -12,6 +12,7 @@ public class PlayerAccountConfig : ScriptableObject
     [Header("CarSettings")]
     public float CarMotorForce;
     public float CarMass;
+    public float CarMaxSpeed;
     public float MaxSteerAngle;    
     public float RestoreDirectionSpeed;
     public float WheelDampingRate;
