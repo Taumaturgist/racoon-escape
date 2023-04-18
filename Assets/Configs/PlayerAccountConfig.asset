@@ -25,6 +25,7 @@ MonoBehaviour:
   Spring: 3500
   Damper: 3500
   TargetPosition: 0.5
+  CarBreakPower: 15
   CarAcceleration: 0
   MaxYRotationAngle: 0
   TurnSpeed: 0

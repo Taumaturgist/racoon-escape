@@ -9,7 +9,7 @@ public class PlayerAccount : MonoBehaviour
 
     private PlayerActiveCar _activeCar;
 
-    private Dictionary<string, int> _storage = new Dictionary<string, int>();
+    private Dictionary<string, int> _storage;
 
     private int _odometer;
 
