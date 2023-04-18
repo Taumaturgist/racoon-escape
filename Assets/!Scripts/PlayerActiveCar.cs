@@ -4,6 +4,7 @@ public class PlayerActiveCar : MonoBehaviour
 {
 	[SerializeField] private WheelCollider frontLeftW, frontRightW, rearLeftW, rearRightW;
 	[SerializeField] private Transform frontLeftT, frontRightT, rearLeftT, rearRightT;
+	[SerializeField] private GameObject stopLightLeft, stopLightRight;
 
 	private Transform _carTransform;
 	private Rigidbody _carRigidbody;
@@ -20,10 +21,12 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _targetPos;
 
 	private bool _isActive = true;
-	[SerializeField] private bool _isAccelerating = true;
+	private bool _isAccelerating = true;
+	[SerializeField] private bool _canUseBrakes;
 
 	private float _speed;
 	private float _speedLimit;
+	private float _breakSpeedLimit;
 
 	private float _currentRideDistance;
 	private Vector3 _startPosition;
@@ -40,7 +43,7 @@ public class PlayerActiveCar : MonoBehaviour
 		SetSuspension(playerAccountConfig);
 
 		_speedLimit = playerAccountConfig.CarMaxSpeed;
-
+		_breakSpeedLimit = _speedLimit * (1 - playerAccountConfig.CarBreakPower / 100);
 		_carTransform = GetComponent<Transform>();
 		_startPosition = _carTransform.position;
 	}
@@ -61,10 +64,15 @@ public class PlayerActiveCar : MonoBehaviour
 			return;
         }
 
+		CheckBools();
+
 		GetInput();
 		Steer();
 		RestoreCarOrientation();
+
 		AccelerateAuto();
+		UseBrakes(_canUseBrakes);
+
 		UpdateWheelPoses();		
 
 		_speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
@@ -93,13 +101,10 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private void AccelerateAuto()
 	{
-		LimitMaxSpeed();
-
 		var _currentMotorForce = _isAccelerating ? _motorForce : 0;
 
 		frontLeftW.motorTorque = _currentMotorForce;
-		frontRightW.motorTorque = _currentMotorForce;
-			
+		frontRightW.motorTorque = _currentMotorForce;			
 	}
 
 	private void UpdateWheelPoses()
@@ -141,15 +146,47 @@ public class PlayerActiveCar : MonoBehaviour
 		}
 	}
 
-	private void LimitMaxSpeed()
+	private void CheckBools()
     {
 		if (_speed >= _speedLimit)
 		{
 			_isAccelerating = false;
 		}
 		else
-        {
+		{
 			_isAccelerating = true;
-        }
-    }
+		}
+
+		if (_speed >= _breakSpeedLimit)
+		{
+			_canUseBrakes = true;
+		}
+		else
+		{
+			_canUseBrakes = false;
+		}	
+	}	
+
+	private void UseBrakes(bool canUseBrakes)
+    {
+		if (Input.GetKeyUp(KeyCode.Space))
+		{
+			stopLightLeft.SetActive(false);
+			stopLightRight.SetActive(false);			
+		}		
+
+		if (Input.GetKey(KeyCode.Space) && canUseBrakes)
+        {
+			frontLeftW.brakeTorque = _motorForce * 10;
+			frontRightW.brakeTorque = _motorForce * 10;
+
+			stopLightLeft.SetActive(true);
+			stopLightRight.SetActive(true);
+
+			return;
+		}
+
+		frontLeftW.brakeTorque = 0;
+		frontRightW.brakeTorque = 0;
+	}
 }
