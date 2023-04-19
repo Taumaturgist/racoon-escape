@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TileSpawner : MonoBehaviour
 {
     public int tileType;
-    public Vector3 tilePosition;
-    private void tileCreation()
+    public Tile tile;
+
+    private void Awake()
     {
-        Instantiate(gameObject, tilePosition, Quaternion.identity);
+        tile = GetComponent<Tile>();
     }
 }
