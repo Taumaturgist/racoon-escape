@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tiles : MonoBehaviour
+public class TilesList : MonoBehaviour
 {
     public GameObject[] cityTiles;
     public GameObject[] forestTiles;

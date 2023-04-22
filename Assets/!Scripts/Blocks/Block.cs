@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    public int blockId;
+    public int blockID;
     public int blockType;
     public int tilesCount;
 }

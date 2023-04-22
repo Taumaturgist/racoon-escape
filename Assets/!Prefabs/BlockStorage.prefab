@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8710584025412502069
+--- !u!1 &444862550099237907
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8710584025412502071}
+  - component: {fileID: 5669585320749819088}
+  - component: {fileID: 444862550099237904}
+  - component: {fileID: 444862550099237910}
   m_Layer: 0
   m_Name: BlockStorage
   m_TagString: Untagged
@@ -16,18 +18,54 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8710584025412502071
+--- !u!4 &5669585320749819088
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8710584025412502069}
+  m_GameObject: {fileID: 444862550099237907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9593353, y: 4.654207, z: 7.0727386}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444862550099237904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444862550099237907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc46d85d492897f4291a64e0b5f13d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 1770747905326644711, guid: ea7579af3201003468bf01fac551bad7, type: 3}
+  tile: {fileID: 4192696207721956122, guid: a04b2621e11cebd4ab40e64b9632d4de, type: 3}
+--- !u!114 &444862550099237910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444862550099237907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353eaedf7b31e5b4181f506a7f02eb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cityTiles:
+  - {fileID: 4192696207721956122, guid: a04b2621e11cebd4ab40e64b9632d4de, type: 3}
+  - {fileID: 8218325642773468018, guid: 58b94934151f546458db99bd4becb33e, type: 3}
+  - {fileID: 8845397834256987886, guid: dc5173feacaa35b4a9ef341a54a95a65, type: 3}
+  - {fileID: 8718738552086383790, guid: 1d9a69396dfd0db4a9df0da214e2abeb, type: 3}
+  forestTiles: []
+  desertTiles:
+  - {fileID: 2533951117993019420, guid: b598bf98c37c5b94ba226908574e08db, type: 3}
+  highwayTiles:
+  - {fileID: 7583693068473796937, guid: 1690547593c15c74cac8088f1b2332df, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    int blockID;
-    bool isLast;
+    public int blockID;
+    public bool isLast;
     public GameObject tile;
 }
