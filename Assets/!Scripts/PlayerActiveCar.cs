@@ -9,7 +9,12 @@ public class PlayerActiveCar : MonoBehaviour
 	private Transform _carTransform;
 	private Rigidbody _carRigidbody;
 
+	private Vector3 _startPosition;
+
 	private float _motorForce;
+	private bool _isFrontWheelDriveOn;
+	private bool _isRearWheelDriveOn;
+
 	private float _maxSteerAngle;
 	private float _restoreDirectionSpeed;
 
@@ -22,18 +27,16 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private bool _isActive = true;
 	private bool _isAccelerating = true;
-	[SerializeField] private bool _canUseBrakes;
+	private bool _canUseBrakes;
 
 	private float _speed;
 	private float _speedLimit;
 	private float _breakSpeedLimit;
 
-	private float _currentRideDistance;
-	private Vector3 _startPosition;
+	private float _currentRideDistance;	
 
 	public void Launch(PlayerAccountConfig playerAccountConfig)
-	{
-		_motorForce = playerAccountConfig.CarMotorForce;
+	{		
 		_maxSteerAngle = playerAccountConfig.MaxSteerAngle;
 		_restoreDirectionSpeed = playerAccountConfig.RestoreDirectionSpeed;
 		
@@ -41,6 +44,8 @@ public class PlayerActiveCar : MonoBehaviour
 		_carRigidbody.mass = playerAccountConfig.CarMass;
 
 		SetSuspension(playerAccountConfig);
+		SetWheelsDrive(playerAccountConfig);
+		SetEngine(playerAccountConfig);
 
 		_speedLimit = playerAccountConfig.CarMaxSpeed;
 		_breakSpeedLimit = _speedLimit * (1 - playerAccountConfig.CarBreakPower / 100);
@@ -78,6 +83,25 @@ public class PlayerActiveCar : MonoBehaviour
 		_speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
 		_currentRideDistance = Vector3.Distance(_startPosition, _carTransform.position);
 	}
+
+	private void SetWheelsDrive(PlayerAccountConfig playerAccountConfig)
+    {
+		_isFrontWheelDriveOn = playerAccountConfig.FrontWheelDrive;
+		_isRearWheelDriveOn = playerAccountConfig.RearWheelDrive;
+    }
+
+	private void SetEngine (PlayerAccountConfig playerAccountConfig)
+    {
+		if (playerAccountConfig.FrontWheelDrive && playerAccountConfig.RearWheelDrive)
+		{
+			_motorForce = playerAccountConfig.CarMotorForce / 2;
+
+		}
+		else
+		{
+			_motorForce = playerAccountConfig.CarMotorForce;
+		}
+	}
 	private void GetInput()
 	{
 		_horizontalInput = Input.GetAxis("Horizontal");
@@ -103,8 +127,17 @@ public class PlayerActiveCar : MonoBehaviour
 	{
 		var _currentMotorForce = _isAccelerating ? _motorForce : 0;
 
-		frontLeftW.motorTorque = _currentMotorForce;
-		frontRightW.motorTorque = _currentMotorForce;			
+		if (_isFrontWheelDriveOn)
+        {
+			frontLeftW.motorTorque = _currentMotorForce;
+			frontRightW.motorTorque = _currentMotorForce;
+		}
+		
+		if (_isRearWheelDriveOn)
+        {
+			rearLeftW.motorTorque = _currentMotorForce;
+			rearRightW.motorTorque = _currentMotorForce;
+		}		
 	}
 
 	private void UpdateWheelPoses()

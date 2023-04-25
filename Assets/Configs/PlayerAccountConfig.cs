@@ -9,18 +9,24 @@ public class PlayerAccountConfig : ScriptableObject
     public PlayerActiveCar PlayerActiveCar;
     public Vector3 PACSpawnPosition;
 
-    [Header("CarSettings")]
+    [Header("GeneralCarSettings")]
     public float CarMotorForce;
     public float CarMass;
     public float CarMaxSpeed;    
     public float MaxSteerAngle;    
     public float RestoreDirectionSpeed;
+    public float CarBreakPower;
+
+    [Header("CarSuspensionSettings")]
     public float WheelDampingRate;
     public float SuspensionDistance;
     public float Spring;
     public float Damper;
     public float TargetPosition;
-    public float CarBreakPower;
+    
+    [Header("CarDriveSettings")]
+    public bool FrontWheelDrive;
+    public bool RearWheelDrive;
 
     [Header("TO DO")]    
     public float CarAcceleration;
