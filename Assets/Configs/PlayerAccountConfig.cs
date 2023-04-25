@@ -20,9 +20,9 @@ public class PlayerAccountConfig : ScriptableObject
     public float Spring;
     public float Damper;
     public float TargetPosition;
-
-    [Header("TO DO")]
     public float CarBreakPower;
+
+    [Header("TO DO")]    
     public float CarAcceleration;
     public float MaxYRotationAngle;
     public float TurnSpeed;
