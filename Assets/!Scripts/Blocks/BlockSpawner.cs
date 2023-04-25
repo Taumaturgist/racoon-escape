@@ -10,7 +10,6 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField] private GameObject block;
     private int previousBlockType;
 
-    private TilesList tilesList;
     [SerializeField] private GameObject tile;
     private const int minTileCountInBlock = 8;
     private const int maxTileCountInBlock = 12;
@@ -19,50 +18,47 @@ public class BlockSpawner : MonoBehaviour
 
     private void Awake()
     {
-        tilesList = GetComponent<TilesList>();
-
-        FirstTwoBlocksCreation();
-        
+         //FirstTwoBlocksCreation();   
     }
 
-    private void FirstTwoBlocksCreation()
-    {
-        var _position = Vector3.zero;
-        var _rotation = Quaternion.identity;
+    //private void FirstTwoBlocksCreation()
+    //{
+    //    var _position = Vector3.zero;
+    //    var _rotation = Quaternion.identity;
 
-        int tileCount = 15;
-        var tiles = new GameObject[tileCount];
+    //    int tileCount = 15;
+    //    var tiles = new GameObject[tileCount];
         
-        var firstBlock = Instantiate(block, _position, _rotation, transform);
-        firstBlock.AddComponent<Block>();
-        var firstBlockComponent = firstBlock.GetComponent<Block>();
+    //    var firstBlock = Instantiate(block, _position, _rotation, transform);
+    //    firstBlock.AddComponent<Block>();
+    //    var firstBlockComponent = firstBlock.GetComponent<Block>();
 
-        firstBlockComponent.blockID = SetBlockID();
+    //    firstBlockComponent.blockID = SetBlockID();
 
-        Debug.Log(firstBlockComponent.blockID);
+    //    Debug.Log(firstBlockComponent.blockID);
 
-        for (int i = 0; i < tileCount; i++)
-        {
-            var randomIndex = Random.Range(0, tilesList.cityTiles.Length);
-            tiles[i] = Instantiate(tilesList.cityTiles[randomIndex], _position, _rotation, firstBlock.transform);
-            _position.z += offsetZ;
-        }
-        blocks.Add(block);
+    //    for (int i = 0; i < tileCount; i++)
+    //    {
+    //        var randomIndex = Random.Range(0, tilesList.cityTiles.Length);
+    //        tiles[i] = Instantiate(tilesList.cityTiles[randomIndex], _position, _rotation, firstBlock.transform);
+    //        _position.z += offsetZ;
+    //    }
+    //    blocks.Add(block);
 
-        var secondBlock = Instantiate(block, _position, _rotation, transform);
-        secondBlock.AddComponent<Block>();
-        var secondBlockComponent = secondBlock.GetComponent<Block>();
-        secondBlockComponent.blockID = SetBlockID();
+    //    var secondBlock = Instantiate(block, _position, _rotation, transform);
+    //    secondBlock.AddComponent<Block>();
+    //    var secondBlockComponent = secondBlock.GetComponent<Block>();
+    //    secondBlockComponent.blockID = SetBlockID();
 
-        Debug.Log(secondBlockComponent.blockID);
-        for (int i = 0; i < tileCount; i++)
-        {
-            var randomIndex = Random.Range(0, tilesList.cityTiles.Length);
-            tiles[i] = Instantiate(tilesList.cityTiles[randomIndex], _position, _rotation, secondBlock.transform);
-            _position.z += offsetZ;
-        }
-        blocks.Add(block);
-    }
+    //    Debug.Log(secondBlockComponent.blockID);
+    //    for (int i = 0; i < tileCount; i++)
+    //    {
+    //        var randomIndex = Random.Range(0, tilesList.cityTiles.Length);
+    //        tiles[i] = Instantiate(tilesList.cityTiles[randomIndex], _position, _rotation, secondBlock.transform);
+    //        _position.z += offsetZ;
+    //    }
+    //    blocks.Add(block);
+    //}
 
     private void BlockCreation()
     {
@@ -100,7 +96,7 @@ public class BlockSpawner : MonoBehaviour
     }
     private int SetTilesCount()
     {
-        var tileCount = Random.Range(8, 13);
+        var tileCount = Random.Range(minTileCountInBlock, maxTileCountInBlock + 1);
         return tileCount;
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3812622581877369879}
   - component: {fileID: 2430656683449038630}
   m_Layer: 0
-  m_Name: TileCity5_2
+  m_Name: CityTile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
