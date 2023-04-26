@@ -14,8 +14,7 @@ public class PlayerAccountConfig : ScriptableObject
     public float CarMass;
     public float CarMaxSpeed;    
     public float MaxSteerAngle;
-    public float LimitRotationY;
-    public float RestoreDirectionSpeed;
+    public float LimitRotationY;    
     public float CarBreakPower;
 
     [Header("CarSuspensionSettings")]
@@ -34,5 +33,8 @@ public class PlayerAccountConfig : ScriptableObject
     public float NitroRestorationSpeed;
     public float NitroSpeedCapRaise;
     public float NitroAcceleration; //add torque?
+
+    //not used
+    //public float RestoreDirectionSpeed;
 
 }

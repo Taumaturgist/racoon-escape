@@ -18,7 +18,7 @@ MonoBehaviour:
   CarMotorForce: 500
   CarMass: 1500
   CarMaxSpeed: 100
-  MaxSteerAngle: 15
+  MaxSteerAngle: 20
   LimitRotationY: 20
   RestoreDirectionSpeed: 100
   CarBreakPower: 15
@@ -29,5 +29,7 @@ MonoBehaviour:
   TargetPosition: 0.5
   FrontWheelDrive: 1
   RearWheelDrive: 1
-  CarAcceleration: 0
-  TurnSpeed: 0
+  NitroCapacity: 0
+  NitroRestorationSpeed: 0
+  NitroSpeedCapRaise: 0
+  NitroAcceleration: 0
