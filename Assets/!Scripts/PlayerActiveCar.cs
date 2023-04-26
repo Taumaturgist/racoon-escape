@@ -24,6 +24,7 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _horizontalInput;
 	private float _steeringAngle;
 	private float _limitRotationAngleY;
+	private float _limitRotationAngleZ = 5;
 
 	private float _spring;
 	private float _damper;
@@ -47,6 +48,7 @@ public class PlayerActiveCar : MonoBehaviour
 		
 		_carRigidbody = GetComponent<Rigidbody>();
 		_carRigidbody.mass = playerAccountConfig.CarMass;
+		_carRigidbody.centerOfMass = new Vector3(0, -1, 0);
 
 		SetSuspension(playerAccountConfig);
 
@@ -56,6 +58,7 @@ public class PlayerActiveCar : MonoBehaviour
 
 		_speedLimit = playerAccountConfig.CarMaxSpeed;
 		_breakSpeedLimit = _speedLimit * (1 - playerAccountConfig.CarBreakPower / 100);
+
 		_carTransform = GetComponent<Transform>();
 		_startPosition = _carTransform.position;
 
@@ -121,38 +124,52 @@ public class PlayerActiveCar : MonoBehaviour
 	private void Steer()
 	{		
 		_steeringAngle = _maxSteerAngle * _horizontalInput;
+		
 		frontLeftW.steerAngle = _steeringAngle;
 		frontRightW.steerAngle = _steeringAngle;
-	}
 
-	private void LimitRotationYZ()
-    {		
-		if (_carTransform.eulerAngles.y > _limitRotationAngleY && 
+		if (_carTransform.eulerAngles.y > _limitRotationAngleY &&
 			_carTransform.eulerAngles.y < HalfCircle)
 		{
 			_carTransform.eulerAngles = new Vector3(
 				_carTransform.eulerAngles.x,
-				_limitRotationAngleY, 
+				_limitRotationAngleY,
 				_carTransform.eulerAngles.z);
+
+			_carRigidbody.angularVelocity = new Vector3(
+				_carRigidbody.angularVelocity.x,
+				_carRigidbody.angularVelocity.y,
+				0);
 		}
-		else if (_carTransform.eulerAngles.y > HalfCircle && 
+		else if (_carTransform.eulerAngles.y > HalfCircle &&
 			_carTransform.eulerAngles.y < FullCircle - _limitRotationAngleY)
 		{
 			_carTransform.eulerAngles = new Vector3(
-				_carTransform.eulerAngles.x, 
-				FullCircle - _limitRotationAngleY, 
+				_carTransform.eulerAngles.x,
+				FullCircle - _limitRotationAngleY,
 				_carTransform.eulerAngles.z);
-		}		
+
+			_carRigidbody.angularVelocity = new Vector3(
+				_carRigidbody.angularVelocity.x,
+				_carRigidbody.angularVelocity.y,
+				0);
+		}
 	}
+
+	private void LimitRotationYZ()
+    {
+		
+    }
 	private void RestoreCarOrientation()
 	{
 		if (_horizontalInput == 0)
 		{
-			var diffAngle = transform.rotation.y * _restoreDirectionSpeed;
+            var diffAngle = transform.rotation.y * _restoreDirectionSpeed;
+
 			frontLeftW.steerAngle = -diffAngle;
-			frontRightW.steerAngle = -diffAngle;
+            frontRightW.steerAngle = -diffAngle;
 		}
-	}
+    }
 
 	private void AccelerateAuto()
 	{
@@ -239,17 +256,31 @@ public class PlayerActiveCar : MonoBehaviour
 			stopLightRight.SetActive(false);			
 		}		
 
-		if (Input.GetKey(KeyCode.Space) && canUseBrakes)
+		if (canUseBrakes)
         {
-			frontLeftW.brakeTorque = _motorForce * 10;
-			frontRightW.brakeTorque = _motorForce * 10;
+			if (Input.GetKey(KeyCode.Space))
+            {
+				frontLeftW.brakeTorque = _motorForce * 10;
+				frontRightW.brakeTorque = _motorForce * 10;
 
-			stopLightLeft.SetActive(true);
-			stopLightRight.SetActive(true);
+				stopLightLeft.SetActive(true);
+				stopLightRight.SetActive(true);
 
-			return;
+				return;
+			}
+
+			else
+            {
+				stopLightLeft.SetActive(false);
+				stopLightRight.SetActive(false);
+			}			
 		}
-
+		else
+        {
+			stopLightLeft.SetActive(false);
+			stopLightRight.SetActive(false);
+		}
+		
 		frontLeftW.brakeTorque = 0;
 		frontRightW.brakeTorque = 0;
 	}
