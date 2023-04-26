@@ -8,6 +8,7 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private const float FullCircle = 360f;
 	private const float HalfCircle = 180f;
+	private const float MassCenterY = -1f;
 
 	private Transform _carTransform;
 	private Rigidbody _carRigidbody;
@@ -18,13 +19,11 @@ public class PlayerActiveCar : MonoBehaviour
 	private bool _isFrontWheelDriveOn;
 	private bool _isRearWheelDriveOn;
 
-	private float _maxSteerAngle;
-	private float _restoreDirectionSpeed;
+	private float _maxSteerAngle;	
 
 	private float _horizontalInput;
 	private float _steeringAngle;
-	private float _limitRotationAngleY;
-	private float _limitRotationAngleZ = 5;
+	private float _limitRotationAngleY;	
 
 	private float _spring;
 	private float _damper;
@@ -38,17 +37,15 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _speedLimit;
 	private float _breakSpeedLimit;
 
-	private float _currentRideDistance;
-	
+	private float _currentRideDistance;	
 
 	public void Launch(PlayerAccountConfig playerAccountConfig)
 	{		
-		_maxSteerAngle = playerAccountConfig.MaxSteerAngle;
-		_restoreDirectionSpeed = playerAccountConfig.RestoreDirectionSpeed;
+		_maxSteerAngle = playerAccountConfig.MaxSteerAngle;		
 		
 		_carRigidbody = GetComponent<Rigidbody>();
 		_carRigidbody.mass = playerAccountConfig.CarMass;
-		_carRigidbody.centerOfMass = new Vector3(0, -1, 0);
+		_carRigidbody.centerOfMass = new Vector3(0, MassCenterY, 0);
 
 		SetSuspension(playerAccountConfig);
 
@@ -82,11 +79,9 @@ public class PlayerActiveCar : MonoBehaviour
         }
 
 		CheckBools();
-
 		GetInput();
-		Steer();
-		RestoreCarOrientation();
 
+		Steer();	
 		AccelerateAuto();
 		UseBrakes(_canUseBrakes);
 
@@ -94,8 +89,6 @@ public class PlayerActiveCar : MonoBehaviour
 
 		_speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
 		_currentRideDistance = Vector3.Distance(_startPosition, _carTransform.position);
-
-		LimitRotationYZ();
 	}
 
 	private void SetWheelsDrive(PlayerAccountConfig playerAccountConfig)
@@ -123,7 +116,14 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private void Steer()
 	{		
-		_steeringAngle = _maxSteerAngle * _horizontalInput;
+		if (_horizontalInput == 0)
+        {
+			_steeringAngle = -transform.eulerAngles.y;
+        }
+		else
+        {
+			_steeringAngle = _maxSteerAngle * _horizontalInput;
+		}		
 		
 		frontLeftW.steerAngle = _steeringAngle;
 		frontRightW.steerAngle = _steeringAngle;
@@ -154,22 +154,15 @@ public class PlayerActiveCar : MonoBehaviour
 				_carRigidbody.angularVelocity.y,
 				0);
 		}
-	}
 
-	private void LimitRotationYZ()
-    {
-		
-    }
-	private void RestoreCarOrientation()
-	{
-		if (_horizontalInput == 0)
-		{
-            var diffAngle = transform.rotation.y * _restoreDirectionSpeed;
-
-			frontLeftW.steerAngle = -diffAngle;
-            frontRightW.steerAngle = -diffAngle;
+		if (_carTransform.eulerAngles.y >= -1 && _carTransform.eulerAngles.y <= 1)
+        {
+			_carRigidbody.angularVelocity = new Vector3(
+				_carRigidbody.angularVelocity.x,
+				_carRigidbody.angularVelocity.y,
+				0);
 		}
-    }
+	}	
 
 	private void AccelerateAuto()
 	{
@@ -268,18 +261,12 @@ public class PlayerActiveCar : MonoBehaviour
 
 				return;
 			}
-
 			else
             {
 				stopLightLeft.SetActive(false);
 				stopLightRight.SetActive(false);
 			}			
-		}
-		else
-        {
-			stopLightLeft.SetActive(false);
-			stopLightRight.SetActive(false);
-		}
+		}		
 		
 		frontLeftW.brakeTorque = 0;
 		frontRightW.brakeTorque = 0;
