@@ -13,7 +13,8 @@ public class PlayerAccountConfig : ScriptableObject
     public float CarMotorForce;
     public float CarMass;
     public float CarMaxSpeed;    
-    public float MaxSteerAngle;    
+    public float MaxSteerAngle;
+    public float LimitRotationY;
     public float RestoreDirectionSpeed;
     public float CarBreakPower;
 
@@ -28,9 +29,10 @@ public class PlayerAccountConfig : ScriptableObject
     public bool FrontWheelDrive;
     public bool RearWheelDrive;
 
-    [Header("TO DO")]    
-    public float CarAcceleration;
-    public float MaxYRotationAngle;
-    public float TurnSpeed;
+    [Header("TO DO")]
+    public float NitroCapacity;
+    public float NitroRestorationSpeed;
+    public float NitroSpeedCapRaise;
+    public float NitroAcceleration; //add torque?
 
 }

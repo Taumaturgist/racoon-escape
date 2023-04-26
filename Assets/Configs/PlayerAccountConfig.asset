@@ -14,18 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: 0
   PlayerActiveCar: {fileID: -603158850229641492, guid: 96fb2e0db858f014c968b2151bd0c855, type: 3}
-  PACSpawnPosition: {x: 0, y: 0, z: 0}
-  CarMotorForce: 300
+  PACSpawnPosition: {x: 0, y: 1, z: 0}
+  CarMotorForce: 500
   CarMass: 1500
   CarMaxSpeed: 100
-  MaxSteerAngle: 30
+  MaxSteerAngle: 15
+  LimitRotationY: 20
   RestoreDirectionSpeed: 100
-  WheelDampingRate: 0.25
-  SuspensionDistance: 0.1
-  Spring: 3500
-  Damper: 3500
-  TargetPosition: 0.5
   CarBreakPower: 15
+  WheelDampingRate: 1
+  SuspensionDistance: 0.1
+  Spring: 30000
+  Damper: 2000
+  TargetPosition: 0.5
+  FrontWheelDrive: 1
+  RearWheelDrive: 1
   CarAcceleration: 0
-  MaxYRotationAngle: 0
   TurnSpeed: 0

@@ -6,11 +6,14 @@ public class PlayerActiveCar : MonoBehaviour
 	[SerializeField] private Transform frontLeftT, frontRightT, rearLeftT, rearRightT;
 	[SerializeField] private GameObject stopLightLeft, stopLightRight;
 
+	private const float FullCircle = 360f;
+	private const float HalfCircle = 180f;
+
 	private Transform _carTransform;
 	private Rigidbody _carRigidbody;
 
-	private Vector3 _startPosition;
-
+	private Vector3 _startPosition;	
+	
 	private float _motorForce;
 	private bool _isFrontWheelDriveOn;
 	private bool _isRearWheelDriveOn;
@@ -20,6 +23,7 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private float _horizontalInput;
 	private float _steeringAngle;
+	private float _limitRotationAngleY;
 
 	private float _spring;
 	private float _damper;
@@ -33,7 +37,8 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _speedLimit;
 	private float _breakSpeedLimit;
 
-	private float _currentRideDistance;	
+	private float _currentRideDistance;
+	
 
 	public void Launch(PlayerAccountConfig playerAccountConfig)
 	{		
@@ -44,13 +49,17 @@ public class PlayerActiveCar : MonoBehaviour
 		_carRigidbody.mass = playerAccountConfig.CarMass;
 
 		SetSuspension(playerAccountConfig);
+
 		SetWheelsDrive(playerAccountConfig);
+
 		SetEngine(playerAccountConfig);
 
 		_speedLimit = playerAccountConfig.CarMaxSpeed;
 		_breakSpeedLimit = _speedLimit * (1 - playerAccountConfig.CarBreakPower / 100);
 		_carTransform = GetComponent<Transform>();
 		_startPosition = _carTransform.position;
+
+		_limitRotationAngleY = playerAccountConfig.LimitRotationY;
 	}
 
 	public int GetSpeed()
@@ -82,6 +91,8 @@ public class PlayerActiveCar : MonoBehaviour
 
 		_speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
 		_currentRideDistance = Vector3.Distance(_startPosition, _carTransform.position);
+
+		LimitRotationYZ();
 	}
 
 	private void SetWheelsDrive(PlayerAccountConfig playerAccountConfig)
@@ -95,23 +106,43 @@ public class PlayerActiveCar : MonoBehaviour
 		if (playerAccountConfig.FrontWheelDrive && playerAccountConfig.RearWheelDrive)
 		{
 			_motorForce = playerAccountConfig.CarMotorForce / 2;
-
 		}
 		else
 		{
 			_motorForce = playerAccountConfig.CarMotorForce;
 		}
 	}
+
 	private void GetInput()
 	{
 		_horizontalInput = Input.GetAxis("Horizontal");
 	}
 
 	private void Steer()
-	{
+	{		
 		_steeringAngle = _maxSteerAngle * _horizontalInput;
 		frontLeftW.steerAngle = _steeringAngle;
 		frontRightW.steerAngle = _steeringAngle;
+	}
+
+	private void LimitRotationYZ()
+    {		
+		if (_carTransform.eulerAngles.y > _limitRotationAngleY && 
+			_carTransform.eulerAngles.y < HalfCircle)
+		{
+			_carTransform.eulerAngles = new Vector3(
+				_carTransform.eulerAngles.x,
+				_limitRotationAngleY, 
+				_carTransform.eulerAngles.z);
+		}
+		else if (_carTransform.eulerAngles.y > HalfCircle && 
+			_carTransform.eulerAngles.y < FullCircle - _limitRotationAngleY)
+		{
+			_carTransform.eulerAngles = new Vector3(
+				_carTransform.eulerAngles.x, 
+				FullCircle - _limitRotationAngleY, 
+				_carTransform.eulerAngles.z);
+		}		
 	}
 	private void RestoreCarOrientation()
 	{
