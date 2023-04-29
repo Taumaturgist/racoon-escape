@@ -28,13 +28,11 @@ public class PlayerAccountConfig : ScriptableObject
     public bool FrontWheelDrive;
     public bool RearWheelDrive;
 
-    [Header("TO DO")]
+    [Header("Nitro")]
     public float NitroCapacity;
+    public float NitroUsageSpeed;
     public float NitroRestorationSpeed;
-    public float NitroSpeedCapRaise;
-    public float NitroAcceleration; //add torque?
-
-    //not used
-    //public float RestoreDirectionSpeed;
-
+    public float NitroSpeedBoost;
+    public float NitroTorqueBoost;
+    
 }

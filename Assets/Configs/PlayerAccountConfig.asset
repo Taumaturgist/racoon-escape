@@ -20,7 +20,6 @@ MonoBehaviour:
   CarMaxSpeed: 100
   MaxSteerAngle: 20
   LimitRotationY: 20
-  RestoreDirectionSpeed: 100
   CarBreakPower: 15
   WheelDampingRate: 1
   SuspensionDistance: 0.1
@@ -29,7 +28,8 @@ MonoBehaviour:
   TargetPosition: 0.5
   FrontWheelDrive: 1
   RearWheelDrive: 1
-  NitroCapacity: 0
-  NitroRestorationSpeed: 0
-  NitroSpeedCapRaise: 0
-  NitroAcceleration: 0
+  NitroCapacity: 10
+  NitroUsageSpeed: 1
+  NitroRestorationSpeed: 1
+  NitroSpeedBoost: 100
+  NitroTorqueBoost: 1000
