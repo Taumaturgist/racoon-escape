@@ -1,106 +1,144 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class BlockSpawner : MonoBehaviour
 {
-    private List<GameObject> blocks = new();
-    [SerializeField] private GameObject block;
-    private int previousBlockType;
-
-    private TilesList tilesList;
-    [SerializeField] private GameObject tile;
-    private const int minTileCountInBlock = 8;
-    private const int maxTileCountInBlock = 12;
-
-    private int offsetZ = 200;
+    private ApplicationStartUp _applicationStartUp;
+    private BlockSpawnConfig _blockSpawnConfig;
+    private List<GameObject> _blocks = new();
+    private eBlockType _previousBlockType;
+    private int _previousTileType;
 
     private void Awake()
     {
-        tilesList = GetComponent<TilesList>();
-
-        FirstTwoBlocksCreation();
-        
+        GetBlockSpawnConfig();
+        CreateFirstBlock();
     }
 
-    private void FirstTwoBlocksCreation()
+    private void GetBlockSpawnConfig()
     {
-        var _position = Vector3.zero;
-        var _rotation = Quaternion.identity;
+        _applicationStartUp = FindObjectOfType<ApplicationStartUp>();
+        _blockSpawnConfig = _applicationStartUp.BlockSpawnConfig;
+    }
+    private void CreateFirstBlock()
+    {
+        var pos = _blockSpawnConfig.SpawnPointFirstBlock;
+        var rot = Quaternion.identity;
 
-        int tileCount = 15;
-        var tiles = new GameObject[tileCount];
-        
-        var firstBlock = Instantiate(block, _position, _rotation, transform);
+        var firstBlock = Instantiate(
+                                _blockSpawnConfig.Block,
+                                pos,
+                                rot,
+                                transform);
         firstBlock.AddComponent<Block>();
         var firstBlockComponent = firstBlock.GetComponent<Block>();
+        SetFirstBlockParameters(firstBlockComponent);
 
-        firstBlockComponent.blockID = SetBlockID();
+        var tilesCountInFirstBlock = firstBlockComponent.tilesCount;
+        CreateTilesInFirstBlock(
+                    firstBlock,
+                    tilesCountInFirstBlock,
+                    pos,
+                    rot);
 
-        Debug.Log(firstBlockComponent.blockID);
+        _blocks.Add(firstBlock);
+    }
 
-        for (int i = 0; i < tileCount; i++)
+    private void SetFirstBlockParameters(Block firstBlockComponent)
+    {
+        firstBlockComponent.blockID = 0;
+        firstBlockComponent.blockType = eBlockType.City;
+        firstBlockComponent.tilesCount = _blockSpawnConfig.TilesCountInFirstBlock;
+    }
+
+    private void CreateTilesInFirstBlock(
+                            GameObject firstBlock, 
+                            int tilesCountInFirstBlock, 
+                            Vector3 pos, 
+                            Quaternion rot)
+    {
+        var tilesInFirstBlock = new GameObject[tilesCountInFirstBlock];
+
+        var crossroadExists = false;
+        var numberCrossroad = 3;
+
+        var previousTileType = -1;
+        for (int i = 0; i < tilesInFirstBlock.Length; i++)
         {
-            var randomIndex = Random.Range(0, tilesList.cityTiles.Length);
-            tiles[i] = Instantiate(tilesList.cityTiles[randomIndex], _position, _rotation, firstBlock.transform);
-            _position.z += offsetZ;
+            // Не спавнить одинаковые тайлы
+            var randomIndex = GetRandomIndexForFirstBlock();
+            tilesInFirstBlock[i] = Instantiate(
+                                               _blockSpawnConfig.CityTiles[randomIndex],
+                                               pos,
+                                               rot,
+                                               firstBlock.transform);
+            //if (randomIndex != _previousTileType)
+            //{
+            //    if ((randomIndex == numberCrossroad) && (crossroadExists == true))
+            //    { }
+            //    else
+            //    {
+            //        if (randomIndex == numberCrossroad)
+            //            crossroadExists = true;
+
+            //        tilesInFirstBlock[i] = Instantiate(
+            //                                    _blockSpawnConfig.CityTiles[randomIndex],
+            //                                    pos,
+            //                                    rot,
+            //                                    firstBlock.transform);
+            //    }
+            //}
+            //else
+            //{
+            //    randomIndex = GetRandomIndexForFirstBlock();
+            //}
+            //previousTileType = randomIndex;
+            pos.z += _blockSpawnConfig.OffsetZ;
         }
-        blocks.Add(block);
-
-        var secondBlock = Instantiate(block, _position, _rotation, transform);
-        secondBlock.AddComponent<Block>();
-        var secondBlockComponent = secondBlock.GetComponent<Block>();
-        secondBlockComponent.blockID = SetBlockID();
-
-        Debug.Log(secondBlockComponent.blockID);
-        for (int i = 0; i < tileCount; i++)
-        {
-            var randomIndex = Random.Range(0, tilesList.cityTiles.Length);
-            tiles[i] = Instantiate(tilesList.cityTiles[randomIndex], _position, _rotation, secondBlock.transform);
-            _position.z += offsetZ;
-        }
-        blocks.Add(block);
     }
-
-    private void BlockCreation()
+    private int GetRandomIndexForFirstBlock()
     {
-        Vector3 _position = Vector3.zero;
-        Quaternion _rotation = Quaternion.identity;
-
-        var newBlock = Instantiate(block, _position, _rotation);
-
-        newBlock.AddComponent<Block>();
-        var newBlockComponent = newBlock.GetComponent<Block>();
-
-        newBlockComponent.blockID = SetBlockID();
-        newBlockComponent.blockType = SetBlockType();
-        newBlockComponent.tilesCount = SetTilesCount();
-
-        // Создать тайлы внутри блока
-        for (int tileNumber = 0; tileNumber < newBlockComponent.tilesCount; tileNumber++)
-        {
-            Vector3 offset = new Vector3(0f, 0f, tileNumber * offsetZ);
-        }
-        blocks.Add(newBlock);
+        return Random.Range(0, _blockSpawnConfig.CityTiles.Length);
     }
-    private void BlockDestroying(GameObject block)
-    {
-        Destroy(block);
-    }
+    //private void BlockCreation()
+    //{
+    //    Vector3 _position = Vector3.zero;
+    //    Quaternion _rotation = Quaternion.identity;
 
-    private int SetBlockID()
-    {
-        return blocks.Count;
-    }
-    private int SetBlockType()
-    {
-        return 0;
-    }
-    private int SetTilesCount()
-    {
-        var tileCount = Random.Range(8, 13);
-        return tileCount;
-    }
+    //    var newBlock = Instantiate(_block, _position, _rotation);
+
+    //    newBlock.AddComponent<Block>();
+    //    var newBlockComponent = newBlock.GetComponent<Block>();
+
+    //    newBlockComponent.blockID = SetBlockID();
+    //    newBlockComponent.blockType = SetBlockType();
+    //    newBlockComponent.tilesCount = SetTilesCount();
+
+    //    // Создать тайлы внутри блока
+    //    for (int tileNumber = 0; tileNumber < newBlockComponent.tilesCount; tileNumber++)
+    //    {
+    //        Vector3 offset = new Vector3(0f, 0f, tileNumber * offsetZ);
+    //    }
+    //    blocks.Add(newBlock);
+    //}
+    //private void BlockDestroying(GameObject block)
+    //{
+    //    Destroy(block);
+    //}
+
+    //private int SetBlockID()
+    //{
+    //    return blocks.Count;
+    //}
+    //private int SetBlockType()
+    //{
+    //    return 0;
+    //}
+    //private int SetTilesCount()
+    //{
+    //    var tileCount = Random.Range(minTileCountInBlock, maxTileCountInBlock + 1);
+    //    return tileCount;
+    //}
 }

@@ -5,6 +5,6 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     public int blockID;
-    public int blockType;
+    public eBlockType blockType;
     public int tilesCount;
 }
