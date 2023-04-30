@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BlockSpawnConfig
   m_EditorClassIdentifier: 
   BlockStorage: {fileID: 444862550099237907, guid: dc45dd8a5c1c3b74a97fd61d7f339f74, type: 3}
+  Block: {fileID: 7154188028352649655, guid: ea7579af3201003468bf01fac551bad7, type: 3}
   OffsetZ: 200
   CityTiles:
   - {fileID: 4192696207721956122, guid: a04b2621e11cebd4ab40e64b9632d4de, type: 3}

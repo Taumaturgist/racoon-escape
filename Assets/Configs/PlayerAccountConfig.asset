@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: 0
   PlayerActiveCar: {fileID: -603158850229641492, guid: 96fb2e0db858f014c968b2151bd0c855, type: 3}
-  PACSpawnPosition: {x: 0, y: 0, z: 0}
+  PACSpawnPosition: {x: 0, y: 1, z: 0}
   CarMotorForce: 300
   CarMass: 1500
   CarMaxSpeed: 100

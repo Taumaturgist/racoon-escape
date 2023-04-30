@@ -1,10 +1,11 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BlockSpawnConfig", menuName = "Configs/BlockSpawnConfig", order = 51)]
 public class BlockSpawnConfig : ScriptableObject
 {
+    [Header("Blocks")]
     public GameObject BlockStorage;
+    public GameObject Block;
 
     public float OffsetZ;
 
@@ -22,5 +23,4 @@ public class BlockSpawnConfig : ScriptableObject
     [Header("Other Blocks Parameters")]
     public int MinTilesCountInBlock;
     public int MaxTilesCountInBlock;
-
 }
