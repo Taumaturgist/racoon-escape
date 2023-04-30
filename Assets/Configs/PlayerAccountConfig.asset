@@ -17,6 +17,7 @@ MonoBehaviour:
   PACSpawnPosition: {x: 0, y: 1, z: 0}
   CarMotorForce: 500
   CarMass: 1500
+  CarMassCenterShiftY: -1
   CarMaxSpeed: 100
   MaxSteerAngle: 20
   LimitRotationY: 20

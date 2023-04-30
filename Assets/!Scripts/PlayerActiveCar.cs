@@ -8,7 +8,6 @@ public class PlayerActiveCar : MonoBehaviour
 	
 	private const float FullCircle = 360f;
 	private const float HalfCircle = 180f;
-	private const float MassCenterY = -1f;
 
 	private Transform _carTransform;
 	private Rigidbody _carRigidbody;
@@ -55,7 +54,7 @@ public class PlayerActiveCar : MonoBehaviour
 		
 		_carRigidbody = GetComponent<Rigidbody>();
 		_carRigidbody.mass = playerAccountConfig.CarMass;
-		_carRigidbody.centerOfMass = new Vector3(0, MassCenterY, 0);
+		_carRigidbody.centerOfMass = new Vector3(0, playerAccountConfig.CarMassCenterShiftY, 0);
 
 		SetSuspension(playerAccountConfig);
 
