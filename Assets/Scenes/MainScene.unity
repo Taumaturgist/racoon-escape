@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,5 +182,9 @@ PrefabInstance:
       propertyPath: BlockSpawnConfig
       value: 
       objectReference: {fileID: 11400000, guid: 242302545a5e303479da2ee8d8f473ae, type: 2}
+    - target: {fileID: 5406610483859203975, guid: 2b50baceb24069740800d35c94d9d998, type: 3}
+      propertyPath: BuildingSpawnConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: b0285ae11f10cc2459d0930b64afaddc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b50baceb24069740800d35c94d9d998, type: 3}

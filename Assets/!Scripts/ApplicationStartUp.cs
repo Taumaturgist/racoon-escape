@@ -9,6 +9,7 @@ public class ApplicationStartUp : MonoBehaviour
     public EnvironmentConfig EnvironmentConfig;
     public DebugConfig DebugConfig;
     public BlockSpawnConfig BlockSpawnConfig;
+    public BuildingSpawnConfig BuildingSpawnConfig;
     
     private void Awake()
     {

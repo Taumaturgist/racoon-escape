@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Vector3[] buildingSpawnPoints;
+    [SerializeField] private BuildingSpawnConfig buildingSpawnConfig; //set as private and put config to AppStartUp
+    [SerializeField] private Building buildingPrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private GameObject[] _bigFirstFloors;
+    private GameObject[] _smallFirstFloors;
 }
