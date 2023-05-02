@@ -5,31 +5,39 @@ using static UnityEditor.PlayerSettings;
 
 public class BlockSpawner : MonoBehaviour
 {
+    private ApplicationStartUp _applicationStartUp;
+    private BlockSpawnConfig _blockSpawnConfig;
     private List<GameObject> _blocks = new();
     private eBlockType _previousBlockType;
     private int _previousTileType;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig)
+    private void Awake()
     {
-        CreateFirstBlock(blockSpawnConfig);
+        GetBlockSpawnConfig();
+        CreateFirstBlock();
     }
 
-    private void CreateFirstBlock(BlockSpawnConfig blockSpawnConfig)
+    private void GetBlockSpawnConfig()
     {
-        var pos = blockSpawnConfig.SpawnPointFirstBlock;
+        _applicationStartUp = FindObjectOfType<ApplicationStartUp>();
+        _blockSpawnConfig = _applicationStartUp.BlockSpawnConfig;
+    }
+    private void CreateFirstBlock()
+    {
+        var pos = _blockSpawnConfig.SpawnPointFirstBlock;
         var rot = Quaternion.identity;
 
         var firstBlock = Instantiate(
-                                blockSpawnConfig.Block,
+                                _blockSpawnConfig.Block,
                                 pos,
                                 rot,
                                 transform);
-        //var firstBlockComponent = firstBlock.GetComponent<Block>();
-        SetFirstBlockParameters(blockSpawnConfig, firstBlock);
+        firstBlock.AddComponent<Block>();
+        var firstBlockComponent = firstBlock.GetComponent<Block>();
+        SetFirstBlockParameters(firstBlockComponent);
 
-        var tilesCountInFirstBlock = firstBlock.tilesCount;
+        var tilesCountInFirstBlock = firstBlockComponent.tilesCount;
         CreateTilesInFirstBlock(
-                    blockSpawnConfig,
                     firstBlock,
                     tilesCountInFirstBlock,
                     pos,
@@ -38,18 +46,17 @@ public class BlockSpawner : MonoBehaviour
         _blocks.Add(firstBlock);
     }
 
-    private void SetFirstBlockParameters(BlockSpawnConfig blockSpawnConfig, Block firstBlock)
+    private void SetFirstBlockParameters(Block firstBlockComponent)
     {
-        firstBlock.blockID = 0;
-        firstBlock.blockType = eBlockType.City;
-        firstBlock.tilesCount = blockSpawnConfig.TilesCountInFirstBlock;
+        firstBlockComponent.blockID = 0;
+        firstBlockComponent.blockType = eBlockType.City;
+        firstBlockComponent.tilesCount = _blockSpawnConfig.TilesCountInFirstBlock;
     }
 
     private void CreateTilesInFirstBlock(
-                            BlockSpawnConfig blockSpawnConfig,
-                            GameObject firstBlock,
-                            int tilesCountInFirstBlock,
-                            Vector3 pos,
+                            GameObject firstBlock, 
+                            int tilesCountInFirstBlock, 
+                            Vector3 pos, 
                             Quaternion rot)
     {
         var tilesInFirstBlock = new GameObject[tilesCountInFirstBlock];
@@ -63,7 +70,7 @@ public class BlockSpawner : MonoBehaviour
             // Не спавнить одинаковые тайлы
             var randomIndex = GetRandomIndexForFirstBlock();
             tilesInFirstBlock[i] = Instantiate(
-                                               blockSpawnConfig.CityTiles[randomIndex],
+                                               _blockSpawnConfig.CityTiles[randomIndex],
                                                pos,
                                                rot,
                                                firstBlock.transform);
@@ -88,7 +95,7 @@ public class BlockSpawner : MonoBehaviour
             //    randomIndex = GetRandomIndexForFirstBlock();
             //}
             //previousTileType = randomIndex;
-            pos.z += blockSpawnConfig.OffsetZ;
+            pos.z += _blockSpawnConfig.OffsetZ;
         }
     }
     private int GetRandomIndexForFirstBlock()
