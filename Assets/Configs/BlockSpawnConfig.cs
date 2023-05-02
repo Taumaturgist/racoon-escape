@@ -11,10 +11,17 @@ public class BlockSpawnConfig : ScriptableObject
 
     [Header("Tiles")]
     public GameObject[] CityTiles;
-    public GameObject[] ForestTiles;
     public GameObject[] DesertTiles;
+    public GameObject[] ForestTiles;
     public GameObject[] HighwayTiles;
-    public GameObject[] TransitionTiles;
+
+    [Header("Transition Tiles")]
+    public GameObject CityDesertTile;
+    public GameObject CityForestTile;
+    public GameObject CityHighwayTile;
+    public GameObject ForestDesertTile;
+    public GameObject HighwayDesertTile;
+    public GameObject HighwayForestTile;
 
     [Header("First Block Parameters")]
     public Vector3 SpawnPointFirstBlock;

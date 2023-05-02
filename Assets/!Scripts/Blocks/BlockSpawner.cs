@@ -1,48 +1,47 @@
+using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
-
 public class BlockSpawner : MonoBehaviour
 {
-    private List<GameObject> _blocks = new();
     private eBlockType _previousBlockType;
-    private int _previousTileType;
+    private List<GameObject> _blocks = new();
+    private Vector3 _pos;
+    private Quaternion _rot;
+    private int _nextBlockType;
 
     public void Launch(BlockSpawnConfig blockSpawnConfig)
     {
-        CreateFirstBlock(blockSpawnConfig);
+        _pos = blockSpawnConfig.SpawnPointFirstBlock;
+        _rot = Quaternion.identity;
+        CreateFirstBlock(blockSpawnConfig, _pos, _rot);
+        CreateFollowingBlock(blockSpawnConfig, _pos, _rot);
     }
 
-    private void CreateFirstBlock(BlockSpawnConfig blockSpawnConfig)
+    private void CreateFirstBlock(BlockSpawnConfig blockSpawnConfig, Vector3 pos, Quaternion rot)
     {
-        var pos = blockSpawnConfig.SpawnPointFirstBlock;
-        var rot = Quaternion.identity;
-
         var firstBlock = Instantiate(
                                 blockSpawnConfig.Block,
                                 pos,
                                 rot,
                                 transform);
-        //var firstBlockComponent = firstBlock.GetComponent<Block>();
         SetFirstBlockParameters(blockSpawnConfig, firstBlock);
 
-        var tilesCountInFirstBlock = firstBlock.tilesCount;
+        var tilesCountInFirstBlock = firstBlock.TilesCount;
         CreateTilesInFirstBlock(
                     blockSpawnConfig,
-                    firstBlock,
+                    firstBlock.gameObject,
                     tilesCountInFirstBlock,
                     pos,
                     rot);
 
-        _blocks.Add(firstBlock);
+        _blocks.Add(firstBlock.gameObject);
     }
 
     private void SetFirstBlockParameters(BlockSpawnConfig blockSpawnConfig, Block firstBlock)
     {
-        firstBlock.blockID = 0;
-        firstBlock.blockType = eBlockType.City;
-        firstBlock.tilesCount = blockSpawnConfig.TilesCountInFirstBlock;
+        firstBlock.BlockID = 0;
+        firstBlock.BlockType = eBlockType.City;
+        firstBlock.TilesCount = blockSpawnConfig.TilesCountInFirstBlock;
     }
 
     private void CreateTilesInFirstBlock(
@@ -53,47 +52,76 @@ public class BlockSpawner : MonoBehaviour
                             Quaternion rot)
     {
         var tilesInFirstBlock = new GameObject[tilesCountInFirstBlock];
-
-        var crossroadExists = false;
+        var crossroadCount = 0;
         var numberCrossroad = 3;
+        int randomIndex;
 
-        var previousTileType = -1;
-        for (int i = 0; i < tilesInFirstBlock.Length; i++)
+        for (int i = 0; i < tilesInFirstBlock.Length - 1; i++)
         {
-            // Не спавнить одинаковые тайлы
-            var randomIndex = GetRandomIndexForFirstBlock();
-            tilesInFirstBlock[i] = Instantiate(
-                                               blockSpawnConfig.CityTiles[randomIndex],
-                                               pos,
-                                               rot,
-                                               firstBlock.transform);
-            //if (randomIndex != _previousTileType)
-            //{
-            //    if ((randomIndex == numberCrossroad) && (crossroadExists == true))
-            //    { }
-            //    else
-            //    {
-            //        if (randomIndex == numberCrossroad)
-            //            crossroadExists = true;
+            randomIndex = GetRandomIndexForFirstBlock(blockSpawnConfig.CityTiles.Length);
+            if (crossroadCount < 2)
+            {
+                tilesInFirstBlock[i] = Instantiate(
+                                   blockSpawnConfig.CityTiles[randomIndex],
+                                   pos,
+                                   rot,
+                                   firstBlock.transform);
+                if (randomIndex == numberCrossroad)
+                    crossroadCount++;
+            }
+            else
+            {
+                randomIndex = GetRandomIndexForFirstBlock(blockSpawnConfig.CityTiles.Length - 1);
 
-            //        tilesInFirstBlock[i] = Instantiate(
-            //                                    _blockSpawnConfig.CityTiles[randomIndex],
-            //                                    pos,
-            //                                    rot,
-            //                                    firstBlock.transform);
-            //    }
-            //}
-            //else
-            //{
-            //    randomIndex = GetRandomIndexForFirstBlock();
-            //}
-            //previousTileType = randomIndex;
+                tilesInFirstBlock[i] = Instantiate(
+                                    blockSpawnConfig.CityTiles[randomIndex],
+                                    pos,
+                                    rot,
+                                    firstBlock.transform);
+            }
+
             pos.z += blockSpawnConfig.OffsetZ;
         }
+        _nextBlockType = UnityEngine.Random.Range((int)eBlockType.Desert, Enum.GetNames(typeof(eBlockType)).Length);
+        switch (_nextBlockType)
+        {
+            case 1:
+                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
+                                                                    blockSpawnConfig.CityDesertTile,
+                                                                    pos,
+                                                                    rot,
+                                                                    firstBlock.transform);
+                break;
+            case 2:
+                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
+                                                                    blockSpawnConfig.CityForestTile,
+                                                                    pos,
+                                                                    rot,
+                                                                    firstBlock.transform);
+                break;
+            case 3:
+                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
+                                                                    blockSpawnConfig.CityHighwayTile,
+                                                                    pos,
+                                                                    rot,
+                                                                    firstBlock.transform);
+                break;
+        }
+        pos.z += blockSpawnConfig.OffsetZ;
     }
-    private int GetRandomIndexForFirstBlock()
+    private int GetRandomIndexForFirstBlock(int upperBound)
     {
-        return Random.Range(0, _blockSpawnConfig.CityTiles.Length);
+        return UnityEngine.Random.Range(0, upperBound);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
+    private void CreateFollowingBlock(BlockSpawnConfig blockSpawnConfig, Vector3 pos, Quaternion rot)
+    {
+        
     }
     //private void BlockCreation()
     //{

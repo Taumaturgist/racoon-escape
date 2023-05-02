@@ -3,7 +3,6 @@ using UnityEngine;
 public class BlockStorageCreation : MonoBehaviour
 {
     private BlockSpawnConfig _blockSpawnConfig;
-
     private BlockSpawner _blockStorage;
 
     private void Awake()
