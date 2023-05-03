@@ -20,18 +20,17 @@ MonoBehaviour:
   - {fileID: 8218325642773468018, guid: 58b94934151f546458db99bd4becb33e, type: 3}
   - {fileID: 8845397834256987886, guid: dc5173feacaa35b4a9ef341a54a95a65, type: 3}
   - {fileID: 8718738552086383790, guid: 1d9a69396dfd0db4a9df0da214e2abeb, type: 3}
-  ForestTiles: []
   DesertTiles:
   - {fileID: 2533951117993019420, guid: b598bf98c37c5b94ba226908574e08db, type: 3}
+  ForestTiles: []
   HighwayTiles:
   - {fileID: 7583693068473796937, guid: 1690547593c15c74cac8088f1b2332df, type: 3}
-  TransitionTiles:
-  - {fileID: 9166369551285055917, guid: 990889a4d9aa1db43a51f3dfe83798d6, type: 3}
-  - {fileID: 4246600992848196394, guid: 85e05c789c8987a4cb98168f16a0de74, type: 3}
-  - {fileID: 1889424204158794975, guid: 89ab255c83948c5479fa57f103cdfc0b, type: 3}
-  - {fileID: 7611959400193699313, guid: ea20f4c5e0f277743a8eac9fa9d4bde5, type: 3}
-  - {fileID: 6341411166168351909, guid: bdbc396af61da454d86f7a0ea1f4bc22, type: 3}
-  - {fileID: 5129324236411004504, guid: da3b631d31a5db74e9b236ff42e4d244, type: 3}
+  CityDesertTile: {fileID: 9166369551285055917, guid: 990889a4d9aa1db43a51f3dfe83798d6, type: 3}
+  CityForestTile: {fileID: 4246600992848196394, guid: 85e05c789c8987a4cb98168f16a0de74, type: 3}
+  CityHighwayTile: {fileID: 1889424204158794975, guid: 89ab255c83948c5479fa57f103cdfc0b, type: 3}
+  ForestDesertTile: {fileID: 7611959400193699313, guid: ea20f4c5e0f277743a8eac9fa9d4bde5, type: 3}
+  HighwayDesertTile: {fileID: 6341411166168351909, guid: bdbc396af61da454d86f7a0ea1f4bc22, type: 3}
+  HighwayForestTile: {fileID: 5129324236411004504, guid: da3b631d31a5db74e9b236ff42e4d244, type: 3}
   SpawnPointFirstBlock: {x: 0, y: 0, z: 0}
   TilesCountInFirstBlock: 15
   MinTilesCountInBlock: 8

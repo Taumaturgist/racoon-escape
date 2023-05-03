@@ -1,7 +1,7 @@
 public enum eBlockType
 {
     City,
-    Desert,    
+    Desert,
     Forest,
     Highway
 }
