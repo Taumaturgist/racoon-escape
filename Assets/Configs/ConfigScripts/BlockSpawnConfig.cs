@@ -4,17 +4,24 @@ using UnityEngine;
 public class BlockSpawnConfig : ScriptableObject
 {
     [Header("Blocks")]
-    public GameObject BlockStorage;
-    public GameObject Block;
+    public BlockSpawner BlockStorage;
+    public Block Block;
 
     public float OffsetZ;
 
     [Header("Tiles")]
     public GameObject[] CityTiles;
-    public GameObject[] ForestTiles;
     public GameObject[] DesertTiles;
+    public GameObject[] ForestTiles;
     public GameObject[] HighwayTiles;
-    public GameObject[] TransitionTiles;
+
+    [Header("Transition Tiles")]
+    public GameObject CityDesertTile;
+    public GameObject CityForestTile;
+    public GameObject CityHighwayTile;
+    public GameObject ForestDesertTile;
+    public GameObject HighwayDesertTile;
+    public GameObject HighwayForestTile;
 
     [Header("First Block Parameters")]
     public Vector3 SpawnPointFirstBlock;
