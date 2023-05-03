@@ -4,8 +4,8 @@ using UnityEngine;
 public class BlockSpawnConfig : ScriptableObject
 {
     [Header("Blocks")]
-    public GameObject BlockStorage;
-    public GameObject Block;
+    public BlockSpawner BlockStorage;
+    public Block Block;
 
     public float OffsetZ;
 
