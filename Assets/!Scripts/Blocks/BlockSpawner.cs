@@ -14,6 +14,7 @@ public class BlockSpawner : MonoBehaviour
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
         _rot = Quaternion.identity;
         CreateFirstBlock(blockSpawnConfig, _pos, _rot);
+        CreateFollowingBlock(blockSpawnConfig, _pos, _rot);
     }
 
     private void CreateFirstBlock(BlockSpawnConfig blockSpawnConfig, Vector3 pos, Quaternion rot)
@@ -113,15 +114,15 @@ public class BlockSpawner : MonoBehaviour
         return UnityEngine.Random.Range(0, upperBound);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
+    private void OnTriggerEnter(Collider other)
+    {
         
-    //}
+    }
 
-    //private void CreateFollowingBlock(BlockSpawnConfig blockSpawnConfig, Vector3 pos, Quaternion rot)
-    //{
+    private void CreateFollowingBlock(BlockSpawnConfig blockSpawnConfig, Vector3 pos, Quaternion rot)
+    {
         
-    //}
+    }
     //private void BlockCreation()
     //{
     //    Vector3 _position = Vector3.zero;
