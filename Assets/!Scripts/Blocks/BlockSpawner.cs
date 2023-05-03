@@ -1,127 +1,106 @@
-using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
+
 public class BlockSpawner : MonoBehaviour
 {
-    private eBlockType _previousBlockType;
+    private ApplicationStartUp _applicationStartUp;
+    private BlockSpawnConfig _blockSpawnConfig;
     private List<GameObject> _blocks = new();
-    private Vector3 _pos;
-    private Quaternion _rot;
-    private int _nextBlockType;
+    private eBlockType _previousBlockType;
+    private int _previousTileType;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig)
+    private void Awake()
     {
-        _pos = blockSpawnConfig.SpawnPointFirstBlock;
-        _rot = Quaternion.identity;
-        CreateFirstBlock(blockSpawnConfig, _pos, _rot);
-        CreateFollowingBlock(blockSpawnConfig, _pos, _rot);
+        GetBlockSpawnConfig();
+        CreateFirstBlock();
     }
 
-    private void CreateFirstBlock(BlockSpawnConfig blockSpawnConfig, Vector3 pos, Quaternion rot)
+    private void GetBlockSpawnConfig()
     {
+        _applicationStartUp = FindObjectOfType<ApplicationStartUp>();
+        _blockSpawnConfig = _applicationStartUp.BlockSpawnConfig;
+    }
+    private void CreateFirstBlock()
+    {
+        var pos = _blockSpawnConfig.SpawnPointFirstBlock;
+        var rot = Quaternion.identity;
+
         var firstBlock = Instantiate(
-                                blockSpawnConfig.Block,
+                                _blockSpawnConfig.Block,
                                 pos,
                                 rot,
                                 transform);
-        SetFirstBlockParameters(blockSpawnConfig, firstBlock);
+        firstBlock.AddComponent<Block>();
+        var firstBlockComponent = firstBlock.GetComponent<Block>();
+        SetFirstBlockParameters(firstBlockComponent);
 
-        var tilesCountInFirstBlock = firstBlock.TilesCount;
+        var tilesCountInFirstBlock = firstBlockComponent.tilesCount;
         CreateTilesInFirstBlock(
-                    blockSpawnConfig,
-                    firstBlock.gameObject,
+                    firstBlock,
                     tilesCountInFirstBlock,
                     pos,
                     rot);
 
-        _blocks.Add(firstBlock.gameObject);
+        _blocks.Add(firstBlock);
     }
 
-    private void SetFirstBlockParameters(BlockSpawnConfig blockSpawnConfig, Block firstBlock)
+    private void SetFirstBlockParameters(Block firstBlockComponent)
     {
-        firstBlock.BlockID = 0;
-        firstBlock.BlockType = eBlockType.City;
-        firstBlock.TilesCount = blockSpawnConfig.TilesCountInFirstBlock;
+        firstBlockComponent.blockID = 0;
+        firstBlockComponent.blockType = eBlockType.City;
+        firstBlockComponent.tilesCount = _blockSpawnConfig.TilesCountInFirstBlock;
     }
 
     private void CreateTilesInFirstBlock(
-                            BlockSpawnConfig blockSpawnConfig,
-                            GameObject firstBlock,
-                            int tilesCountInFirstBlock,
-                            Vector3 pos,
+                            GameObject firstBlock, 
+                            int tilesCountInFirstBlock, 
+                            Vector3 pos, 
                             Quaternion rot)
     {
         var tilesInFirstBlock = new GameObject[tilesCountInFirstBlock];
-        var crossroadCount = 0;
+
+        var crossroadExists = false;
         var numberCrossroad = 3;
-        int randomIndex;
 
-        for (int i = 0; i < tilesInFirstBlock.Length - 1; i++)
+        var previousTileType = -1;
+        for (int i = 0; i < tilesInFirstBlock.Length; i++)
         {
-            randomIndex = GetRandomIndexForFirstBlock(blockSpawnConfig.CityTiles.Length);
-            if (crossroadCount < 2)
-            {
-                tilesInFirstBlock[i] = Instantiate(
-                                   blockSpawnConfig.CityTiles[randomIndex],
-                                   pos,
-                                   rot,
-                                   firstBlock.transform);
-                if (randomIndex == numberCrossroad)
-                    crossroadCount++;
-            }
-            else
-            {
-                randomIndex = GetRandomIndexForFirstBlock(blockSpawnConfig.CityTiles.Length - 1);
+            // Не спавнить одинаковые тайлы
+            var randomIndex = GetRandomIndexForFirstBlock();
+            tilesInFirstBlock[i] = Instantiate(
+                                               _blockSpawnConfig.CityTiles[randomIndex],
+                                               pos,
+                                               rot,
+                                               firstBlock.transform);
+            //if (randomIndex != _previousTileType)
+            //{
+            //    if ((randomIndex == numberCrossroad) && (crossroadExists == true))
+            //    { }
+            //    else
+            //    {
+            //        if (randomIndex == numberCrossroad)
+            //            crossroadExists = true;
 
-                tilesInFirstBlock[i] = Instantiate(
-                                    blockSpawnConfig.CityTiles[randomIndex],
-                                    pos,
-                                    rot,
-                                    firstBlock.transform);
-            }
-
-            pos.z += blockSpawnConfig.OffsetZ;
+            //        tilesInFirstBlock[i] = Instantiate(
+            //                                    _blockSpawnConfig.CityTiles[randomIndex],
+            //                                    pos,
+            //                                    rot,
+            //                                    firstBlock.transform);
+            //    }
+            //}
+            //else
+            //{
+            //    randomIndex = GetRandomIndexForFirstBlock();
+            //}
+            //previousTileType = randomIndex;
+            pos.z += _blockSpawnConfig.OffsetZ;
         }
-        _nextBlockType = UnityEngine.Random.Range((int)eBlockType.Desert, Enum.GetNames(typeof(eBlockType)).Length);
-        switch (_nextBlockType)
-        {
-            case 1:
-                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityDesertTile,
-                                                                    pos,
-                                                                    rot,
-                                                                    firstBlock.transform);
-                break;
-            case 2:
-                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityForestTile,
-                                                                    pos,
-                                                                    rot,
-                                                                    firstBlock.transform);
-                break;
-            case 3:
-                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityHighwayTile,
-                                                                    pos,
-                                                                    rot,
-                                                                    firstBlock.transform);
-                break;
-        }
-        pos.z += blockSpawnConfig.OffsetZ;
     }
-    private int GetRandomIndexForFirstBlock(int upperBound)
+    private int GetRandomIndexForFirstBlock()
     {
-        return UnityEngine.Random.Range(0, upperBound);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
-
-    private void CreateFollowingBlock(BlockSpawnConfig blockSpawnConfig, Vector3 pos, Quaternion rot)
-    {
-        
+        return Random.Range(0, _blockSpawnConfig.CityTiles.Length);
     }
     //private void BlockCreation()
     //{
