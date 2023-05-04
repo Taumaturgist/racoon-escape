@@ -15,7 +15,7 @@ public class BuildingSpawner : MonoBehaviour
     {
         for (int i = 0; i < buildingSpawnPoints.Length; i++)
         {
-            Building building = Instantiate(buildingPrefab, buildingSpawnPoints[i], Quaternion.identity, transform);
+            Building building = Instantiate(buildingPrefab, transform.position + buildingSpawnPoints[i], Quaternion.identity, transform);
             building.Launch(buildingSpawnConfig, smallBuildingIndexes, i, _isOnLeftStreetSide);
         }
     }

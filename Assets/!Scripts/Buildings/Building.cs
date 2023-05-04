@@ -23,7 +23,7 @@ public class Building : MonoBehaviour
         _bigFirstFloorsList = buildingSpawnConfig.BigFirstFloorsList;
         _smallFirstFloorsList = buildingSpawnConfig.SmallFirstFloorsList;
 
-        CreateBuilding();
+       // CreateBuilding();
     }
 
     private void CreateBuilding()
