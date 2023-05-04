@@ -39,12 +39,20 @@ public class Building : MonoBehaviour
             {
                 var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
                 Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+
+                var angleY = _isOnLeftStreetSide == true ? 0 : 180;
+                transform.Rotate(0, angleY, 0);
             }
         }        
         else
         {
             var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
             Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+
+            var angleY = _isOnLeftStreetSide == true ? 0 : 180;
+            transform.Rotate(0, angleY, 0);
         }
+
+        
     }
 }
