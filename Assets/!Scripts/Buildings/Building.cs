@@ -23,7 +23,7 @@ public class Building : MonoBehaviour
         _bigFirstFloorsList = buildingSpawnConfig.BigFirstFloorsList;
         _smallFirstFloorsList = buildingSpawnConfig.SmallFirstFloorsList;
 
-       // CreateBuilding();
+        CreateBuilding();
     }
 
     private void CreateBuilding()
@@ -34,6 +34,11 @@ public class Building : MonoBehaviour
             {
                 var randomInt = Random.Range(0, _smallFirstFloorsList.Count);
                 Instantiate(_smallFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+            }
+            else
+            {
+                var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
+                Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
             }
         }        
         else
