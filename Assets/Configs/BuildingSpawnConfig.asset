@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add331eaa73862d41a3032d3e93b4d13, type: 3}
+  m_Name: BuildingSpawnConfig
+  m_EditorClassIdentifier: 
+  BigFirstFloorsList:
+  - {fileID: 6812432106743708081, guid: bf7c2b141dd3c334c9d6c2f277885acd, type: 3}
+  - {fileID: 6812432106743708081, guid: 20d66b6eb675f704bbd5f2a17c07c05e, type: 3}
+  - {fileID: 6812432106743708081, guid: a10e5b899f2fe3f45867ab554d97af12, type: 3}
+  - {fileID: 6812432106743708081, guid: a361d6524e9b79941ba52de3570dbcd4, type: 3}
+  - {fileID: 6812432106743708081, guid: 9eb3f85b1e6444f4eb587170944f9bef, type: 3}
+  SmallFirstFloorsList:
+  - {fileID: 6812432106743708081, guid: 39ce589fd6ed8c946991fe9631eb555f, type: 3}
+  - {fileID: 6812432106743708081, guid: c421ebee909e8d34cad1db96c6347378, type: 3}
+  - {fileID: 6812432106743708081, guid: f8848240bdc75d242ac186afaa8c89ee, type: 3}
+  - {fileID: 6812432106743708081, guid: 065cf091feab4404094515c90d0fc7d7, type: 3}
+  - {fileID: 6812432106743708081, guid: 89dff4982a2c3d244b4fe8f2c78f36fb, type: 3}
+  MinFloorsAmount: 5
+  MaxFloorsAmount: 15
