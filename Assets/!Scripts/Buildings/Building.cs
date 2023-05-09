@@ -16,10 +16,10 @@ public class Building : MonoBehaviour
 
     public void Launch(BuildingSpawnConfig buildingSpawnConfig, List<int> smallBuildingsIndexes, int buildingNumber, bool isOnLeftStreetSide)
     {
-        _buildingSpawnConfig = buildingSpawnConfig;   
+        _buildingSpawnConfig = buildingSpawnConfig;
         _smallBuildingsIndexesList = smallBuildingsIndexes;
         _buildingNumber = buildingNumber;
-        _isOnLeftStreetSide = isOnLeftStreetSide;        
+        _isOnLeftStreetSide = isOnLeftStreetSide;
 
         _bigFirstFloorsList = buildingSpawnConfig.BigFirstFloorsList;
         _smallFirstFloorsList = buildingSpawnConfig.SmallFirstFloorsList;
@@ -29,8 +29,6 @@ public class Building : MonoBehaviour
 
     private void CreateBuilding()
     {
-        
-
         if (_smallBuildingsIndexesList.Count > 0)
         {
             if (_smallBuildingsIndexesList.Contains(_buildingNumber))
