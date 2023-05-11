@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,75 +28,75 @@ public class Building : MonoBehaviour
 
     private void CreateBuilding()
     {
-        if (_smallBuildingsIndexesList.Count > 0)
-        {
-            if (_smallBuildingsIndexesList.Contains(_buildingNumber))
-            {
-                var randomInt = Random.Range(0, _smallFirstFloorsList.Count);
-                Instantiate(_smallFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+        CreateFirstFloor();
+    }
 
-                switch (_smallBuildingsIndexesList.Count)
-                {
-                    case 2:
-                        switch (_buildingNumber)
-                        {
-                            case 2:
-                                transform.Rotate(0, 180, 0);
-                                transform.localScale = new Vector3(
-                                    -transform.localScale.x, 
-                                    transform.localScale.y, 
-                                    transform.localScale.z);
-                                break;
-                            case 4:
-                                transform.localScale = new Vector3(
-                                    -transform.localScale.x,
-                                    transform.localScale.y,
-                                    transform.localScale.z);
-                                break;
-                            case 5:
-                                transform.Rotate(0, 180, 0);
-                                break;
-                        }
-                        break;
-                    case 4:
-                        switch (_buildingNumber)
-                        {
-                            case 2:
-                                transform.Rotate(0, 180, 0);
-                                transform.localScale = new Vector3(
-                                    -transform.localScale.x,
-                                    transform.localScale.y,
-                                    transform.localScale.z);
-                                break;
-                            case 5:
-                                transform.localScale = new Vector3(
-                                    -transform.localScale.x,
-                                    transform.localScale.y,
-                                    transform.localScale.z);
-                                break;
-                            case 6:
-                                transform.Rotate(0, 180, 0);
-                                break;
-                        }
-                        break;
-                }
-            }
+    private void CreateFirstFloor()
+    {
+        var smallBuildingsExists = _smallBuildingsIndexesList.Count > 0;
+
+        if (smallBuildingsExists)
+        {
+            var currentBuildingIsSmall = _smallBuildingsIndexesList.Contains(_buildingNumber);
+
+            if (currentBuildingIsSmall)
+                CreateSmallFirstFloor();
             else
-            {
-                var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
-                Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
-
-                _angleY = _isOnLeftStreetSide == true ? 0 : 180;
-                transform.Rotate(0, _angleY, 0);
-            }
-        }        
+                CreateBigFirstFloor();
+        }
         else
-        {
-            var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
-            Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+            CreateBigFirstFloor();
+    }
 
-            _angleY = _isOnLeftStreetSide == true ? 0 : 180;
-            transform.Rotate(0, _angleY, 0);
-        }        
+    private void CreateSmallFirstFloor()
+    {
+        var randomInt = Random.Range(0, _smallFirstFloorsList.Count);
+        Instantiate(_smallFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+
+        int[] indexes;
+
+        switch (_smallBuildingsIndexesList.Count)
+        {
+            case 2:
+                indexes = new int[] { 2, 4, 5 };
+                SetTransformForSmallBuilding(indexes);
+                break;
+            case 4:
+                indexes = new int[] { 2, 5, 6 };
+                SetTransformForSmallBuilding(indexes);
+                break;
+        }
+    }
+    private void SetTransformForSmallBuilding(int[] indexes)
+    {
+        if (_buildingNumber == indexes[0])
+        {
+            transform.Rotate(0, 180, 0);
+            transform.localScale = new Vector3(
+                -transform.localScale.x,
+                transform.localScale.y,
+                transform.localScale.z);
+        }
+        if (_buildingNumber == indexes[1])
+        {
+            transform.localScale = new Vector3(
+                -transform.localScale.x,
+                transform.localScale.y,
+                transform.localScale.z);
+        }
+        if (_buildingNumber == indexes[2])
+            transform.Rotate(0, 180, 0);
+    }
+
+    private void CreateBigFirstFloor()
+    {
+        var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
+        Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+        SetTransformForBigBuilding();
+    }
+    private void SetTransformForBigBuilding()
+    {
+        _angleY = _isOnLeftStreetSide == true ? 0 : 180;
+        transform.Rotate(0, _angleY, 0);
     }
 }
