@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    private BuildingSpawnConfig _buildingSpawnConfig;
-
     private List<GameObject> _bigFirstFloorsList;
     private List<GameObject> _smallFirstFloorsList;
     private List<int> _smallBuildingsIndexesList;
@@ -19,7 +17,6 @@ public class Building : MonoBehaviour
 
     public void Launch(BuildingSpawnConfig buildingSpawnConfig, List<int> smallBuildingsIndexes, int buildingNumber, bool isOnLeftStreetSide)
     {
-        _buildingSpawnConfig = buildingSpawnConfig;
         _smallBuildingsIndexesList = smallBuildingsIndexes;
         _buildingNumber = buildingNumber;
         _isOnLeftStreetSide = isOnLeftStreetSide;
