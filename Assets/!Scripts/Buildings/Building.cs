@@ -1,4 +1,6 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class Building : MonoBehaviour
@@ -7,8 +9,10 @@ public class Building : MonoBehaviour
 
     private List<GameObject> _bigFirstFloorsList;
     private List<GameObject> _smallFirstFloorsList;
-
     private List<int> _smallBuildingsIndexesList;
+
+    public delegate void Delegate();
+
     private int _buildingNumber;
     private bool _isOnLeftStreetSide;
     private float _angleY;
@@ -29,9 +33,10 @@ public class Building : MonoBehaviour
     private void CreateBuilding()
     {
         CreateFirstFloor();
+        SetTransformForBuilding();
     }
 
-    private void CreateFirstFloor()
+    private void ActionDependingBuildingSize(Delegate action1, Delegate action2)
     {
         var smallBuildingsExists = _smallBuildingsIndexesList.Count > 0;
 
@@ -40,34 +45,55 @@ public class Building : MonoBehaviour
             var currentBuildingIsSmall = _smallBuildingsIndexesList.Contains(_buildingNumber);
 
             if (currentBuildingIsSmall)
-                CreateSmallFirstFloor();
+                action1.Invoke();
             else
-                CreateBigFirstFloor();
+                action2.Invoke();
         }
         else
-            CreateBigFirstFloor();
+            action2.Invoke();
     }
 
+    private void CreateFirstFloor()
+    {
+        Delegate createSmallFirstFloor = CreateSmallFirstFloor;
+        Delegate createBigFirstFloor = CreateBigFirstFloor;
+
+        ActionDependingBuildingSize(createSmallFirstFloor, createBigFirstFloor);
+    }
     private void CreateSmallFirstFloor()
     {
         var randomInt = Random.Range(0, _smallFirstFloorsList.Count);
         Instantiate(_smallFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+    }
+    private void CreateBigFirstFloor()
+    {
+        var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
+        Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+    }
+    private void SetTransformForBuilding()
+    {
+        Delegate actionBasedOnSmallBuildingsIndexesCount = ActionBasedOnSmallBuildingsIndexesCount;
+        Delegate transformBigBuilding = TransformBigBuilding;
 
+        ActionDependingBuildingSize(actionBasedOnSmallBuildingsIndexesCount, transformBigBuilding);
+    }
+    private void ActionBasedOnSmallBuildingsIndexesCount()
+    {
         int[] indexes;
 
         switch (_smallBuildingsIndexesList.Count)
         {
             case 2:
                 indexes = new int[] { 2, 4, 5 };
-                SetTransformForSmallBuilding(indexes);
+                TransformSmallBuilding(indexes);
                 break;
             case 4:
                 indexes = new int[] { 2, 5, 6 };
-                SetTransformForSmallBuilding(indexes);
+                TransformSmallBuilding(indexes);
                 break;
         }
     }
-    private void SetTransformForSmallBuilding(int[] indexes)
+    private void TransformSmallBuilding(int[] indexes)
     {
         if (_buildingNumber == indexes[0])
         {
@@ -87,14 +113,7 @@ public class Building : MonoBehaviour
         if (_buildingNumber == indexes[2])
             transform.Rotate(0, 180, 0);
     }
-
-    private void CreateBigFirstFloor()
-    {
-        var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
-        Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
-        SetTransformForBigBuilding();
-    }
-    private void SetTransformForBigBuilding()
+    private void TransformBigBuilding()
     {
         _angleY = _isOnLeftStreetSide == true ? 0 : 180;
         transform.Rotate(0, _angleY, 0);
