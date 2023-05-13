@@ -68,7 +68,6 @@ MonoBehaviour:
   - {x: 50, y: 0, z: -25}
   - {x: 50, y: 0, z: 25}
   - {x: 50, y: 0, z: 65}
-  buildingSpawnConfig: {fileID: 11400000, guid: b0285ae11f10cc2459d0930b64afaddc, type: 2}
   buildingPrefab: {fileID: -7081646534055728397, guid: d559fd0f5c5a9c243a6a22b66e587aa7, type: 3}
   smallBuildingIndexes: 01000000020000000500000006000000
 --- !u!1001 &8718738551289283972

@@ -7,7 +7,7 @@ public class BlockSpawnConfig : ScriptableObject
     public BlockSpawner BlockStorage;
     public Block Block;
 
-    public float OffsetZ;
+    public int OffsetZ;
     public int CrossroadNumberInCity;
 
     [Header("Tiles")]
@@ -38,6 +38,6 @@ public class BlockSpawnConfig : ScriptableObject
     public int TilesCountInFirstBlock;
 
     [Header("Other Blocks Parameters")]
-    public int MinTilesCountInBlock;
-    public int MaxTilesCountInBlock;
+    public int MinTilesCount;
+    public int MaxTilesCount;
 }

@@ -8,10 +8,8 @@ public class BlockStorageCreation : MonoBehaviour
     private void Awake()
     {
         _blockSpawnConfig = GetComponent<ApplicationStartUp>().BlockSpawnConfig;
-        _blockStorage = Instantiate(
-                                _blockSpawnConfig.BlockStorage,
-                                transform.position,
-                                transform.rotation);
+
+        _blockStorage = Instantiate(_blockSpawnConfig.BlockStorage);
         _blockStorage.Launch(_blockSpawnConfig);
     }
 }

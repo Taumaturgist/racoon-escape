@@ -1,7 +1,7 @@
 /*  Задачи
- *      2) Создавать блоки с помощью OnTriggerEnterAsObservable()
- *      3) Уничтожать блоки можно с помощью метода OnTriggerExitAsObservable()
- *      4) Рефактор кода
+ *      1) Уничтожать блоки можно с помощью метода OnTriggerExitAsObservable()
+ *      2) Рефакторинг кода
+ *      3) Написать отписку после проигрыша _disposable.Clear();
  */
 
 using System;
@@ -13,84 +13,49 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     private BlockSpawnConfig _blockSpawnConfig;
+    private CompositeDisposable _disposable = new CompositeDisposable();
     private eBlockType _previousBlockType, _nextBlockType;
+
     private List<GameObject> _blocks = new();
     private GameObject[] _tileSet;
+
     private Vector3 _pos;
     private Quaternion _rot;
-    private CompositeDisposable _disposable = new CompositeDisposable();
+    private bool _isFirstBlock;
+    private GameObject _transitionTile;
 
     public void Launch(BlockSpawnConfig blockSpawnConfig)
     {
+        _isFirstBlock = true;
         _blockSpawnConfig = blockSpawnConfig;
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
         _rot = Quaternion.identity;
 
-        CreateFirstBlock();
+        CreateBlock();
     }
-
-    private void CreateFirstBlock()
-    {
-        var firstBlock = Instantiate(_blockSpawnConfig.Block, _pos, _rot, transform);
-
-        SetFirstBlockParameters(firstBlock);
-        CreateTilesInFirstBlock(firstBlock);
-
-        _blocks.Add(firstBlock.gameObject);
-    }
-    private void SetFirstBlockParameters(Block firstBlock)
-    {
-        firstBlock.BlockID = 0;
-        firstBlock.BlockType = eBlockType.City;
-        firstBlock.TilesCount = _blockSpawnConfig.TilesCountInFirstBlock;
-    }
-    private void CreateTilesInFirstBlock(Block firstBlock)
-    {
-        var tiles = new GameObject[firstBlock.TilesCount];
-        var crossroadCount = 0;
-        int randomIndex;
-
-        for (int i = 0; i < tiles.Length - 1; i++)
-        {
-            randomIndex = GetRandomIndex(_blockSpawnConfig.CityTiles.Length);
-            if (crossroadCount < 2)
-            {
-                tiles[i] = Instantiate(_blockSpawnConfig.CityTiles[randomIndex], _pos, _rot, firstBlock.transform);
-                if (randomIndex == _blockSpawnConfig.CrossroadNumberInCity)
-                    crossroadCount++;
-            }
-            else
-            {
-                randomIndex = GetRandomIndex(_blockSpawnConfig.CityTiles.Length - 1);
-
-                tiles[i] = Instantiate(_blockSpawnConfig.CityTiles[randomIndex], _pos, _rot, firstBlock.transform);
-            }
-
-            _pos.z += _blockSpawnConfig.OffsetZ;
-        }
-
-        _previousBlockType = firstBlock.BlockType;
-        _nextBlockType = GetUniqueBlockType();
-
-        var transitionTile = TransitionTile(firstBlock, tiles);
-        var transitionTileCollider = transitionTile.GetComponent<BoxCollider>();
-
-        _pos.z += _blockSpawnConfig.OffsetZ;
-
-        CheckTrigger(transitionTileCollider);
-    }
-    private int GetRandomIndex(int upperBound)
-    {
-        return UnityEngine.Random.Range(0, upperBound);
-    }
-
-    private void CreateFollowingBlock()
+    private void CreateBlock()
     {
         var block = Instantiate(_blockSpawnConfig.Block, _pos, _rot, transform);
-        SetBlockParameters(block);
-        CreateTilesInFollowingBlock(block);
+
+        if (_isFirstBlock)
+        {
+            GetFirstBlockParameters(block);
+            _isFirstBlock = false;
+        }
+        else
+            GetBlockParameters(block);
+
+        CreateTiles(block);
+
+        _blocks.Add(block.gameObject);
     }
-    private void SetBlockParameters(Block block)
+    private void GetFirstBlockParameters(Block block)
+    {
+        block.BlockID = 0;
+        block.BlockType = eBlockType.City;
+        block.TilesCount = _blockSpawnConfig.TilesCountInFirstBlock;
+    }
+    private void GetBlockParameters(Block block)
     {
         block.BlockID = GetBlockID();
         block.BlockType = _nextBlockType;
@@ -100,28 +65,33 @@ public class BlockSpawner : MonoBehaviour
     {
         return _blocks.Count;
     }
-    private eBlockType GetUniqueBlockType()
+    private eBlockType GetBlockType()
     {
         var randomIndex = (int)_previousBlockType;
 
         while (randomIndex == (int)_previousBlockType)
         {
             var enumLen = Enum.GetNames(typeof(eBlockType)).Length;
-            randomIndex = UnityEngine.Random.Range(0, enumLen);
+            randomIndex = GetRandomIndex(0, enumLen);
         }
 
         return (eBlockType)randomIndex;
     }
     private int GetTilesCount()
     {
-        var tilesCount = UnityEngine.Random.Range(_blockSpawnConfig.MinTilesCountInBlock, _blockSpawnConfig.MaxTilesCountInBlock + 1);
+        var tilesCount = GetRandomIndex(_blockSpawnConfig.MinTilesCount, _blockSpawnConfig.MaxTilesCount + 1);
         return tilesCount;
     }
-    private void CreateTilesInFollowingBlock(Block block)
+    private int GetRandomIndex(int underBound, int upperBound)
+    {
+        return UnityEngine.Random.Range(underBound, upperBound);
+    }
+    private void CreateTiles(Block block)
     {
         var tiles = new GameObject[block.TilesCount];
+        var blockType = block.BlockType;
 
-        switch (block.BlockType)
+        switch (blockType)
         {
             case eBlockType.City:
                 _tileSet = _blockSpawnConfig.CityTiles;
@@ -142,7 +112,7 @@ public class BlockSpawner : MonoBehaviour
         int randomIndex;
         for (int i = 0; i < tiles.Length - 1; i++)
         {
-            randomIndex = GetRandomIndex(_tileSet.Length);
+            randomIndex = GetRandomIndex(0, _tileSet.Length);
             if (crossroadCount < 2)
             {
                 tiles[i] = Instantiate(_tileSet[randomIndex], _pos, _rot, block.transform);
@@ -151,7 +121,7 @@ public class BlockSpawner : MonoBehaviour
             }
             else
             {
-                randomIndex = GetRandomIndex(_tileSet.Length - 1);
+                randomIndex = GetRandomIndex(0, _tileSet.Length - 1);
 
                 tiles[i] = Instantiate(_tileSet[randomIndex], _pos, _rot, block.transform);
             }
@@ -159,17 +129,18 @@ public class BlockSpawner : MonoBehaviour
             _pos.z += _blockSpawnConfig.OffsetZ;
         }
 
-        _previousBlockType = block.BlockType;
-        _nextBlockType = GetUniqueBlockType();
+        _previousBlockType = blockType;
+        _nextBlockType = GetBlockType();
 
-        var transitionTile = TransitionTile(block, tiles);
-        var transitionTileCollider = transitionTile.GetComponent<BoxCollider>();
+        _transitionTile = GetTransitionTile(block, tiles);
 
         _pos.z += _blockSpawnConfig.OffsetZ;
 
+        var transitionTileCollider = _transitionTile.GetComponent<BoxCollider>();
+
         CheckTrigger(transitionTileCollider);
     }
-    private GameObject TransitionTile(Block block, GameObject[] tiles)
+    private GameObject GetTransitionTile(Block block, GameObject[] tiles)
     {
         var lastIndex = tiles.Length - 1;
         switch ((int)_previousBlockType)
@@ -178,13 +149,13 @@ public class BlockSpawner : MonoBehaviour
                 switch ((int)_nextBlockType)
                 {
                     case 1:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.CityDesertTile, _pos, _blockSpawnConfig.CityDesertTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityDesertTile, block.gameObject);
                         break;
                     case 2:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.CityForestTile, _pos, _blockSpawnConfig.CityForestTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityForestTile, block.gameObject);
                         break;
                     case 3:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.CityHighwayTile, _pos, _blockSpawnConfig.CityHighwayTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityHighwayTile, block.gameObject);
                         break;
                 }
                 break;
@@ -192,13 +163,13 @@ public class BlockSpawner : MonoBehaviour
                 switch ((int)_nextBlockType)
                 {
                     case 0:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.DesertCityTile, _pos, _blockSpawnConfig.DesertCityTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertCityTile, block.gameObject);
                         break;
                     case 2:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.DesertForestTile, _pos, _blockSpawnConfig.DesertForestTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertForestTile, block.gameObject);
                         break;
                     case 3:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.DesertHighwayTile, _pos, _blockSpawnConfig.DesertHighwayTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertHighwayTile, block.gameObject);
                         break;
                 }
                 break;
@@ -206,13 +177,13 @@ public class BlockSpawner : MonoBehaviour
                 switch ((int)_nextBlockType)
                 {
                     case 0:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.ForestCityTile, _pos, _blockSpawnConfig.ForestCityTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestCityTile, block.gameObject);
                         break;
                     case 1:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.ForestDesertTile, _pos, _blockSpawnConfig.ForestDesertTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestDesertTile, block.gameObject);
                         break;
                     case 3:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.ForestHighwayTile, _pos, _blockSpawnConfig.ForestHighwayTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestHighwayTile, block.gameObject);
                         break;
                 }
                 break;
@@ -220,13 +191,13 @@ public class BlockSpawner : MonoBehaviour
                 switch ((int)_nextBlockType)
                 {
                     case 0:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.HighwayCityTile, _pos, _blockSpawnConfig.HighwayCityTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayCityTile, block.gameObject);
                         break;
                     case 1:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.HighwayDesertTile, _pos, _blockSpawnConfig.HighwayDesertTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayDesertTile, block.gameObject);
                         break;
                     case 2:
-                        tiles[lastIndex] = Instantiate(_blockSpawnConfig.HighwayForestTile, _pos, _blockSpawnConfig.HighwayForestTile.transform.rotation, block.transform);
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayForestTile, block.gameObject);
                         break;
                 }
                 break;
@@ -234,18 +205,21 @@ public class BlockSpawner : MonoBehaviour
 
         return tiles[lastIndex];
     }
+
+    private GameObject CreateTransitionTile(GameObject obj, GameObject parent)
+    {
+        return Instantiate(obj, _pos, obj.transform.rotation, parent.transform);
+    }
     
     private void CheckTrigger(Collider trigger)
     {
+        //Debug.Log(_disposable.Count.ToString());
         trigger.OnTriggerEnterAsObservable()
-            //.First()  
             .Where(t => t.gameObject.CompareTag("Player"))
             .Subscribe(other =>
             {
-                CreateFollowingBlock();
+                CreateBlock();
             }).AddTo(_disposable);
-
-        _disposable.Clear();
     }
 
     private void DestroyBlock(GameObject block)
