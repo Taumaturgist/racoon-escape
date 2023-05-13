@@ -8,6 +8,7 @@ public class BlockSpawnConfig : ScriptableObject
     public Block Block;
 
     public float OffsetZ;
+    public int CrossroadNumberInCity;
 
     [Header("Tiles")]
     public GameObject[] CityTiles;
@@ -19,7 +20,16 @@ public class BlockSpawnConfig : ScriptableObject
     public GameObject CityDesertTile;
     public GameObject CityForestTile;
     public GameObject CityHighwayTile;
+
+    public GameObject DesertCityTile;
+    public GameObject DesertForestTile;
+    public GameObject DesertHighwayTile;
+
+    public GameObject ForestCityTile;
     public GameObject ForestDesertTile;
+    public GameObject ForestHighwayTile;
+
+    public GameObject HighwayCityTile;
     public GameObject HighwayDesertTile;
     public GameObject HighwayForestTile;
 

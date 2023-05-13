@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &565603247166494486
 Transform:
   m_ObjectHideFlags: 0
@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 4328153484271297578}
   - component: {fileID: 619668199118113092}
   - component: {fileID: -603158850229641492}
+  - component: {fileID: 8662433363287228873}
   m_Layer: 0
   m_Name: PlayerCarBasicPickUp
   m_TagString: Player
@@ -503,6 +504,19 @@ MonoBehaviour:
   stopLightLeft: {fileID: 2081236439975810255}
   stopLightRight: {fileID: 8775067634746743113}
   nitroLight: {fileID: 8166052560207803273}
+--- !u!65 &8662433363287228873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328153484271297579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5532038, y: 0.8791347, z: 4.808749}
+  m_Center: {x: 0, y: 0.03309354, z: -0.070268154}
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0
