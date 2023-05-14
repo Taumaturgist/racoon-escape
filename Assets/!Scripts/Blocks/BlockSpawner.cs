@@ -1,7 +1,5 @@
-/*  Задачи
- *      1) Уничтожать блоки можно с помощью метода OnTriggerExitAsObservable()
- *      2) Рефакторинг кода
- *      3) Написать отписку после проигрыша _disposable.Clear();
+/* 
+*      Написать отписку после проигрыша _disposableTrigger.Clear();
  */
 
 using System;
@@ -13,7 +11,7 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     private BlockSpawnConfig _blockSpawnConfig;
-    private CompositeDisposable _disposable = new CompositeDisposable();
+    private CompositeDisposable _disposableTrigger = new();
     private eBlockType _previousBlockType, _nextBlockType;
 
     private List<GameObject> _blocks = new();
@@ -21,18 +19,21 @@ public class BlockSpawner : MonoBehaviour
 
     private Vector3 _pos;
     private Quaternion _rot;
-    private bool _isFirstBlock;
     private GameObject _transitionTile;
+    private int _blockCount;
+    private bool _isFirstBlock;
 
     public void Launch(BlockSpawnConfig blockSpawnConfig)
     {
-        _isFirstBlock = true;
         _blockSpawnConfig = blockSpawnConfig;
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
         _rot = Quaternion.identity;
+        _isFirstBlock = true;
+        _blockCount = 0;
 
         CreateBlock();
     }
+
     private void CreateBlock()
     {
         var block = Instantiate(_blockSpawnConfig.Block, _pos, _rot, transform);
@@ -48,23 +49,28 @@ public class BlockSpawner : MonoBehaviour
         CreateTiles(block);
 
         _blocks.Add(block.gameObject);
+        _blockCount = _blocks.Count;
+
+        var transitionTileCollider = _transitionTile.GetComponent<BoxCollider>();
+        CheckTrigger(transitionTileCollider);
     }
+
     private void GetFirstBlockParameters(Block block)
     {
-        block.BlockID = 0;
+        //block.BlockID = 0;
         block.BlockType = eBlockType.City;
         block.TilesCount = _blockSpawnConfig.TilesCountInFirstBlock;
     }
     private void GetBlockParameters(Block block)
     {
-        block.BlockID = GetBlockID();
+        //block.BlockID = GetBlockID();
         block.BlockType = _nextBlockType;
         block.TilesCount = GetTilesCount();
     }
-    private int GetBlockID()
-    {
-        return _blocks.Count;
-    }
+    //private int GetBlockID()
+    //{
+    //    return _blocks.Count;
+    //}
     private eBlockType GetBlockType()
     {
         var randomIndex = (int)_previousBlockType;
@@ -86,6 +92,7 @@ public class BlockSpawner : MonoBehaviour
     {
         return UnityEngine.Random.Range(underBound, upperBound);
     }
+
     private void CreateTiles(Block block)
     {
         var tiles = new GameObject[block.TilesCount];
@@ -136,67 +143,64 @@ public class BlockSpawner : MonoBehaviour
 
         _pos.z += _blockSpawnConfig.OffsetZ;
 
-        var transitionTileCollider = _transitionTile.GetComponent<BoxCollider>();
-
-        CheckTrigger(transitionTileCollider);
     }
     private GameObject GetTransitionTile(Block block, GameObject[] tiles)
     {
         var lastIndex = tiles.Length - 1;
-        switch ((int)_previousBlockType)
+        switch (_previousBlockType)
         {
-            case 0:
-                switch ((int)_nextBlockType)
+            case eBlockType.City:
+                switch (_nextBlockType)
                 {
-                    case 1:
+                    case eBlockType.Desert:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityDesertTile, block.gameObject);
                         break;
-                    case 2:
+                    case eBlockType.Forest:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityForestTile, block.gameObject);
                         break;
-                    case 3:
+                    case eBlockType.Highway:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityHighwayTile, block.gameObject);
                         break;
                 }
                 break;
-            case 1:
-                switch ((int)_nextBlockType)
+            case eBlockType.Desert:
+                switch (_nextBlockType)
                 {
-                    case 0:
+                    case eBlockType.City:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertCityTile, block.gameObject);
                         break;
-                    case 2:
+                    case eBlockType.Forest:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertForestTile, block.gameObject);
                         break;
-                    case 3:
+                    case eBlockType.Highway:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertHighwayTile, block.gameObject);
                         break;
                 }
                 break;
-            case 2:
-                switch ((int)_nextBlockType)
+            case eBlockType.Forest:
+                switch (_nextBlockType)
                 {
-                    case 0:
+                    case eBlockType.City:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestCityTile, block.gameObject);
                         break;
-                    case 1:
+                    case eBlockType.Desert:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestDesertTile, block.gameObject);
                         break;
-                    case 3:
+                    case eBlockType.Highway:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestHighwayTile, block.gameObject);
                         break;
                 }
                 break;
-            case 3:
-                switch ((int)_nextBlockType)
+            case eBlockType.Highway:
+                switch (_nextBlockType)
                 {
-                    case 0:
+                    case eBlockType.City:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayCityTile, block.gameObject);
                         break;
-                    case 1:
+                    case eBlockType.Desert:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayDesertTile, block.gameObject);
                         break;
-                    case 2:
+                    case eBlockType.Forest:
                         tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayForestTile, block.gameObject);
                         break;
                 }
@@ -205,7 +209,6 @@ public class BlockSpawner : MonoBehaviour
 
         return tiles[lastIndex];
     }
-
     private GameObject CreateTransitionTile(GameObject obj, GameObject parent)
     {
         return Instantiate(obj, _pos, obj.transform.rotation, parent.transform);
@@ -218,12 +221,18 @@ public class BlockSpawner : MonoBehaviour
             .Where(t => t.gameObject.CompareTag("Player"))
             .Subscribe(other =>
             {
+                CheckBlockRemoval();
                 CreateBlock();
-            }).AddTo(_disposable);
+            }).AddTo(_disposableTrigger);
     }
 
-    private void DestroyBlock(GameObject block)
+    private void CheckBlockRemoval()
     {
-        Destroy(block);
+        if (_blockCount > 3)
+        {
+            var removableBlock = _blocks[0];
+            _blocks.Remove(_blocks[0]);
+            Destroy(removableBlock);
+        }
     }
 }
