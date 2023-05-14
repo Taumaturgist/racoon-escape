@@ -15,12 +15,12 @@ MonoBehaviour:
   BlockStorage: {fileID: -4973332637753836099, guid: dc45dd8a5c1c3b74a97fd61d7f339f74, type: 3}
   Block: {fileID: -6115050909301146613, guid: ea7579af3201003468bf01fac551bad7, type: 3}
   OffsetZ: 200
-  CrossroadNumberInCity: 3
+  CrossroadNumberInCity: 0
   CityTiles:
+  - {fileID: 8718738552086383790, guid: 3922b4d99a236dd498f16ee4fc02570f, type: 3}
   - {fileID: 4192696207721956122, guid: 1db4df91f5140504896e2b9ffd1c17a1, type: 3}
   - {fileID: 8218325642773468018, guid: 449463f19403dbc4faf93879a614d290, type: 3}
   - {fileID: 8845397834256987886, guid: 2e31b45579bdfc44d875703cc33b3351, type: 3}
-  - {fileID: 8718738552086383790, guid: 3922b4d99a236dd498f16ee4fc02570f, type: 3}
   DesertTiles:
   - {fileID: 2533951117993019420, guid: b598bf98c37c5b94ba226908574e08db, type: 3}
   ForestTiles:
@@ -41,5 +41,5 @@ MonoBehaviour:
   HighwayForestTile: {fileID: 5129324236411004504, guid: da3b631d31a5db74e9b236ff42e4d244, type: 3}
   SpawnPointFirstBlock: {x: 0, y: 0, z: 0}
   TilesCountInFirstBlock: 15
-  MinTilesCount: 0
-  MaxTilesCount: 0
+  MinTilesCount: 8
+  MaxTilesCount: 12
