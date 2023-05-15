@@ -1,7 +1,5 @@
-using JetBrains.Annotations;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Building : MonoBehaviour
 {
@@ -30,26 +28,10 @@ public class Building : MonoBehaviour
     private void CreateBuilding()
     {
         CreateFirstFloor();
-        SetTransformForBuilding();
+        //CreateMiddleFloors();
+        //CreateRoof();
+        SetTransform();
     }
-
-    private void ActionDependingBuildingSize(Delegate action1, Delegate action2)
-    {
-        var smallBuildingsExists = _smallBuildingsIndexesList.Count > 0;
-
-        if (smallBuildingsExists)
-        {
-            var currentBuildingIsSmall = _smallBuildingsIndexesList.Contains(_buildingNumber);
-
-            if (currentBuildingIsSmall)
-                action1.Invoke();
-            else
-                action2.Invoke();
-        }
-        else
-            action2.Invoke();
-    }
-
     private void CreateFirstFloor()
     {
         Delegate createSmallFirstFloor = CreateSmallFirstFloor;
@@ -67,7 +49,7 @@ public class Building : MonoBehaviour
         var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
         Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
     }
-    private void SetTransformForBuilding()
+    private void SetTransform()
     {
         Delegate actionBasedOnSmallBuildingsIndexesCount = ActionBasedOnSmallBuildingsIndexesCount;
         Delegate transformBigBuilding = TransformBigBuilding;
@@ -112,7 +94,21 @@ public class Building : MonoBehaviour
     }
     private void TransformBigBuilding()
     {
-        _angleY = _isOnLeftStreetSide == true ? 0 : 180;
+        _angleY = _isOnLeftStreetSide ? 0 : 180;
         transform.Rotate(0, _angleY, 0);
+    }
+    private void ActionDependingBuildingSize(Delegate action1, Delegate action2)
+    {
+        if (_smallBuildingsIndexesList.Count > 0)
+        {
+            var currentBuildingIsSmall = _smallBuildingsIndexesList.Contains(_buildingNumber);
+
+            if (currentBuildingIsSmall)
+                action1.Invoke();
+            else
+                action2.Invoke();
+        }
+        else
+            action2.Invoke();
     }
 }

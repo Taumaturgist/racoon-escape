@@ -1,256 +1,238 @@
-/*  Задачи
- *      1) Учесть при спавне количество перекрестков в блоке City в последующих блоках
- *      2) Исправить спавн переходных тайлов в последующих блоках
- *      3) Создавать блоки с помощью OnTriggerEnterAsObservable()
- *      4) Уничтожать блоки можно с помощью метода OnTriggerExitAsObservable()
+/* 
+*      Написать отписку после проигрыша _disposableTrigger.Clear();
  */
 
 using System;
 using System.Collections.Generic;
+using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 
 public class BlockSpawner : MonoBehaviour
 {
-    private eBlockType _previousBlockType;
-    private eBlockType _nextBlockType;
+    private BlockSpawnConfig _blockSpawnConfig;
+    private CompositeDisposable _disposableTrigger = new();
+    private eBlockType _previousBlockType, _nextBlockType;
+
     private List<GameObject> _blocks = new();
     private GameObject[] _tileSet;
+
     private Vector3 _pos;
-    private Quaternion _rot = Quaternion.identity;
+    private Quaternion _rot;
+    private GameObject _transitionTile;
+    private int _blockCount;
+    private bool _isFirstBlock;
 
     public void Launch(BlockSpawnConfig blockSpawnConfig)
     {
+        _blockSpawnConfig = blockSpawnConfig;
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
-        CreateFirstBlock(blockSpawnConfig);
-        CreateFollowingBlock(blockSpawnConfig);
+        _rot = Quaternion.identity;
+        _isFirstBlock = true;
+        _blockCount = 0;
+
+        CreateBlock();
     }
 
-    private void CreateFirstBlock(BlockSpawnConfig blockSpawnConfig)
+    private void CreateBlock()
     {
-        var firstBlock = Instantiate(
-                                blockSpawnConfig.Block,
-                                _pos,
-                                _rot,
-                                transform);
-        SetFirstBlockParameters(blockSpawnConfig, firstBlock);
+        var block = Instantiate(_blockSpawnConfig.Block, _pos, _rot, transform);
 
-        CreateTilesInFirstBlock(
-                    blockSpawnConfig,
-                    firstBlock);
-
-        _blocks.Add(firstBlock.gameObject);
-    }
-
-    private void SetFirstBlockParameters(BlockSpawnConfig blockSpawnConfig, Block firstBlock)
-    {
-        firstBlock.BlockID = 0;
-        firstBlock.BlockType = eBlockType.City;
-        firstBlock.TilesCount = blockSpawnConfig.TilesCountInFirstBlock;
-    }
-
-    private void CreateTilesInFirstBlock(
-                            BlockSpawnConfig blockSpawnConfig,
-                            Block firstBlock)
-    {
-        var tilesInFirstBlock = new GameObject[firstBlock.TilesCount];
-        var crossroadCount = 0;
-        var сrossroadNumberInInspector = 3;
-        int randomIndex;
-
-        for (int i = 0; i < tilesInFirstBlock.Length - 1; i++)
+        if (_isFirstBlock)
         {
-            randomIndex = GetRandomIndexForBlock(blockSpawnConfig.CityTiles.Length);
-            if (crossroadCount < 2)
-            {
-                tilesInFirstBlock[i] = Instantiate(
-                                   blockSpawnConfig.CityTiles[randomIndex],
-                                   _pos,
-                                   _rot,
-                                   firstBlock.gameObject.transform);
-                if (randomIndex == сrossroadNumberInInspector)
-                    crossroadCount++;
-            }
-            else
-            {
-                randomIndex = GetRandomIndexForBlock(blockSpawnConfig.CityTiles.Length - 1);
-
-                tilesInFirstBlock[i] = Instantiate(
-                                    blockSpawnConfig.CityTiles[randomIndex],
-                                    _pos,
-                                    _rot,
-                                    firstBlock.gameObject.transform);
-            }
-
-            _pos.z += blockSpawnConfig.OffsetZ;
+            GetFirstBlockParameters(block);
+            _isFirstBlock = false;
         }
-        _previousBlockType = eBlockType.City;
-        _nextBlockType = GetUniqueBlockType();
-        switch ((int)_nextBlockType)
-        {
-            case 1:
-                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityDesertTile,
-                                                                    _pos,
-                                                                    _rot,
-                                                                    firstBlock.transform);
-                break;
-            case 2:
-                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityForestTile,
-                                                                    _pos,
-                                                                    _rot,
-                                                                    firstBlock.transform);
-                break;
-            case 3:
-                tilesInFirstBlock[tilesInFirstBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityHighwayTile,
-                                                                    _pos,
-                                                                    _rot,
-                                                                    firstBlock.transform);
-                break;
-        }
-        _pos.z += blockSpawnConfig.OffsetZ;
+        else
+            GetBlockParameters(block);
 
-        _previousBlockType = eBlockType.City;
-    }
-    private int GetRandomIndexForBlock(int upperBound)
-    {
-        return UnityEngine.Random.Range(0, upperBound);
+        CreateTiles(block);
+
+        _blocks.Add(block.gameObject);
+        _blockCount = _blocks.Count;
+
+        var transitionTileCollider = _transitionTile.GetComponent<BoxCollider>();
+        CheckTrigger(transitionTileCollider);
     }
 
-    private void CreateFollowingBlock(BlockSpawnConfig blockSpawnConfig)
+    private void GetFirstBlockParameters(Block block)
     {
-        var block = Instantiate(
-                            blockSpawnConfig.Block,
-                            _pos,
-                            _rot,
-                            transform);
-        SetBlockParameters(blockSpawnConfig, block);
-        CreateTilesInFollowingBlock(
-                            blockSpawnConfig,
-                            block);
+        //block.BlockID = 0;
+        block.BlockType = eBlockType.City;
+        block.TilesCount = _blockSpawnConfig.TilesCountInFirstBlock;
     }
-    private void SetBlockParameters(BlockSpawnConfig blockSpawnConfig, Block block)
+    private void GetBlockParameters(Block block)
     {
-        block.BlockID = GetBlockID();
+        //block.BlockID = GetBlockID();
         block.BlockType = _nextBlockType;
-        block.TilesCount = GetTilesCount(blockSpawnConfig);
+        block.TilesCount = GetTilesCount();
     }
-    private int GetBlockID()
-    {
-        return _blocks.Count;
-    }
-    private eBlockType GetUniqueBlockType()
+    //private int GetBlockID()
+    //{
+    //    return _blocks.Count;
+    //}
+    private eBlockType GetBlockType()
     {
         var randomIndex = (int)_previousBlockType;
+
         while (randomIndex == (int)_previousBlockType)
         {
             var enumLen = Enum.GetNames(typeof(eBlockType)).Length;
-            randomIndex = UnityEngine.Random.Range(0, enumLen);
+            randomIndex = GetRandomIndex(0, enumLen);
         }
+
         return (eBlockType)randomIndex;
     }
-    private int GetTilesCount(BlockSpawnConfig blockSpawnConfig)
+    private int GetTilesCount()
     {
-        var tilesCount = UnityEngine.Random.Range(
-                                            blockSpawnConfig.MinTilesCountInBlock,
-                                            blockSpawnConfig.MaxTilesCountInBlock + 1);
+        var tilesCount = GetRandomIndex(_blockSpawnConfig.MinTilesCount, _blockSpawnConfig.MaxTilesCount + 1);
         return tilesCount;
     }
-
-    private void CreateTilesInFollowingBlock(
-                                    BlockSpawnConfig blockSpawnConfig,
-                                    Block block)
+    private int GetRandomIndex(int underBound, int upperBound)
     {
-        var tilesInBlock = new GameObject[block.TilesCount];
+        return UnityEngine.Random.Range(underBound, upperBound);
+    }
 
-        switch (block.BlockType)
+    private void CreateTiles(Block block)
+    {
+        var tiles = new GameObject[block.TilesCount];
+        var blockType = block.BlockType;
+
+        switch (blockType)
         {
             case eBlockType.City:
-                _tileSet = blockSpawnConfig.CityTiles;
+                _tileSet = _blockSpawnConfig.CityTiles;
                 break;
             case eBlockType.Desert:
-                _tileSet = blockSpawnConfig.DesertTiles;
+                _tileSet = _blockSpawnConfig.DesertTiles;
                 break;
             case eBlockType.Forest:
-                _tileSet = blockSpawnConfig.ForestTiles;
+                _tileSet = _blockSpawnConfig.ForestTiles;
                 break;
             case eBlockType.Highway:
-                _tileSet = blockSpawnConfig.HighwayTiles;
+                _tileSet = _blockSpawnConfig.HighwayTiles;
                 break;
         }
 
         var crossroadCount = 0;
-        var сrossroadNumberInInspector = 3;
 
         int randomIndex;
-        for (int i = 0; i < tilesInBlock.Length - 1; i++)
+        for (int i = 0; i < tiles.Length - 1; i++)
         {
-            randomIndex = GetRandomIndexForBlock(_tileSet.Length);
+            randomIndex = GetRandomIndex(0, _tileSet.Length);
             if (crossroadCount < 2)
             {
-                tilesInBlock[i] = Instantiate(
-                                   _tileSet[randomIndex],
-                                   _pos,
-                                   _rot,
-                                   block.transform);
-                if (randomIndex == сrossroadNumberInInspector)
+                tiles[i] = Instantiate(_tileSet[randomIndex], _pos, _rot, block.transform);
+                if (randomIndex == _blockSpawnConfig.CrossroadNumberInCity)
                     crossroadCount++;
             }
             else
             {
-                randomIndex = GetRandomIndexForBlock(_tileSet.Length - 1);
+                randomIndex = GetRandomIndex(0, _tileSet.Length - 1);
 
-                tilesInBlock[i] = Instantiate(
-                                    _tileSet[randomIndex],
-                                    _pos,
-                                    _rot,
-                                    block.transform);
+                tiles[i] = Instantiate(_tileSet[randomIndex], _pos, _rot, block.transform);
             }
 
-            _pos.z += blockSpawnConfig.OffsetZ;
+            _pos.z += _blockSpawnConfig.OffsetZ;
         }
-        var _nextBlockType = _previousBlockType;
-        while (_nextBlockType != _previousBlockType)
-            _nextBlockType = (eBlockType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(eBlockType)).Length);
-        /*switch ((int) nextBlockType)
-        {
-            case 1:
-                tilesInBlock[tilesInBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityDesertTile,
-                                                                    _pos,
-                                                                    _rot,
-                                                                    block.transform);
-                break;
-            case 2:
-                tilesInBlock[tilesInBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityForestTile,
-                                                                    _pos,
-                                                                    _rot,
-                                                                    block.transform);
-                break;
-            case 3:
-                tilesInBlock[tilesInBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityHighwayTile,
-                                                                    _pos,
-                                                                    _rot,
-                                                                    block.transform);
-                break;
-            case 4:
-                tilesInBlock[tilesInBlock.Length - 1] = Instantiate(
-                                                                    blockSpawnConfig.CityHighwayTile,
-                                                                    _pos,
-                                                                    _rot,
-                                                                    block.transform);
-                break;
-        }
-        */
-        _pos.z += blockSpawnConfig.OffsetZ;
 
-        _previousBlockType = block.BlockType;
+        _previousBlockType = blockType;
+        _nextBlockType = GetBlockType();
+
+        _transitionTile = GetTransitionTile(block, tiles);
+
+        _pos.z += _blockSpawnConfig.OffsetZ;
+
     }
-    private void DestroyBlock(GameObject block)
+    private GameObject GetTransitionTile(Block block, GameObject[] tiles)
     {
-        Destroy(block);
+        var lastIndex = tiles.Length - 1;
+        switch (_previousBlockType)
+        {
+            case eBlockType.City:
+                switch (_nextBlockType)
+                {
+                    case eBlockType.Desert:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityDesertTile, block.gameObject);
+                        break;
+                    case eBlockType.Forest:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityForestTile, block.gameObject);
+                        break;
+                    case eBlockType.Highway:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.CityHighwayTile, block.gameObject);
+                        break;
+                }
+                break;
+            case eBlockType.Desert:
+                switch (_nextBlockType)
+                {
+                    case eBlockType.City:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertCityTile, block.gameObject);
+                        break;
+                    case eBlockType.Forest:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertForestTile, block.gameObject);
+                        break;
+                    case eBlockType.Highway:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.DesertHighwayTile, block.gameObject);
+                        break;
+                }
+                break;
+            case eBlockType.Forest:
+                switch (_nextBlockType)
+                {
+                    case eBlockType.City:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestCityTile, block.gameObject);
+                        break;
+                    case eBlockType.Desert:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestDesertTile, block.gameObject);
+                        break;
+                    case eBlockType.Highway:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.ForestHighwayTile, block.gameObject);
+                        break;
+                }
+                break;
+            case eBlockType.Highway:
+                switch (_nextBlockType)
+                {
+                    case eBlockType.City:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayCityTile, block.gameObject);
+                        break;
+                    case eBlockType.Desert:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayDesertTile, block.gameObject);
+                        break;
+                    case eBlockType.Forest:
+                        tiles[lastIndex] = CreateTransitionTile(_blockSpawnConfig.HighwayForestTile, block.gameObject);
+                        break;
+                }
+                break;
+        }
+
+        return tiles[lastIndex];
+    }
+    private GameObject CreateTransitionTile(GameObject obj, GameObject parent)
+    {
+        return Instantiate(obj, _pos, obj.transform.rotation, parent.transform);
+    }
+    
+    private void CheckTrigger(Collider trigger)
+    {
+        //Debug.Log(_disposable.Count.ToString());
+        trigger.OnTriggerEnterAsObservable()
+            .Where(t => t.gameObject.CompareTag("Player"))
+            .Subscribe(other =>
+            {
+                CheckBlockRemoval();
+                CreateBlock();
+            }).AddTo(_disposableTrigger);
+    }
+
+    private void CheckBlockRemoval()
+    {
+        if (_blockCount > 3)
+        {
+            var removableBlock = _blocks[0];
+            _blocks.Remove(_blocks[0]);
+            Destroy(removableBlock);
+        }
     }
 }
