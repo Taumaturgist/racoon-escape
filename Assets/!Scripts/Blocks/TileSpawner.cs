@@ -64,11 +64,11 @@ public class TileSpawner : MonoBehaviour
         previousBlockType = blockType;
         nextBlockType = block.GetBlockType(previousBlockType);
 
-        _transitionTile = GetTransitionTile(block, _tiles, previousBlockType, nextBlockType, ref pos);
+        _transitionTile = GetTransitionTile(_tiles, previousBlockType, nextBlockType, ref pos);
 
         pos.z += _blockSpawnConfig.OffsetZ;
     }
-    private Tile GetTransitionTile(Block block, Tile[] tiles, eBlockType previousBlockType, eBlockType nextBlockType, ref Vector3 pos)
+    private Tile GetTransitionTile(Tile[] tiles, eBlockType previousBlockType, eBlockType nextBlockType, ref Vector3 pos)
     {
         var lastIndex = tiles.Length - 1;
         switch (previousBlockType)
