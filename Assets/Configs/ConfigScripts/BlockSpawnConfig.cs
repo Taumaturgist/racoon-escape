@@ -3,35 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BlockSpawnConfig", menuName = "Configs/BlockSpawnConfig", order = 51)]
 public class BlockSpawnConfig : ScriptableObject
 {
-    [Header("Blocks")]
-    public BlockSpawner BlockStorage;
-    public Block Block;
-
     public int OffsetZ;
     public int CrossroadNumberInCity;
 
-    [Header("Tiles")]
-    public GameObject[] CityTiles;
-    public GameObject[] DesertTiles;
-    public GameObject[] ForestTiles;
-    public GameObject[] HighwayTiles;
-
-    [Header("Transition Tiles")]
-    public GameObject CityDesertTile;
-    public GameObject CityForestTile;
-    public GameObject CityHighwayTile;
-
-    public GameObject DesertCityTile;
-    public GameObject DesertForestTile;
-    public GameObject DesertHighwayTile;
-
-    public GameObject ForestCityTile;
-    public GameObject ForestDesertTile;
-    public GameObject ForestHighwayTile;
-
-    public GameObject HighwayCityTile;
-    public GameObject HighwayDesertTile;
-    public GameObject HighwayForestTile;
+    [Header("Blocks")]
+    public BlockSpawner BlockStorage;
+    public Block Block;
+    public TileSpawner TileSpawner;
+    public Tile Tile;
 
     [Header("First Block Parameters")]
     public Vector3 SpawnPointFirstBlock;
@@ -40,4 +19,28 @@ public class BlockSpawnConfig : ScriptableObject
     [Header("Other Blocks Parameters")]
     public int MinTilesCount;
     public int MaxTilesCount;
+
+    [Header("Tiles")]
+    public Tile[] CityTiles;
+    public Tile[] DesertTiles;
+    public Tile[] ForestTiles;
+    public Tile[] HighwayTiles;
+
+    [Header("Transition Tiles")]
+    public Tile CityDesertTile;
+    public Tile CityForestTile;
+    public Tile CityHighwayTile;
+
+    public Tile DesertCityTile;
+    public Tile DesertForestTile;
+    public Tile DesertHighwayTile;
+
+    public Tile ForestCityTile;
+    public Tile ForestDesertTile;
+    public Tile ForestHighwayTile;
+
+    public Tile HighwayCityTile;
+    public Tile HighwayDesertTile;
+    public Tile HighwayForestTile;
+
 }
