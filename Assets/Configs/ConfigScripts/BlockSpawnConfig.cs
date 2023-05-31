@@ -21,26 +21,26 @@ public class BlockSpawnConfig : ScriptableObject
     public int MaxTilesCount;
 
     [Header("Tiles")]
-    public GameObject[] CityTiles;
-    public GameObject[] DesertTiles;
-    public GameObject[] ForestTiles;
-    public GameObject[] HighwayTiles;
+    public Tile[] CityTiles;
+    public Tile[] DesertTiles;
+    public Tile[] ForestTiles;
+    public Tile[] HighwayTiles;
 
     [Header("Transition Tiles")]
-    public GameObject CityDesertTile;
-    public GameObject CityForestTile;
-    public GameObject CityHighwayTile;
+    public Tile CityDesertTile;
+    public Tile CityForestTile;
+    public Tile CityHighwayTile;
 
-    public GameObject DesertCityTile;
-    public GameObject DesertForestTile;
-    public GameObject DesertHighwayTile;
+    public Tile DesertCityTile;
+    public Tile DesertForestTile;
+    public Tile DesertHighwayTile;
 
-    public GameObject ForestCityTile;
-    public GameObject ForestDesertTile;
-    public GameObject ForestHighwayTile;
+    public Tile ForestCityTile;
+    public Tile ForestDesertTile;
+    public Tile ForestHighwayTile;
 
-    public GameObject HighwayCityTile;
-    public GameObject HighwayDesertTile;
-    public GameObject HighwayForestTile;
+    public Tile HighwayCityTile;
+    public Tile HighwayDesertTile;
+    public Tile HighwayForestTile;
 
 }

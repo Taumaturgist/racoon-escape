@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8845397834256987887}
   - component: {fileID: 9044076335499168510}
   - component: {fileID: -5203009901394868669}
+  - component: {fileID: 4805882520437461842}
   m_Layer: 0
   m_Name: CityTile3
   m_TagString: Untagged
@@ -69,6 +70,18 @@ MonoBehaviour:
   - {x: 50, y: 0, z: 65}
   buildingPrefab: {fileID: -7081646534055728397, guid: d559fd0f5c5a9c243a6a22b66e587aa7, type: 3}
   smallBuildingIndexes: 0100000002000000
+--- !u!114 &4805882520437461842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8845397834256987886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8845397834041623469
 PrefabInstance:
   m_ObjectHideFlags: 0

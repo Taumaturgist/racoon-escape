@@ -11,9 +11,9 @@ public class BuildingSpawner : MonoBehaviour
     
     private bool _isOnLeftStreetSide;
 
-    private void Awake()
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig)
     {
-        _buildingSpawnConfig = FindAnyObjectByType<ApplicationStartUp>().BuildingSpawnConfig;
+        _buildingSpawnConfig = buildingSpawnConfig;
 
         for (int i = 0; i < buildingSpawnPoints.Length; i++)
         {

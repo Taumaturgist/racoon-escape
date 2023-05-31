@@ -1,6 +1,14 @@
 /* 
-*      Отделить случай города от остальных при создании тайлов (не более 2 перекрестков)
-*      Написать отписку после проигрыша _disposableTrigger.Clear();
+ *      на старте должны создаться 2 блока.
+ *      блок 3 создается при срабатывании триггера на блоке 1.
+ *      блок 4 - на блоке 2, и т.д.
+ *      сейчас новый блок создается прямо перед игроком.
+ * 
+ * 
+ * 
+ * 
+ *      Отделить случай города от остальных при создании тайлов (не более 2 перекрестков)
+ *      Написать отписку после проигрыша _disposableTrigger.Clear();
  */
 
 using System.Collections.Generic;
@@ -11,6 +19,8 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     private BlockSpawnConfig _blockSpawnConfig;
+    private BuildingSpawnConfig _buildingSpawnConfig;
+
     private eBlockType _previousBlockType, _nextBlockType;
     private CompositeDisposable _disposable = new();
 
@@ -24,19 +34,20 @@ public class BlockSpawner : MonoBehaviour
     private int _blockCount;
     private bool _isFirstBlock;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig)
+    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig)
     {
         _blockSpawnConfig = blockSpawnConfig;
+        _buildingSpawnConfig = buildingSpawnConfig;
 
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
         _rot = Quaternion.identity;
         _blockCount = 0;
         _isFirstBlock = true;
 
-        CreateBlocks();
+        CreateBlock();
     }
 
-    private void CreateBlocks()
+    private void CreateBlock()
     {
         var block = Instantiate(_blockSpawnConfig.Block, _pos, _rot, transform);
         block.Launch(_blockSpawnConfig);
@@ -50,7 +61,7 @@ public class BlockSpawner : MonoBehaviour
             block.GetBlockParameters(_nextBlockType);
 
         var tileSpawner = Instantiate(_blockSpawnConfig.TileSpawner, _pos, _rot, block.transform);
-        tileSpawner.Launch(_blockSpawnConfig);
+        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig);
 
         tileSpawner.CreateTiles(block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
         _transitionTileCollider = tileSpawner.GetTransitionTileCollider();
@@ -68,7 +79,7 @@ public class BlockSpawner : MonoBehaviour
             .Subscribe(other =>
             {
                 CheckBlockRemoval();
-                CreateBlocks();
+                CreateBlock();
             }).AddTo(_disposable);
     }
     private void CheckBlockRemoval()

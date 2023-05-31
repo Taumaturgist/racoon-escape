@@ -55,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8850071556610012720}
   - component: {fileID: 5400471324793990284}
+  - component: {fileID: 5146159383086067896}
   m_Layer: 0
   m_Name: DesertCityTile
   m_TagString: Untagged
@@ -92,6 +93,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 200, y: 4, z: 200}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &5146159383086067896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166369551285055917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4890508047155974157
 PrefabInstance:
   m_ObjectHideFlags: 0
