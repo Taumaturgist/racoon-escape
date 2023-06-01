@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add331eaa73862d41a3032d3e93b4d13, type: 3}
   m_Name: BuildingSpawnConfig
   m_EditorClassIdentifier: 
+  MinFloorsAmount: 5
+  MaxFloorsAmount: 15
   BigFirstFloorsList:
   - {fileID: 6812432106743708081, guid: bf7c2b141dd3c334c9d6c2f277885acd, type: 3}
   - {fileID: 6812432106743708081, guid: 20d66b6eb675f704bbd5f2a17c07c05e, type: 3}
@@ -24,5 +26,27 @@ MonoBehaviour:
   - {fileID: 6812432106743708081, guid: f8848240bdc75d242ac186afaa8c89ee, type: 3}
   - {fileID: 6812432106743708081, guid: 065cf091feab4404094515c90d0fc7d7, type: 3}
   - {fileID: 6812432106743708081, guid: 89dff4982a2c3d244b4fe8f2c78f36fb, type: 3}
-  MinFloorsAmount: 5
-  MaxFloorsAmount: 15
+  BigMiddleFloorsList:
+  - {fileID: 6812432106743708081, guid: afe50361d3aeda34ab0499f66b6aa45a, type: 3}
+  - {fileID: 6812432106743708081, guid: 5cdf90226d17df845bb163028a000452, type: 3}
+  - {fileID: 6812432106743708081, guid: 7bd9dd4dc2dd5c4449237c8bd39ff6d3, type: 3}
+  - {fileID: 6812432106743708081, guid: 3be06aa0d1b7cf14cb2818cedce77a39, type: 3}
+  - {fileID: 6812432106743708081, guid: 8e6daaf373af9f344a1a27ba1766f2e2, type: 3}
+  SmallMiddleFloorsList:
+  - {fileID: 6812432106743708081, guid: 6e354c42801275a459f4ef55f6d24bfc, type: 3}
+  - {fileID: 6812432106743708081, guid: 45d5d1b523b7f9044ae9db44929e06d7, type: 3}
+  - {fileID: 6812432106743708081, guid: 74feef9a3450b4d41877fe23fd8155e5, type: 3}
+  - {fileID: 6812432106743708081, guid: 5f5e7791cc1719c40b8698d4c2bab32f, type: 3}
+  - {fileID: 6812432106743708081, guid: 15dc15cebd1ec4945a1a7c5ee6a09df7, type: 3}
+  BigRoofList:
+  - {fileID: 6812432106743708081, guid: 53330665127823c4b90c57ae33b648c2, type: 3}
+  - {fileID: 6812432106743708081, guid: 033ecb8f5ae1320489cff3af696191ef, type: 3}
+  - {fileID: 6812432106743708081, guid: ee45e882a0829314ca59c90c3b2f19a6, type: 3}
+  - {fileID: 6812432106743708081, guid: 6fdb4c0d35ecaa94bb4bb163353e1260, type: 3}
+  - {fileID: 6812432106743708081, guid: 18b422b1c9e36944dab6d55a640e8781, type: 3}
+  SmallRoofList:
+  - {fileID: 6812432106743708081, guid: 320ecc43ff6e60544b75f5885531324a, type: 3}
+  - {fileID: 6812432106743708081, guid: c2b2dbd9ba58fac4ab802582fa851927, type: 3}
+  - {fileID: 6812432106743708081, guid: 3f12d2e3c9a10024b98fac3745fa1dbb, type: 3}
+  - {fileID: 6812432106743708081, guid: 8d80e61bbd55557429d2b4ea25354198, type: 3}
+  - {fileID: 6812432106743708081, guid: 7634580209e00564f8a6679e27dc1cee, type: 3}
