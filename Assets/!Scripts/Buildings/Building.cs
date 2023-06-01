@@ -85,17 +85,46 @@ public class Building : MonoBehaviour
     private void CreateMiddleFloors(bool isBigBuilding)
     {
         var randomFloorAmount = Random.Range(_minFloorAmount, _maxFloorAmount + 1);
-        
 
         for (int i = 0; i < randomFloorAmount; i++)
         {
             _offset = new Vector3(0f, (i + 1) * _height, 0f);
             if (isBigBuilding)
+            {
                 Instantiate(_bigMiddleFloorsList[_randomIndex], transform.position + _offset, transform.rotation, transform);
+
+                _offset += new Vector3(0f, _height, 0f);
+
+                if (_randomIndex == 3)
+                {
+                    Instantiate(_bigMiddleFloorsList[5], transform.position + _offset, transform.rotation, transform);
+                    _offset += new Vector3(0f, _height, 0f);
+                }
+                else if (_randomIndex == 4)
+                {
+                    Instantiate(_bigMiddleFloorsList[6], transform.position + _offset, transform.rotation, transform);
+                    _offset += new Vector3(0f, _height, 0f);
+                }
+            }
             else
+            {
                 Instantiate(_smallMiddleFloorsList[_randomIndex], transform.position + _offset, transform.rotation, transform);
+
+                _offset += new Vector3(0f, _height, 0f);
+
+                if (_randomIndex == 3)
+                {
+                    Instantiate(_smallMiddleFloorsList[5], transform.position + _offset, transform.rotation, transform);
+                    _offset += new Vector3(0f, _height, 0f);
+                }
+                else if (_randomIndex == 4)
+                {
+                    Instantiate(_smallMiddleFloorsList[6], transform.position + _offset, transform.rotation, transform);
+                    _offset += new Vector3(0f, _height, 0f);
+                }
+            }
         }
-        _offset += new Vector3(0f, _height, 0f);
+
     }
 
     private void CreateRoof(bool isBigBuilding)
