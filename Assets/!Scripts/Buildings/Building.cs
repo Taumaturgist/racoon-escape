@@ -1,5 +1,11 @@
+/*
+ * Необходимо отделить логику создания среднего этажа и крыши для больших и маленьких зданий
+ */
+
 using UnityEngine;
 using System.Collections.Generic;
+using System;
+using Random = UnityEngine.Random;
 
 public class Building : MonoBehaviour
 {
@@ -11,16 +17,23 @@ public class Building : MonoBehaviour
     private List<GameObject> _bigMiddleFloorsList;
     private List<GameObject> _smallMiddleFloorsList;
 
+    private GameObject _bigLastFloorForBuildNumber3;
+    private GameObject _bigLastFloorForBuildNumber4;
+
+    private GameObject _smallLastFloorForBuildNumber3;
+    private GameObject _smallLastFloorForBuildNumber4;
+
     private List<GameObject> _bigRoofList;
     private List<GameObject> _smallRoofList;
 
     public delegate void Delegate();
 
-    private Vector3 _offset;
+    private Vector3 _heightMiddleFloor;
     private int _buildingNumber;
     private bool _isOnLeftStreetSide;
     private float _angleY;
-    private float _height = 5f;
+    private readonly float _height = 5f;
+    private Vector3 _offset;
 
     private int _randomIndex;
     private int _minFloorAmount;
@@ -44,8 +57,16 @@ public class Building : MonoBehaviour
         _bigMiddleFloorsList = _buildingSpawnConfig.BigMiddleFloorsList;
         _smallMiddleFloorsList = _buildingSpawnConfig.SmallMiddleFloorsList;
 
+        _bigLastFloorForBuildNumber3 = _buildingSpawnConfig.BigLastFloorForBuildNumber3;
+        _bigLastFloorForBuildNumber4 = _buildingSpawnConfig.BigLastFloorForBuildNumber4;
+        _smallLastFloorForBuildNumber3 = _buildingSpawnConfig.SmallLastFloorForBuildNumber3;
+        _smallLastFloorForBuildNumber4 = _buildingSpawnConfig.SmallLastFloorForBuildNumber4;
+
         _bigRoofList = _buildingSpawnConfig.BigRoofList;
         _smallRoofList = _buildingSpawnConfig.SmallRoofList;
+
+        _heightMiddleFloor = Vector3.zero;
+        _offset = new Vector3(0f, _height, 0f);
 
         CreateBuilding();
     }
@@ -65,74 +86,88 @@ public class Building : MonoBehaviour
 
         ActionDependingBuildingSize(createSmallFirstFloor, createBigFirstFloor);
     }
-    private void CreateSmallFirstFloor()
-    {
-        _isBigBuilding = false;
-
-        var randomInt = Random.Range(0, _smallFirstFloorsList.Count);
-        Instantiate(_smallFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
-        _randomIndex = randomInt;
-    }
     private void CreateBigFirstFloor()
     {
         _isBigBuilding = true;
 
         var randomInt = Random.Range(0, _bigFirstFloorsList.Count);
         Instantiate(_bigFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+
+        _randomIndex = randomInt;
+    }
+    private void CreateSmallFirstFloor()
+    {
+        _isBigBuilding = false;
+
+        var randomInt = Random.Range(0, _smallFirstFloorsList.Count);
+        Instantiate(_smallFirstFloorsList[randomInt], transform.position, transform.rotation, transform);
+
         _randomIndex = randomInt;
     }
 
     private void CreateMiddleFloors(bool isBigBuilding)
     {
-        var randomFloorAmount = Random.Range(_minFloorAmount, _maxFloorAmount + 1);
+        var randomFloorAmount = UnityEngine.Random.Range(_minFloorAmount, _maxFloorAmount + 1);
+
+        if (_randomIndex == 3 || _randomIndex == 4)
+            randomFloorAmount -= 1;
 
         for (int i = 0; i < randomFloorAmount; i++)
         {
-            _offset = new Vector3(0f, (i + 1) * _height, 0f);
+            _heightMiddleFloor += _offset;
             if (isBigBuilding)
-            {
-                Instantiate(_bigMiddleFloorsList[_randomIndex], transform.position + _offset, transform.rotation, transform);
-
-                _offset += new Vector3(0f, _height, 0f);
-
-                if (_randomIndex == 3)
-                {
-                    Instantiate(_bigMiddleFloorsList[5], transform.position + _offset, transform.rotation, transform);
-                    _offset += new Vector3(0f, _height, 0f);
-                }
-                else if (_randomIndex == 4)
-                {
-                    Instantiate(_bigMiddleFloorsList[6], transform.position + _offset, transform.rotation, transform);
-                    _offset += new Vector3(0f, _height, 0f);
-                }
-            }
+                CreateMiddleFloor(_bigMiddleFloorsList, _randomIndex);
             else
-            {
-                Instantiate(_smallMiddleFloorsList[_randomIndex], transform.position + _offset, transform.rotation, transform);
-
-                _offset += new Vector3(0f, _height, 0f);
-
-                if (_randomIndex == 3)
-                {
-                    Instantiate(_smallMiddleFloorsList[5], transform.position + _offset, transform.rotation, transform);
-                    _offset += new Vector3(0f, _height, 0f);
-                }
-                else if (_randomIndex == 4)
-                {
-                    Instantiate(_smallMiddleFloorsList[6], transform.position + _offset, transform.rotation, transform);
-                    _offset += new Vector3(0f, _height, 0f);
-                }
-            }
+                CreateMiddleFloor(_smallMiddleFloorsList, _randomIndex);
         }
 
+        _heightMiddleFloor += _offset;
+
+        //if (isBigBuilding)
+        //{
+        //    if (_randomIndex == 3)
+        //    {
+        //        var obj = Instantiate(_bigLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
+        //        _heightMiddleFloor += _offset;
+        //        Debug.Log(obj.ToString() + _randomIndex);
+        //    }
+
+        //    if (_randomIndex == 4)
+        //    {
+        //        var obj = Instantiate(_bigLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
+        //        _heightMiddleFloor += _offset;
+        //        Debug.Log(obj.ToString() + _randomIndex);
+        //    }
+        //}
+        //else
+        //{
+        //    if (_randomIndex == 3)
+        //    {
+        //        var obj = Instantiate(_smallLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
+        //        _heightMiddleFloor += _offset;
+        //        Debug.Log(obj.ToString() + _randomIndex);
+        //    }
+
+        //    if (_randomIndex == 4)
+        //    {
+        //        var obj = Instantiate(_smallLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
+        //        _heightMiddleFloor += _offset;
+        //        Debug.Log(obj.ToString() + _randomIndex);
+        //    }
+        //}
+    }
+
+    private void CreateMiddleFloor(List<GameObject> middleFloors, int index)
+    {
+        Instantiate(middleFloors[index], transform.position + _heightMiddleFloor, transform.rotation, transform);
     }
 
     private void CreateRoof(bool isBigBuilding)
     {
         if (isBigBuilding)
-            Instantiate(_bigRoofList[_randomIndex], transform.position + _offset, transform.rotation, transform);
+            Instantiate(_bigRoofList[_randomIndex], transform.position + _heightMiddleFloor, transform.rotation, transform);
         else
-            Instantiate(_smallRoofList[_randomIndex], transform.position + _offset, transform.rotation, transform);
+            Instantiate(_smallRoofList[_randomIndex], transform.position + _heightMiddleFloor, transform.rotation, transform);
     }
 
     private void SetTransform()

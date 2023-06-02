@@ -29,19 +29,19 @@ MonoBehaviour:
   BigMiddleFloorsList:
   - {fileID: 6812432106743708081, guid: afe50361d3aeda34ab0499f66b6aa45a, type: 3}
   - {fileID: 6812432106743708081, guid: 5cdf90226d17df845bb163028a000452, type: 3}
-  - {fileID: 6812432106743708081, guid: 7bd9dd4dc2dd5c4449237c8bd39ff6d3, type: 3}
-  - {fileID: 6812432106743708081, guid: 3be06aa0d1b7cf14cb2818cedce77a39, type: 3}
-  - {fileID: 6812432106743708081, guid: 8e6daaf373af9f344a1a27ba1766f2e2, type: 3}
   - {fileID: 6812432106743708081, guid: a9a9a1404b9ffa84dbbc53b81dc8a625, type: 3}
   - {fileID: 6812432106743708081, guid: 6face90c8e588544a85f99b3e75cf82b, type: 3}
+  - {fileID: 6812432106743708081, guid: 8e6daaf373af9f344a1a27ba1766f2e2, type: 3}
   SmallMiddleFloorsList:
   - {fileID: 6812432106743708081, guid: 6e354c42801275a459f4ef55f6d24bfc, type: 3}
   - {fileID: 6812432106743708081, guid: 45d5d1b523b7f9044ae9db44929e06d7, type: 3}
-  - {fileID: 6812432106743708081, guid: 74feef9a3450b4d41877fe23fd8155e5, type: 3}
-  - {fileID: 6812432106743708081, guid: 5f5e7791cc1719c40b8698d4c2bab32f, type: 3}
-  - {fileID: 6812432106743708081, guid: 15dc15cebd1ec4945a1a7c5ee6a09df7, type: 3}
   - {fileID: 6812432106743708081, guid: 9f95e1d4a1b22b64c85f46c1451df83e, type: 3}
   - {fileID: 6812432106743708081, guid: fccaf5fe6fea73f449f90aa3df3b7d72, type: 3}
+  - {fileID: 6812432106743708081, guid: 15dc15cebd1ec4945a1a7c5ee6a09df7, type: 3}
+  BigLastFloorForBuildNumber3: {fileID: 6812432106743708081, guid: 7bd9dd4dc2dd5c4449237c8bd39ff6d3, type: 3}
+  BigLastFloorForBuildNumber4: {fileID: 6812432106743708081, guid: 3be06aa0d1b7cf14cb2818cedce77a39, type: 3}
+  SmallLastFloorForBuildNumber3: {fileID: 6812432106743708081, guid: 74feef9a3450b4d41877fe23fd8155e5, type: 3}
+  SmallLastFloorForBuildNumber4: {fileID: 6812432106743708081, guid: 5f5e7791cc1719c40b8698d4c2bab32f, type: 3}
   BigRoofList:
   - {fileID: 6812432106743708081, guid: 53330665127823c4b90c57ae33b648c2, type: 3}
   - {fileID: 6812432106743708081, guid: 033ecb8f5ae1320489cff3af696191ef, type: 3}
