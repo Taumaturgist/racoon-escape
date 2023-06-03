@@ -1,5 +1,5 @@
 /* 
- *      Отписка после проигрыша _disposableTrigger.Clear();
+ *      Unsubscribing after losing _disposableTrigger.Clear();
  */
 
 using System.Collections.Generic;
@@ -54,8 +54,7 @@ public class BlockSpawner : MonoBehaviour
             block.GetBlockParameters(_nextBlockType);
 
         var tileSpawner = Instantiate(_blockSpawnConfig.TileSpawner, _pos, _rot, block.transform);
-        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig);
-        tileSpawner.CreateTiles(block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
+        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig, block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
 
         _blocks.Add(block.gameObject);
         _blockCount = _blocks.Count;

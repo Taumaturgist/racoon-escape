@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add331eaa73862d41a3032d3e93b4d13, type: 3}
   m_Name: BuildingSpawnConfig
   m_EditorClassIdentifier: 
-  MinFloorsAmount: 2
-  MaxFloorsAmount: 5
+  
+  MinFloorsAmount: 4
+  MaxFloorsAmount: 6
+
   BigFirstFloorsList:
   - {fileID: 6812432106743708081, guid: bf7c2b141dd3c334c9d6c2f277885acd, type: 3}
   - {fileID: 6812432106743708081, guid: 20d66b6eb675f704bbd5f2a17c07c05e, type: 3}
