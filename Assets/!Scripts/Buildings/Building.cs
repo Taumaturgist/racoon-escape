@@ -137,7 +137,7 @@ public class Building : MonoBehaviour
                 Instantiate(_bigLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
                 _heightMiddleFloor += _offset;
             }
-        }
+         }
         else
         {
             if (_randomIndex == _indexBuildNumber3)
