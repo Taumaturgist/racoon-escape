@@ -109,7 +109,7 @@ public class Building : MonoBehaviour
     {
         var randomFloorAmount = UnityEngine.Random.Range(_minFloorAmount, _maxFloorAmount + 1);
 
-        if (_randomIndex == 3 || _randomIndex == 4)
+        if (_randomIndex == 2 || _randomIndex == 3)
             randomFloorAmount -= 1;
 
         for (int i = 0; i < randomFloorAmount; i++)
@@ -123,38 +123,38 @@ public class Building : MonoBehaviour
 
         _heightMiddleFloor += _offset;
 
-        //if (isBigBuilding)
-        //{
-        //    if (_randomIndex == 3)
-        //    {
-        //        var obj = Instantiate(_bigLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
-        //        _heightMiddleFloor += _offset;
-        //        Debug.Log(obj.ToString() + _randomIndex);
-        //    }
+        if (isBigBuilding)
+        {
+            if (_randomIndex == 2)
+            {
+                var obj = Instantiate(_bigLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                _heightMiddleFloor += _offset;
+                Debug.Log(obj.ToString() + _randomIndex);
+            }
 
-        //    if (_randomIndex == 4)
-        //    {
-        //        var obj = Instantiate(_bigLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
-        //        _heightMiddleFloor += _offset;
-        //        Debug.Log(obj.ToString() + _randomIndex);
-        //    }
-        //}
-        //else
-        //{
-        //    if (_randomIndex == 3)
-        //    {
-        //        var obj = Instantiate(_smallLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
-        //        _heightMiddleFloor += _offset;
-        //        Debug.Log(obj.ToString() + _randomIndex);
-        //    }
+            if (_randomIndex == 3)
+            {
+                var obj = Instantiate(_bigLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                _heightMiddleFloor += _offset;
+                Debug.Log(obj.ToString() + _randomIndex);
+            }
+        }
+        else
+        {
+            if (_randomIndex == 2)
+            {
+                var obj = Instantiate(_smallLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                _heightMiddleFloor += _offset;
+                Debug.Log(obj.ToString() + _randomIndex);
+            }
 
-        //    if (_randomIndex == 4)
-        //    {
-        //        var obj = Instantiate(_smallLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
-        //        _heightMiddleFloor += _offset;
-        //        Debug.Log(obj.ToString() + _randomIndex);
-        //    }
-        //}
+            if (_randomIndex == 3)
+            {
+                var obj = Instantiate(_smallLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                _heightMiddleFloor += _offset;
+                Debug.Log(obj.ToString() + _randomIndex);
+            }
+        }
     }
 
     private void CreateMiddleFloor(List<GameObject> middleFloors, int index)
