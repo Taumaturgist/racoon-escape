@@ -9,13 +9,20 @@ public class TileSpawner : MonoBehaviour
     private Tile[] _tileSet;
     private Tile _transitionTile;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig)
+    private const int _maxBlockAmounttInScene = 2;
+
+    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig,
+        Block block, ref eBlockType previousBlockType, ref eBlockType nextBlockType,
+        ref Vector3 pos, Quaternion rot)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
+
+        CreateTiles(block, ref previousBlockType, ref nextBlockType, ref pos, rot);
     }
 
-    public void CreateTiles(Block block, ref eBlockType previousBlockType, ref eBlockType nextBlockType, ref Vector3 pos, Quaternion rot)
+    private void CreateTiles(Block block, ref eBlockType previousBlockType, ref eBlockType nextBlockType,
+        ref Vector3 pos, Quaternion rot)
     {
         _tiles = new Tile[block.TilesCount];
         var blockType = block.BlockType;
@@ -41,10 +48,12 @@ public class TileSpawner : MonoBehaviour
         for (int i = 0; i < _tiles.Length - 1; i++)
         {
             randomIndex = Random.Range(0, _tileSet.Length);
-            if (crossroadCount < 2)
+            if (crossroadCount < _maxBlockAmounttInScene)
             {
                 _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
-                _tiles[i].Launch(_buildingSpawnConfig);
+
+                if (blockType == eBlockType.City)
+                    _tiles[i].Launch(_buildingSpawnConfig);
 
                 if (randomIndex == _blockSpawnConfig.CrossroadNumberInCity)
                     crossroadCount++;
@@ -55,7 +64,11 @@ public class TileSpawner : MonoBehaviour
                 randomIndex = Random.Range(_blockSpawnConfig.CrossroadNumberInCity, _tileSet.Length);
 
                 _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
-                _tiles[i].Launch(_buildingSpawnConfig);
+
+                if (blockType == eBlockType.City)
+                    _tiles[i].Launch(_buildingSpawnConfig);
+                else
+                    _tiles[i].Launch();
             }
 
             pos.z += _blockSpawnConfig.OffsetZ;
