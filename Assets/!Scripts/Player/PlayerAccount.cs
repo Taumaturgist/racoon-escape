@@ -11,6 +11,8 @@ public class PlayerAccount : MonoBehaviour
 
     private Dictionary<string, int> _storage;
 
+    private CameraSettings _camera;
+
     private int _odometer;
 
     public int GetOdometer()
@@ -25,8 +27,11 @@ public class PlayerAccount : MonoBehaviour
         _storage = _serializer.Load();
         _odometer = _storage["odometer"];
 
+        
         _activeCar = Instantiate(_playerAccountConfig.PlayerActiveCar, _playerAccountConfig.PACSpawnPosition, transform.rotation);
         _activeCar.Launch(_playerAccountConfig);
+
+        _camera = Instantiate(_playerAccountConfig.Camera);
     }
 
     private void OnApplicationQuit()
