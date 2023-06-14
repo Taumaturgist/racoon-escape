@@ -54,6 +54,7 @@ public class PlayerActiveCar : MonoBehaviour
 		
 		_carRigidbody = GetComponent<Rigidbody>();
 		_carRigidbody.mass = playerAccountConfig.CarMass;
+		_carRigidbody.angularDrag = playerAccountConfig.CarAngularDrug;
 		_carRigidbody.centerOfMass = new Vector3(0, playerAccountConfig.CarMassCenterShiftY, 0);
 
 		SetSuspension(playerAccountConfig);

@@ -9,15 +9,16 @@ public class CameraSettings : MonoBehaviour
 	[SerializeField] private float followSpeed;
 	[SerializeField] private float lookSpeed;
 
-    private void Awake()
+    public void Launch(GameObject objectToFollow)
     {
-		_objectToFollow = GameObject.FindGameObjectWithTag("Player");
+		_objectToFollow = objectToFollow;
     }
 
     private void FixedUpdate()
 	{
 		MoveToTarget();
-	}
+		LookAtTarget();
+    }
 
 	public void MoveToTarget()
 	{
@@ -27,10 +28,10 @@ public class CameraSettings : MonoBehaviour
 							 _objectToFollow.transform.up * offsetShoulderView.y;
 		transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.fixedDeltaTime);
 	}
-	//public void LookAtTarget()
-	//{
-	//	Vector3 _lookDirection = _objectToFollow.transform.position - transform.position;
-	//	Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
-	//	transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.fixedDeltaTime);
-	//}
+	public void LookAtTarget()
+	{
+		Vector3 _lookDirection = _objectToFollow.transform.position - transform.position;
+		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
+		transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.fixedDeltaTime);
+	}
 }
