@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class UIController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] UIMainMenu mainMenuScreen;
+    [SerializeField] UIActionScreen actionScreen;
+    [SerializeField] UIHUD hud;
+    [SerializeField] UISettingsScreen settingsScreen;
+    [SerializeField] UIShopScreen shopScreen;
+    [SerializeField] UITuningScreen tuningScreen;
+    [SerializeField] UIPaintingScreen paintingScreen;
+    [SerializeField] UILoseScreen loseScreen;
+ 
+    public void StartGame()
     {
-        
-    }
+        MessageBroker
+            .Default
+            .Publish(new OnGameStartMessage());
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        mainMenuScreen.gameObject.SetActive(false);
+        actionScreen.gameObject.SetActive(true);
     }
 }
