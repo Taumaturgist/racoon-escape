@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerAccount : MonoBehaviour
 {
+    private Game _game;
+
     private PlayerAccountConfig _playerAccountConfig;
     private Serializer _serializer;
     private PlayerDataStorage _playerDataStorage;
@@ -19,6 +21,7 @@ public class PlayerAccount : MonoBehaviour
     }
     private void Awake()
     {
+        _game = GetComponent<Game>();
         _playerAccountConfig = GetComponent<ApplicationStartUp>().PlayerAccountConfig;
         _serializer = GetComponent<Serializer>();
 
@@ -26,7 +29,7 @@ public class PlayerAccount : MonoBehaviour
         _odometer = _storage["odometer"];
 
         _activeCar = Instantiate(_playerAccountConfig.PlayerActiveCar, _playerAccountConfig.PACSpawnPosition, transform.rotation);
-        _activeCar.Launch(_playerAccountConfig);
+        _activeCar.Launch(_playerAccountConfig, _game);
     }
 
     private void OnApplicationQuit()
