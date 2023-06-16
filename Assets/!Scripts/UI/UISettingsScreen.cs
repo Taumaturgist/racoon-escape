@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UISettingsScreen : MonoBehaviour
+public class UISettingsScreen : UIScreen
 {
     // Start is called before the first frame update
     void Start()

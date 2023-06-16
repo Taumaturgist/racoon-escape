@@ -9,6 +9,8 @@ public class PlayerActiveCar : MonoBehaviour
 	private const float FullCircle = 360f;
 	private const float HalfCircle = 180f;
 
+	private Game _game;
+
 	private Transform _carTransform;
 	private Rigidbody _carRigidbody;
 
@@ -48,17 +50,18 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _nitroSpeedBoost;
 	private float _NitroTorqueBoost;
 
-	public void Launch(PlayerAccountConfig playerAccountConfig)
+	public void Launch(PlayerAccountConfig playerAccountConfig, Game game)
 	{		
+		_game = game;
+
 		_maxSteerAngle = playerAccountConfig.MaxSteerAngle;		
 		
 		_carRigidbody = GetComponent<Rigidbody>();
 		_carRigidbody.mass = playerAccountConfig.CarMass;
+		_carRigidbody.angularDrag = playerAccountConfig.CarAngularDrug;
 		_carRigidbody.centerOfMass = new Vector3(0, playerAccountConfig.CarMassCenterShiftY, 0);
 
-		SetSuspension(playerAccountConfig);
-
-		
+		SetSuspension(playerAccountConfig);		
 
 		SetEngine(playerAccountConfig);		
 
@@ -89,12 +92,12 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		CheckConditions();
+
 		if (!_isActive)
         {
 			return;
-        }
-
-		CheckBools();
+        }		
 
 		Steer();	
 		AccelerateAuto();
@@ -107,8 +110,18 @@ public class PlayerActiveCar : MonoBehaviour
 		_currentRideDistance = Vector3.Distance(_startPosition, _carTransform.position);
 	}
 
-	private void CheckBools()
+	private void CheckConditions()
 	{
+		switch(_game.GetGameState())
+        {
+			case GameState.Pause:
+				_isActive = false;
+				break;
+			case GameState.Action:				
+				_isActive = true;
+				break;
+        }
+
 		if (_speed >= _speedLimit)
 		{
 			_isAccelerating = false;
