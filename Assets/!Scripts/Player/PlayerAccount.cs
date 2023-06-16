@@ -32,10 +32,10 @@ public class PlayerAccount : MonoBehaviour
 
         
         _activeCar = Instantiate(_playerAccountConfig.PlayerActiveCar, _playerAccountConfig.PACSpawnPosition, transform.rotation);
-        _activeCar.Launch(_playerAccountConfig);
+        _activeCar.Launch(_playerAccountConfig, _game);
 
         _camera = Instantiate(_playerAccountConfig.Camera);
-        _camera.Launch(_activeCar.gameObject);
+        _camera.Launch(_activeCar.transform);
     }
 
     private void OnApplicationQuit()
