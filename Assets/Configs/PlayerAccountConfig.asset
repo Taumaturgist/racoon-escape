@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: PlayerAccountConfig
   m_EditorClassIdentifier: 
   PlayerID: 0
+  Camera: {fileID: 1608220958813791805, guid: 5ba82fe74b88dff43895b6bbd760eae2, type: 3}
   PlayerActiveCar: {fileID: -603158850229641492, guid: 96fb2e0db858f014c968b2151bd0c855, type: 3}
   PACSpawnPosition: {x: 9, y: 0, z: 60}
   CarMotorForce: 500
   CarMass: 1500
+  CarAngularDrug: 6
   CarMassCenterShiftY: -1
   CarMaxSpeed: 100
   MaxSteerAngle: 20

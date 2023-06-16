@@ -5,6 +5,9 @@ public class PlayerAccountConfig : ScriptableObject
 {
     public float PlayerID;
 
+    [Header("Camera")]
+    public CameraSettings Camera;
+
     [Header("Cars")]
     public PlayerActiveCar PlayerActiveCar;
     public Vector3 PACSpawnPosition;
@@ -12,6 +15,7 @@ public class PlayerAccountConfig : ScriptableObject
     [Header("GeneralCarSettings")]
     public float CarMotorForce;
     public float CarMass;
+    public float CarAngularDrug;
     public float CarMassCenterShiftY;
     public float CarMaxSpeed;    
     public float MaxSteerAngle;
