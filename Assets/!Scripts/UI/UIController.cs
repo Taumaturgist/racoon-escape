@@ -21,4 +21,16 @@ public class UIController : MonoBehaviour
         mainMenuScreen.gameObject.SetActive(false);
         actionScreen.gameObject.SetActive(true);
     }
+
+    public void EnterShop()
+    {
+        mainMenuScreen.gameObject.SetActive(false);
+        shopScreen.gameObject.SetActive(true);
+    }
+
+    public void ExitShop()
+    {
+        shopScreen.gameObject.SetActive(false);
+        mainMenuScreen.gameObject.SetActive(true);
+    }
 }

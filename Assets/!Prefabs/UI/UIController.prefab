@@ -1382,6 +1382,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -1919236468897869148}
+    - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
 --- !u!114 &4099325199701380300 stripped
@@ -1458,6 +1486,34 @@ PrefabInstance:
     - target: {fileID: 567031842571319317, guid: d2922c25550852244805571c65119c8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322512609124604466, guid: d2922c25550852244805571c65119c8c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322512609124604466, guid: d2922c25550852244805571c65119c8c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322512609124604466, guid: d2922c25550852244805571c65119c8c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -1919236468897869148}
+    - target: {fileID: 1322512609124604466, guid: d2922c25550852244805571c65119c8c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322512609124604466, guid: d2922c25550852244805571c65119c8c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322512609124604466, guid: d2922c25550852244805571c65119c8c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322512609124604466, guid: d2922c25550852244805571c65119c8c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2439717785688274841, guid: d2922c25550852244805571c65119c8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
