@@ -1,4 +1,5 @@
 using UnityEngine;
+using UniRx;
 
 public class PlayerActiveCar : MonoBehaviour
 {
@@ -48,7 +49,15 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _NitroTorqueBoost;
 
 	public void Launch(Game game)
-	{		
+	{
+		MessageBroker
+			.Default
+			.Receive<OnEraseCar>()
+			.Subscribe(message => {				
+				Destroy(gameObject);					
+			})
+			.AddTo(this);
+
 		_game = game;
 
 		_maxSteerAngle = carConfig.MaxSteerAngle;		
