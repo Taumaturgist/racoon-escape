@@ -48,7 +48,7 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _NitroTorqueBoost;
 
 	public void Launch(Game game)
-	{		
+	{
 		_game = game;
 
 		_maxSteerAngle = carConfig.MaxSteerAngle;		
@@ -85,7 +85,7 @@ public class PlayerActiveCar : MonoBehaviour
     {
 		return Mathf.RoundToInt(_currentNitroLevel);
 	}
-
+	
 	private void FixedUpdate()
 	{
 		CheckConditions();
@@ -371,5 +371,5 @@ public class PlayerActiveCar : MonoBehaviour
 				_currentNitroLevel = _nitroCapacity;
             }
         }
-    }
+    }	
 }
