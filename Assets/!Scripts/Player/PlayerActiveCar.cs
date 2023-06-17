@@ -1,5 +1,4 @@
 using UnityEngine;
-using UniRx;
 
 public class PlayerActiveCar : MonoBehaviour
 {
@@ -50,14 +49,6 @@ public class PlayerActiveCar : MonoBehaviour
 
 	public void Launch(Game game)
 	{
-		MessageBroker
-			.Default
-			.Receive<OnEraseCar>()
-			.Subscribe(message => {				
-				Destroy(gameObject);					
-			})
-			.AddTo(this);
-
 		_game = game;
 
 		_maxSteerAngle = carConfig.MaxSteerAngle;		
@@ -94,7 +85,7 @@ public class PlayerActiveCar : MonoBehaviour
     {
 		return Mathf.RoundToInt(_currentNitroLevel);
 	}
-
+	
 	private void FixedUpdate()
 	{
 		CheckConditions();
@@ -380,5 +371,5 @@ public class PlayerActiveCar : MonoBehaviour
 				_currentNitroLevel = _nitroCapacity;
             }
         }
-    }
+    }	
 }

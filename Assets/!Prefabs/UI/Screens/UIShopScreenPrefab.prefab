@@ -233,9 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefabs:
-  - {fileID: -603158850229641492, guid: 96fb2e0db858f014c968b2151bd0c855, type: 3}
-  - {fileID: -603158850229641492, guid: 541578b3549f7ba4aab9bc28d8f7f54e, type: 3}
-  - {fileID: -603158850229641492, guid: 3c2bc1d64be4288478e5536e5f6931dc, type: 3}
+  - {fileID: 436067910035140417, guid: 96fb2e0db858f014c968b2151bd0c855, type: 3}
+  - {fileID: 7583957033510607630, guid: 541578b3549f7ba4aab9bc28d8f7f54e, type: 3}
+  - {fileID: 3154559454780343831, guid: 3c2bc1d64be4288478e5536e5f6931dc, type: 3}
 --- !u!1 &780774993617279180
 GameObject:
   m_ObjectHideFlags: 0

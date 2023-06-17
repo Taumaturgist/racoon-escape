@@ -2,47 +2,71 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
+public readonly struct OnPlayerCarIDRequestMessage
+{ }
+
 public class Shop : MonoBehaviour
 {
-    [SerializeField] private List<PlayerActiveCar> carPrefabs;
+    [SerializeField] private List<PlayerCarShopView> carPrefabs;
 
-    private int _currentCarIndex;
+    private int _currentShopCarIndex;
+    private int _currentPlayerCarIndex;
+
+    private bool _isFirstShopEntrance = true;
 
     public void ShowPreviousCar()
     {
-        Debug.Log("Previous pressed");
         SwitchCar(-1);
     }
 
     public void ShowNextCar()
     {
-        Debug.Log("Next pressed");
         SwitchCar(1);
     }
 
     private void SwitchCar(int indexDiff)
     {
-        _currentCarIndex += indexDiff;
-       
-
-        if (_currentCarIndex >= carPrefabs.Count)
+        if (_isFirstShopEntrance)
         {
-            _currentCarIndex = 0;
+            MessageBroker
+                .Default
+                .Publish(new OnPlayerCarIDRequestMessage());
+            _currentShopCarIndex = _currentPlayerCarIndex;
+            _isFirstShopEntrance = false;
+        }       
+
+        _currentShopCarIndex += indexDiff;       
+
+        if (_currentShopCarIndex >= carPrefabs.Count)
+        {
+            _currentShopCarIndex = 0;
         }
 
-        if (_currentCarIndex < 0)
+        if (_currentShopCarIndex < 0)
         {
-            _currentCarIndex = carPrefabs.Count - 1;
+            _currentShopCarIndex = carPrefabs.Count - 1;
         }
 
-        Debug.Log(_currentCarIndex);
+        Debug.Log(_currentShopCarIndex);
 
         MessageBroker
             .Default
-            .Publish(new OnShopCarViewSwitchMessage(carPrefabs[_currentCarIndex]));
+            .Publish(new OnShopCarViewSwitchMessage(carPrefabs[_currentShopCarIndex]));
     }
+
     public void PurchaseCar()
     {
 
+    }
+
+    private void Start()
+    {
+        MessageBroker
+            .Default
+            .Receive<OnDeclareCarIDMessage>()
+            .Subscribe(message =>
+            {
+                _currentPlayerCarIndex = message.CarID;
+            });
     }
 }

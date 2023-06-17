@@ -4,16 +4,26 @@ using UniRx;
 
 public readonly struct OnShopCarViewSwitchMessage
 {
-    public readonly PlayerActiveCar CarPrefab;
+    public readonly PlayerCarShopView CarPrefab;
 
-    public OnShopCarViewSwitchMessage(PlayerActiveCar carPrefab)
+    public OnShopCarViewSwitchMessage(PlayerCarShopView carPrefab)
     {
         CarPrefab = carPrefab;
     }
 }
 
-public readonly struct OnEraseCar
+public readonly struct OnEraseCarMessage
 { }
+
+public readonly struct OnDeclareCarIDMessage
+{
+    public readonly int CarID;
+
+    public OnDeclareCarIDMessage(int carID)
+    {
+        CarID = carID;
+    }
+}
 
 public class PlayerAccount : MonoBehaviour
 {
@@ -29,7 +39,7 @@ public class PlayerAccount : MonoBehaviour
 
     private CameraSettings _camera;
 
-    private int _odometer;
+    private int _odometer;    
 
     public int GetOdometer()
     {
@@ -47,13 +57,23 @@ public class PlayerAccount : MonoBehaviour
         _activeCar = Instantiate(_playerAccountConfig.PlayerActiveCar, _playerAccountConfig.PACSpawnPosition, transform.rotation);
         _activeCar.Launch(_game);
 
+        MessageBroker
+            .Default
+            .Receive<OnPlayerCarIDRequestMessage>()
+            .Subscribe(message =>
+            {
+                MessageBroker
+                .Default
+                .Publish(new OnDeclareCarIDMessage(_activeCar.GetComponent<PlayerCarShopView>().GetCarModelID()));
+            });       
+
         _camera = Instantiate(_playerAccountConfig.Camera);
         _camera.Launch(_activeCar.transform);
 
         MessageBroker
             .Default
             .Receive<OnShopCarViewSwitchMessage>()
-            .Subscribe(message => SwitchShopView(message.CarPrefab));
+            .Subscribe(message => SwitchShopView(message.CarPrefab.GetComponent<PlayerActiveCar>()));
     }
 
     private void OnApplicationQuit()
@@ -66,10 +86,11 @@ public class PlayerAccount : MonoBehaviour
     {
         MessageBroker
             .Default
-            .Publish(new OnEraseCar());
+            .Publish(new OnEraseCarMessage());
 
-        _activeCar = Instantiate(carPrefab, _playerAccountConfig.PACSpawnPosition, transform.rotation);
-        _activeCar.Launch(_game);
+        _activeCar = Instantiate(carPrefab.GetComponent<PlayerActiveCar>(), _playerAccountConfig.PACSpawnPosition, transform.rotation);
+        _activeCar.Launch(_game);       
+
         _camera.Launch(_activeCar.transform);
     }
 }
