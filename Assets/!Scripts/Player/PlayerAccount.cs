@@ -68,7 +68,7 @@ public class PlayerAccount : MonoBehaviour
             });       
 
         _camera = Instantiate(_playerAccountConfig.Camera);
-        _camera.Launch(_activeCar.transform);
+        _camera.Launch(_activeCar.transform, _activeCar.GetComponent<PlayerCarShopView>().GetCarModelID());
 
         MessageBroker
             .Default
@@ -91,6 +91,6 @@ public class PlayerAccount : MonoBehaviour
         _activeCar = Instantiate(carPrefab.GetComponent<PlayerActiveCar>(), _playerAccountConfig.PACSpawnPosition, transform.rotation);
         _activeCar.Launch(_game);       
 
-        _camera.Launch(_activeCar.transform);
+        _camera.Launch(_activeCar.transform, _activeCar.GetComponent<PlayerCarShopView>().GetCarModelID());
     }
 }
