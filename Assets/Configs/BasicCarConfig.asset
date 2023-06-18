@@ -32,3 +32,6 @@ MonoBehaviour:
   NitroRestorationSpeed: 1
   NitroSpeedBoost: 100
   NitroTorqueBoost: 1000
+  DefeatActivationSpeed: 85
+  DefeatWarningSpeed: 80
+  DefeatConditionSpeed: 70

@@ -30,5 +30,9 @@ public class PlayerActiveCarConfig : ScriptableObject
     public float NitroRestorationSpeed;
     public float NitroSpeedBoost;
     public float NitroTorqueBoost;
-    
+
+    [Header("Misc")]
+    public float DefeatActivationSpeed;
+    public float DefeatWarningSpeed;
+    public float DefeatConditionSpeed;    
 }

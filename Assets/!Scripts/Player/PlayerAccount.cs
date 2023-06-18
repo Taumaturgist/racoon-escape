@@ -74,12 +74,15 @@ public class PlayerAccount : MonoBehaviour
             .Default
             .Receive<OnShopCarViewSwitchMessage>()
             .Subscribe(message => SwitchShopView(message.CarPrefab.GetComponent<PlayerActiveCar>()));
-    }
 
-    private void OnApplicationQuit()
-    {
-        _odometer += _activeCar.GetCurrentRideDistance();
-        _serializer.Save(_odometer);
+        MessageBroker
+            .Default
+            .Receive<OnGameStartMessage>()
+            .Subscribe(message =>
+            {
+                _activeCar.transform.position = _playerAccountConfig.PACSpawnPosition;
+                _activeCar.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            });
     }
 
     private void SwitchShopView(PlayerActiveCar carPrefab)
@@ -89,8 +92,14 @@ public class PlayerAccount : MonoBehaviour
             .Publish(new OnEraseCarMessage());
 
         _activeCar = Instantiate(carPrefab.GetComponent<PlayerActiveCar>(), _playerAccountConfig.PACSpawnPosition, transform.rotation);
-        _activeCar.Launch(_game);       
+        _activeCar.Launch(_game);
 
         _camera.Launch(_activeCar.transform, _activeCar.GetComponent<PlayerCarShopView>().GetCarModelID());
     }
+
+    private void OnApplicationQuit()
+    {
+        _odometer += _activeCar.GetCurrentRideDistance();
+        _serializer.Save(_odometer);
+    }    
 }
