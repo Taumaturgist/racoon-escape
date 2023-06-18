@@ -11,11 +11,27 @@ public class CameraSettings : MonoBehaviour
 	private Transform _objectToFollow;
 	private Transform _cameraTransform;
 
-    public void Launch(Transform objectToFollow)
+    public void Launch(Transform objectToFollow, int carID)
     {
 		_objectToFollow = objectToFollow;
 		_cameraTransform = transform;
-    }
+
+		switch (carID)
+		{
+			case 0:
+				offsetShoulderView = new Vector3(0f, 1.3f, -3.35f);
+				break;
+			case 1:
+				offsetShoulderView = new Vector3(0f, 1.4f, -3.35f);
+				break;
+			case 2:
+				offsetShoulderView = new Vector3(0f, 1.1f, -3.35f);
+				break;
+			default:
+				offsetShoulderView = new Vector3(0f, 2f, -5f);
+				break;
+		}
+	}
 
     private void FixedUpdate()
 	{
