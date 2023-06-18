@@ -1,4 +1,5 @@
 using UnityEngine;
+using UniRx;
 
 public class PlayerActiveCar : MonoBehaviour
 {
@@ -47,6 +48,12 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _nitroSpeedBoost;
 	private float _NitroTorqueBoost;
 
+	private float _defeatActivationSpeed;
+	private float _defeatConditionSpeed;
+	private bool _canLose;
+	private bool _isLossConditionActivated;
+	private bool _hasLost;
+
 	public void Launch(Game game)
 	{
 		_game = game;
@@ -69,6 +76,9 @@ public class PlayerActiveCar : MonoBehaviour
 		_startPosition = _carTransform.position;
 
 		_limitRotationAngleY = carConfig.LimitRotationY;
+
+		_defeatActivationSpeed = carConfig.DefeatActivationSpeed;
+		_defeatConditionSpeed = carConfig.DefeatConditionSpeed;
 	}
 
 	public int GetSpeed()
@@ -111,12 +121,21 @@ public class PlayerActiveCar : MonoBehaviour
 		switch(_game.GetGameState())
         {
 			case GameState.Pause:
+			case GameState.Defeat:
 				_isActive = false;
+				_canLose = false;
+				_isLossConditionActivated = false;
 				break;
 			case GameState.Action:				
 				_isActive = true;
+				_hasLost = false;
 				break;
         }
+
+		if (_hasLost)
+        {
+			_carRigidbody.velocity = Vector3.zero;
+		}
 
 		if (_speed >= _speedLimit)
 		{
@@ -135,6 +154,26 @@ public class PlayerActiveCar : MonoBehaviour
 		{
 			_canUseBrakes = false;
 		}
+
+		if (!_isLossConditionActivated)
+        {
+			if (_speed >= _defeatActivationSpeed)
+            {
+				_canLose = true;
+				_isLossConditionActivated = true;
+			}
+        }
+
+		if (_canLose)
+        {
+			if (_speed <= _defeatConditionSpeed)
+            {
+				MessageBroker
+					.Default
+					.Publish(new OnPlayerDefeatedMessage());
+				_hasLost = true;
+			}
+        }
 	}
 
 	private void Steer()
@@ -191,6 +230,11 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private void AccelerateAuto()
 	{
+		if (!_isActive)
+		{
+			return;
+		}
+
 		if (_isNitroOn)
         {
 			_currentMotorForce = _isAccelerating ? _motorForce + _NitroTorqueBoost : 0;
