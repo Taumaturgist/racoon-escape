@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class CameraSettings : MonoBehaviour
 {
-	[SerializeField] private Vector3 offsetShoulderView;
-	[SerializeField] private Quaternion rotationShoulderView;
-
 	[SerializeField] private float followSpeed;
 	[SerializeField] private float lookSpeed;
+
+	private CameraChoiceOffsetAndRotation _cameraChoiceOffsetAndRotation;
+	private Vector3 offsetShoulderView;
+	private Quaternion rotationShoulderView;
 
 	private Transform _objectToFollow;
 	private Transform _cameraTransform;
@@ -16,21 +17,8 @@ public class CameraSettings : MonoBehaviour
 		_objectToFollow = objectToFollow;
 		_cameraTransform = transform;
 
-		switch (carID)
-		{
-			case 0:
-				offsetShoulderView = new Vector3(0f, 1.3f, -3.35f);
-				break;
-			case 1:
-				offsetShoulderView = new Vector3(0f, 1.4f, -3.35f);
-				break;
-			case 2:
-				offsetShoulderView = new Vector3(0f, 1.1f, -3.35f);
-				break;
-			default:
-				offsetShoulderView = new Vector3(0f, 2f, -5f);
-				break;
-		}
+        _cameraChoiceOffsetAndRotation = GetComponent<CameraChoiceOffsetAndRotation>();
+        _cameraChoiceOffsetAndRotation.GetCameraOffsetAndRotation(carID, ref offsetShoulderView, ref rotationShoulderView);
 	}
 
     private void FixedUpdate()
