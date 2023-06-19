@@ -49,6 +49,9 @@ public class UIController : MonoBehaviour
             {
                 ShowLoseScreen();
             });
+
+        hud.Launch();
+        loseScreen.Launch();
     }
 
     private void ShowLoseScreen()
