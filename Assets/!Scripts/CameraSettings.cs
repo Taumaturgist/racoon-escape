@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class CameraSettings : MonoBehaviour
 {
+	[SerializeField] private CameraSettingsConfig cameraSettingsConfig;
 	[SerializeField] private float followSpeed;
 	[SerializeField] private float lookSpeed;
 
-	private CameraChoiceOffsetAndRotation _cameraChoiceOffsetAndRotation;
-	private Vector3 offsetShoulderView;
-	private Quaternion rotationShoulderView;
+	private Vector3 _offsetShoulderView;
+	private Quaternion _rotationShoulderView;
 
 	private Transform _objectToFollow;
 	private Transform _cameraTransform;
@@ -17,9 +17,8 @@ public class CameraSettings : MonoBehaviour
 		_objectToFollow = objectToFollow;
 		_cameraTransform = transform;
 
-        _cameraChoiceOffsetAndRotation = GetComponent<CameraChoiceOffsetAndRotation>();
-        _cameraChoiceOffsetAndRotation.GetCameraOffsetAndRotation(carID, ref offsetShoulderView, ref rotationShoulderView);
-	}
+		ChooseCameraTransform(ref carID);
+    }
 
     private void FixedUpdate()
 	{
@@ -27,15 +26,31 @@ public class CameraSettings : MonoBehaviour
 		LookAtTarget();
     }
 
-	public void MoveToTarget()
+	private void ChooseCameraTransform(ref int carID)
+	{
+        switch (carID)
+        {
+            case 0:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[0].offsetShoulderView;
+                break;
+            case 1:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[1].offsetShoulderView;
+                break;
+            case 2:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[2].offsetShoulderView;
+                break;
+        }
+    }
+
+	private void MoveToTarget()
 	{
 		Vector3 _targetPos = _objectToFollow.position +
-							 _objectToFollow.forward * offsetShoulderView.z +
-							 _objectToFollow.right * offsetShoulderView.x +
-							 _objectToFollow.up * offsetShoulderView.y;
+							 _objectToFollow.forward * _offsetShoulderView.z +
+							 _objectToFollow.right * _offsetShoulderView.x +
+							 _objectToFollow.up * _offsetShoulderView.y;
 		_cameraTransform.position = Vector3.Lerp(_cameraTransform.position, _targetPos, followSpeed * Time.fixedDeltaTime);
 	}
-	public void LookAtTarget()
+	private void LookAtTarget()
 	{
 		Vector3 _lookDirection = _objectToFollow.position - _cameraTransform.position;
 		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
