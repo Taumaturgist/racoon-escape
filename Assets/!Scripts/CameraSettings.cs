@@ -52,8 +52,8 @@ public class CameraSettings : MonoBehaviour
 	}
 	private void LookAtTarget()
 	{
-		Vector3 _lookDirection = _objectToFollow.position - _cameraTransform.position;
-		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
-		_cameraTransform.rotation = Quaternion.Lerp(_cameraTransform.rotation, _rot, lookSpeed * Time.fixedDeltaTime);
+		var lookDirection = _objectToFollow.position - _cameraTransform.position;
+		var rot = Quaternion.LookRotation(lookDirection, Vector3.up);
+		_cameraTransform.rotation = Quaternion.Lerp(_cameraTransform.rotation, rot, lookSpeed * Time.fixedDeltaTime);
 	}
 }
