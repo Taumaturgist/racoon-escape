@@ -30,14 +30,14 @@ public class CameraSettings : MonoBehaviour
 	{
         switch (carID)
         {
-            case 0:
-                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[0].offsetShoulderView;
+            case (int)eCarModel.BasicPickUp:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.BasicPickUp].offsetShoulderView;
                 break;
-            case 1:
-                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[1].offsetShoulderView;
+			case (int)eCarModel.Tundra:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.Tundra].offsetShoulderView;
                 break;
-            case 2:
-                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[2].offsetShoulderView;
+            case (int)eCarModel.Huracan:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.Huracan].offsetShoulderView;
                 break;
         }
     }
