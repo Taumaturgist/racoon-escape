@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class CameraSettings : MonoBehaviour
 {
-	[SerializeField] private Vector3 offsetShoulderView;
-	[SerializeField] private Quaternion rotationShoulderView;
-
+	[SerializeField] private CameraSettingsConfig cameraSettingsConfig;
 	[SerializeField] private float followSpeed;
 	[SerializeField] private float lookSpeed;
+
+	private Vector3 _offsetShoulderView;
+	private Quaternion _rotationShoulderView;
 
 	private Transform _objectToFollow;
 	private Transform _cameraTransform;
@@ -16,22 +17,8 @@ public class CameraSettings : MonoBehaviour
 		_objectToFollow = objectToFollow;
 		_cameraTransform = transform;
 
-		switch (carID)
-		{
-			case 0:
-				offsetShoulderView = new Vector3(0f, 1.3f, -3.35f);
-				break;
-			case 1:
-				offsetShoulderView = new Vector3(0f, 1.4f, -3.35f);
-				break;
-			case 2:
-				offsetShoulderView = new Vector3(0f, 1.1f, -3.35f);
-				break;
-			default:
-				offsetShoulderView = new Vector3(0f, 2f, -5f);
-				break;
-		}
-	}
+		ChooseCameraTransform(ref carID);
+    }
 
     private void FixedUpdate()
 	{
@@ -39,18 +26,34 @@ public class CameraSettings : MonoBehaviour
 		LookAtTarget();
     }
 
-	public void MoveToTarget()
+	private void ChooseCameraTransform(ref int carID)
+	{
+        switch (carID)
+        {
+            case (int)eCarModel.BasicPickUp:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.BasicPickUp].offsetShoulderView;
+                break;
+			case (int)eCarModel.ToyotaTundra:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.ToyotaTundra].offsetShoulderView;
+                break;
+            case (int)eCarModel.LamborghiniHuracanLP700:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.LamborghiniHuracanLP700].offsetShoulderView;
+                break;
+        }
+    }
+
+	private void MoveToTarget()
 	{
 		Vector3 _targetPos = _objectToFollow.position +
-							 _objectToFollow.forward * offsetShoulderView.z +
-							 _objectToFollow.right * offsetShoulderView.x +
-							 _objectToFollow.up * offsetShoulderView.y;
+							 _objectToFollow.forward * _offsetShoulderView.z +
+							 _objectToFollow.right * _offsetShoulderView.x +
+							 _objectToFollow.up * _offsetShoulderView.y;
 		_cameraTransform.position = Vector3.Lerp(_cameraTransform.position, _targetPos, followSpeed * Time.fixedDeltaTime);
 	}
-	public void LookAtTarget()
+	private void LookAtTarget()
 	{
-		Vector3 _lookDirection = _objectToFollow.position - _cameraTransform.position;
-		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
-		_cameraTransform.rotation = Quaternion.Lerp(_cameraTransform.rotation, _rot, lookSpeed * Time.fixedDeltaTime);
+		var lookDirection = _objectToFollow.position - _cameraTransform.position;
+		var rot = Quaternion.LookRotation(lookDirection, Vector3.up);
+		_cameraTransform.rotation = Quaternion.Lerp(_cameraTransform.rotation, rot, lookSpeed * Time.fixedDeltaTime);
 	}
 }
