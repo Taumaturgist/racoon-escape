@@ -33,11 +33,11 @@ public class CameraSettings : MonoBehaviour
             case (int)eCarModel.BasicPickUp:
                 _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.BasicPickUp].offsetShoulderView;
                 break;
-			case (int)eCarModel.Tundra:
-                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.Tundra].offsetShoulderView;
+			case (int)eCarModel.ToyotaTundra:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.ToyotaTundra].offsetShoulderView;
                 break;
-            case (int)eCarModel.Huracan:
-                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.Huracan].offsetShoulderView;
+            case (int)eCarModel.LamborghiniHuracanLP700:
+                _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.LamborghiniHuracanLP700].offsetShoulderView;
                 break;
         }
     }

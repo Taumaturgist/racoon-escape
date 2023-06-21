@@ -7,8 +7,7 @@ public class CameraSettingsConfig : ScriptableObject
     [Serializable]
     public struct CameraTransformData
     {
-        public int carID;
-        public string carName;
+        public eCarModel carModel;
         public Vector3 offsetShoulderView;
         public Quaternion rotationShoulderView;
     }
