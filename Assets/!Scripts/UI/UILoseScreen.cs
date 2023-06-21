@@ -15,7 +15,7 @@ public class UILoseScreen : UIScreen
             .Receive<OnOdometerUpdateMessage>()
             .Subscribe(message =>
             {
-                odometerText.text = $"{message.Odometer} M$";
+                odometerText.text = $"{message.Odometer} M";
             });
 
         MessageBroker
