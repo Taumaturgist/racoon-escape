@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: 0
   Camera: {fileID: 1608220958813791805, guid: 5ba82fe74b88dff43895b6bbd760eae2, type: 3}
-  PlayerActiveCar: {fileID: -603158850229641492, guid: 3c2bc1d64be4288478e5536e5f6931dc, type: 3}
+  PlayerActiveCar: {fileID: -603158850229641492, guid: f6082e4a68ab9074a9c523c23701f290, type: 3}
   PACSpawnPosition: {x: 9, y: 0, z: 60}
