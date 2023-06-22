@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a11b92abf40182b439c9911b385b4484
+guid: b9e14bb6e1d511249b9c7ea674954af0
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -12,22 +12,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Body_Tvoyta
-    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: HeadLights_Mat
-    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lattice1_Mat
+      name: Wheel_Mat
     second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
   materials:
     materialImportMode: 2

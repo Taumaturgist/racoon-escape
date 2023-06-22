@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 18bb827680611584faaef16a6fbaee6d
+guid: 774d3046ca1ca5c48ae032ffb470ec31
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Cars_Tex
+    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_Mers
+    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeadLights_Mat
+    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lattice1_Mat
+    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
