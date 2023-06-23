@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2515979562634652367}
   m_Layer: 0
-  m_Name: TundraLockedVisual
+  m_Name: ViperLockedVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,69 +28,69 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3702571044278160844}
+  - {fileID: 703240582715321105}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &3812461745417857575
+--- !u!1001 &1029302213914119418
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 2515979562634652367}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
+    - target: {fileID: 919132149155446097, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
       propertyPath: m_Name
-      value: Toyota Tundra L11 Locked
+      value: Dodge Viper GTS L11 Locked
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
---- !u!4 &3702571044278160844 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
+--- !u!4 &703240582715321105 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66b3b5b0f5c818648a531c4623eb245d, type: 3}
-  m_PrefabInstance: {fileID: 3812461745417857575}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe03adde798e5a74bb68c9a857eafd88, type: 3}
+  m_PrefabInstance: {fileID: 1029302213914119418}
   m_PrefabAsset: {fileID: 0}

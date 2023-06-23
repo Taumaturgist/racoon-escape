@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 18bb827680611584faaef16a6fbaee6d
+guid: f5ba5c1071019ea439d3a6d025379fb2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Cars_Tex
+    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Wheel_Mat
+    second: {fileID: 2100000, guid: e4bed11bb807d644db0158cb85d9e845, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
