@@ -21,4 +21,42 @@ public class UIController : MonoBehaviour
         mainMenuScreen.gameObject.SetActive(false);
         actionScreen.gameObject.SetActive(true);
     }
+
+    public void EnterShop()
+    {
+        mainMenuScreen.gameObject.SetActive(false);
+        shopScreen.gameObject.SetActive(true);
+    }
+
+    public void ExitShop()
+    {
+        shopScreen.gameObject.SetActive(false);
+        mainMenuScreen.gameObject.SetActive(true);
+    }
+
+    public void ExitLoseScreen()
+    {
+        loseScreen.gameObject.SetActive(false);
+        mainMenuScreen.gameObject.SetActive(true);
+    }
+
+    private void Awake()
+    {
+        MessageBroker
+            .Default
+            .Receive<OnPlayerDefeatedMessage>()
+            .Subscribe(message =>
+            {
+                ShowLoseScreen();
+            });
+
+        hud.Launch();
+        loseScreen.Launch();
+    }
+
+    private void ShowLoseScreen()
+    {
+        actionScreen.gameObject.SetActive(false);
+        loseScreen.gameObject.SetActive(true);
+    }
 }

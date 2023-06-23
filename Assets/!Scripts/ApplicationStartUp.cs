@@ -6,6 +6,7 @@ public class ApplicationStartUp : MonoBehaviour
 
     [Header("Configs")]
     public PlayerAccountConfig PlayerAccountConfig;
+    public PlayerMoneyConfig PlayerMoneyConfig;
     public EnvironmentConfig EnvironmentConfig;
     public DebugConfig DebugConfig;
     public BlockSpawnConfig BlockSpawnConfig;
@@ -17,6 +18,7 @@ public class ApplicationStartUp : MonoBehaviour
         gameObject.AddComponent<PlayerDataStorage>();
         gameObject.AddComponent<Serializer>();
         gameObject.AddComponent<DebugSettings>();
+        gameObject.AddComponent<PlayerMoney>();
         gameObject.AddComponent<PlayerAccount>();
         gameObject.AddComponent<Environment>();
         gameObject.AddComponent<BlockStorageCreation>();

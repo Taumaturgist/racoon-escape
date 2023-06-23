@@ -1,21 +1,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public readonly struct PlayerData
+{
+    public readonly int Odometer;
+    public readonly int Balance;
+
+    public PlayerData(int odometer, int balance)
+    {
+        Odometer = odometer;
+        Balance = balance;
+    }
+}
+
 public class Serializer : MonoBehaviour
 {
+    
     private PlayerDataStorage playerDataStorage;
-    public void Save(int odometer)
+    public void Save(PlayerData playerData)
     {
-        PlayerPrefs.SetInt("odometer", odometer);
-    }
+        PlayerPrefs.SetInt("odometer", playerData.Odometer);
+        PlayerPrefs.SetInt("balance", playerData.Balance);
+    }    
 
-    public Dictionary<string, int> Load()
+    public PlayerData Load()
     {
-        var storage = new Dictionary<string, int>();
+        var playerData = new PlayerData(
+            PlayerPrefs.GetInt("odometer"),
+            PlayerPrefs.GetInt("balance"));
 
-        int odometer = PlayerPrefs.GetInt("odometer");
-        storage.Add("odometer", odometer);
-
-        return storage;
+        return playerData;
     }
 }

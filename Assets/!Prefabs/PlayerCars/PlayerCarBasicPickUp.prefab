@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 619668199118113092}
   - component: {fileID: -603158850229641492}
   - component: {fileID: 8662433363287228873}
+  - component: {fileID: 436067910035140417}
   m_Layer: 0
   m_Name: PlayerCarBasicPickUp
   m_TagString: Player
@@ -503,6 +504,7 @@ MonoBehaviour:
   stopLightLeft: {fileID: 2081236439975810255}
   stopLightRight: {fileID: 8775067634746743113}
   nitroLight: {fileID: 8166052560207803273}
+  carConfig: {fileID: 11400000, guid: 7916bb0641800fd4cb0d2b1d29a0d66f, type: 2}
 --- !u!65 &8662433363287228873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -516,6 +518,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5532038, y: 0.8791347, z: 4.808749}
   m_Center: {x: 0, y: 0.03309354, z: -0.070268154}
+--- !u!114 &436067910035140417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328153484271297579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cee3cc236b463f4f8631e73fcddce92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carModelID: 0
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0

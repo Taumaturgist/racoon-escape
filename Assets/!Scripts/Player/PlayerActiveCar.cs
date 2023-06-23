@@ -1,10 +1,12 @@
 using UnityEngine;
+using UniRx;
 
 public class PlayerActiveCar : MonoBehaviour
 {
 	[SerializeField] private WheelCollider frontLeftW, frontRightW, rearLeftW, rearRightW;
 	[SerializeField] private Transform frontLeftT, frontRightT, rearLeftT, rearRightT;
 	[SerializeField] private GameObject stopLightLeft, stopLightRight, nitroLight;
+	[SerializeField] private PlayerActiveCarConfig carConfig;
 	
 	private const float FullCircle = 360f;
 	private const float HalfCircle = 180f;
@@ -27,10 +29,6 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _steeringAngle;
 	private float _limitRotationAngleY;	
 
-	private float _spring;
-	private float _damper;
-	private float _targetPos;
-
 	private bool _isActive = true;
 	private bool _isAccelerating = true;
 	private bool _canUseBrakes;
@@ -50,29 +48,37 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _nitroSpeedBoost;
 	private float _NitroTorqueBoost;
 
-	public void Launch(PlayerAccountConfig playerAccountConfig, Game game)
-	{		
+	private float _defeatActivationSpeed;
+	private float _defeatConditionSpeed;
+	private bool _canLose;
+	private bool _isLossConditionActivated;
+	private bool _hasLost;
+
+	public void Launch(Game game)
+	{
 		_game = game;
 
-		_maxSteerAngle = playerAccountConfig.MaxSteerAngle;		
+		_maxSteerAngle = carConfig.MaxSteerAngle;		
 		
 		_carRigidbody = GetComponent<Rigidbody>();
-		_carRigidbody.mass = playerAccountConfig.CarMass;
-		_carRigidbody.angularDrag = playerAccountConfig.CarAngularDrug;
-		_carRigidbody.centerOfMass = new Vector3(0, playerAccountConfig.CarMassCenterShiftY, 0);
+		_carRigidbody.mass = carConfig.CarMass;
+		_carRigidbody.angularDrag = carConfig.CarAngularDrug;
+		_carRigidbody.centerOfMass = new Vector3(0, carConfig.CarMassCenterShiftY, 0);
 
-		SetSuspension(playerAccountConfig);		
+		SetSuspension();	
+		SetEngine();		
 
-		SetEngine(playerAccountConfig);		
-
-		_standardSpeedLimit = playerAccountConfig.CarMaxSpeed;
+		_standardSpeedLimit = carConfig.CarMaxSpeed;
 		_speedLimit = _standardSpeedLimit;
-		_breakSpeedLimit = _speedLimit * (1 - playerAccountConfig.CarBreakPower / 100);
+		_breakSpeedLimit = _speedLimit * (1 - carConfig.CarBreakPower / 100);
 
 		_carTransform = GetComponent<Transform>();
 		_startPosition = _carTransform.position;
 
-		_limitRotationAngleY = playerAccountConfig.LimitRotationY;
+		_limitRotationAngleY = carConfig.LimitRotationY;
+
+		_defeatActivationSpeed = carConfig.DefeatActivationSpeed;
+		_defeatConditionSpeed = carConfig.DefeatConditionSpeed;
 	}
 
 	public int GetSpeed()
@@ -89,7 +95,7 @@ public class PlayerActiveCar : MonoBehaviour
     {
 		return Mathf.RoundToInt(_currentNitroLevel);
 	}
-
+	
 	private void FixedUpdate()
 	{
 		CheckConditions();
@@ -115,12 +121,21 @@ public class PlayerActiveCar : MonoBehaviour
 		switch(_game.GetGameState())
         {
 			case GameState.Pause:
+			case GameState.Defeat:
 				_isActive = false;
+				_canLose = false;
+				_isLossConditionActivated = false;
 				break;
 			case GameState.Action:				
 				_isActive = true;
+				_hasLost = false;
 				break;
         }
+
+		if (_hasLost)
+        {
+			_carRigidbody.velocity = Vector3.zero;
+		}
 
 		if (_speed >= _speedLimit)
 		{
@@ -139,6 +154,26 @@ public class PlayerActiveCar : MonoBehaviour
 		{
 			_canUseBrakes = false;
 		}
+
+		if (!_isLossConditionActivated)
+        {
+			if (_speed >= _defeatActivationSpeed)
+            {
+				_canLose = true;
+				_isLossConditionActivated = true;
+			}
+        }
+
+		if (_canLose)
+        {
+			if (_speed <= _defeatConditionSpeed)
+            {
+				MessageBroker
+					.Default
+					.Publish(new OnPlayerDefeatedMessage());
+				_hasLost = true;
+			}
+        }
 	}
 
 	private void Steer()
@@ -195,6 +230,11 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private void AccelerateAuto()
 	{
+		if (!_isActive)
+		{
+			return;
+		}
+
 		if (_isNitroOn)
         {
 			_currentMotorForce = _isAccelerating ? _motorForce + _NitroTorqueBoost : 0;
@@ -304,55 +344,51 @@ public class PlayerActiveCar : MonoBehaviour
 		transform.rotation = quat;
 	}
 
-	private void SetSuspension(PlayerAccountConfig playerConfig)
+	private void SetSuspension()
 	{
-		_spring = playerConfig.Spring;
-		_damper = playerConfig.Damper;
-		_targetPos = playerConfig.TargetPosition;
-
 		var wheelColliders = new[] { frontLeftW, frontRightW, rearLeftW, rearRightW };
 		var suspensionSpring = new JointSpring();
-		suspensionSpring.spring = _spring;
-		suspensionSpring.damper = _damper;
-		suspensionSpring.targetPosition = _targetPos;
+		suspensionSpring.spring = carConfig.Spring;
+		suspensionSpring.damper = carConfig.Damper;
+		suspensionSpring.targetPosition = carConfig.TargetPosition;
 
 		foreach (var wheelCollider in wheelColliders)
 		{
-			wheelCollider.wheelDampingRate = playerConfig.WheelDampingRate;
-			wheelCollider.suspensionDistance = playerConfig.SuspensionDistance;
+			wheelCollider.wheelDampingRate = carConfig.WheelDampingRate;
+			wheelCollider.suspensionDistance = carConfig.SuspensionDistance;
 			wheelCollider.suspensionSpring = suspensionSpring;
 		}
 	}		
 
-	private void SetEngine(PlayerAccountConfig playerAccountConfig)
+	private void SetEngine()
 	{
-		SetWheelsDrive(playerAccountConfig);
-		SetNitro(playerAccountConfig);
+		SetWheelsDrive();
+		SetNitro();
 
-		if (playerAccountConfig.FrontWheelDrive && playerAccountConfig.RearWheelDrive)
+		if (carConfig.FrontWheelDrive && carConfig.RearWheelDrive)
 		{
-			_motorForce = playerAccountConfig.CarMotorForce / 2;
-			_NitroTorqueBoost = playerAccountConfig.NitroTorqueBoost / 2;
+			_motorForce = carConfig.CarMotorForce / 2;
+			_NitroTorqueBoost = carConfig.NitroTorqueBoost / 2;
 		}
 		else
 		{
-			_motorForce = playerAccountConfig.CarMotorForce;
+			_motorForce = carConfig.CarMotorForce;
 		}
 	}
-	private void SetWheelsDrive(PlayerAccountConfig playerAccountConfig)
+	private void SetWheelsDrive()
 	{
-		_isFrontWheelDriveOn = playerAccountConfig.FrontWheelDrive;
-		_isRearWheelDriveOn = playerAccountConfig.RearWheelDrive;
+		_isFrontWheelDriveOn = carConfig.FrontWheelDrive;
+		_isRearWheelDriveOn = carConfig.RearWheelDrive;
 	}
 
-	private void SetNitro(PlayerAccountConfig playerAccountConfig)
+	private void SetNitro()
 	{
-		_nitroCapacity = playerAccountConfig.NitroCapacity;
+		_nitroCapacity = carConfig.NitroCapacity;
 		_currentNitroLevel = _nitroCapacity;
-		_nitroUsageSpeed = playerAccountConfig.NitroUsageSpeed;
-		_nitroRestorationSpeed = playerAccountConfig.NitroRestorationSpeed;
-		_nitroSpeedBoost = playerAccountConfig.NitroSpeedBoost;
-		_NitroTorqueBoost = playerAccountConfig.NitroTorqueBoost;
+		_nitroUsageSpeed = carConfig.NitroUsageSpeed;
+		_nitroRestorationSpeed = carConfig.NitroRestorationSpeed;
+		_nitroSpeedBoost = carConfig.NitroSpeedBoost;
+		_NitroTorqueBoost = carConfig.NitroTorqueBoost;
 	}
 
 	private void ConsumeNitro()
@@ -379,5 +415,5 @@ public class PlayerActiveCar : MonoBehaviour
 				_currentNitroLevel = _nitroCapacity;
             }
         }
-    }
+    }	
 }
