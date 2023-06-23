@@ -191,7 +191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &567031842571319317
 Transform:
   m_ObjectHideFlags: 0
@@ -233,9 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefabs:
-  - {fileID: 436067910035140417, guid: 96fb2e0db858f014c968b2151bd0c855, type: 3}
-  - {fileID: 7583957033510607630, guid: 541578b3549f7ba4aab9bc28d8f7f54e, type: 3}
-  - {fileID: 3154559454780343831, guid: 3c2bc1d64be4288478e5536e5f6931dc, type: 3}
+  - {fileID: 7583957033510607630, guid: f6082e4a68ab9074a9c523c23701f290, type: 3}
+  - {fileID: 7583957033510607630, guid: 4306f558ddb50cd49a4de2f761df7da0, type: 3}
+  - {fileID: 3154559454780343831, guid: 0fac84ef9b1f2634fbd28f96a7a48223, type: 3}
 --- !u!1 &780774993617279180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,7 +1808,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2737241412338884446}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ExitShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2995989906194986733
 GameObject:
   m_ObjectHideFlags: 0

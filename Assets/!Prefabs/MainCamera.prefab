@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ceae1e737c57441a8a69bc0ef1d382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetShoulderView: {x: 0, y: 2, z: -5}
-  rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
+  cameraSettingsConfig: {fileID: 11400000, guid: 0dfc4386f15713347ad9bac7efcdabac, type: 2}
   followSpeed: 20
   lookSpeed: 20

@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UniRx;
 
 public class UILoseScreen : UIScreen
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TextMeshProUGUI odometerText;
+    [SerializeField] private TextMeshProUGUI recordText;
+    [SerializeField] private TextMeshProUGUI salaryText;
 
-    // Update is called once per frame
-    void Update()
+    public void Launch()
     {
-        
+        MessageBroker
+            .Default
+            .Receive<OnOdometerUpdateMessage>()
+            .Subscribe(message =>
+            {
+                odometerText.text = $"{message.Odometer} M";
+            });
+
+        MessageBroker
+            .Default
+            .Receive<OnRaceSalaryCountMessage>()
+            .Subscribe(message =>
+            {
+                salaryText.text = $"+{message.Salary} $";
+            });
     }
 }
