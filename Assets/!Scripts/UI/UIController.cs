@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour
         mainMenuScreen.gameObject.SetActive(true);
     }
 
-    private void Awake()
+    public void Launch(Shop shop)
     {
         MessageBroker
             .Default
@@ -51,7 +51,7 @@ public class UIController : MonoBehaviour
             });
 
         hud.Launch();
-        shopScreen.Launch();
+        shopScreen.Launch(shop);
         loseScreen.Launch();
     }
 

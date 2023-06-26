@@ -1,10 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public readonly struct PlayerData
+public class PlayerData
 {
-    public readonly int Odometer;
-    public readonly int Balance;
+    public int Odometer;
+    public int Balance;
 
     public PlayerData(int odometer, int balance)
     {
@@ -15,20 +14,15 @@ public readonly struct PlayerData
 
 public class Serializer : MonoBehaviour
 {
-    
-    private PlayerDataStorage playerDataStorage;
     public void Save(PlayerData playerData)
     {
-        PlayerPrefs.SetInt("odometer", playerData.Odometer);
-        PlayerPrefs.SetInt("balance", playerData.Balance);
+        var saveString = JsonUtility.ToJson(playerData);
+        Debug.Log(saveString);
+        PlayerPrefs.SetString("save", saveString);
     }    
 
     public PlayerData Load()
     {
-        var playerData = new PlayerData(
-            PlayerPrefs.GetInt("odometer"),
-            PlayerPrefs.GetInt("balance"));
-
-        return playerData;
+        return JsonUtility.FromJson<PlayerData>(PlayerPrefs.GetString("save"));
     }
 }

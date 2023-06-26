@@ -2,10 +2,20 @@ using UnityEngine;
 
 public class UIShopScreen : UIScreen
 {
-    [SerializeField] private Shop shop;
-    public void Launch()
+    private Shop _shop;
+    public void Launch(Shop shop)
     {
-        shop.Launch();
+        _shop = shop;
+    }
+
+    public void ShowPreviousCar()
+    {
+        _shop.SwitchCar(-1);
+    }
+
+    public void ShowNextCar()
+    {
+        _shop.SwitchCar(1);
     }
 }
 
