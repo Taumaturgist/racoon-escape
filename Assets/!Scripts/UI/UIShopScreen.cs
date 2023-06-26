@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIShopScreen : UIScreen
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Shop shop;
+    public void Launch()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        shop.Launch();
     }
 }
+

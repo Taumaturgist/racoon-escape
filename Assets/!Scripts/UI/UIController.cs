@@ -51,6 +51,7 @@ public class UIController : MonoBehaviour
             });
 
         hud.Launch();
+        shopScreen.Launch();
         loseScreen.Launch();
     }
 

@@ -22,3 +22,12 @@ MonoBehaviour:
   - carModel: 2
     offsetShoulderView: {x: 0, y: 1.1, z: -3.35}
     rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
+  - carModel: 3
+    offsetShoulderView: {x: 0, y: 1.1, z: -3.35}
+    rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
+  - carModel: 4
+    offsetShoulderView: {x: 0, y: 1.1, z: -3.35}
+    rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
+  - carModel: 5
+    offsetShoulderView: {x: 0, y: 1.1, z: -3.35}
+    rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
