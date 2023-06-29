@@ -3,11 +3,12 @@ using UniRx;
 
 public class PlayerCarShopView : MonoBehaviour
 {
-	[SerializeField] private int carModelID;
+	[SerializeField] eCarModel carModel;
+	[SerializeField] eCarLevel carLevel;	
 
 	public int GetCarModelID()
 	{
-		return carModelID;
+		return (int)carModel;
 	}
 
 	private void Awake()

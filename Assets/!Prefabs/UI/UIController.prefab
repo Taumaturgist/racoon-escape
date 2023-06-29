@@ -1427,6 +1427,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4561630952584119532, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4099325199701380300}
+    - target: {fileID: 4561630952584119532, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowPreviousCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561630952584119532, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIShopScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336445027136038731, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4099325199701380300}
+    - target: {fileID: 6336445027136038731, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowNextCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336445027136038731, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIShopScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8693459647502404432, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

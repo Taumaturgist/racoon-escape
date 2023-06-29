@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac0f27eedcd6b84bae7a69a015e1680, type: 3}
+  m_Name: ShopCarModelsConfig
+  m_EditorClassIdentifier: 
+  carsL0:
+  - {fileID: 7583957033510607630, guid: 783da4ff90eb6c2478348e7e389bcd1f, type: 3}
+  - {fileID: 7583957033510607630, guid: 5866f1d6ad941ba4ea4e8a803dd142ee, type: 3}
+  - {fileID: 7583957033510607630, guid: b7107c0de4cd921419e3702381dad86f, type: 3}
+  - {fileID: 7583957033510607630, guid: cab4c8c10c42ac942949e2ed8e1b6c1d, type: 3}
+  - {fileID: 7583957033510607630, guid: 2a4d253ad2b2b684098cebb3f8560010, type: 3}
+  - {fileID: 3154559454780343831, guid: 1e6780a5429dfe2459b6d1c66b805c26, type: 3}
+  carsL1:
+  - {fileID: 7583957033510607630, guid: f6082e4a68ab9074a9c523c23701f290, type: 3}
+  - {fileID: 7583957033510607630, guid: 541578b3549f7ba4aab9bc28d8f7f54e, type: 3}
+  - {fileID: 7583957033510607630, guid: 75396ed8662c34c4e9ea60354097616b, type: 3}
+  - {fileID: 7583957033510607630, guid: deb9fa8a1d7d72042a488c30667f35e2, type: 3}
+  - {fileID: 7583957033510607630, guid: 2c8945549f2b1bf4391d02004cd48223, type: 3}
+  - {fileID: 3154559454780343831, guid: 3c2bc1d64be4288478e5536e5f6931dc, type: 3}
+  carsL2:
+  - {fileID: 7583957033510607630, guid: df28c2d6edc0eb044be933601533945b, type: 3}
+  - {fileID: 7583957033510607630, guid: 76f775d0ddea84e4ea22193b2733f65c, type: 3}
+  - {fileID: 7583957033510607630, guid: a1ee084cfaec76a409d692aaa37ece38, type: 3}
+  - {fileID: 7583957033510607630, guid: b073f44eaf118824d8bfeebd91ab0289, type: 3}
+  - {fileID: 7583957033510607630, guid: d732f3bfe2c8d9249a18ce2ea4af0da5, type: 3}
+  - {fileID: 3154559454780343831, guid: c703e8378516b614fb2c38a6831bad56, type: 3}
+  carsL3:
+  - {fileID: 7583957033510607630, guid: 1b3e3a0de3aefed4d9d1a3eb479562ec, type: 3}
+  - {fileID: 7583957033510607630, guid: 6a73d728b5b2210488dadb2047288fd2, type: 3}
+  - {fileID: 7583957033510607630, guid: 1a558a2a039ae074bb7d46e1425d4644, type: 3}
+  - {fileID: 7583957033510607630, guid: 0895991d686adea4ca3f515fef9ba51a, type: 3}
+  - {fileID: 7583957033510607630, guid: d5e5a36dd1b2cff4eb4b2963d3266fdb, type: 3}
+  - {fileID: 3154559454780343831, guid: f130eabb8e0674d4eb745799d5cdf611, type: 3}

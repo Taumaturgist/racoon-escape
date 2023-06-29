@@ -1,10 +1,9 @@
 public enum eCarModel
 {
-    BasicPickUp,
-    ToyotaTundra,
-    LamborghiniHuracanLP700,
     ChevroletCamaroSS1969,
+    ToyotaTundra,
+    NissanSkylineGT,
     DodgeViperGTS,
     MercedesBenzGCLass,
-    NissanSkylineGT
+    LamborghiniHuracanLP700    
 }

@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIShopScreen : UIScreen
 {
-    // Start is called before the first frame update
-    void Start()
+    private Shop _shop;
+    public void Launch(Shop shop)
     {
-        
+        _shop = shop;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowPreviousCar()
     {
-        
+        _shop.SwitchCar(-1);
+    }
+
+    public void ShowNextCar()
+    {
+        _shop.SwitchCar(1);
     }
 }
+

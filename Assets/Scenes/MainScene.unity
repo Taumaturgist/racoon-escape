@@ -190,5 +190,9 @@ PrefabInstance:
       propertyPath: BuildingSpawnConfig
       value: 
       objectReference: {fileID: 11400000, guid: b0285ae11f10cc2459d0930b64afaddc, type: 2}
+    - target: {fileID: 5406610483859203975, guid: 2b50baceb24069740800d35c94d9d998, type: 3}
+      propertyPath: ShopCarModelsConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 87db66fca2c4509499a355116c78c20f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b50baceb24069740800d35c94d9d998, type: 3}

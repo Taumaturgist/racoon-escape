@@ -49,7 +49,7 @@ public readonly struct OnOdometerUpdateMessage
 
 public class PlayerAccount : MonoBehaviour
 {
-    private Game _game;
+    private Game _game;    
 
     private PlayerAccountConfig _playerAccountConfig;
     private Serializer _serializer;
@@ -72,9 +72,11 @@ public class PlayerAccount : MonoBehaviour
     private void Awake()
     {
         _game = GetComponent<Game>();
+        
         _playerAccountConfig = GetComponent<ApplicationStartUp>().PlayerAccountConfig;
         _serializer = GetComponent<Serializer>(); 
         _money = GetComponent<PlayerMoney>();
+
 
         _camera = Instantiate(_playerAccountConfig.Camera);
 
