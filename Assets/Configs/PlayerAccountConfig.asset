@@ -16,3 +16,11 @@ MonoBehaviour:
   Camera: {fileID: 1608220958813791805, guid: 5ba82fe74b88dff43895b6bbd760eae2, type: 3}
   PlayerActiveCar: {fileID: -603158850229641492, guid: f6082e4a68ab9074a9c523c23701f290, type: 3}
   PACSpawnPosition: {x: 9, y: 0, z: 60}
+  OverrideAssortment: 0
+  CarsAssortment:
+    CamaroLevel: 1
+    TundraLevel: 0
+    SkylineLevel: 0
+    ViperLevel: 0
+    BenzLevel: 0
+    HurricanLevel: 0

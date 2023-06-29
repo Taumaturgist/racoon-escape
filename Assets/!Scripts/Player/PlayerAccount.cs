@@ -56,6 +56,9 @@ public class PlayerAccount : MonoBehaviour
     private PlayerMoney _money;
     private PlayerDataStorage _playerDataStorage;
 
+    private CarsAssortment _carsAssortment;
+    private CarsAssortment _carsAssortmentLoaded;
+
     private PlayerActiveCar _activeCar;   
 
     private CameraSettings _camera;
@@ -120,6 +123,20 @@ public class PlayerAccount : MonoBehaviour
             .Subscribe(message => UpdateOdometer());
     }
 
+    private void Start()
+    {
+        LoadPlayerData();
+
+        if (_playerAccountConfig.OverrideAssortment)
+        {
+            _carsAssortment = _playerAccountConfig.CarsAssortment;
+        }
+        else
+        {
+            _carsAssortment = _carsAssortmentLoaded;
+        }
+    }
+
     private void SwitchShopView(PlayerActiveCar carPrefab)
     {
         MessageBroker
@@ -132,6 +149,8 @@ public class PlayerAccount : MonoBehaviour
     private void LoadPlayerData()
     {
         var playerData = _serializer.Load();
+        _carsAssortmentLoaded = playerData.CarsAssortment;
+             
         _odometer = playerData.Odometer;
         _balance = playerData.Balance;
 
@@ -142,7 +161,7 @@ public class PlayerAccount : MonoBehaviour
 
     private void SavePlayerData()
     {      
-        _serializer.Save(new PlayerData(_odometer, _balance));
+        _serializer.Save(new PlayerData(_carsAssortment, _odometer, _balance));
     }
 
     private void SetUpNewActiveCar(PlayerActiveCar carPrefab)
@@ -167,12 +186,7 @@ public class PlayerAccount : MonoBehaviour
         MessageBroker
             .Default
             .Publish(new OnOdometerUpdateMessage(_currentRideDistance, _odometer));
-    }
-
-    private void Start()
-    {
-        LoadPlayerData();
-    }
+    }    
 
     private void OnApplicationQuit()
     {

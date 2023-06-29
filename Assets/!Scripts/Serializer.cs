@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class PlayerData
 {
+    public CarsAssortment CarsAssortment;
     public int Odometer;
     public int Balance;
 
-    public PlayerData(int odometer, int balance)
+    public PlayerData(
+        CarsAssortment carsAssortment,
+        int odometer,
+        int balance)
     {
+        CarsAssortment = carsAssortment;
         Odometer = odometer;
         Balance = balance;
     }
