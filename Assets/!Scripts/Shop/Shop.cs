@@ -5,16 +5,16 @@ using UniRx;
 public readonly struct OnPlayerCarIDRequestMessage
 { }
 
-public class Shop : MonoBehaviour
+public class Shop : MonoBehaviour    
 {
-    private List<PlayerCarShopView> _carPrefabs;
+    [SerializeField] private List<CarPool> carPools;
 
-    private List<CarPool> _carPools;  
+    [SerializeField] private List<PlayerCarShopView> carViewsL0;
+    [SerializeField] private List<PlayerCarShopView> carViewsL1;
+    [SerializeField] private List<PlayerCarShopView> carViewsL2;
+    [SerializeField] private List<PlayerCarShopView> carViewsL3;
 
-    private List<PlayerCarShopView> _carViewsL0;
-    private List<PlayerCarShopView> _carViewsL1;
-    private List<PlayerCarShopView> _carViewsL2;
-    private List<PlayerCarShopView> _carViewsL3;
+    private List<PlayerCarShopView> _carPrefabs;    
 
     private PlayerAccount _playerAccount;
     private PlayerAccountConfig _playerAccountConfig;
@@ -62,15 +62,14 @@ public class Shop : MonoBehaviour
 
     }
 
-    private void Awake()
+    public void Launch(ShopCarModelsConfig shopCarModelConfig, PlayerAccountConfig playerAccountConfig)
     {
-        _playerAccount = GetComponent<PlayerAccount>();
-        _playerAccountConfig = GetComponent<ApplicationStartUp>().PlayerAccountConfig;
-        _shopCarModelsConfig = GetComponent<ApplicationStartUp>().ShopCarModelsConfig;
+        _shopCarModelsConfig = shopCarModelConfig;
+        _playerAccountConfig = playerAccountConfig;        
 
         _carPrefabs = _shopCarModelsConfig.carsL0;
 
-        //InstantiateCarModelsPool();
+        InstantiateCarModelsPool();
 
         MessageBroker
             .Default
@@ -85,30 +84,30 @@ public class Shop : MonoBehaviour
     {
         for (int i = 0; i < _shopCarModelsConfig.carsL0.Count; i++)
         {
-            var go = Instantiate(_shopCarModelsConfig.carsL0[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL0[i].transform.rotation, _carPools[0].transform);
-            _carViewsL0.Add(go);
+            var go = Instantiate(_shopCarModelsConfig.carsL0[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL0[i].transform.rotation, carPools[0].transform);
+            carViewsL0.Add(go);
             Debug.Log($"{go} added to pool");
             go.gameObject.SetActive(false);            
         }
 
         for (int i = 0; i < _shopCarModelsConfig.carsL1.Count; i++)
         {
-            var go = Instantiate(_shopCarModelsConfig.carsL1[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL1[i].transform.rotation, _carPools[1].transform);
-            _carViewsL1.Add(go);
+            var go = Instantiate(_shopCarModelsConfig.carsL1[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL1[i].transform.rotation, carPools[1].transform);
+            carViewsL1.Add(go);
             go.gameObject.SetActive(false);
         }
 
         for (int i = 0; i < _shopCarModelsConfig.carsL2.Count; i++)
         {
-            var go = Instantiate(_shopCarModelsConfig.carsL2[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL2[i].transform.rotation, _carPools[2].transform);
-            _carViewsL2.Add(go);
+            var go = Instantiate(_shopCarModelsConfig.carsL2[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL2[i].transform.rotation, carPools[2].transform);
+            carViewsL2.Add(go);
             go.gameObject.SetActive(false);
         }
 
         for (int i = 0; i < _shopCarModelsConfig.carsL3.Count; i++)
         {
-            var go = Instantiate(_shopCarModelsConfig.carsL3[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL3[i].transform.rotation, _carPools[3].transform);
-            _carViewsL3.Add(go);
+            var go = Instantiate(_shopCarModelsConfig.carsL3[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL3[i].transform.rotation, carPools[3].transform);
+            carViewsL3.Add(go);
             go.gameObject.SetActive(false);
         }
     }

@@ -15,8 +15,7 @@ public class ApplicationStartUp : MonoBehaviour
     
     private void Awake()
     {
-        gameObject.AddComponent<Game>();
-        gameObject.AddComponent<Shop>();
+        gameObject.AddComponent<Game>();        
         gameObject.AddComponent<PlayerDataStorage>();
         gameObject.AddComponent<Serializer>();
         gameObject.AddComponent<DebugSettings>();

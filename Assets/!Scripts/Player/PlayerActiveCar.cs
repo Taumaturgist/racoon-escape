@@ -15,6 +15,7 @@ public class PlayerActiveCar : MonoBehaviour
 
 	private Transform _carTransform;
 	private Rigidbody _carRigidbody;
+	private Collider _carCollider;
 
 	private Vector3 _startPosition;	
 	
@@ -29,7 +30,7 @@ public class PlayerActiveCar : MonoBehaviour
 	private float _steeringAngle;
 	private float _limitRotationAngleY;	
 
-	private bool _isActive = true;
+	private bool _isActive;
 	private bool _isAccelerating = true;
 	private bool _canUseBrakes;
 	private bool _isNitroOn;
@@ -55,7 +56,9 @@ public class PlayerActiveCar : MonoBehaviour
 	private bool _hasLost;
 
 	public void Launch(Game game)
-	{
+	{		
+		_carCollider = GetComponent<Collider>();
+		
 		_game = game;
 
 		_maxSteerAngle = carConfig.MaxSteerAngle;		
@@ -79,6 +82,10 @@ public class PlayerActiveCar : MonoBehaviour
 
 		_defeatActivationSpeed = carConfig.DefeatActivationSpeed;
 		_defeatConditionSpeed = carConfig.DefeatConditionSpeed;
+
+		SetPhysics(true);
+
+		_isActive = true;
 	}
 
 	public int GetSpeed()
@@ -95,15 +102,21 @@ public class PlayerActiveCar : MonoBehaviour
     {
 		return Mathf.RoundToInt(_currentNitroLevel);
 	}
+
+	public void SetPhysics(bool value)
+    {
+		_carCollider.isTrigger = !value;
+		_carRigidbody.useGravity = value;
+	}
 	
 	private void FixedUpdate()
 	{
 		CheckConditions();
 
 		if (!_isActive)
-        {
+		{
 			return;
-        }		
+		}
 
 		Steer();	
 		AccelerateAuto();
@@ -125,10 +138,12 @@ public class PlayerActiveCar : MonoBehaviour
 				_isActive = false;
 				_canLose = false;
 				_isLossConditionActivated = false;
+				//SetPhysics(false);
 				break;
 			case GameState.Action:				
 				_isActive = true;
 				_hasLost = false;
+				SetPhysics(true);
 				break;
         }
 

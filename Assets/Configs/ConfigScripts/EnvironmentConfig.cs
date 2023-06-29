@@ -7,4 +7,6 @@ public class EnvironmentConfig : ScriptableObject
     public Quaternion LightQuaternion;
 
     public UIController UIController;
+
+    public Shop Shop;
 }
