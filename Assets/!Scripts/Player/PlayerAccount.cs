@@ -47,6 +47,16 @@ public readonly struct OnOdometerUpdateMessage
     }
 }
 
+public readonly struct OnCarsAssortmentLoadedMessage
+{
+    public readonly CarsAssortment CarsAssortment;
+
+    public OnCarsAssortmentLoadedMessage(CarsAssortment carsAssortment)
+    {
+        CarsAssortment = carsAssortment;
+    }
+}
+
 public class PlayerAccount : MonoBehaviour
 {
     private Game _game;    
@@ -111,7 +121,7 @@ public class PlayerAccount : MonoBehaviour
 
         MessageBroker
             .Default
-            .Receive<OnRaceSalaryCountMessage>()
+            .Receive<OnBalanceDiffMessage>()
             .Subscribe(message =>
             {
                 ProcessBalance(message.Salary);
@@ -135,6 +145,10 @@ public class PlayerAccount : MonoBehaviour
         {
             _carsAssortment = _carsAssortmentLoaded;
         }
+
+        MessageBroker
+            .Default
+            .Publish(new OnCarsAssortmentLoadedMessage(_carsAssortment));
     }
 
     private void SwitchShopView(PlayerActiveCar carPrefab)
@@ -176,6 +190,7 @@ public class PlayerAccount : MonoBehaviour
     private void ProcessBalance(int diff)
     {
         _balance += diff;
+        Debug.Log(_balance);
     }
 
     private void UpdateOdometer()

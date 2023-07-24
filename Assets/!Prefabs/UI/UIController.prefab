@@ -1379,9 +1379,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8580163347544467292}
     m_Modifications:
+    - target: {fileID: -42624374617075377, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: carName
+      value: 
+      objectReference: {fileID: 5299524029223524735}
     - target: {fileID: 567031842571319314, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
       propertyPath: m_Name
       value: UIShopScreenPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 567031842571319314, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 567031842571319317, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
       propertyPath: m_RootOrder
@@ -1473,6 +1481,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 567031842571319317, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
   m_PrefabInstance: {fileID: 5155262403678510467}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5299524029223524735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1008976540843427068, guid: b9d64599c22734844b2889f95ce4e675, type: 3}
+  m_PrefabInstance: {fileID: 5155262403678510467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6103963224934280677
 PrefabInstance:
   m_ObjectHideFlags: 0

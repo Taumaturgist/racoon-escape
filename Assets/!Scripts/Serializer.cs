@@ -22,12 +22,14 @@ public class Serializer : MonoBehaviour
     public void Save(PlayerData playerData)
     {
         var saveString = JsonUtility.ToJson(playerData);
-        Debug.Log(saveString);
+        Debug.Log($"Save data: {saveString}");
         PlayerPrefs.SetString("save", saveString);
     }    
 
     public PlayerData Load()
     {
-        return JsonUtility.FromJson<PlayerData>(PlayerPrefs.GetString("save"));
+        var loadString = PlayerPrefs.GetString("save");
+        Debug.Log($"Load data: {loadString}");
+        return JsonUtility.FromJson<PlayerData>(loadString);
     }
 }

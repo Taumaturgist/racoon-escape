@@ -1,15 +1,13 @@
 using UnityEngine;
 using UniRx;
 
-public readonly struct OnRaceSalaryCountMessage
+public readonly struct OnBalanceDiffMessage
 {
-    public readonly int Salary;
-    public readonly bool HasFinished;
+    public readonly int Salary;    
 
-    public OnRaceSalaryCountMessage(int salary, bool hasFinished)
+    public OnBalanceDiffMessage(int salary)
     {
-        Salary = salary;
-        HasFinished = hasFinished;
+        Salary = salary;        
     }
 }
 public class PlayerMoney : MonoBehaviour
@@ -57,7 +55,7 @@ public class PlayerMoney : MonoBehaviour
             {                
                 MessageBroker
                 .Default
-                .Publish(new OnRaceSalaryCountMessage(_earnedMoneyInCurrentRide, true));
+                .Publish(new OnBalanceDiffMessage(_earnedMoneyInCurrentRide));
                 _isEarningMoney = false;
             });
     }
