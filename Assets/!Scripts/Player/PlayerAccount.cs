@@ -47,6 +47,16 @@ public readonly struct OnOdometerUpdateMessage
     }
 }
 
+public readonly struct OnCarsAssortmentLoadedMessage
+{
+    public readonly CarsAssortment CarsAssortment;
+
+    public OnCarsAssortmentLoadedMessage(CarsAssortment carsAssortment)
+    {
+        CarsAssortment = carsAssortment;
+    }
+}
+
 public class PlayerAccount : MonoBehaviour
 {
     private Game _game;    
@@ -55,6 +65,9 @@ public class PlayerAccount : MonoBehaviour
     private Serializer _serializer;
     private PlayerMoney _money;
     private PlayerDataStorage _playerDataStorage;
+
+    private CarsAssortment _carsAssortment;
+    private CarsAssortment _carsAssortmentLoaded;
 
     private PlayerActiveCar _activeCar;   
 
@@ -108,7 +121,7 @@ public class PlayerAccount : MonoBehaviour
 
         MessageBroker
             .Default
-            .Receive<OnRaceSalaryCountMessage>()
+            .Receive<OnBalanceDiffMessage>()
             .Subscribe(message =>
             {
                 ProcessBalance(message.Salary);
@@ -118,6 +131,24 @@ public class PlayerAccount : MonoBehaviour
             .Default
             .Receive<OnPlayerDefeatedMessage>()
             .Subscribe(message => UpdateOdometer());
+    }
+
+    private void Start()
+    {
+        LoadPlayerData();
+
+        if (_playerAccountConfig.OverrideAssortment)
+        {
+            _carsAssortment = _playerAccountConfig.CarsAssortment;
+        }
+        else
+        {
+            _carsAssortment = _carsAssortmentLoaded;
+        }
+
+        MessageBroker
+            .Default
+            .Publish(new OnCarsAssortmentLoadedMessage(_carsAssortment));
     }
 
     private void SwitchShopView(PlayerActiveCar carPrefab)
@@ -132,6 +163,8 @@ public class PlayerAccount : MonoBehaviour
     private void LoadPlayerData()
     {
         var playerData = _serializer.Load();
+        _carsAssortmentLoaded = playerData.CarsAssortment;
+             
         _odometer = playerData.Odometer;
         _balance = playerData.Balance;
 
@@ -142,7 +175,7 @@ public class PlayerAccount : MonoBehaviour
 
     private void SavePlayerData()
     {      
-        _serializer.Save(new PlayerData(_odometer, _balance));
+        _serializer.Save(new PlayerData(_carsAssortment, _odometer, _balance));
     }
 
     private void SetUpNewActiveCar(PlayerActiveCar carPrefab)
@@ -157,6 +190,7 @@ public class PlayerAccount : MonoBehaviour
     private void ProcessBalance(int diff)
     {
         _balance += diff;
+        Debug.Log(_balance);
     }
 
     private void UpdateOdometer()
@@ -167,12 +201,7 @@ public class PlayerAccount : MonoBehaviour
         MessageBroker
             .Default
             .Publish(new OnOdometerUpdateMessage(_currentRideDistance, _odometer));
-    }
-
-    private void Start()
-    {
-        LoadPlayerData();
-    }
+    }    
 
     private void OnApplicationQuit()
     {

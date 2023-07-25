@@ -535,6 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carModel: 0
   carLevel: 0
+  carPurchasePrice: 0
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0

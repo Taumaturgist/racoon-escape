@@ -21,7 +21,7 @@ public class UIHUD : UIScreen
 
         MessageBroker
             .Default
-            .Receive<OnRaceSalaryCountMessage>()
+            .Receive<OnBalanceDiffMessage>()
             .Subscribe(message =>
             {
                 _balance += message.Salary;

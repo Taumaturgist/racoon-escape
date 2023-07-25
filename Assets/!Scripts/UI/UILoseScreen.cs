@@ -20,7 +20,7 @@ public class UILoseScreen : UIScreen
 
         MessageBroker
             .Default
-            .Receive<OnRaceSalaryCountMessage>()
+            .Receive<OnBalanceDiffMessage>()
             .Subscribe(message =>
             {
                 salaryText.text = $"+{message.Salary} $";
