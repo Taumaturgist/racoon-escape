@@ -12,9 +12,9 @@ public class PlayerCarShopView : MonoBehaviour
 		return (int)carModel;
 	}
 
-	public string GetCarModelName()
+	public eCarModel GetCarModel()
     {
-		return carModel.ToString();
+		return carModel;
     }
 
 	public eCarLevel GetCarLevel()

@@ -11,11 +11,16 @@ public class UIShopScreen : UIScreen
 
     private bool _isPurchased;
     private int _carPrice;
-    public void Launch(UIController uiController, Shop shop, ShopCarModelsConfig shopConfig, PlayerAccountConfig playerAccountConfig)
+    public void Launch(UIController uiController, Shop shop, ShopCarModelsConfig shopConfig, PlayerAccountConfig playerAccountConfig, PlayerAccount playerAccount)
     {
         _uiController = uiController;
         _shop = shop;
-        shop.Launch(shopConfig, playerAccountConfig);
+        shop.Launch(shopConfig, playerAccountConfig, playerAccount);
+    }
+    public void ShowCarOnShopEnter()
+    {
+        _shop.SwitchCar(0);
+        OnCarSwitchLogic();
     }
 
     public void ShowPreviousCar()

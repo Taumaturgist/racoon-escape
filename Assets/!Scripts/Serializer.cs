@@ -1,17 +1,19 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerData
 {
-    public CarsAssortment CarsAssortment;
+    public Dictionary<eCarModel, eCarLevel> CarsAssortmentDict;
     public int Odometer;
     public int Balance;
 
     public PlayerData(
-        CarsAssortment carsAssortment,
+        Dictionary<eCarModel, eCarLevel> carsAssortmentDict,
         int odometer,
         int balance)
     {
-        CarsAssortment = carsAssortment;
+        CarsAssortmentDict = carsAssortmentDict;
         Odometer = odometer;
         Balance = balance;
     }
@@ -21,15 +23,44 @@ public class Serializer : MonoBehaviour
 {
     public void Save(PlayerData playerData)
     {
-        var saveString = JsonUtility.ToJson(playerData);
-        Debug.Log($"Save data: {saveString}");
-        PlayerPrefs.SetString("save", saveString);
+        var dictString = "";
+        foreach (var car in playerData.CarsAssortmentDict)
+        {
+            dictString += $"{car.Key},{car.Value};";
+        }
+        PlayerPrefs.SetString("carsDict", dictString);
+
+        PlayerPrefs.SetString("odometer", playerData.Odometer.ToString());
+        PlayerPrefs.SetString("balance", playerData.Balance.ToString());
+
+        Debug.Log($"SaveData: {dictString} {playerData.Odometer} {playerData.Balance}");
     }    
 
     public PlayerData Load()
     {
-        var loadString = PlayerPrefs.GetString("save");
-        Debug.Log($"Load data: {loadString}");
-        return JsonUtility.FromJson<PlayerData>(loadString);
+        var dictString = PlayerPrefs.GetString("carsDict");
+        Debug.Log($"dictString {dictString}");
+        var carsDict = new Dictionary<eCarModel, eCarLevel>();
+
+        if (dictString != "")
+        {
+            var carsArray = dictString.Split(";");
+            foreach (var car in carsArray)
+            {
+                var carInfo = car.Split(",");
+                if (carInfo[0] != "" && carInfo[1] != "")
+                {
+                    carsDict.Add(Enum.Parse<eCarModel>(carInfo[0]),
+                             Enum.Parse<eCarLevel>(carInfo[1]));
+                }                
+            }
+        }        
+
+        var odometer = Int32.Parse(PlayerPrefs.GetString("odometer"));
+        var balance = Int32.Parse(PlayerPrefs.GetString("balance"));
+
+
+        Debug.Log($"LoadData: {dictString} {odometer} {balance}");
+        return new PlayerData(carsDict, odometer, balance);
     }
 }

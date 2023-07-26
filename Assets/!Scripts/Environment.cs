@@ -9,6 +9,7 @@ public class Environment : MonoBehaviour
         _environmentConfig = GetComponent<ApplicationStartUp>().EnvironmentConfig;
         var shopConfig = GetComponent<ApplicationStartUp>().ShopCarModelsConfig;
         var playerAccountConfig = GetComponent<ApplicationStartUp>().PlayerAccountConfig;
+        var playerAccount = GetComponent<PlayerAccount>();
 
         var light = Instantiate(_environmentConfig.DirectionalLight, Vector3.zero, _environmentConfig.LightQuaternion);
 
@@ -16,6 +17,6 @@ public class Environment : MonoBehaviour
 
         var UI = Instantiate(_environmentConfig.UIController, Vector3.zero, Quaternion.Euler(Vector3.zero));
 
-        UI.Launch(shop, shopConfig, playerAccountConfig);
+        UI.Launch(shop, shopConfig, playerAccountConfig, playerAccount);
     }
 }

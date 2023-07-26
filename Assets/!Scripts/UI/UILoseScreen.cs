@@ -23,7 +23,7 @@ public class UILoseScreen : UIScreen
             .Receive<OnBalanceDiffMessage>()
             .Subscribe(message =>
             {
-                salaryText.text = $"+{message.Salary} $";
+                salaryText.text = $"+{message.Diff} $";
             });
     }
 }

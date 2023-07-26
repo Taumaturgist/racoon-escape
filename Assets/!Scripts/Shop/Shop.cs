@@ -7,14 +7,7 @@ public readonly struct OnPlayerCarIDRequestMessage
 
 public class Shop : MonoBehaviour    
 {
-    [SerializeField] private List<CarPool> carPools;
-
-    [SerializeField] private List<PlayerCarShopView> carViewsL0;
-    [SerializeField] private List<PlayerCarShopView> carViewsL1;
-    [SerializeField] private List<PlayerCarShopView> carViewsL2;
-    [SerializeField] private List<PlayerCarShopView> carViewsL3;
-
-    private List<PlayerCarShopView> _carPrefabs;    
+    private List<PlayerCarShopView> _carPrefabs = new List<PlayerCarShopView>();    
 
     private PlayerAccount _playerAccount;
     private PlayerAccountConfig _playerAccountConfig;
@@ -23,9 +16,7 @@ public class Shop : MonoBehaviour
     private int _currentShopCarIndex;
     private int _currentPlayerCarIndex;
 
-    private bool _isFirstShopEntrance = true;
-
-    
+    private bool _isFirstShopEntrance = true;    
 
     public void SwitchCar(int indexDiff)
     {
@@ -35,6 +26,9 @@ public class Shop : MonoBehaviour
                 .Default
                 .Publish(new OnPlayerCarIDRequestMessage());
             _currentShopCarIndex = _currentPlayerCarIndex;
+
+            SetAssortmentFromAccount();
+
             _isFirstShopEntrance = false;
         }       
 
@@ -59,7 +53,7 @@ public class Shop : MonoBehaviour
 
     public void PurchaseCar()
     {
-        _carPrefabs[_currentShopCarIndex] = _shopCarModelsConfig.carsL1[_currentShopCarIndex];
+        _carPrefabs[_currentShopCarIndex] = _shopCarModelsConfig.CarsL1[_currentShopCarIndex];
 
         MessageBroker
             .Default
@@ -67,18 +61,14 @@ public class Shop : MonoBehaviour
 
         MessageBroker
             .Default
-            .Publish(new OnBalanceDiffMessage(-_shopCarModelsConfig.carsL0[_currentShopCarIndex].GetCarPurchasePrice()));
-
+            .Publish(new OnBalanceDiffMessage(-_shopCarModelsConfig.CarsL0[_currentShopCarIndex].GetCarPurchasePrice()));
     }
 
-    public void Launch(ShopCarModelsConfig shopCarModelConfig, PlayerAccountConfig playerAccountConfig)
+    public void Launch(ShopCarModelsConfig shopCarModelConfig, PlayerAccountConfig playerAccountConfig, PlayerAccount playerAccount)
     {
         _shopCarModelsConfig = shopCarModelConfig;
         _playerAccountConfig = playerAccountConfig;        
-
-        _carPrefabs = _shopCarModelsConfig.carsL0;
-
-        //InstantiateCarModelsPool();
+        _playerAccount = playerAccount;
 
         MessageBroker
             .Default
@@ -91,7 +81,7 @@ public class Shop : MonoBehaviour
 
     public string GetCurrentCarName()
     {
-        return _carPrefabs[_currentShopCarIndex].GetCarModelName();    
+        return _carPrefabs[_currentShopCarIndex].GetCarModel().ToString();    
     }
 
     public bool GetCurrentCarPurchaseStatus()
@@ -109,36 +99,51 @@ public class Shop : MonoBehaviour
         return _carPrefabs[_currentShopCarIndex].GetCarPurchasePrice();
     }
 
-    //return to this later in need of optimisation
-    //private void InstantiateCarModelsPool()
-    //{
-    //    for (int i = 0; i < _shopCarModelsConfig.carsL0.Count; i++)
-    //    {
-    //        var go = Instantiate(_shopCarModelsConfig.carsL0[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL0[i].transform.rotation, carPools[0].transform);
-    //        carViewsL0.Add(go);
-    //        Debug.Log($"{go} added to pool");
-    //        go.gameObject.SetActive(false);            
-    //    }
+    private void SetAssortmentFromAccount()
+    {
+        var carsDict = _playerAccount.GetCarsDict();
 
-    //    for (int i = 0; i < _shopCarModelsConfig.carsL1.Count; i++)
-    //    {
-    //        var go = Instantiate(_shopCarModelsConfig.carsL1[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL1[i].transform.rotation, carPools[1].transform);
-    //        carViewsL1.Add(go);
-    //        go.gameObject.SetActive(false);
-    //    }
-
-    //    for (int i = 0; i < _shopCarModelsConfig.carsL2.Count; i++)
-    //    {
-    //        var go = Instantiate(_shopCarModelsConfig.carsL2[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL2[i].transform.rotation, carPools[2].transform);
-    //        carViewsL2.Add(go);
-    //        go.gameObject.SetActive(false);
-    //    }
-
-    //    for (int i = 0; i < _shopCarModelsConfig.carsL3.Count; i++)
-    //    {
-    //        var go = Instantiate(_shopCarModelsConfig.carsL3[i], _playerAccountConfig.PACSpawnPosition, _shopCarModelsConfig.carsL3[i].transform.rotation, carPools[3].transform);
-    //        carViewsL3.Add(go);
-    //        go.gameObject.SetActive(false);
-    //    }
-    //}
+        foreach (var car in carsDict)
+        {
+            switch (car.Value)
+            {
+                case eCarLevel.Locked:
+                    foreach (var carModel in _shopCarModelsConfig.CarsL0)
+                    {
+                        if (carModel.GetCarModel() == car.Key)
+                        {
+                            _carPrefabs.Add(carModel);
+                        }
+                    }
+                    break;
+                case eCarLevel.Lvl1:
+                    foreach (var carModel in _shopCarModelsConfig.CarsL1)
+                    {
+                        if (carModel.GetCarModel() == car.Key)
+                        {
+                            _carPrefabs.Add(carModel);
+                        }
+                    }
+                    break;
+                case eCarLevel.Lvl2:
+                    foreach (var carModel in _shopCarModelsConfig.CarsL2)
+                    {
+                        if (carModel.GetCarModel() == car.Key)
+                        {
+                            _carPrefabs.Add(carModel);
+                        }
+                    }
+                    break;
+                case eCarLevel.Lvl3:
+                    foreach (var carModel in _shopCarModelsConfig.CarsL3)
+                    {
+                        if (carModel.GetCarModel() == car.Key)
+                        {
+                            _carPrefabs.Add(carModel);
+                        }
+                    }
+                    break;
+            }
+        }       
+    }
 }

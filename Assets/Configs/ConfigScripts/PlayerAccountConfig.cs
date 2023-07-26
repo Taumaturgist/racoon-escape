@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Configs/PlayerAccountConfig", order = 51)]
@@ -13,8 +14,8 @@ public class PlayerAccountConfig : ScriptableObject
     public PlayerActiveCar PlayerActiveCar;
     public Vector3 PACSpawnPosition;
 
-    public bool OverrideAssortment;
-    public CarsAssortment CarsAssortment;
+    public bool IsCheatMode;
+    public int CheatBalance;
 }
 
 [Serializable]

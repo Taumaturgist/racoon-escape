@@ -64,10 +64,8 @@ public class PlayerAccount : MonoBehaviour
     private PlayerAccountConfig _playerAccountConfig;
     private Serializer _serializer;
     private PlayerMoney _money;
-    private PlayerDataStorage _playerDataStorage;
 
-    private CarsAssortment _carsAssortment;
-    private CarsAssortment _carsAssortmentLoaded;
+    private Dictionary<eCarModel, eCarLevel> _carsAssortmentDict = new Dictionary<eCarModel, eCarLevel>();
 
     private PlayerActiveCar _activeCar;   
 
@@ -80,6 +78,11 @@ public class PlayerAccount : MonoBehaviour
     public int GetOdometer()
     {
         return _odometer;
+    }
+
+    public Dictionary<eCarModel, eCarLevel> GetCarsDict()
+    {
+        return _carsAssortmentDict;
     }
 
     private void Awake()
@@ -108,7 +111,11 @@ public class PlayerAccount : MonoBehaviour
         MessageBroker
             .Default
             .Receive<OnShopCarViewSwitchMessage>()
-            .Subscribe(message => SwitchShopView(message.CarPrefab.GetComponent<PlayerActiveCar>()));
+            .Subscribe(message =>
+            {
+                SwitchShopView(message.CarPrefab.GetComponent<PlayerActiveCar>());
+                _carsAssortmentDict[message.CarPrefab.GetCarModel()] = message.CarPrefab.GetCarLevel();
+            });
 
         MessageBroker
             .Default
@@ -124,7 +131,8 @@ public class PlayerAccount : MonoBehaviour
             .Receive<OnBalanceDiffMessage>()
             .Subscribe(message =>
             {
-                ProcessBalance(message.Salary);
+                ProcessBalance(message.Diff);
+                Debug.Log($"Balance change: {message.Diff}");
             });
 
         MessageBroker
@@ -136,19 +144,6 @@ public class PlayerAccount : MonoBehaviour
     private void Start()
     {
         LoadPlayerData();
-
-        if (_playerAccountConfig.OverrideAssortment)
-        {
-            _carsAssortment = _playerAccountConfig.CarsAssortment;
-        }
-        else
-        {
-            _carsAssortment = _carsAssortmentLoaded;
-        }
-
-        MessageBroker
-            .Default
-            .Publish(new OnCarsAssortmentLoadedMessage(_carsAssortment));
     }
 
     private void SwitchShopView(PlayerActiveCar carPrefab)
@@ -163,10 +158,24 @@ public class PlayerAccount : MonoBehaviour
     private void LoadPlayerData()
     {
         var playerData = _serializer.Load();
-        _carsAssortmentLoaded = playerData.CarsAssortment;
-             
+
+        if (playerData.CarsAssortmentDict.Count == 0)
+        {
+            InitDefaultCarDictionary();
+            Debug.Log("Default cars loaded");
+        }
+        else
+        {
+            _carsAssortmentDict = playerData.CarsAssortmentDict;
+        }
+        
         _odometer = playerData.Odometer;
         _balance = playerData.Balance;
+
+        if (_playerAccountConfig.IsCheatMode)
+        { 
+            _balance = _playerAccountConfig.CheatBalance;
+        }
 
         MessageBroker
             .Default
@@ -175,7 +184,7 @@ public class PlayerAccount : MonoBehaviour
 
     private void SavePlayerData()
     {      
-        _serializer.Save(new PlayerData(_carsAssortment, _odometer, _balance));
+        _serializer.Save(new PlayerData(_carsAssortmentDict, _odometer, _balance));
     }
 
     private void SetUpNewActiveCar(PlayerActiveCar carPrefab)
@@ -202,6 +211,16 @@ public class PlayerAccount : MonoBehaviour
             .Default
             .Publish(new OnOdometerUpdateMessage(_currentRideDistance, _odometer));
     }    
+
+    private void InitDefaultCarDictionary()
+    {
+        _carsAssortmentDict.Add(eCarModel.ChevroletCamaroSS1969, eCarLevel.Lvl1);
+        _carsAssortmentDict.Add(eCarModel.ToyotaTundra, eCarLevel.Locked);
+        _carsAssortmentDict.Add(eCarModel.NissanSkylineGT, eCarLevel.Locked);
+        _carsAssortmentDict.Add(eCarModel.DodgeViperGTS, eCarLevel.Locked);
+        _carsAssortmentDict.Add(eCarModel.MercedesBenzGCLass, eCarLevel.Locked);
+        _carsAssortmentDict.Add(eCarModel.LamborghiniHuracanLP700, eCarLevel.Locked);
+    }
 
     private void OnApplicationQuit()
     {
