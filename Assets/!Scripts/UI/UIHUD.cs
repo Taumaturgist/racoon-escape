@@ -24,7 +24,7 @@ public class UIHUD : UIScreen
             .Receive<OnBalanceDiffMessage>()
             .Subscribe(message =>
             {
-                _balance += message.Salary;
+                _balance += message.Diff;
                 moneyText.text = $"$: {_balance}";
             });
     }

@@ -3,11 +3,11 @@ using UniRx;
 
 public readonly struct OnBalanceDiffMessage
 {
-    public readonly int Salary;    
+    public readonly int Diff;    
 
-    public OnBalanceDiffMessage(int salary)
+    public OnBalanceDiffMessage(int diff)
     {
-        Salary = salary;        
+        Diff = diff;        
     }
 }
 public class PlayerMoney : MonoBehaviour

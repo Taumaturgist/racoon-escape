@@ -26,6 +26,7 @@ public class UIController : MonoBehaviour
     {
         mainMenuScreen.gameObject.SetActive(false);
         shopScreen.gameObject.SetActive(true);
+        shopScreen.ShowCarOnShopEnter();
     }
 
     public void ExitShop()
@@ -40,7 +41,7 @@ public class UIController : MonoBehaviour
         mainMenuScreen.gameObject.SetActive(true);
     }
 
-    public void Launch(Shop shop, ShopCarModelsConfig shopConfig, PlayerAccountConfig playerAccountConfig)
+    public void Launch(Shop shop, ShopCarModelsConfig shopConfig, PlayerAccountConfig playerAccountConfig, PlayerAccount playerAccount)
     {
         MessageBroker
             .Default
@@ -51,7 +52,7 @@ public class UIController : MonoBehaviour
             });
 
         hud.Launch();
-        shopScreen.Launch(this, shop, shopConfig, playerAccountConfig);
+        shopScreen.Launch(this, shop, shopConfig, playerAccountConfig, playerAccount);
         loseScreen.Launch();
     }
 
