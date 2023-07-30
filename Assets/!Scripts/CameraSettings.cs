@@ -7,10 +7,14 @@ public class CameraSettings : MonoBehaviour
 	[SerializeField] private float lookSpeed;
 
 	private Vector3 _offsetShoulderView;
-	private Quaternion _rotationShoulderView;
+	
+	private Quaternion _camShopRotation;
 
 	private Transform _objectToFollow;
 	private Transform _cameraTransform;
+
+	[SerializeField] private bool _isShopMode;
+	private bool _isTransitionComplete;
 
     public void Launch(Transform objectToFollow, int carID)
     {
@@ -18,12 +22,24 @@ public class CameraSettings : MonoBehaviour
 		_cameraTransform = transform;
 
 		ChooseCameraTransform(ref carID);
+
+		_camShopRotation = Quaternion.Euler(
+			cameraSettingsConfig.CamShopData.rotation.x,
+			cameraSettingsConfig.CamShopData.rotation.y,
+			cameraSettingsConfig.CamShopData.rotation.z);			
     }
 
     private void FixedUpdate()
 	{
-		MoveToTarget();
-		LookAtTarget();
+		if (!_isShopMode)
+        {
+			MoveToTarget();
+			LookAtTarget();
+		}
+		else if (!_isTransitionComplete)
+        {
+			MoveToShopView();
+        }
     }
 
 	private void ChooseCameraTransform(ref int carID)
@@ -48,10 +64,39 @@ public class CameraSettings : MonoBehaviour
 							 _objectToFollow.up * _offsetShoulderView.y;
 		_cameraTransform.position = Vector3.Lerp(_cameraTransform.position, _targetPos, followSpeed * Time.fixedDeltaTime);
 	}
+
 	private void LookAtTarget()
 	{
 		var lookDirection = _objectToFollow.position - _cameraTransform.position;
 		var rot = Quaternion.LookRotation(lookDirection, Vector3.up);
 		_cameraTransform.rotation = Quaternion.Lerp(_cameraTransform.rotation, rot, lookSpeed * Time.fixedDeltaTime);
+	}
+
+	private void MoveToShopView()
+    {
+		_cameraTransform.position = Vector3.MoveTowards(
+			_cameraTransform.position, 
+			cameraSettingsConfig.CamShopData.position, 
+			cameraSettingsConfig.CamShopSwitchSpeed * Time.fixedDeltaTime);
+
+		_cameraTransform.rotation = Quaternion.Slerp(
+			_cameraTransform.rotation, 
+			_camShopRotation,
+			cameraSettingsConfig.CamShopSwitchSpeed * Time.fixedDeltaTime);
+
+		if (_cameraTransform.position == cameraSettingsConfig.CamShopData.position)
+        {
+			_isTransitionComplete = true;
+        }
+	}
+
+	private void SetCameraShopMode(bool value)
+    {
+		_isShopMode = value;		
+    }
+
+	private void SetCameraMovementMode(bool value)
+    {
+		_isTransitionComplete = value;
 	}
 }

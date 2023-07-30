@@ -31,3 +31,7 @@ MonoBehaviour:
   - carModel: 5
     offsetShoulderView: {x: 0, y: 1.1, z: -3.35}
     rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
+  CamShopData:
+    position: {x: 5.5, y: 3.1, z: 65.7}
+    rotation: {x: 22, y: 120, z: 0}
+  CamShopSwitchSpeed: 10
