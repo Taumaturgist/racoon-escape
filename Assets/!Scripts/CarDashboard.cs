@@ -19,11 +19,15 @@ public class CarDashboard : MonoBehaviour
 
     private void Update()
     {
+        if (_activeCarInfo == null)
+        {
+            _activeCarInfo = FindFirstObjectByType<PlayerActiveCar>();
+        }
+
         carSpeedInfo.text = $"Speed Km/H: {_activeCarInfo.GetSpeed()}";
         carCurrentRideDistance.text = $"Current Ride Distance, m: {_activeCarInfo.GetCurrentRideDistance()}";
         carOdometer.text = $"Odometer, m: {_playerAccount.GetOdometer()}";
         carNitroCapacity.text = $"NITRO: {_activeCarInfo?.GetNitroCapacity()}";
-
     }
 
     void OnGUI()
