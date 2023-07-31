@@ -1,6 +1,8 @@
 using UnityEngine;
 using UniRx;
 
+public readonly struct OnLoseScreenExitMessage
+{ }
 public class UIController : MonoBehaviour
 {
     [SerializeField] UIMainMenu mainMenuScreen;
@@ -27,18 +29,30 @@ public class UIController : MonoBehaviour
         mainMenuScreen.gameObject.SetActive(false);
         shopScreen.gameObject.SetActive(true);
         shopScreen.ShowCarOnShopEnter();
+
+        MessageBroker
+            .Default
+            .Publish(new OnShopEnterCamSwitchMessage(true));
     }
 
     public void ExitShop()
     {
         shopScreen.gameObject.SetActive(false);
         mainMenuScreen.gameObject.SetActive(true);
+
+        MessageBroker
+            .Default
+            .Publish(new OnShopEnterCamSwitchMessage(false));
     }
 
     public void ExitLoseScreen()
     {
         loseScreen.gameObject.SetActive(false);
         mainMenuScreen.gameObject.SetActive(true);
+
+        MessageBroker
+            .Default
+            .Publish(new OnLoseScreenExitMessage());
     }
 
     public void Launch(Shop shop, ShopCarModelsConfig shopConfig, PlayerAccountConfig playerAccountConfig, PlayerAccount playerAccount)

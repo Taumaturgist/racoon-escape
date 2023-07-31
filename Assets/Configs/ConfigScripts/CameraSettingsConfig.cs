@@ -12,6 +12,16 @@ public class CameraSettingsConfig : ScriptableObject
         public Quaternion rotationShoulderView;
     }
 
-    [SerializeField]
-    public CameraTransformData[] CameraTransformDataSet;
+    [Serializable]
+    public struct CameraShopData
+    {
+        public Vector3 position;
+        public Vector3 rotation;
+    }
+
+    [SerializeField] public CameraTransformData[] CameraTransformDataSet;
+
+    public CameraShopData CamShopData;
+
+    public float CamShopSwitchSpeed;
 }
