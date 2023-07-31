@@ -3,7 +3,17 @@ guid: ac024f154ad21e44795d671fc4f35d39
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metro1_Mat
+    second: {fileID: 2100000, guid: efebfc4e101a60945aa91d6716fe6d31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows2_Mat
+    second: {fileID: 2100000, guid: a848ea0f14f685141a60d34925e39139, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
