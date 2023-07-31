@@ -3,7 +3,12 @@ guid: e7d1aece0be129c4bb980dc20e15e69d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DestroyTree1_Mat
+    second: {fileID: 2100000, guid: 4287c34725d089649a8ababedcfe5360, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

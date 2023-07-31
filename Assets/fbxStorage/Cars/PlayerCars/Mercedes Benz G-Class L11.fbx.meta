@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Body_Mers
+    second: {fileID: 2100000, guid: f2620b6cf49df21448d42c981d140535, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Glass
     second: {fileID: 2100000, guid: b988f3d895133254ab5cc9a82d5956a6, type: 2}
   - first:
