@@ -1,4 +1,15 @@
 using UnityEngine;
+using UniRx;
+
+public readonly struct OnShopEnterCamSwitchMessage
+{
+	public readonly bool IsShopping;
+
+	public OnShopEnterCamSwitchMessage(bool value)
+    {
+		IsShopping = value;
+    }
+}
 
 public class CameraSettings : MonoBehaviour
 {
@@ -13,7 +24,7 @@ public class CameraSettings : MonoBehaviour
 	private Transform _objectToFollow;
 	private Transform _cameraTransform;
 
-	[SerializeField] private bool _isShopMode;
+	private bool _isShopMode;
 	private bool _isTransitionComplete;
 
     public void Launch(Transform objectToFollow, int carID)
@@ -26,7 +37,16 @@ public class CameraSettings : MonoBehaviour
 		_camShopRotation = Quaternion.Euler(
 			cameraSettingsConfig.CamShopData.rotation.x,
 			cameraSettingsConfig.CamShopData.rotation.y,
-			cameraSettingsConfig.CamShopData.rotation.z);			
+			cameraSettingsConfig.CamShopData.rotation.z);
+
+		MessageBroker
+			.Default
+			.Receive<OnShopEnterCamSwitchMessage>()
+			.Subscribe(message =>
+			{
+				SetCameraShopMode(message.IsShopping);
+				SetCameraMovementMode(!message.IsShopping);
+			});
     }
 
     private void FixedUpdate()

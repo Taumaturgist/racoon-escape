@@ -122,8 +122,15 @@ public class PlayerAccount : MonoBehaviour
             .Receive<OnGameStartMessage>()
             .Subscribe(message =>
             {
-                _activeCar.transform.position = _playerAccountConfig.PACSpawnPosition;
-                _activeCar.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                RestoreActiveCarDefaults();
+            });
+
+        MessageBroker
+            .Default
+            .Receive<OnLoseScreenExitMessage>()
+            .Subscribe(message =>
+            {
+                RestoreActiveCarDefaults();
             });
 
         MessageBroker
@@ -220,6 +227,12 @@ public class PlayerAccount : MonoBehaviour
         _carsAssortmentDict.Add(eCarModel.DodgeViperGTS, eCarLevel.Locked);
         _carsAssortmentDict.Add(eCarModel.MercedesBenzGCLass, eCarLevel.Locked);
         _carsAssortmentDict.Add(eCarModel.LamborghiniHuracanLP700, eCarLevel.Locked);
+    }
+
+    private void RestoreActiveCarDefaults()
+    {
+        _activeCar.transform.position = _playerAccountConfig.PACSpawnPosition;
+        _activeCar.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void OnApplicationQuit()
