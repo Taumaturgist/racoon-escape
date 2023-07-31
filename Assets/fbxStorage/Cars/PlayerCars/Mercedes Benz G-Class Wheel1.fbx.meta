@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: A_Cars_Tex
-    second: {fileID: 2100000, guid: a66eab1838ab5064d8fd00fba207e7f2, type: 2}
+    second: {fileID: 2100000, guid: c3aa800d1cf189c4c839249c15a515b1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: A_Wheel_Mat
-    second: {fileID: 2100000, guid: eac5769e5ebd179428f7ed789129d7b2, type: 2}
+    second: {fileID: 2100000, guid: b1c72f04c997a3a478e7e06aeba3ce9f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
