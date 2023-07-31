@@ -67,7 +67,7 @@ public class PlayerAccount : MonoBehaviour
 
     private Dictionary<eCarModel, eCarLevel> _carsAssortmentDict = new Dictionary<eCarModel, eCarLevel>();
 
-    private PlayerActiveCar _activeCar;   
+    private PlayerActiveCar _activeCar;
 
     private CameraSettings _camera;
 
@@ -122,6 +122,7 @@ public class PlayerAccount : MonoBehaviour
             .Receive<OnGameStartMessage>()
             .Subscribe(message =>
             {
+                _activeCar.FreezeRotation(false);
                 RestoreActiveCarDefaults();
             });
 
@@ -130,6 +131,7 @@ public class PlayerAccount : MonoBehaviour
             .Receive<OnLoseScreenExitMessage>()
             .Subscribe(message =>
             {
+                _activeCar.FreezeRotation(true);
                 RestoreActiveCarDefaults();
             });
 
@@ -230,7 +232,7 @@ public class PlayerAccount : MonoBehaviour
     }
 
     private void RestoreActiveCarDefaults()
-    {
+    {        
         _activeCar.transform.position = _playerAccountConfig.PACSpawnPosition;
         _activeCar.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }

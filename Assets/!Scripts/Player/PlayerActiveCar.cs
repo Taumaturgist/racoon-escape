@@ -108,6 +108,11 @@ public class PlayerActiveCar : MonoBehaviour
 		_carCollider.isTrigger = !value;
 		_carRigidbody.useGravity = value;
 	}
+
+	public void FreezeRotation(bool value)
+    {
+		_carRigidbody.freezeRotation = value;
+    }
 	
 	private void FixedUpdate()
 	{
