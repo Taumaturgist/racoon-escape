@@ -89,6 +89,7 @@ public class CameraSettings : MonoBehaviour
 	{
 		var lookDirection = _objectToFollow.position - _cameraTransform.position;
 		var rot = Quaternion.LookRotation(lookDirection, Vector3.up);
+		rot.eulerAngles -= new Vector3(0f, rot.eulerAngles.y, 0f);
 		_cameraTransform.rotation = Quaternion.Lerp(_cameraTransform.rotation, rot, lookSpeed * Time.fixedDeltaTime);
 	}
 

@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSettingsConfig: {fileID: 11400000, guid: 0dfc4386f15713347ad9bac7efcdabac, type: 2}
-  followSpeed: 20
-  lookSpeed: 20
+  followSpeed: 30
+  lookSpeed: 50
