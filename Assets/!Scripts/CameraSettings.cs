@@ -1,5 +1,6 @@
 using UnityEngine;
 using UniRx;
+using DG.Tweening;
 
 public readonly struct OnShopEnterCamSwitchMessage
 {
@@ -66,8 +67,10 @@ public class CameraSettings : MonoBehaviour
 	{
         switch (carID)
         {
-			default:
-			case (int)eCarModel.ToyotaTundra:
+			case (int)eCarModel.ChevroletCamaroSS1969:
+				_offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.ChevroletCamaroSS1969].offsetShoulderView;
+				break;
+            case (int)eCarModel.ToyotaTundra:
                 _offsetShoulderView = cameraSettingsConfig.CameraTransformDataSet[(int)eCarModel.ToyotaTundra].offsetShoulderView;
                 break;
             case (int)eCarModel.LamborghiniHuracanLP700:
@@ -89,6 +92,7 @@ public class CameraSettings : MonoBehaviour
 	{
 		var lookDirection = _objectToFollow.position - _cameraTransform.position;
 		var rot = Quaternion.LookRotation(lookDirection, Vector3.up);
+		rot.eulerAngles -= new Vector3(0f, rot.eulerAngles.y, 0f);
 		_cameraTransform.rotation = Quaternion.Lerp(_cameraTransform.rotation, rot, lookSpeed * Time.fixedDeltaTime);
 	}
 
