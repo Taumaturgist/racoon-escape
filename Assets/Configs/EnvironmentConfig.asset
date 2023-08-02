@@ -16,3 +16,4 @@ MonoBehaviour:
   LightQuaternion: {x: -0.4082179, y: 0.23456979, z: -0.10938169, w: -0.87542605}
   UIController: {fileID: -1919236468897869148, guid: 8bc23067f6d037241839d29ed638806b, type: 3}
   Shop: {fileID: -6429404066933279128, guid: 6ffd8525acfb5cb40b281e3f9399bc47, type: 3}
+  AudioController: {fileID: 2606153887580582617, guid: 780758f8fd6323443beed913000535ef, type: 3}

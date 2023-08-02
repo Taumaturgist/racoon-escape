@@ -9,4 +9,6 @@ public class EnvironmentConfig : ScriptableObject
     public UIController UIController;
 
     public Shop Shop;
+
+    public AudioController AudioController;
 }
