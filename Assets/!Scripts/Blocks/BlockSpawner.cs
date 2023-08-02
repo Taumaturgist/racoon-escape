@@ -15,7 +15,7 @@ public class BlockSpawner : MonoBehaviour
     private CompositeDisposable _disposable = new();
     private eBlockType _previousBlockType, _nextBlockType;
 
-    private List<GameObject> _blocks = new();
+    private List<Block> _blocks = new();
 
     private Vector3 _pos;
     private Quaternion _rot;
@@ -56,7 +56,7 @@ public class BlockSpawner : MonoBehaviour
         var tileSpawner = Instantiate(_blockSpawnConfig.TileSpawner, _pos, _rot, block.transform);
         tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig, block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
 
-        _blocks.Add(block.gameObject);
+        _blocks.Add(block);
         _blockCount = _blocks.Count;
 
         _transitionTileColliders[transitionTileNumber] = tileSpawner.GetTransitionTileCollider();
@@ -68,6 +68,12 @@ public class BlockSpawner : MonoBehaviour
             .Where(t => t.gameObject.CompareTag("Player"))
             .Subscribe(other =>
             {
+                MessageBroker
+                .Default
+                .Publish(new OnAmbientThemeSwitchMessage(
+                    _blocks.Count > 2 ? _blocks[2].BlockType : _blocks[1].BlockType
+                    ));
+
                 CheckBlockRemoval();
                 CreateBlock(0);
             }).AddTo(_disposable);
@@ -78,7 +84,7 @@ public class BlockSpawner : MonoBehaviour
         {
             var removableBlock = _blocks[0];
             _blocks.Remove(_blocks[0]);
-            Destroy(removableBlock);
+            Destroy(removableBlock.gameObject);
         }
     }
 }
