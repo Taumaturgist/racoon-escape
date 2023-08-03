@@ -12,10 +12,11 @@ public class ApplicationStartUp : MonoBehaviour
     public BlockSpawnConfig BlockSpawnConfig;
     public BuildingSpawnConfig BuildingSpawnConfig;
     public ShopCarModelsConfig ShopCarModelsConfig;
+    public TrafficSpawnConfig TrafficSpawnConfig;
     
     private void Awake()
     {
-        gameObject.AddComponent<Game>();        
+        gameObject.AddComponent<Game>();
         gameObject.AddComponent<PlayerDataStorage>();
         gameObject.AddComponent<Serializer>();
         gameObject.AddComponent<DebugSettings>();

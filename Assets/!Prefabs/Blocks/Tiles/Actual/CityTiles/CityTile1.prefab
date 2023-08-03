@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4192696207721956123}
   - component: {fileID: 8922726771520624967}
-  - component: {fileID: 8762049809995068488}
   - component: {fileID: 3543692409055551638}
+  - component: {fileID: 8762049809995068488}
+  - component: {fileID: 3199879608773821151}
   m_Layer: 0
   m_Name: CityTile1
   m_TagString: Untagged
@@ -48,6 +49,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 200, y: 0.1, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3543692409055551638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4192696207721956122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8762049809995068488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +82,7 @@ MonoBehaviour:
   - {x: 50, y: 0, z: 65}
   buildingPrefab: {fileID: -7081646534055728397, guid: d559fd0f5c5a9c243a6a22b66e587aa7, type: 3}
   smallBuildingIndexes: 
---- !u!114 &3543692409055551638
+--- !u!114 &3199879608773821151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,9 +91,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4192696207721956122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
+  m_Script: {fileID: 11500000, guid: e1d15ea5f3099614ca0d8a35618935c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
+  trafficCarsSpawnPoints:
+  - {x: -6, y: 0, z: -75}
+  - {x: -2, y: 0, z: -75}
+  - {x: 2, y: 0, z: -25}
+  - {x: -2, y: 0, z: -25}
+  - {x: 6, y: 0, z: 0}
+  - {x: -6, y: 0, z: 0}
+  - {x: -2, y: 0, z: 25}
+  - {x: 2, y: 0, z: 25}
+  - {x: 6, y: 0, z: 75}
+  - {x: -6, y: 0, z: 75}
 --- !u!1001 &4192696208217582909
 PrefabInstance:
   m_ObjectHideFlags: 0
