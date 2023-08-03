@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 891994989767525184}
   - component: {fileID: 926160079569169291}
   - component: {fileID: -4362574417198823884}
+  - component: {fileID: -5775987019254971699}
   m_Layer: 0
   m_Name: ForestDesertTile
   m_TagString: Untagged
@@ -105,6 +106,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5775987019254971699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611959400193699313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d15ea5f3099614ca0d8a35618935c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
+  trafficCarsSpawnPoints: []
 --- !u!1001 &484517078130004514
 PrefabInstance:
   m_ObjectHideFlags: 0

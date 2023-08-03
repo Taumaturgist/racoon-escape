@@ -11,6 +11,7 @@ public class BlockSpawner : MonoBehaviour
 {
     private BlockSpawnConfig _blockSpawnConfig;
     private BuildingSpawnConfig _buildingSpawnConfig;
+    private TrafficSpawnConfig _trafficSpawnConfig;
 
     private CompositeDisposable _disposable = new();
     private eBlockType _previousBlockType, _nextBlockType;
@@ -25,10 +26,11 @@ public class BlockSpawner : MonoBehaviour
     private int _blockCount;
     private bool _isFirstBlock;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig)
+    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig, TrafficSpawnConfig trafficSpawnConfig)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
+        _trafficSpawnConfig = trafficSpawnConfig;
 
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
         _rot = Quaternion.identity;
@@ -54,7 +56,7 @@ public class BlockSpawner : MonoBehaviour
             block.GetBlockParameters(_nextBlockType);
 
         var tileSpawner = Instantiate(_blockSpawnConfig.TileSpawner, _pos, _rot, block.transform);
-        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig, block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
+        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig, _trafficSpawnConfig, block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
 
         _blocks.Add(block.gameObject);
         _blockCount = _blocks.Count;
