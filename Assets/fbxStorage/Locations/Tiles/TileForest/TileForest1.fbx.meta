@@ -3,7 +3,27 @@ guid: dfc4813fd33c40149b1c7a0861e081c8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Location
+    second: {fileID: 2100000, guid: dfd488e07566b4446bfdf6ad9647b6a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Roads
+    second: {fileID: 2100000, guid: 60267ae20564edf4983047fbdfc37bd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Palette
+    second: {fileID: 2100000, guid: dfd488e07566b4446bfdf6ad9647b6a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sand.001
+    second: {fileID: 2100000, guid: 60267ae20564edf4983047fbdfc37bd5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
