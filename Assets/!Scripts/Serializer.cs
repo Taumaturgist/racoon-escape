@@ -38,12 +38,10 @@ public class Serializer : MonoBehaviour
 
     public PlayerData Load()
     {
-        var dictString = PlayerPrefs.GetString("carsDict");
-
-        if (dictString == "")
-        {
-            dictString = "ChevroletCamaroSS1969,Lvl1;ToyotaTundra,Locked;NissanSkylineGT,Locked;DodgeViperGTS,Locked;MercedesBenzGCLass,Locked;LamborghiniHuracanLP700,Locked";
-        }
+        var dictString = PlayerPrefs.HasKey("carsDict") ?
+            PlayerPrefs.GetString("carsDict") :        
+            "ChevroletCamaroSS1969,Lvl1;ToyotaTundra,Locked;NissanSkylineGT,Locked;DodgeViperGTS,Locked;MercedesBenzGCLass,Locked;LamborghiniHuracanLP700,Locked;";
+        
 
         Debug.Log($"dictString {dictString}");
         var carsDict = new Dictionary<eCarModel, eCarLevel>();
@@ -58,9 +56,12 @@ public class Serializer : MonoBehaviour
                          Enum.Parse<eCarLevel>(carInfo[1]));
             }                
         }
-        
-        var odometer = Int32.Parse(PlayerPrefs.GetString("odometer"));
-        var balance = Int32.Parse(PlayerPrefs.GetString("balance"));
+
+        var odometer = PlayerPrefs.HasKey("odometer") ?
+            Int32.Parse(PlayerPrefs.GetString("odometer")) : 0;
+
+        var balance = PlayerPrefs.HasKey("balance") ?
+            Int32.Parse(PlayerPrefs.GetString("balance")) : 0;
 
         Debug.Log($"LoadData: {dictString} {odometer} {balance}");
         return new PlayerData(carsDict, odometer, balance);
