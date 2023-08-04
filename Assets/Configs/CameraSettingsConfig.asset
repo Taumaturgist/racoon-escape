@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraTransformDataSet:
   - carModel: 0
-    offsetShoulderView: {x: 0, y: 1.3, z: -3.35}
+    offsetShoulderView: {x: 0, y: 1.3, z: -4.2}
     rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
   - carModel: 1
     offsetShoulderView: {x: 0, y: 1.4, z: -3.35}
     rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
   - carModel: 2
-    offsetShoulderView: {x: 0, y: 1.1, z: -3.35}
+    offsetShoulderView: {x: 0, y: 1.1, z: -4.2}
     rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
   - carModel: 3
-    offsetShoulderView: {x: 0, y: 1.1, z: -3.35}
+    offsetShoulderView: {x: 0, y: 1.1, z: -4.2}
     rotationShoulderView: {x: 0, y: 0, z: 0, w: 0}
   - carModel: 4
     offsetShoulderView: {x: 0, y: 1.1, z: -3.35}

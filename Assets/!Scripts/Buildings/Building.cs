@@ -1,7 +1,3 @@
-/*
- *  It is necessary to separate the logic of creating a middle floor and a roof for large and small buildings
- */
-
 using UnityEngine;
 using System.Collections.Generic;
 

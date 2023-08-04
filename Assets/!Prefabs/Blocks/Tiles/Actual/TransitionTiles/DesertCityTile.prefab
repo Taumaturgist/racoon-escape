@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 8850071556610012720}
   - component: {fileID: 5400471324793990284}
   - component: {fileID: 5146159383086067896}
+  - component: {fileID: 9032283585621136184}
   m_Layer: 0
   m_Name: DesertCityTile
   m_TagString: Untagged
@@ -262,6 +263,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &50730903562093628
+--- !u!114 &9032283585621136184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166369551285055917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d15ea5f3099614ca0d8a35618935c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
+  trafficCarsSpawnPoints: []
+--- !u!1001 &4890508047155974157
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
