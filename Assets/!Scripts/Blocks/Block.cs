@@ -5,7 +5,10 @@ public class Block : MonoBehaviour
 {
     private BlockSpawnConfig _blockSpawnConfig;
 
+    [HideInInspector]
     public eBlockType BlockType;
+
+    [HideInInspector]
     public int TilesCount;
 
     public void Launch(BlockSpawnConfig blockSpawnConfig)

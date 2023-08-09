@@ -8,11 +8,11 @@ public class ApplicationStartUp : MonoBehaviour
     public PlayerAccountConfig PlayerAccountConfig;
     public PlayerMoneyConfig PlayerMoneyConfig;
     public EnvironmentConfig EnvironmentConfig;
-    public DebugConfig DebugConfig;
+    public ShopCarModelsConfig ShopCarModelsConfig;
     public BlockSpawnConfig BlockSpawnConfig;
     public BuildingSpawnConfig BuildingSpawnConfig;
-    public ShopCarModelsConfig ShopCarModelsConfig;
     public TrafficSpawnConfig TrafficSpawnConfig;
+    public DebugConfig DebugConfig;
     
     private void Awake()
     {

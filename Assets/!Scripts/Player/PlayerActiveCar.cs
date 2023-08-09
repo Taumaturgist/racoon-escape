@@ -56,7 +56,7 @@ public class PlayerActiveCar : MonoBehaviour
 	private bool _hasLost;
 
 	public void Launch(Game game)
-	{		
+	{
 		_carCollider = GetComponent<Collider>();
 		
 		_game = game;
