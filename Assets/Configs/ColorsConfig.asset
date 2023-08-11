@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07210a53ad97d164fa309dd8bb6836e2, type: 3}
+  m_Name: ColorsConfig
+  m_EditorClassIdentifier: 
+  CarColors:
+  - CarModel: 0
+    ColorChoice:
+    - CarColor: {r: 0, g: 0, b: 0, a: 0}
+      ColorPrice: 1
+    - CarColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+      ColorPrice: 2
+    - CarColor: {r: 1, g: 1, b: 1, a: 0}
+      ColorPrice: 3
+  - CarModel: 1
+    ColorChoice:
+    - CarColor: {r: 0, g: 0, b: 0, a: 0}
+      ColorPrice: 1
+    - CarColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+      ColorPrice: 2
+    - CarColor: {r: 1, g: 1, b: 1, a: 0}
+      ColorPrice: 3
+    - CarColor: {r: 1, g: 0, b: 0, a: 0}
+      ColorPrice: 4
+    - CarColor: {r: 0, g: 1, b: 0, a: 0}
+      ColorPrice: 5
+  - CarModel: 2
+    ColorChoice:
+    - CarColor: {r: 0, g: 0, b: 0, a: 0}
+      ColorPrice: 1
+    - CarColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+      ColorPrice: 2
+    - CarColor: {r: 1, g: 1, b: 1, a: 0}
+      ColorPrice: 3
+    - CarColor: {r: 1, g: 0, b: 0, a: 0}
+      ColorPrice: 4
+    - CarColor: {r: 0, g: 1, b: 0, a: 0}
+      ColorPrice: 5
+    - CarColor: {r: 0, g: 0, b: 1, a: 0}
+      ColorPrice: 6
+    - CarColor: {r: 1, g: 1, b: 0, a: 0}
+      ColorPrice: 7
+  - CarModel: 3
+    ColorChoice:
+    - CarColor: {r: 0, g: 0, b: 0, a: 0}
+      ColorPrice: 1
+    - CarColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+      ColorPrice: 2
+    - CarColor: {r: 1, g: 1, b: 1, a: 0}
+      ColorPrice: 3
+    - CarColor: {r: 1, g: 0, b: 0, a: 0}
+      ColorPrice: 4
+    - CarColor: {r: 0, g: 1, b: 0, a: 0}
+      ColorPrice: 5
+    - CarColor: {r: 0, g: 0, b: 1, a: 0}
+      ColorPrice: 6
+    - CarColor: {r: 1, g: 1, b: 0, a: 0}
+      ColorPrice: 7
+    - CarColor: {r: 1, g: 0, b: 1, a: 0}
+      ColorPrice: 8
+    - CarColor: {r: 0, g: 1, b: 1, a: 0}
+      ColorPrice: 9
+  - CarModel: 4
+    ColorChoice:
+    - CarColor: {r: 0, g: 0, b: 0, a: 0}
+      ColorPrice: 1
+    - CarColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+      ColorPrice: 2
+    - CarColor: {r: 1, g: 1, b: 1, a: 0}
+      ColorPrice: 3
+    - CarColor: {r: 1, g: 0, b: 0, a: 0}
+      ColorPrice: 4
+    - CarColor: {r: 0, g: 1, b: 0, a: 0}
+      ColorPrice: 5
+    - CarColor: {r: 0, g: 0, b: 1, a: 0}
+      ColorPrice: 6
+    - CarColor: {r: 1, g: 1, b: 0, a: 0}
+      ColorPrice: 7
+    - CarColor: {r: 1, g: 0, b: 1, a: 0}
+      ColorPrice: 8
+    - CarColor: {r: 0, g: 1, b: 1, a: 0}
+      ColorPrice: 9
+    - CarColor: {r: 1, g: 0.5019608, b: 0, a: 0}
+      ColorPrice: 10
+    - CarColor: {r: 1, g: 0, b: 0.5019608, a: 0}
+      ColorPrice: 11
+  - CarModel: 5
+    ColorChoice:
+    - CarColor: {r: 0, g: 0, b: 0, a: 0}
+      ColorPrice: 1
+    - CarColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+      ColorPrice: 2
+    - CarColor: {r: 1, g: 1, b: 1, a: 0}
+      ColorPrice: 3
+    - CarColor: {r: 1, g: 0, b: 0, a: 0}
+      ColorPrice: 4
+    - CarColor: {r: 0, g: 1, b: 0, a: 0}
+      ColorPrice: 5
+    - CarColor: {r: 0, g: 0, b: 1, a: 0}
+      ColorPrice: 6
+    - CarColor: {r: 1, g: 1, b: 0, a: 0}
+      ColorPrice: 7
+    - CarColor: {r: 1, g: 0, b: 1, a: 0}
+      ColorPrice: 8
+    - CarColor: {r: 0, g: 1, b: 1, a: 0}
+      ColorPrice: 9
+    - CarColor: {r: 1, g: 0.5019608, b: 0, a: 0}
+      ColorPrice: 10
+    - CarColor: {r: 1, g: 0, b: 0.5019608, a: 0}
+      ColorPrice: 11
+    - CarColor: {r: 0, g: 0.5019608, b: 1, a: 0}
+      ColorPrice: 12
