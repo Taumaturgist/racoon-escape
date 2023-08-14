@@ -45,6 +45,18 @@ public class UIController : MonoBehaviour
             .Publish(new OnShopEnterCamSwitchMessage(false));
     }
 
+    public void EnterColorsShop()
+    {
+        shopScreen.gameObject.SetActive(false);
+        paintingScreen.gameObject.SetActive(true);
+    }
+
+    public void ExitColorsShop()
+    {
+        paintingScreen.gameObject.SetActive(false);
+        shopScreen.gameObject.SetActive(true);
+    }
+
     public void ExitLoseScreen()
     {
         loseScreen.gameObject.SetActive(false);
@@ -55,7 +67,12 @@ public class UIController : MonoBehaviour
             .Publish(new OnLoseScreenExitMessage());
     }
 
-    public void Launch(Shop shop, ShopCarModelsConfig shopConfig, PlayerAccountConfig playerAccountConfig, PlayerAccount playerAccount)
+    public void Launch(
+        Shop shop, 
+        ShopCarModelsConfig shopConfig, 
+        PlayerAccountConfig playerAccountConfig, 
+        PlayerAccount playerAccount, 
+        ColorsConfig colorsConfig)
     {
         MessageBroker
             .Default
@@ -68,6 +85,7 @@ public class UIController : MonoBehaviour
         hud.Launch();
         shopScreen.Launch(this, shop, shopConfig, playerAccountConfig, playerAccount);
         loseScreen.Launch();
+        paintingScreen.Launch(this, colorsConfig);
     }
 
     private void ShowLoseScreen()

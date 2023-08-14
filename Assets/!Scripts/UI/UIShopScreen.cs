@@ -49,6 +49,11 @@ public class UIShopScreen : UIScreen
         }
     }
 
+    public void EnterColorsShop()
+    {
+        _uiController.EnterColorsShop();
+    }
+
     private void OnCarSwitchLogic()
     {
         SetCarName(_shop.GetCurrentCarName());
