@@ -49,6 +49,8 @@ public class UIController : MonoBehaviour
     {
         shopScreen.gameObject.SetActive(false);
         paintingScreen.gameObject.SetActive(true);
+
+        paintingScreen.SetColors();
     }
 
     public void ExitColorsShop()
@@ -85,7 +87,7 @@ public class UIController : MonoBehaviour
         hud.Launch();
         shopScreen.Launch(this, shop, shopConfig, playerAccountConfig, playerAccount);
         loseScreen.Launch();
-        paintingScreen.Launch(this, colorsConfig);
+        paintingScreen.Launch(this, colorsConfig, shop);
     }
 
     private void ShowLoseScreen()
