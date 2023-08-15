@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Grass1_Mat
     second: {fileID: 2100000, guid: 9ba58b7434a530b42880fc87387d346c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrassOld_Mat
+    second: {fileID: 2100000, guid: 4842c659848d3fd41b18066199d8a2b1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
