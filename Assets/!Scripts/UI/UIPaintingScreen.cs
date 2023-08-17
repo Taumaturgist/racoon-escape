@@ -1,18 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIPaintingScreen : UIScreen
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Button[] colorButtons;
+
+    private UIController _uiController;
+    private ColorsConfig _colorsConfig;
+    private Shop _shop;
+
+    public void Launch(UIController uiController, ColorsConfig colorsConfig, Shop shop)
     {
-        
+        _uiController = uiController;
+        _colorsConfig = colorsConfig;
+        _shop = shop;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetColors()
     {
-        
+        var carModel = _shop.GetCurrentCarModel();
+
+        foreach (var item in _colorsConfig.CarColors)
+        {
+            if (item.CarModel == carModel)
+            {
+                for (int i = 0; i < item.ColorChoice.Length; i++)
+                {
+                    colorButtons[i].gameObject.SetActive(true);
+                    colorButtons[i].GetComponent<Image>().color = item.ColorChoice[i].CarColor;
+                }
+            }
+        }
+    }
+
+    public void ExitColorsShop()
+    {
+        _uiController.ExitColorsShop();
+
+        for (int i = 0; i < colorButtons.Length;i++)
+        {
+            colorButtons[i].gameObject.SetActive(false);
+        }
     }
 }
