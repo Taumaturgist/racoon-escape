@@ -6,16 +6,19 @@ using System.Collections.Generic;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BlockSpawner : MonoBehaviour
 {
+    public UnityEvent OnChangeRoadLane;
+    
     private BlockSpawnConfig _blockSpawnConfig;
     private BuildingSpawnConfig _buildingSpawnConfig;
     private TrafficSpawnConfig _trafficSpawnConfig;
 
     private CompositeDisposable _disposable = new();
     private eBlockType _previousBlockType, _nextBlockType;
-
+    
     private List<Block> _blocks = new();
 
     private Vector3 _pos;
@@ -26,7 +29,10 @@ public class BlockSpawner : MonoBehaviour
     private int _blockCount;
     private bool _isFirstBlock;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig, TrafficSpawnConfig trafficSpawnConfig)
+    public void Launch(
+        BlockSpawnConfig blockSpawnConfig,
+        BuildingSpawnConfig buildingSpawnConfig,
+        TrafficSpawnConfig trafficSpawnConfig)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
@@ -55,8 +61,20 @@ public class BlockSpawner : MonoBehaviour
         else
             block.GetBlockParameters(_nextBlockType);
 
-        var tileSpawner = Instantiate(_blockSpawnConfig.TileSpawner, _pos, _rot, block.transform);
-        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig, _trafficSpawnConfig, block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
+        var tileSpawner = Instantiate(
+            _blockSpawnConfig.TileSpawner,
+            _pos,
+            _rot,
+            block.transform);
+        tileSpawner.Launch(
+            _blockSpawnConfig,
+            _buildingSpawnConfig,
+            _trafficSpawnConfig,
+            block,
+            ref _previousBlockType,
+            ref _nextBlockType,
+            ref _pos,
+            _rot);
 
         _blocks.Add(block);
         _blockCount = _blocks.Count;
@@ -78,6 +96,7 @@ public class BlockSpawner : MonoBehaviour
 
                 CheckBlockRemoval();
                 CreateBlock(0);
+                OnChangeRoadLane?.Invoke();
             }).AddTo(_disposable);
     }
     private void CheckBlockRemoval()

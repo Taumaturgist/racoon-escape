@@ -14,6 +14,9 @@ public class BlockStorageCreation : MonoBehaviour
         _trafficSpawnConfig = GetComponent<ApplicationStartUp>().TrafficSpawnConfig;
 
         _blockStorage = Instantiate(_blockSpawnConfig.BlockStorage);
-        _blockStorage.Launch(_blockSpawnConfig, _buildingSpawnConfig, _trafficSpawnConfig);
+        _blockStorage.Launch(
+            _blockSpawnConfig,
+            _buildingSpawnConfig,
+            _trafficSpawnConfig);
     }
 }

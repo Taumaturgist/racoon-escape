@@ -10,18 +10,27 @@ public class TileSpawner : MonoBehaviour
     private Tile[] _tileSet;
     private Tile _transitionTile;
 
-    private const int _maxBlockAmountInScene = 2;
+    private const int MaxBlockAmountInScene = 2;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig,
-        TrafficSpawnConfig trafficSpawnConfig, Block block,
-        ref eBlockType previousBlockType, ref eBlockType nextBlockType,
+    public void Launch(
+        BlockSpawnConfig blockSpawnConfig,
+        BuildingSpawnConfig buildingSpawnConfig,
+        TrafficSpawnConfig trafficSpawnConfig,
+        Block block,
+        ref eBlockType previousBlockType,
+        ref eBlockType nextBlockType,
         ref Vector3 pos, Quaternion rot)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
         _trafficSpawnConfig = trafficSpawnConfig;
 
-        CreateTiles(block, ref previousBlockType, ref nextBlockType, ref pos, rot);
+        CreateTiles(
+            block,
+            ref previousBlockType,
+            ref nextBlockType,
+            ref pos,
+            rot);
     }
 
     private void CreateTiles(Block block, ref eBlockType previousBlockType, ref eBlockType nextBlockType,
@@ -51,7 +60,7 @@ public class TileSpawner : MonoBehaviour
         for (int i = 0; i < _tiles.Length - 1; i++)
         {
             randomIndex = Random.Range(0, _tileSet.Length);
-            if (crossroadCount < _maxBlockAmountInScene)
+            if (crossroadCount < MaxBlockAmountInScene)
             {
                 _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
 

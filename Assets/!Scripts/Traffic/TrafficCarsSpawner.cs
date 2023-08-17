@@ -14,7 +14,7 @@ public class TrafficCarsSpawner : MonoBehaviour
 
         for (int i = 0; i < trafficCarsSpawnPoints.Length; i++)
         {
-            TrafficCar trafficCar = Instantiate(trafficCarPrefab, transform.position + trafficCarsSpawnPoints[i], Quaternion.identity, transform);
+            var trafficCar = Instantiate(trafficCarPrefab, transform.position + trafficCarsSpawnPoints[i], Quaternion.identity, transform);
             _isOnLeftStreetSide = trafficCarsSpawnPoints[i].x < 0;
 
             trafficCar.Launch(_trafficSpawnConfig, _isOnLeftStreetSide);

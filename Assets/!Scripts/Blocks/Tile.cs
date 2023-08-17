@@ -16,7 +16,6 @@ public class Tile : MonoBehaviour
         _buildingSpawner = GetComponent<BuildingSpawner>();
         _trafficCarsSpawner = GetComponent<TrafficCarsSpawner>();
 
-
         if (_buildingSpawner != null)
             _buildingSpawner.Launch(_buildingSpawnConfig);
         
