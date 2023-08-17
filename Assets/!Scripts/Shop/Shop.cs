@@ -99,6 +99,11 @@ public class Shop : MonoBehaviour
         return _carPrefabs[_currentShopCarIndex].GetCarPurchasePrice();
     }
 
+    public eCarModel GetCurrentCarModel()
+    {
+        return _carPrefabs[_currentShopCarIndex].GetCarModel();
+    }
+
     private void SetAssortmentFromAccount()
     {
         var carsDict = _playerAccount.GetCarsDict();
