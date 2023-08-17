@@ -6,6 +6,7 @@ public class TrafficCar : MonoBehaviour
 {
     private TrafficSpawnConfig _trafficSpawnConfig;
     private float _speed;
+    private int _direction;
     private bool _isOnLeftStreetSide;
 
     public void Launch(TrafficSpawnConfig trafficSpawnConfig, bool isOnLeftStreetSide)
@@ -17,14 +18,18 @@ public class TrafficCar : MonoBehaviour
         if (isOnLeftStreetSide)
         {
             transform.Rotate(0f, -180f, 0f);
+            _direction = -1;
         }
-
+        else
+        {
+            _direction = 1;
+        }
         SpawnTrafficCar();
     }
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime, Space.Self);
+        transform.Translate(_direction * Vector3.forward * _speed * Time.deltaTime);
     }
 
     private void SpawnTrafficCar()
