@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrafficSpawnConfig
   m_EditorClassIdentifier: 
   TrafficCarsSpawner: {fileID: -1015186689500763139, guid: bc93a1769cdac3846bc0528a712c5914, type: 3}
+  TrafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
   TrafficCars:
   - {fileID: 2515979562634652366, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
   - {fileID: 2515979562634652366, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}

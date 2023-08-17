@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrafficSpawnConfig : ScriptableObject
 {
     public TrafficCarsSpawner TrafficCarsSpawner;
+    public TrafficCar TrafficCarPrefab;
     public List<GameObject> TrafficCars;
     public float TrafficCarsSpeed;
 }
