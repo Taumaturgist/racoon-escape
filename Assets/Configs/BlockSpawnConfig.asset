@@ -29,6 +29,10 @@ MonoBehaviour:
   - {fileID: 2179686252110637026, guid: 3922b4d99a236dd498f16ee4fc02570f, type: 3}
   DesertTiles:
   - {fileID: -3228108307972865063, guid: b598bf98c37c5b94ba226908574e08db, type: 3}
+  - {fileID: -3228108307972865063, guid: fdf017c1400bed848ab36e9396d96f0e, type: 3}
+  - {fileID: -3228108307972865063, guid: 3d2184da823b0d84faa5f784ce27d33f, type: 3}
+  - {fileID: -3228108307972865063, guid: 42fb875bbb51e844797087c8159e3089, type: 3}
+  - {fileID: -3228108307972865063, guid: 96445f083912ee7408f07c1b7ed078c9, type: 3}
   ForestTiles:
   - {fileID: 8764331584623168254, guid: b757a6bfc04699c438338b61cb506fc9, type: 3}
   HighwayTiles:
