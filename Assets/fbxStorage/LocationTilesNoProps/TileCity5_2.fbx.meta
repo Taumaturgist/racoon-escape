@@ -14,6 +14,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: A_Roads
     second: {fileID: 2100000, guid: 60267ae20564edf4983047fbdfc37bd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Sidewalk_Mat
+    second: {fileID: 2100000, guid: 7fdbb863eaf61b041b65c754e5efb89d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sidewalk3_Mat
+    second: {fileID: 2100000, guid: f0b712d002da62341a74bfce4624953c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
