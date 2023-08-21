@@ -32,6 +32,11 @@ public class TrafficCar : MonoBehaviour
         {
             _direction = -1;
             transform.Rotate(0f, -180f, 0f);
+            _direction = -1;
+        }
+        else
+        {
+            _direction = 1;
         }
         else
             _direction = 1;
