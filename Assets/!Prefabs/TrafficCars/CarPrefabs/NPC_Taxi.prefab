@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2515979562634652367}
   - component: {fileID: 8074021447025941374}
   - component: {fileID: 4964473440750899458}
+  - component: {fileID: 9201160333865850269}
   m_Layer: 0
   m_Name: NPC_Taxi
   m_TagString: Untagged
@@ -64,6 +65,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9573601, y: 1.764454, z: 5.241824}
   m_Center: {x: 0.0056219697, y: 0.8420904, z: -1.5727205}
+--- !u!114 &9201160333865850269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515979562634652366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d432e5185fed429f13a4019449201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3167390132812965091
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,8 +101,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167390132812965091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9, y: -0.45, z: 1.655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.85, y: -0.45, z: 1.655}
+  m_LocalScale: {x: 0.97, y: 0.97, z: 0.97}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 829007025172438488}
@@ -120,8 +133,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3830070726700586220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: -0.45, z: -1.176}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.85, y: -0.45, z: -1.176}
+  m_LocalScale: {x: 0.97, y: 0.97, z: 0.97}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7103035150643962019}
@@ -152,8 +165,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4184657702332750943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: -0.45, z: 1.655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.85, y: -0.45, z: 1.655}
+  m_LocalScale: {x: 0.97, y: 0.97, z: 0.97}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7482008496849146944}
@@ -219,8 +232,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8008963847203778608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9, y: -0.45, z: -1.1759999}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.85, y: -0.45, z: -1.1759999}
+  m_LocalScale: {x: 0.97, y: 0.97, z: 0.97}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 885408362866851784}

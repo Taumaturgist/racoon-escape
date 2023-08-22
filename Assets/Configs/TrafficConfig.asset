@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a99baa13925c849b67f008592f15df, type: 3}
+  m_Name: TrafficConfig
+  m_EditorClassIdentifier: 
+  _trafficModel:
+  - TrafficCarName: 0
+    TrafficCar: {fileID: 1225974333804127935, guid: 912399416774c774ebbd1927199c6192, type: 3}
+  - TrafficCarName: 1
+    TrafficCar: {fileID: 2880843906780187015, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
+  - TrafficCarName: 2
+    TrafficCar: {fileID: 6954149515662593270, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
+  - TrafficCarName: 3
+    TrafficCar: {fileID: 3211006285154323820, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
+  - TrafficCarName: 4
+    TrafficCar: {fileID: 4794528664680887014, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
+  - TrafficCarName: 5
+    TrafficCar: {fileID: 9201160333865850269, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
+  CitySpawnPoints: []
+  DesertSpawnPoints: []
+  ForestSpawnPoints: []
+  HighwaySpawnPoints: []

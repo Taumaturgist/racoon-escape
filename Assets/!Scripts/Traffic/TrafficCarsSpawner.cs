@@ -1,24 +1,27 @@
 using UnityEngine;
 
-public class TrafficCarsSpawner : MonoBehaviour
+namespace Traffic
 {
-    private TrafficCar _trafficCarPrefab;
-    [SerializeField] private Vector3[] trafficCarsSpawnPoints;
-
-    private TrafficSpawnConfig _trafficSpawnConfig;
-    private bool _isOnLeftStreetSide;
-
-    public void Launch(TrafficSpawnConfig trafficSpawnConfig)
+    public class TrafficCarsSpawner : MonoBehaviour
     {
-        _trafficSpawnConfig = trafficSpawnConfig;
-        _trafficCarPrefab = _trafficSpawnConfig.TrafficCarPrefab;
+        private TrafficCar _trafficCarPrefab;
+        [SerializeField] private Vector3[] trafficCarsSpawnPoints;
 
-        for (int i = 0; i < trafficCarsSpawnPoints.Length; i++)
+        private TrafficConfig _trafficConfig;
+        private bool _isOnLeftStreetSide;
+
+        public void Launch(TrafficConfig trafficConfig)
         {
-            var trafficCar = Instantiate(_trafficCarPrefab, transform.position + trafficCarsSpawnPoints[i], Quaternion.identity, transform);
-            _isOnLeftStreetSide = trafficCarsSpawnPoints[i].x < 0;
+            _trafficConfig = trafficConfig;
+            // _trafficCarPrefab = _trafficConfig.TrafficCarPrefab;
 
-            trafficCar.Launch(_trafficSpawnConfig, _isOnLeftStreetSide);
+            for (int i = 0; i < trafficCarsSpawnPoints.Length; i++)
+            {
+                var trafficCar = Instantiate(_trafficCarPrefab, transform.position + trafficCarsSpawnPoints[i], Quaternion.identity, transform);
+                _isOnLeftStreetSide = trafficCarsSpawnPoints[i].x < 0;
+
+                trafficCar.Launch(_trafficConfig, _isOnLeftStreetSide);
+            }
         }
     }
 }

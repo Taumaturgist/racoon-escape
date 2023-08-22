@@ -3,6 +3,7 @@
  */
 
 using System.Collections.Generic;
+using Traffic;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class BlockSpawner : MonoBehaviour
     
     private BlockSpawnConfig _blockSpawnConfig;
     private BuildingSpawnConfig _buildingSpawnConfig;
-    private TrafficSpawnConfig _trafficSpawnConfig;
+    private TrafficConfig _trafficConfig;
 
     private CompositeDisposable _disposable = new();
     private eBlockType _previousBlockType, _nextBlockType;
@@ -32,11 +33,11 @@ public class BlockSpawner : MonoBehaviour
     public void Launch(
         BlockSpawnConfig blockSpawnConfig,
         BuildingSpawnConfig buildingSpawnConfig,
-        TrafficSpawnConfig trafficSpawnConfig)
+        TrafficConfig trafficConfig)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
-        _trafficSpawnConfig = trafficSpawnConfig;
+        _trafficConfig = trafficConfig;
 
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
         _rot = Quaternion.identity;
@@ -69,7 +70,7 @@ public class BlockSpawner : MonoBehaviour
         tileSpawner.Launch(
             _blockSpawnConfig,
             _buildingSpawnConfig,
-            _trafficSpawnConfig,
+            _trafficConfig,
             block,
             ref _previousBlockType,
             ref _nextBlockType,
