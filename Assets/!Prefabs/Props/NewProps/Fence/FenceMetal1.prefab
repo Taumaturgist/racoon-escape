@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2371327977771769550}
+  - component: {fileID: 811731333760033308}
   m_Layer: 0
   m_Name: FenceMetal1
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &811731333760033308
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169796160849774644}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &383564056697419253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,3 +111,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fc994da3a86f35b46b362465f41b33bc, type: 3}
   m_PrefabInstance: {fileID: 383564056697419253}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &690133400358717604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fc994da3a86f35b46b362465f41b33bc, type: 3}
+  m_PrefabInstance: {fileID: 383564056697419253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &201408651008507112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690133400358717604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0013106749, y: 0.02559487, z: 0.013097436}
+  m_Center: {x: -0.00004537545, y: -2.4560647e-19, z: 0.0063778763}
