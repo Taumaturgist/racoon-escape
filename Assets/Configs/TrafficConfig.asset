@@ -25,7 +25,14 @@ MonoBehaviour:
     TrafficCar: {fileID: 4794528664680887014, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
   - TrafficCarName: 5
     TrafficCar: {fileID: 9201160333865850269, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
-  CitySpawnPoints: []
-  DesertSpawnPoints: []
-  ForestSpawnPoints: []
-  HighwaySpawnPoints: []
+  citySpawnPoints:
+  - {x: -6, y: 1, z: -75}
+  - {x: -2, y: 1, z: -75}
+  - {x: 2, y: 1, z: -25}
+  - {x: -2, y: 1, z: -25}
+  - {x: 6, y: 1, z: 0}
+  - {x: -6, y: 1, z: 0}
+  - {x: -2, y: 1, z: 25}
+  - {x: 2, y: 1, z: 25}
+  - {x: 6, y: 1, z: 75}
+  - {x: -6, y: 1, z: 75}

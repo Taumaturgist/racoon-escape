@@ -11,10 +11,12 @@ namespace Traffic
 
         [SerializeField] private TrafficModel[] _trafficModel;
 
-        [SerializeField] private Vector3[] CitySpawnPoints;
-        [SerializeField] private Vector3[] DesertSpawnPoints;
-        [SerializeField] private Vector3[] ForestSpawnPoints;
-        [SerializeField] private Vector3[] HighwaySpawnPoints;
+        public Vector3[] CitySpawnPoints => citySpawnPoints;
+        [SerializeField] private Vector3[] citySpawnPoints;
+        
+        // [SerializeField] private Vector3[] DesertSpawnPoints;
+        // [SerializeField] private Vector3[] ForestSpawnPoints;
+        // [SerializeField] private Vector3[] HighwaySpawnPoints;
     
         private Dictionary<Enum, TrafficView> _trafficDict = new();
 

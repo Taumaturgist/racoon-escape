@@ -26,12 +26,7 @@ public class TileSpawner : MonoBehaviour
         _buildingSpawnConfig = buildingSpawnConfig;
         _trafficConfig = trafficConfig;
 
-        CreateTiles(
-            block,
-            ref previousBlockType,
-            ref nextBlockType,
-            ref pos,
-            rot);
+        CreateTiles(block, ref previousBlockType, ref nextBlockType, ref pos, rot);
     }
 
     private void CreateTiles(Block block, ref eBlockType previousBlockType, ref eBlockType nextBlockType,

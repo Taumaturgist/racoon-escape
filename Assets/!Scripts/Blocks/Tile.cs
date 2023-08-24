@@ -7,7 +7,10 @@ public class Tile : MonoBehaviour
     private TrafficCarsSpawner _trafficCarsSpawner;
     private BuildingSpawnConfig _buildingSpawnConfig;
     private TrafficConfig _trafficConfig;
-    public void Launch() { }
+
+    public void Launch()
+    {
+    }
 
     public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig)
     {
@@ -21,8 +24,5 @@ public class Tile : MonoBehaviour
             _buildingSpawner.Launch(_buildingSpawnConfig);
 
         new TrafficController(_trafficConfig);
-
-        // if (_trafficCarsSpawner != null)
-        //     _trafficCarsSpawner.Launch(_trafficSpawnConfig);
     }
 }
