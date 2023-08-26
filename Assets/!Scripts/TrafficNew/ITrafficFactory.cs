@@ -1,7 +1,9 @@
-using Traffic;
 using UnityEngine;
 
-public interface ITrafficFactory
+namespace Traffic
 {
-    TrafficView Create(TrafficModel trafficModel, TrafficView trafficView, Vector3 position);
+    public interface ITrafficFactory
+    {
+        TrafficView Create(TrafficModel trafficModel, TrafficView trafficView, Vector3 position);
+    }
 }

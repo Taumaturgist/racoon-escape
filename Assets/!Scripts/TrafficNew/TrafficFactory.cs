@@ -1,26 +1,30 @@
-using Traffic;
 using UnityEngine;
 
-public class TrafficFactory : ITrafficFactory
+namespace Traffic
 {
-    private readonly TrafficView _trafficView;
-    private readonly TrafficModel[] _trafficModel;
-    private const string Traffic = "Traffic";
-    private TrafficConfig _trafficConfig;
-
-    public TrafficFactory(TrafficConfig trafficConfig)
+    public class TrafficFactory : ITrafficFactory
     {
-        _trafficConfig = trafficConfig;
-        
-        _trafficModel = trafficConfig.TrafficModel;
-    }
+        private readonly TrafficView _trafficView;
+        private readonly TrafficModel[] _trafficModel;
+        private TrafficConfig _trafficConfig;
+    
+        private GameObject _trafficPrefab;
 
-    public TrafficView Create(TrafficModel trafficModel ,TrafficView trafficView, Vector3 position)
-    {
-        var randIndex = Random.Range(0, _trafficConfig.TrafficModel.Length);
-        
-        trafficView = GameObject.Instantiate(_trafficModel[randIndex].TrafficCar, position, Quaternion.identity);
+        public TrafficFactory(TrafficConfig trafficConfig)
+        {
+            _trafficConfig = trafficConfig;
+            _trafficModel = trafficConfig.TrafficModel;
 
-        return trafficView;
+            _trafficPrefab = new GameObject("TrafficPrefab");
+        }
+
+        public TrafficView Create(TrafficModel trafficModel ,TrafficView trafficView, Vector3 position)
+        {
+            var randIndex = Random.Range(0, _trafficConfig.TrafficModel.Length);
+        
+            trafficView = Object.Instantiate(_trafficModel[randIndex].TrafficCar, position, Quaternion.identity, _trafficPrefab.transform);
+
+            return trafficView;
+        }
     }
 }
