@@ -9,6 +9,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: A_Location
     second: {fileID: 2100000, guid: dfd488e07566b4446bfdf6ad9647b6a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete1_Mat.001
+    second: {fileID: 2100000, guid: 7650eb752d458b340b2681686d5a735a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows2_Mat
+    second: {fileID: 2100000, guid: a848ea0f14f685141a60d34925e39139, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
