@@ -11,6 +11,8 @@ public class TileSpawner : MonoBehaviour
     private Tile[] _tileSet;
     private Tile _transitionTile;
 
+    private eBlockType _blockType;
+
     private const int MaxBlockAmountInScene = 2;
 
     public void Launch(
@@ -25,6 +27,7 @@ public class TileSpawner : MonoBehaviour
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
         _trafficConfig = trafficConfig;
+        _blockType = block.BlockType;
 
         CreateTiles(block, ref previousBlockType, ref nextBlockType, ref pos, rot);
     }
@@ -60,7 +63,7 @@ public class TileSpawner : MonoBehaviour
             {
                 _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
 
-                _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig);
+                _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
 
                 if (randomIndex == _blockSpawnConfig.CrossroadNumberInCity)
                     crossroadCount++;
@@ -72,7 +75,7 @@ public class TileSpawner : MonoBehaviour
 
                 _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
 
-                _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig);
+                _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
             }
 
             pos.z += _blockSpawnConfig.OffsetZ;
@@ -95,15 +98,15 @@ public class TileSpawner : MonoBehaviour
                 {
                     case eBlockType.Desert:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.CityDesertTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Forest:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.CityForestTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Highway:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.CityHighwayTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                 }
                 break;
@@ -112,15 +115,15 @@ public class TileSpawner : MonoBehaviour
                 {
                     case eBlockType.City:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.DesertCityTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Forest:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.DesertForestTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Highway:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.DesertHighwayTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                 }
                 break;
@@ -129,15 +132,15 @@ public class TileSpawner : MonoBehaviour
                 {
                     case eBlockType.City:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.ForestCityTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Desert:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.ForestDesertTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Highway:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.ForestHighwayTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                 }
                 break;
@@ -146,15 +149,15 @@ public class TileSpawner : MonoBehaviour
                 {
                     case eBlockType.City:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.HighwayCityTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Desert:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.HighwayDesertTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                     case eBlockType.Forest:
                         tiles[lastIndex] = CreateTransitionTileAsGameObject(_blockSpawnConfig.HighwayForestTile, ref pos);
-                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig);
+                        _tiles[lastIndex].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
                         break;
                 }
                 break;

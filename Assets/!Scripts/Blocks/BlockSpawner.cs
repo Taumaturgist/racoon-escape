@@ -1,7 +1,4 @@
-/* 
- *      Unsubscribing after losing _disposableTrigger.Clear();
- */
-
+using System;
 using System.Collections.Generic;
 using Traffic;
 using UniRx;
@@ -9,7 +6,7 @@ using UniRx.Triggers;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BlockSpawner : MonoBehaviour
+public class BlockSpawner : MonoBehaviour, IDisposable
 {
     public UnityEvent OnChangeRoadLane;
     
@@ -108,5 +105,10 @@ public class BlockSpawner : MonoBehaviour
             _blocks.Remove(_blocks[0]);
             Destroy(removableBlock.gameObject);
         }
+    }
+
+    public void Dispose()
+    {
+        _disposable.Clear();
     }
 }

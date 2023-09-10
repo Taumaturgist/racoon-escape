@@ -25,6 +25,6 @@ public class ApplicationStartUp : MonoBehaviour
         gameObject.AddComponent<PlayerMoney>();
         gameObject.AddComponent<PlayerAccount>();
         gameObject.AddComponent<Environment>();
-        gameObject.AddComponent<BlockStorageCreation>();
+        gameObject.AddComponent<BlockStorage>();
     }
 }

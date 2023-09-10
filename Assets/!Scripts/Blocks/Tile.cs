@@ -4,25 +4,18 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     private BuildingSpawner _buildingSpawner;
-    private TrafficCarsSpawner _trafficCarsSpawner;
-    private BuildingSpawnConfig _buildingSpawnConfig;
-    private TrafficConfig _trafficConfig;
+    private TrafficController _trafficController;
 
-    public void Launch()
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig, eBlockType blockType)
     {
-    }
-
-    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig)
-    {
-        _buildingSpawnConfig = buildingSpawnConfig;
-        _trafficConfig = trafficConfig;
-
         _buildingSpawner = GetComponent<BuildingSpawner>();
-        _trafficCarsSpawner = GetComponent<TrafficCarsSpawner>();
+        _trafficController = GetComponent<TrafficController>();
 
         if (_buildingSpawner != null)
-            _buildingSpawner.Launch(_buildingSpawnConfig);
+        {
+            _buildingSpawner.Launch(buildingSpawnConfig);
+        }
 
-        new TrafficController(_trafficConfig);
+        _trafficController.Launch(trafficConfig, blockType, this);
     }
 }

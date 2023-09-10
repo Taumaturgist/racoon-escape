@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3428087840542486600}
   - component: {fileID: 3250276947105909143}
   - component: {fileID: 8725213712331979041}
-  - component: {fileID: 5546946715456990366}
+  - component: {fileID: -3626341493472167152}
   m_Layer: 0
   m_Name: HighwayDesertTile
   m_TagString: Untagged
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5546946715456990366
+--- !u!114 &-3626341493472167152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,11 +71,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6341411166168351909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d15ea5f3099614ca0d8a35618935c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 22d2e99988e3718409daed7959e42b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
-  trafficCarsSpawnPoints: []
 --- !u!1 &6574557493113621359
 GameObject:
   m_ObjectHideFlags: 0

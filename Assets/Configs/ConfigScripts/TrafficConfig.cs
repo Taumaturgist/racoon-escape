@@ -1,48 +1,22 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Traffic
 {
-    [CreateAssetMenu(fileName = "TrafficConfig", menuName = "Configs/TrafficConfig", order = 51)]
+    [CreateAssetMenu(fileName = "TrafficConfig", menuName = "Configs/TrafficConfig")]
     public class TrafficConfig : ScriptableObject
     {
-        public TrafficModel[] TrafficModel => _trafficModel;
+        [Header("TrafficCars")]
+        public CityTraffic[] CityTraffic;
+        public DesertTraffic[] DesertTraffic;
+        public ForestTraffic[] ForestTraffic;
+        public HighwayTraffic[] HighwayTraffic;
 
-        [SerializeField] private TrafficModel[] _trafficModel;
-
-        public Vector3[] CitySpawnPoints => citySpawnPoints;
-        [SerializeField] private Vector3[] citySpawnPoints;
-        [SerializeField] private Vector3[] DesertSpawnPoints;
-        [SerializeField] private Vector3[] ForestSpawnPoints;
-        [SerializeField] private Vector3[] HighwaySpawnPoints;
-    
-        private Dictionary<Enum, TrafficView> _trafficDict = new();
-
-        [NonSerialized] private bool _inited;
-
-        private void Init()
-        {
-            foreach (var model in TrafficModel)
-            {
-                _trafficDict.Add(model.TrafficCarName, model.TrafficCar);
-            }
-        }
-
-        public TrafficView Get(eTrafficCar trafficCarName)
-        {
-            if (!_inited)
-            {
-                Init();
-            }
-
-            if (!_trafficDict.ContainsKey(trafficCarName))
-            {
-                Debug.LogError($"Traffic car named {trafficCarName} not found");
-            }
-        
-            return _trafficDict[trafficCarName];
-        }
+        [Header("SpawnPoints")]
+        public Transform[] CitySpawnPoints;
+        public Transform[] DesertSpawnPoints;
+        public Transform[] ForestSpawnPoints;
+        public Transform[] HighwaySpawnPoints;
     }
 
     public enum eTrafficCar
@@ -57,9 +31,27 @@ namespace Traffic
     }
 
     [Serializable]
-    public struct TrafficModel
+    public struct CityTraffic
     {
         public eTrafficCar TrafficCarName;
-        public TrafficView TrafficCar;
+        public TrafficCar TrafficCar;
+    }
+    [Serializable]
+    public struct DesertTraffic
+    {
+        public eTrafficCar TrafficCarName;
+        public TrafficCar TrafficCar;
+    }
+    [Serializable]
+    public struct ForestTraffic
+    {
+        public eTrafficCar TrafficCarName;
+        public TrafficCar TrafficCar;
+    }
+    [Serializable]
+    public struct HighwayTraffic
+    {
+        public eTrafficCar TrafficCarName;
+        public TrafficCar TrafficCar;
     }
 }

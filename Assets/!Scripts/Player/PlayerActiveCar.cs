@@ -17,7 +17,7 @@ public class PlayerActiveCar : MonoBehaviour
 	private Rigidbody _carRigidbody;
 	private Collider _carCollider;
 
-	private Vector3 _startPosition;	
+	private Vector3 _startPosition;
 	
 	private float _motorForce;
 	private float _currentMotorForce;
@@ -61,15 +61,15 @@ public class PlayerActiveCar : MonoBehaviour
 		
 		_game = game;
 
-		_maxSteerAngle = carConfig.MaxSteerAngle;		
+		_maxSteerAngle = carConfig.MaxSteerAngle;
 		
 		_carRigidbody = GetComponent<Rigidbody>();
 		_carRigidbody.mass = carConfig.CarMass;
 		_carRigidbody.angularDrag = carConfig.CarAngularDrug;
 		_carRigidbody.centerOfMass = new Vector3(0, carConfig.CarMassCenterShiftY, 0);
 
-		SetSuspension();	
-		SetEngine();		
+		SetSuspension();
+		SetEngine();
 
 		_standardSpeedLimit = carConfig.CarMaxSpeed;
 		_speedLimit = _standardSpeedLimit;
@@ -123,12 +123,12 @@ public class PlayerActiveCar : MonoBehaviour
 			return;
 		}
 
-		Steer();	
+		Steer();
 		AccelerateAuto();
 		UseBrakes(_canUseBrakes);
 		UseNitro();
 
-		UpdateWheelPoses();		
+		UpdateWheelPoses();
 
 		_speed = Mathf.Abs(_carRigidbody.velocity.magnitude * 3.6f);
 		_currentRideDistance = Vector3.Distance(_startPosition, _carTransform.position);
@@ -145,7 +145,7 @@ public class PlayerActiveCar : MonoBehaviour
 				_isLossConditionActivated = false;
 				//SetPhysics(false);
 				break;
-			case GameState.Action:				
+			case GameState.Action:
 				_isActive = true;
 				_hasLost = false;
 				SetPhysics(true);

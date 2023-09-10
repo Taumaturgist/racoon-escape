@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 2027669127813099289}
   - component: {fileID: 7872418483888950442}
   - component: {fileID: 502544242769640359}
-  - component: {fileID: -6118547027809125768}
+  - component: {fileID: 6288564975309418764}
   m_Layer: 0
   m_Name: ForestCityTile
   m_TagString: Untagged
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-6118547027809125768
+--- !u!114 &6288564975309418764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,11 +257,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4246600992848196394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d15ea5f3099614ca0d8a35618935c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 22d2e99988e3718409daed7959e42b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
-  trafficCarsSpawnPoints: []
 --- !u!1001 &97566208105465931
 PrefabInstance:
   m_ObjectHideFlags: 0

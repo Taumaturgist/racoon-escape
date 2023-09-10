@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269363650662816718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRenderers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4774590588451263702}
   - component: {fileID: 4977163331300282068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264977660446201541}
   - component: {fileID: 3489707925690132784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4398447487056268152}
   - component: {fileID: 1294718424561195657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5138206773554386231}
   - component: {fileID: 5494661074676197550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 807832898099118385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565603247166494486}
   - component: {fileID: 2909777468520030869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9127973585847142940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: -603158850229641492}
   - component: {fileID: 8662433363287228873}
   - component: {fileID: 3154559454780343831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCarHuracanL1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -533,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carModel: 5
   carLevel: 1
+  carPurchasePrice: 0
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3952850220972425104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2487153840946446217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286803125161239176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791547797790831892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277911185607359746}
   - component: {fileID: 1737424946818786561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +739,7 @@ GameObject:
   - component: {fileID: 1258579295447687215}
   - component: {fileID: 658644029470904708}
   - component: {fileID: 8732147835851392611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NitroLightMock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6333167234194080230}
   - component: {fileID: 4765053799145019187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,9 +925,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4328153484271297578}
     m_Modifications:
+    - target: {fileID: 126108835632796224, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 497102146329663394, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 663435820620296610, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 894404094416568582, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168767517020759773, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246789464483827988, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516192772097192767, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020833794690404110, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2515979562634652366, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
       propertyPath: m_Name
       value: HuracanL1Visual
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515979562634652366, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2515979562634652367, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
       propertyPath: m_RootOrder
@@ -971,6 +1008,86 @@ PrefabInstance:
     - target: {fileID: 2515979562634652367, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712958779618552996, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877858968645400238, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252804816488926437, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430819843786495337, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044519526704626424, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189320155133626445, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027383051043858890, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175967638041351471, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178193880588279616, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241927230842686645, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452059709497688383, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604811627181824168, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155665146046103403, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837257127467601587, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346988955475066510, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758502667217977655, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174983731360278102, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283229667865938723, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590379132906286231, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909420889698443150, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e011e31dc2b7d458e916c3ace2cfab, type: 3}
@@ -1034,6 +1151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamborghini Huracan LP700 Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
 --- !u!4 &2302326004342233485 stripped
@@ -1095,6 +1216,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
       propertyPath: m_Name
       value: Lamborghini Huracan LP700 Wheel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
@@ -1158,6 +1283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamborghini Huracan LP700 Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
 --- !u!4 &5471909520588596402 stripped
@@ -1219,6 +1348,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
       propertyPath: m_Name
       value: Lamborghini Huracan LP700 Wheel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f35152d3fd4f694ea46f576fffe8240, type: 3}
