@@ -240,12 +240,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingSpawnPoints:
-  - {x: -50, y: 0, z: -65}
-  - {x: -50, y: 0, z: 0}
-  - {x: -50, y: 0, z: 65}
-  - {x: 50, y: 0, z: -65}
-  - {x: 50, y: 0, z: 0}
-  - {x: 50, y: 0, z: 65}
+  - {x: -44.5, y: 0, z: -65}
+  - {x: -44.5, y: 0, z: 0}
+  - {x: -44.5, y: 0, z: 65}
+  - {x: 44.5, y: 0, z: -65}
+  - {x: 44.5, y: 0, z: 0}
+  - {x: 44.5, y: 0, z: 65}
   buildingPrefab: {fileID: -7081646534055728397, guid: d559fd0f5c5a9c243a6a22b66e587aa7, type: 3}
   smallBuildingIndexes: 
 --- !u!114 &4450869560198061341
@@ -3845,9 +3845,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7621690549948245066, guid: ceb5f3144f58617469e0db19e3b375ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1811013877820413610, guid: ceb5f3144f58617469e0db19e3b375ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ceb5f3144f58617469e0db19e3b375ba, type: 3}
       propertyPath: m_Name
       value: TileCity5_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673514284172821951, guid: ceb5f3144f58617469e0db19e3b375ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceb5f3144f58617469e0db19e3b375ba, type: 3}

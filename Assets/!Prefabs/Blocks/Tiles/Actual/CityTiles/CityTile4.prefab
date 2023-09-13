@@ -250,14 +250,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingSpawnPoints:
-  - {x: -50, y: 0, z: -65}
-  - {x: -50, y: 0, z: -25}
-  - {x: -50, y: 0, z: 25}
-  - {x: -50, y: 0, z: 65}
-  - {x: 50, y: 0, z: -65}
-  - {x: 50, y: 0, z: -25}
-  - {x: 50, y: 0, z: 25}
-  - {x: 50, y: 0, z: 65}
+  - {x: -44.5, y: 0, z: -65}
+  - {x: -44.5, y: 0, z: -25}
+  - {x: -44.5, y: 0, z: 25}
+  - {x: -44.5, y: 0, z: 65}
+  - {x: 44.5, y: 0, z: -65}
+  - {x: 44.5, y: 0, z: -25}
+  - {x: 44.5, y: 0, z: 25}
+  - {x: 44.5, y: 0, z: 65}
   buildingPrefab: {fileID: -7081646534055728397, guid: d559fd0f5c5a9c243a6a22b66e587aa7, type: 3}
   smallBuildingIndexes: 01000000020000000500000006000000
 --- !u!114 &774963700117642074
