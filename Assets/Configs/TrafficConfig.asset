@@ -64,32 +64,8 @@ MonoBehaviour:
     TrafficCar: {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
   - TrafficCarName: 5
     TrafficCar: {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
-  CitySpawnPoints:
-  - {fileID: 89295387843862137, guid: 15a2755fad7682a4a970797864699278, type: 3}
-  - {fileID: 1820568668479665410, guid: 7ce4bc03397b0394ab88addadd55ebad, type: 3}
-  - {fileID: 2386868223854632568, guid: 81ba1def69089ae40bb53562072b0b3b, type: 3}
-  - {fileID: 2556778728322214012, guid: a11c0c7b454f43842aa55c3b67b1880e, type: 3}
-  - {fileID: 3259713184306338401, guid: c592df3a27800b94eb3ecfedfadee72d, type: 3}
-  - {fileID: 312433132017002314, guid: 7fead64bfd0f0ba48ba106c6c4dd97b9, type: 3}
-  - {fileID: 6411696637127876250, guid: 6cbdeb0d7c6f15d4685b55f42faab675, type: 3}
-  - {fileID: 3784271437483282099, guid: 102da022ef85f0142b3c142592729abc, type: 3}
-  - {fileID: 5437773564129428173, guid: 14a188e9698dee94dbd8b3beb00160b0, type: 3}
-  - {fileID: 8684002400474868092, guid: 95261d9f4bd4a214cb014172062cf738, type: 3}
-  - {fileID: 7268871238190165434, guid: 42538f1267ba0fa4b8d33a18696d8afd, type: 3}
-  - {fileID: 1607367143638529065, guid: c96eef1c62bfe844c8df8dd99f5b3262, type: 3}
-  - {fileID: 1032423601177739274, guid: 6d1f100039f107b43bbb17bb37c7b2f3, type: 3}
-  - {fileID: 5326078733664793079, guid: 8a13c837a0ecfe240aebc17311c7db0e, type: 3}
-  - {fileID: 6653880590085283193, guid: f8be58b5c5f8c7e4ea1a08510526a742, type: 3}
-  - {fileID: 3065370801812427275, guid: d0a6c7970046d884e99dbada15ee6600, type: 3}
-  DesertSpawnPoints:
-  - {fileID: 9040987633559766504, guid: de5b45605c00d4f4aa9e2bdba8cb4693, type: 3}
-  - {fileID: 7885277375167031147, guid: 386f2643a6a6dbd409bd7ca965fe2d9e, type: 3}
-  - {fileID: 2604273216178116785, guid: 2a00c89909ba466409d99b5cdb6a1dac, type: 3}
-  - {fileID: 373344945087793591, guid: 12050049b450ede458c397f295e9456f, type: 3}
-  - {fileID: 5771649111401409185, guid: 24562e2c9ef42584b90025523ae3290f, type: 3}
-  - {fileID: 4012957175299146502, guid: 98f3924692409ce408be3eae0cce60b4, type: 3}
-  - {fileID: 7299462071257990324, guid: d68a7efcdd139ff4cbdf7e71784ea9dd, type: 3}
-  - {fileID: 7710286441066964114, guid: a57be12588d6cdb4380eb0c8b577ccc9, type: 3}
+  CitySpawnPoints: []
+  DesertSpawnPoints: []
   ForestSpawnPoints:
   - {fileID: 89027163497423943, guid: bde7b69a3438e9b4f8e4a2e72ad1c1f4, type: 3}
   - {fileID: 5479895703122533469, guid: a0ee8cbab0b1dd8478e9bf0f711591d5, type: 3}
@@ -120,3 +96,59 @@ MonoBehaviour:
   - {fileID: 7935498631049687890, guid: d01881356d74ba84385eefd99342f183, type: 3}
   - {fileID: 2562572887302854796, guid: be87ffab278ebe84ab3892930f1b98d9, type: 3}
   - {fileID: 1123286233248679775, guid: 2662691d7bcc25b4bbee2f7f657314c7, type: 3}
+  CityPoints:
+  - {x: 1.85, y: 1, z: 20}
+  - {x: 6.3, y: 1, z: 20}
+  - {x: -1.85, y: 1, z: 20}
+  - {x: -6.3, y: 1, z: 20}
+  - {x: 1.85, y: 1, z: 45}
+  - {x: 6.3, y: 1, z: 45}
+  - {x: -1.85, y: 1, z: 45}
+  - {x: -6.3, y: 1, z: 45}
+  - {x: 1.85, y: 1, z: 70}
+  - {x: 6.3, y: 1, z: 70}
+  - {x: -1.85, y: 1, z: 70}
+  - {x: -6.3, y: 1, z: 70}
+  - {x: 1.85, y: 1, z: 95}
+  - {x: 6.3, y: 1, z: 95}
+  - {x: -1.85, y: 1, z: 95}
+  - {x: -6.3, y: 1, z: 95}
+  DesertPoints:
+  - {x: 2, y: 1, z: 20}
+  - {x: -2, y: 1, z: 20}
+  - {x: 2, y: 1, z: 45}
+  - {x: -2, y: 1, z: 45}
+  - {x: 2, y: 1, z: 70}
+  - {x: -2, y: 1, z: 70}
+  - {x: 2, y: 1, z: 95}
+  - {x: -2, y: 1, z: 95}
+  ForestPoints:
+  - {x: 0, y: 1, z: 20}
+  - {x: 0, y: 1, z: 45}
+  - {x: 0, y: 1, z: 70}
+  - {x: 0, y: 1, z: 95}
+  HighwayPoints:
+  - {x: -10, y: 1, z: 20}
+  - {x: -6, y: 1, z: 20}
+  - {x: -2, y: 1, z: 20}
+  - {x: 10, y: 1, z: 20}
+  - {x: 2, y: 1, z: 20}
+  - {x: 6, y: 1, z: 20}
+  - {x: -10, y: 1, z: 45}
+  - {x: -6, y: 1, z: 45}
+  - {x: -2, y: 1, z: 45}
+  - {x: 2, y: 1, z: 45}
+  - {x: 6, y: 1, z: 45}
+  - {x: 10, y: 1, z: 45}
+  - {x: -6, y: 1, z: 70}
+  - {x: -2, y: 1, z: 70}
+  - {x: -10, y: 1, z: 70}
+  - {x: 10, y: 1, z: 70}
+  - {x: 6, y: 1, z: 70}
+  - {x: 2, y: 1, z: 70}
+  - {x: 2, y: 1, z: 95}
+  - {x: 6, y: 1, z: 95}
+  - {x: 10, y: 1, z: 95}
+  - {x: -10, y: 1, z: 95}
+  - {x: -2, y: 1, z: 95}
+  - {x: -6, y: 1, z: 95}

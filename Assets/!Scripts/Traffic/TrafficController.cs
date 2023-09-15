@@ -1,10 +1,8 @@
-using UnityEngine;
-
 namespace Traffic
 {
-    public class TrafficController : MonoBehaviour
+    public class TrafficController
     {
-        public void Launch(TrafficConfig trafficConfig, eBlockType blockType, Tile tile)
+        public TrafficController(TrafficConfig trafficConfig, eBlockType blockType, Tile tile)
         {
             switch(blockType)
             {

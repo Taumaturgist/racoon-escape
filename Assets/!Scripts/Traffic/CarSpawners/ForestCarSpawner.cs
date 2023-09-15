@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Traffic
 {
-    public class ForestCarSpawner : ICarSpawner
+    public class ForestCarSpawner : CarSpawner
     {
         private TrafficConfig _trafficConfig;
         private List<TrafficCar> _cars = new();
@@ -18,24 +18,31 @@ namespace Traffic
             _traffic = new GameObject("Traffic");
             _traffic.transform.SetParent(tile.transform);
 
-            for (int i = 0; i < _trafficConfig.ForestSpawnPoints.Length; i++)
+            SelectPoints();
+        }
+
+        private void SelectPoints()
+        {
+            for (int i = 0; i < _trafficConfig.ForestPoints.Length; i += 2)
             {
-                var car = Spawn(_trafficConfig.ForestSpawnPoints[i]);
+                var randPointIndex = Random.Range(i, (i + 1) + 1);
+                var car = Spawn(_trafficConfig.ForestPoints[randPointIndex]);
                 _cars.Add(car);
             }
         }
 
-        public TrafficCar Spawn(Transform spawnTransform)
+        public override TrafficCar Spawn(Vector3 spawnPoint)
         {
             var randInt = Random.Range(0, _trafficConfig.ForestTraffic.Length);
-            var view = Object
-                .Instantiate(
-                _trafficConfig.ForestTraffic[randInt].TrafficCar,
-                _tile.transform.position + spawnTransform.position,
-                spawnTransform.rotation,
-                _traffic.transform);
 
-            return view;
+            var trafficCar = Object
+                .Instantiate(
+                    _trafficConfig.ForestTraffic[randInt].TrafficCar,
+                    _tile.transform.position + spawnPoint,
+                    Quaternion.identity,
+                    _traffic.transform);
+
+            return trafficCar;
         }
     }
 }

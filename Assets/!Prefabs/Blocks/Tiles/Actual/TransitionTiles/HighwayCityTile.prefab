@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 771108725464329560}
   - component: {fileID: 5424027015248815295}
   - component: {fileID: 6002809352907662865}
-  - component: {fileID: -3698248895453768111}
   m_Layer: 0
   m_Name: HighwayCityTile
   m_TagString: Untagged
@@ -60,18 +59,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-3698248895453768111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889424204158794975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d2e99988e3718409daed7959e42b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3586253948375117065

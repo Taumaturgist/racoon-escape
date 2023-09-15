@@ -9,13 +9,12 @@ public class Tile : MonoBehaviour
     public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig, eBlockType blockType)
     {
         _buildingSpawner = GetComponent<BuildingSpawner>();
-        _trafficController = GetComponent<TrafficController>();
 
         if (_buildingSpawner != null)
         {
             _buildingSpawner.Launch(buildingSpawnConfig);
         }
 
-        _trafficController.Launch(trafficConfig, blockType, this);
+        _trafficController = new TrafficController(trafficConfig, blockType, this);
     }
 }

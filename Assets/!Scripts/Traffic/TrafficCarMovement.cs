@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Traffic
@@ -11,9 +10,10 @@ namespace Traffic
 
         private void Start()
         {
-            _speed = Random.Range(5.0f, 6.0f);
+            _speed = Random.Range(5.0f, 10.0f);
             State = TrafficCarState.Rides;
         }
+
         private void Update()
         {
             if (State == TrafficCarState.Rides)

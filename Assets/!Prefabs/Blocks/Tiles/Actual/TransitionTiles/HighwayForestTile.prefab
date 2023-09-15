@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 2117377937955994142}
   - component: {fileID: 5250499424836910692}
   - component: {fileID: 8160997477353995181}
-  - component: {fileID: 7341403438753049033}
   m_Layer: 0
   m_Name: HighwayForestTile
   m_TagString: Untagged
@@ -180,18 +179,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7341403438753049033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5129324236411004504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d2e99988e3718409daed7959e42b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7655435742242747935

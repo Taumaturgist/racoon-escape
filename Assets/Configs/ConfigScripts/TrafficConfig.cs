@@ -13,10 +13,10 @@ namespace Traffic
         public HighwayTraffic[] HighwayTraffic;
 
         [Header("SpawnPoints")]
-        public Transform[] CitySpawnPoints;
-        public Transform[] DesertSpawnPoints;
-        public Transform[] ForestSpawnPoints;
-        public Transform[] HighwaySpawnPoints;
+        public Vector3[] CityPoints;
+        public Vector3[] DesertPoints;
+        public Vector3[] ForestPoints;
+        public Vector3[] HighwayPoints;
     }
 
     public enum eTrafficCar

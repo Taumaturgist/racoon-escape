@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 2027669127813099289}
   - component: {fileID: 7872418483888950442}
   - component: {fileID: 5190991488812217892}
-  - component: {fileID: 3346898020762547300}
   m_Layer: 0
   m_Name: CityForestTile
   m_TagString: Untagged
@@ -273,18 +272,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3346898020762547300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4246600992848196394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d2e99988e3718409daed7959e42b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &81544090938103732
