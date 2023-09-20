@@ -4,12 +4,9 @@ using Traffic;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class BlockSpawner : MonoBehaviour, IDisposable
 {
-    public UnityEvent OnChangeRoadLane;
-    
     private BlockSpawnConfig _blockSpawnConfig;
     private BuildingSpawnConfig _buildingSpawnConfig;
     private TrafficConfig _trafficConfig;
@@ -94,7 +91,6 @@ public class BlockSpawner : MonoBehaviour, IDisposable
 
                 CheckBlockRemoval();
                 CreateBlock(0);
-                OnChangeRoadLane?.Invoke();
             }).AddTo(_disposable);
     }
     private void CheckBlockRemoval()
