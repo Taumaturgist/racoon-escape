@@ -43,7 +43,7 @@ public class AudioController : MonoBehaviour
 
         switch (blockType)
         {
-            case eBlockType.City:                
+            case eBlockType.City:
                 audioSource.clip = ambientCity;
                 break;
             case eBlockType.Forest:
@@ -55,7 +55,6 @@ public class AudioController : MonoBehaviour
             case eBlockType.Highway:
                 audioSource.clip = ambientHighway;
                 break;
-
         }
 
         Debug.Log($"Play now: {blockType} ambient");

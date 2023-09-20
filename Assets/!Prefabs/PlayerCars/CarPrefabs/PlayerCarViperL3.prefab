@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269363650662816718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRenderers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4774590588451263702}
   - component: {fileID: 4977163331300282068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264977660446201541}
   - component: {fileID: 3489707925690132784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4398447487056268152}
   - component: {fileID: 1294718424561195657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5138206773554386231}
   - component: {fileID: 5494661074676197550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 807832898099118385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565603247166494486}
   - component: {fileID: 2909777468520030869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9127973585847142940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: -603158850229641492}
   - component: {fileID: 8662433363287228873}
   - component: {fileID: 7583957033510607630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCarViperL3
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -533,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carModel: 3
   carLevel: 3
+  carPurchasePrice: 0
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3952850220972425104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2487153840946446217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286803125161239176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791547797790831892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277911185607359746}
   - component: {fileID: 1737424946818786561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +739,7 @@ GameObject:
   - component: {fileID: 1258579295447687215}
   - component: {fileID: 658644029470904708}
   - component: {fileID: 8732147835851392611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NitroLightMock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6333167234194080230}
   - component: {fileID: 4765053799145019187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,6 +973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dodge Viper GTS Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
 --- !u!4 &4247481665132295865 stripped
@@ -1033,6 +1038,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
       propertyPath: m_Name
       value: Dodge Viper GTS Wheel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
@@ -1096,6 +1105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dodge Viper GTS Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
 --- !u!4 &5900084381619890355 stripped
@@ -1158,6 +1171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dodge Viper GTS Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37c0f340205e5a4cb9efc389b94b74d, type: 3}
 --- !u!4 &6492296041902250276 stripped
@@ -1172,9 +1189,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4328153484271297578}
     m_Modifications:
+    - target: {fileID: 1227801064539540373, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481738259908546858, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550426742593747893, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680016716188725289, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879571306133019391, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047294794370688313, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2515979562634652366, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
       propertyPath: m_Name
       value: ViperL3Visual
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515979562634652366, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2515979562634652367, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
       propertyPath: m_RootOrder
@@ -1219,6 +1264,126 @@ PrefabInstance:
     - target: {fileID: 2515979562634652367, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628900074048594685, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762987364914096417, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819154644959255983, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834162989507888713, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924064937049100322, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038889979807175217, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736818338087588113, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870357922171585762, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061260700247627614, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100298689910034269, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102520276057624580, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130083740764754124, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244925677843918994, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263250648511637872, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218952653403860738, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712784652922831204, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021043607615935110, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441957361119074143, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6519081010858246088, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538307107611340036, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933146382157576556, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201947403974501425, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391240396369213009, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608062060238661169, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741010366959236242, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876467519809888521, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348553770783567356, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348863128216507837, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800318780669264490, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961184898131395584, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bdb174dcefacac49bb62cd810689fef, type: 3}

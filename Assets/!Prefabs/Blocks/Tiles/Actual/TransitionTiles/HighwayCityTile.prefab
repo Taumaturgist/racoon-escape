@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 771108725464329560}
   - component: {fileID: 5424027015248815295}
   - component: {fileID: 6002809352907662865}
-  - component: {fileID: 8028509632038656021}
   m_Layer: 0
   m_Name: HighwayCityTile
   m_TagString: Untagged
@@ -48,8 +47,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 4, z: 200}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 200, y: 0.1, z: 200}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!114 &6002809352907662865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,20 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8028509632038656021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889424204158794975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d15ea5f3099614ca0d8a35618935c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
-  trafficCarsSpawnPoints: []
 --- !u!1 &3586253948375117065
 GameObject:
   m_ObjectHideFlags: 0

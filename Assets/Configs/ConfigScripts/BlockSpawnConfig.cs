@@ -1,12 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BlockSpawnConfig", menuName = "Configs/BlockSpawnConfig", order = 51)]
+[CreateAssetMenu(fileName = "BlockSpawnConfig", menuName = "Configs/BlockSpawnConfig")]
 public class BlockSpawnConfig : ScriptableObject
 {
     public int OffsetZ;
     public int CrossroadNumberInCity;
 
-    [Header("Blocks")]
     public BlockSpawner BlockStorage;
     public Block Block;
     public TileSpawner TileSpawner;
@@ -42,5 +41,4 @@ public class BlockSpawnConfig : ScriptableObject
     public Tile HighwayCityTile;
     public Tile HighwayDesertTile;
     public Tile HighwayForestTile;
-
 }

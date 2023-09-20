@@ -1,21 +1,19 @@
-/* 
- *      Unsubscribing after losing _disposableTrigger.Clear();
- */
-
+using System;
 using System.Collections.Generic;
+using Traffic;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 
-public class BlockSpawner : MonoBehaviour
+public class BlockSpawner : MonoBehaviour, IDisposable
 {
     private BlockSpawnConfig _blockSpawnConfig;
     private BuildingSpawnConfig _buildingSpawnConfig;
-    private TrafficSpawnConfig _trafficSpawnConfig;
+    private TrafficConfig _trafficConfig;
 
     private CompositeDisposable _disposable = new();
     private eBlockType _previousBlockType, _nextBlockType;
-
+    
     private List<Block> _blocks = new();
 
     private Vector3 _pos;
@@ -26,11 +24,14 @@ public class BlockSpawner : MonoBehaviour
     private int _blockCount;
     private bool _isFirstBlock;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig, TrafficSpawnConfig trafficSpawnConfig)
+    public void Launch(
+        BlockSpawnConfig blockSpawnConfig,
+        BuildingSpawnConfig buildingSpawnConfig,
+        TrafficConfig trafficConfig)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
-        _trafficSpawnConfig = trafficSpawnConfig;
+        _trafficConfig = trafficConfig;
 
         _pos = blockSpawnConfig.SpawnPointFirstBlock;
         _rot = Quaternion.identity;
@@ -55,8 +56,20 @@ public class BlockSpawner : MonoBehaviour
         else
             block.GetBlockParameters(_nextBlockType);
 
-        var tileSpawner = Instantiate(_blockSpawnConfig.TileSpawner, _pos, _rot, block.transform);
-        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig, _trafficSpawnConfig, block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
+        var tileSpawner = Instantiate(
+            _blockSpawnConfig.TileSpawner,
+            _pos,
+            _rot,
+            block.transform);
+        tileSpawner.Launch(
+            _blockSpawnConfig,
+            _buildingSpawnConfig,
+            _trafficConfig,
+            block,
+            ref _previousBlockType,
+            ref _nextBlockType,
+            ref _pos,
+            _rot);
 
         _blocks.Add(block);
         _blockCount = _blocks.Count;
@@ -88,5 +101,10 @@ public class BlockSpawner : MonoBehaviour
             _blocks.Remove(_blocks[0]);
             Destroy(removableBlock.gameObject);
         }
+    }
+
+    public void Dispose()
+    {
+        _disposable.Clear();
     }
 }

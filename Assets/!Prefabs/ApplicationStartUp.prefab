@@ -48,8 +48,8 @@ MonoBehaviour:
   PlayerAccountConfig: {fileID: 11400000, guid: 5f9abaf22e8913e44a35ad5c0c6371ea, type: 2}
   PlayerMoneyConfig: {fileID: 0}
   EnvironmentConfig: {fileID: 11400000, guid: d33b379b4b82b7a4e8f48e2382533f70, type: 2}
-  DebugConfig: {fileID: 11400000, guid: dd0621cf0515644498566d04c6524014, type: 2}
+  ShopCarModelsConfig: {fileID: 0}
   BlockSpawnConfig: {fileID: 11400000, guid: 242302545a5e303479da2ee8d8f473ae, type: 2}
   BuildingSpawnConfig: {fileID: 11400000, guid: b0285ae11f10cc2459d0930b64afaddc, type: 2}
-  ShopCarModelsConfig: {fileID: 0}
   TrafficSpawnConfig: {fileID: 11400000, guid: c4d429c275751d941adc0a9aa23c5b6b, type: 2}
+  DebugConfig: {fileID: 11400000, guid: dd0621cf0515644498566d04c6524014, type: 2}

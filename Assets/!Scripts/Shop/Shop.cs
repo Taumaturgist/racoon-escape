@@ -5,9 +5,9 @@ using UniRx;
 public readonly struct OnPlayerCarIDRequestMessage
 { }
 
-public class Shop : MonoBehaviour    
+public class Shop : MonoBehaviour
 {
-    private List<PlayerCarShopView> _carPrefabs = new List<PlayerCarShopView>();    
+    private List<PlayerCarShopView> _carPrefabs = new List<PlayerCarShopView>();
 
     private PlayerAccount _playerAccount;
     private PlayerAccountConfig _playerAccountConfig;
@@ -16,7 +16,7 @@ public class Shop : MonoBehaviour
     private int _currentShopCarIndex;
     private int _currentPlayerCarIndex;
 
-    private bool _isFirstShopEntrance = true;    
+    private bool _isFirstShopEntrance = true;
 
     public void SwitchCar(int indexDiff)
     {
@@ -32,7 +32,7 @@ public class Shop : MonoBehaviour
             _isFirstShopEntrance = false;
         }       
 
-        _currentShopCarIndex += indexDiff;       
+        _currentShopCarIndex += indexDiff;
 
         if (_currentShopCarIndex >= _carPrefabs.Count)
         {
@@ -81,7 +81,7 @@ public class Shop : MonoBehaviour
 
     public string GetCurrentCarName()
     {
-        return _carPrefabs[_currentShopCarIndex].GetCarModel().ToString();    
+        return _carPrefabs[_currentShopCarIndex].GetCarModel().ToString();
     }
 
     public bool GetCurrentCarPurchaseStatus()
@@ -149,6 +149,6 @@ public class Shop : MonoBehaviour
                     }
                     break;
             }
-        }       
+        }
     }
 }

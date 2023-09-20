@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b60954f7563a634ca849346e06283d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambientCity: {fileID: 8300000, guid: 2f5fdf2cf4e6b5744a15e37721877bb9, type: 3}
-  ambientForest: {fileID: 8300000, guid: 0b8a24d8e5cbb2242b26d1090150e40f, type: 3}
-  ambientDesert: {fileID: 8300000, guid: 0a923748fe3cf104786079f2e85eb064, type: 3}
-  ambientHighway: {fileID: 8300000, guid: 2f5fdf2cf4e6b5744a15e37721877bb9, type: 3}
+  ambientCity: {fileID: 8300000, guid: aac4300eff44e924e938f5b0a06f3cd5, type: 3}
+  ambientForest: {fileID: 8300000, guid: cdf40558198764d4fa6a9495e070fa69, type: 3}
+  ambientDesert: {fileID: 8300000, guid: b527f2e5d9907264390367946d39cf49, type: 3}
+  ambientHighway: {fileID: 8300000, guid: 85357387e30a4bc4e8adc63583cbe9fa, type: 3}
   audioSource: {fileID: 9057729302944089663}
 --- !u!82 &9057729302944089663
 AudioSource:

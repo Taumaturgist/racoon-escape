@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "BuildingSpawnConfig", menuName = "Configs/BuildingSpawnConfig", order = 51)]
+[CreateAssetMenu(fileName = "BuildingSpawnConfig", menuName = "Configs/BuildingSpawnConfig")]
 public class BuildingSpawnConfig : ScriptableObject
 {
     public int MinFloorsAmount;

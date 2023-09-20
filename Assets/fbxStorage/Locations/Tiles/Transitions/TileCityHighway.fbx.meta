@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdba3d61739e0d74f97f2acaa6d09ea7
+guid: 49a4f42beafb03a4cae7ac8a456598bc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -12,8 +12,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: A_Location.001
+    second: {fileID: 2100000, guid: 9c2e9fdc62953ca4f8ddc475ad2c1264, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: A_Roads
     second: {fileID: 2100000, guid: 60267ae20564edf4983047fbdfc37bd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Roads.001
+    second: {fileID: 2100000, guid: 60267ae20564edf4983047fbdfc37bd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A_Sidewalk_Mat
+    second: {fileID: 2100000, guid: 7fdbb863eaf61b041b65c754e5efb89d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sidewalk3_Mat
+    second: {fileID: 2100000, guid: f0b712d002da62341a74bfce4624953c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

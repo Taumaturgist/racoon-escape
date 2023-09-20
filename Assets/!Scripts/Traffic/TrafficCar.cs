@@ -1,40 +1,61 @@
-using DG.Tweening;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class TrafficCar : MonoBehaviour
+namespace Traffic
 {
-    private TrafficSpawnConfig _trafficSpawnConfig;
-    private float _speed;
-    private int _direction;
-    private bool _isOnLeftStreetSide;
-
-    public void Launch(TrafficSpawnConfig trafficSpawnConfig, bool isOnLeftStreetSide)
+    public class TrafficCar : MonoBehaviour
     {
-        _trafficSpawnConfig = trafficSpawnConfig;
-        _speed = _trafficSpawnConfig.TrafficCarsSpeed;
-        _isOnLeftStreetSide = isOnLeftStreetSide;
+        private TrafficCarMovement _carMovement;
+        private LayerMask _layerMask;
+        private readonly float _maxDistance = 8f;
+        private Transform _direction;
+        private int _laneNumber;
 
-        if (isOnLeftStreetSide)
+        public void Launch(int laneNumber)
         {
-            transform.Rotate(0f, -180f, 0f);
-            _direction = -1;
+            _laneNumber = laneNumber;
         }
-        else
+
+        private void Start()
         {
-            _direction = 1;
+            _carMovement = GetComponent<TrafficCarMovement>();
+
+            _layerMask = LayerMask.GetMask(new[] { "Player" });
+            _direction = transform.GetChild(0).transform;
         }
-        SpawnTrafficCar();
-    }
 
-    private void Update()
-    {
-        transform.Translate(_direction * Vector3.forward * _speed * Time.deltaTime);
-    }
+        private void FixedUpdate()
+        {
+            RaycastHit hit;
 
-    private void SpawnTrafficCar()
-    {
-        var randomInt = Random.Range(0, _trafficSpawnConfig.TrafficCars.Count);
-        Instantiate(_trafficSpawnConfig.TrafficCars[randomInt], transform.position, transform.rotation, transform);
+            if (Physics.Raycast(
+                    _direction.position,
+                    _direction.TransformDirection(Vector3.forward),
+                    out hit,
+                    _maxDistance,
+                    _layerMask))
+            {
+                _carMovement.State = TrafficCarState.Standing;
+            }
+
+            if (transform.position.y < 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("TransitionTile"))
+            {
+                if (_laneNumber == 2 || _laneNumber == -2)
+                {
+                    transform.Rotate(0f, -45f, 0f);
+                    if (transform.position.x == 1.85)
+                    {
+                        transform.Rotate(0f, 45f, 0f);
+                    }
+                }
+            }
+        }
     }
 }

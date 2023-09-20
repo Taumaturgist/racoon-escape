@@ -3,9 +3,9 @@ using UniRx;
 
 public class PlayerCarShopView : MonoBehaviour
 {
-	[SerializeField] eCarModel carModel;
-	[SerializeField] eCarLevel carLevel;
-	[SerializeField] int carPurchasePrice;
+	[SerializeField] private eCarModel carModel;
+	[SerializeField] private eCarLevel carLevel;
+	[SerializeField] private int carPurchasePrice;
 
 	public int GetCarModelID()
 	{

@@ -1,3 +1,4 @@
+using Traffic;
 using UnityEngine;
 
 public class ApplicationStartUp : MonoBehaviour
@@ -12,7 +13,7 @@ public class ApplicationStartUp : MonoBehaviour
     public BlockSpawnConfig BlockSpawnConfig;
     public BuildingSpawnConfig BuildingSpawnConfig;
     public ShopCarModelsConfig ShopCarModelsConfig;
-    public TrafficSpawnConfig TrafficSpawnConfig;
+    public TrafficConfig trafficConfig;
     public ColorsConfig ColorsConfig;
     
     private void Awake()
@@ -24,6 +25,6 @@ public class ApplicationStartUp : MonoBehaviour
         gameObject.AddComponent<PlayerMoney>();
         gameObject.AddComponent<PlayerAccount>();
         gameObject.AddComponent<Environment>();
-        gameObject.AddComponent<BlockStorageCreation>();
+        gameObject.AddComponent<BlockStorage>();
     }
 }
