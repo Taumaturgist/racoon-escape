@@ -41,6 +41,28 @@ namespace Traffic
                     spawnPoint.x < 0 ? Quaternion.Euler(0f, -180f, 0f) : Quaternion.identity,
                     _traffic.transform);
 
+            int laneNumber = 0;
+
+            if (spawnPoint.x < -1.85f)
+            {
+                laneNumber = -2;
+            }
+            else if (spawnPoint.x < 0f)
+            {
+                laneNumber = -1;
+            }
+            
+            if (spawnPoint.x > 1.85f)
+            {
+                laneNumber = 2;
+            }
+            else if (spawnPoint.x > 0f)
+            {
+                laneNumber = 1;
+            }
+            
+            trafficCar.Launch(laneNumber);
+
             return trafficCar;
         }
     }

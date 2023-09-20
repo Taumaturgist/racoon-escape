@@ -5,24 +5,37 @@ namespace Traffic
     public class TrafficCar : MonoBehaviour
     {
         private TrafficCarMovement _carMovement;
-        private LayerMask _layerMaskPlayer;
-        private LayerMask _layerMaskTraffic;
-        private readonly float _maxDistance = 15f;
+        private LayerMask _layerMask;
+        private readonly float _maxDistance = 8f;
         private Transform _direction;
+        private int _laneNumber;
+
+        public void Launch(int laneNumber)
+        {
+            _laneNumber = laneNumber;
+        }
 
         private void Start()
         {
             _carMovement = GetComponent<TrafficCarMovement>();
 
-            _layerMaskPlayer = LayerMask.GetMask(new[] { "Player" });
-            _layerMaskTraffic = LayerMask.GetMask(new[] { "Traffic" });
+            _layerMask = LayerMask.GetMask(new[] { "Player" });
             _direction = transform.GetChild(0).transform;
         }
 
         private void FixedUpdate()
         {
-            DetectPlayer();
-            DetectTrafficCar();
+            RaycastHit hit;
+
+            if (Physics.Raycast(
+                    _direction.position,
+                    _direction.TransformDirection(Vector3.forward),
+                    out hit,
+                    _maxDistance,
+                    _layerMask))
+            {
+                _carMovement.State = TrafficCarState.Standing;
+            }
 
             if (transform.position.y < 0)
             {
@@ -30,33 +43,18 @@ namespace Traffic
             }
         }
 
-        private void DetectTrafficCar()
+        private void OnTriggerEnter(Collider other)
         {
-            RaycastHit hit;
-
-            if (Physics.Raycast(
-                    _direction.position,
-                    _direction.TransformDirection(Vector3.forward),
-                    out hit,
-                    _maxDistance,
-                    _layerMaskTraffic))
+            if (other.gameObject.CompareTag("TransitionTile"))
             {
-                _carMovement.State = TrafficCarState.Standing;
-            }
-        }
-
-        private void DetectPlayer()
-        {
-            RaycastHit hit;
-
-            if (Physics.Raycast(
-                    _direction.position,
-                    _direction.TransformDirection(Vector3.forward),
-                    out hit,
-                    _maxDistance,
-                    _layerMaskPlayer))
-            {
-                _carMovement.State = TrafficCarState.Standing;
+                if (_laneNumber == 2 || _laneNumber == -2)
+                {
+                    transform.Rotate(0f, -45f, 0f);
+                    if (transform.position.x == 1.85)
+                    {
+                        transform.Rotate(0f, 45f, 0f);
+                    }
+                }
             }
         }
     }

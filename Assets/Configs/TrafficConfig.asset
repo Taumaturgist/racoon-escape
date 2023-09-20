@@ -64,38 +64,6 @@ MonoBehaviour:
     TrafficCar: {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
   - TrafficCarName: 5
     TrafficCar: {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
-  CitySpawnPoints: []
-  DesertSpawnPoints: []
-  ForestSpawnPoints:
-  - {fileID: 89027163497423943, guid: bde7b69a3438e9b4f8e4a2e72ad1c1f4, type: 3}
-  - {fileID: 5479895703122533469, guid: a0ee8cbab0b1dd8478e9bf0f711591d5, type: 3}
-  - {fileID: 6660743861716036802, guid: 3d941977759a72f4b9531327222d71d5, type: 3}
-  - {fileID: 8993739713786574767, guid: 139a60b8f2aa53548810ef3086a88796, type: 3}
-  HighwaySpawnPoints:
-  - {fileID: 8191304943187787027, guid: 59f6d34c38f014e4989a99656c4123b8, type: 3}
-  - {fileID: 6938470645883405018, guid: 53da4946e803d744c85df38a0a709399, type: 3}
-  - {fileID: 7934003913130166807, guid: 078a705f2f492574dac5a6baab160d1a, type: 3}
-  - {fileID: 2865630199434172161, guid: 325c1c07867a5244995f9b1d091261b0, type: 3}
-  - {fileID: 876655308438321560, guid: d4a6d1855158e334c8d71603b579785a, type: 3}
-  - {fileID: 2711100797836347267, guid: 64f2cf0eae013844cba0b90bf86619e3, type: 3}
-  - {fileID: 7190761242343199253, guid: d8a826b462c690e4fad814c6bfa3ea75, type: 3}
-  - {fileID: 9032072936018532125, guid: c4d0dde5beab67b49b3ecc2ad76efcd2, type: 3}
-  - {fileID: 3865261678326710820, guid: 1bd986a6cdea95241a0e3d6dd6ab5a26, type: 3}
-  - {fileID: 4501944694813208330, guid: 887303c5ea97ef8478944aa86a5bf4ce, type: 3}
-  - {fileID: 3748001111460981862, guid: c15e6508da376da4ebcb80823764b147, type: 3}
-  - {fileID: 8883968750148733783, guid: 10d67cdb6407b0449977d9596ebf2053, type: 3}
-  - {fileID: 2576414564114701886, guid: dba7c0f730176854a851f2d295f4677b, type: 3}
-  - {fileID: 5369473455914668651, guid: 7de191422bd3f5645b68247566fa3608, type: 3}
-  - {fileID: 2272786094624802701, guid: 2e7a1d0e806ed8b4f9c1e4041908ea5a, type: 3}
-  - {fileID: 4027352691641806304, guid: 728ff24662bc086428479f3c71696ef1, type: 3}
-  - {fileID: 5256678138429095150, guid: 699b1545a75f2d144b721b37e9cd2e3f, type: 3}
-  - {fileID: 3363651820900156576, guid: 54ebd30edf20ed44f932fc19f0b5634c, type: 3}
-  - {fileID: 4053560906951397823, guid: 9e2b1365f89b81b488a316781a58cdb5, type: 3}
-  - {fileID: 8073093324187951588, guid: 383322a4bd886e4489e08764560731e2, type: 3}
-  - {fileID: 5643351380435340249, guid: 8faf4919975ed164c8d93733ee64d62f, type: 3}
-  - {fileID: 7935498631049687890, guid: d01881356d74ba84385eefd99342f183, type: 3}
-  - {fileID: 2562572887302854796, guid: be87ffab278ebe84ab3892930f1b98d9, type: 3}
-  - {fileID: 1123286233248679775, guid: 2662691d7bcc25b4bbee2f7f657314c7, type: 3}
   CityPoints:
   - {x: 1.85, y: 1, z: 20}
   - {x: 6.3, y: 1, z: 20}
@@ -123,10 +91,14 @@ MonoBehaviour:
   - {x: 2, y: 1, z: 95}
   - {x: -2, y: 1, z: 95}
   ForestPoints:
-  - {x: 0, y: 1, z: 20}
-  - {x: 0, y: 1, z: 45}
-  - {x: 0, y: 1, z: 70}
-  - {x: 0, y: 1, z: 95}
+  - {x: 1.6, y: 1, z: 20}
+  - {x: -1.6, y: 1, z: 20}
+  - {x: 1.6, y: 1, z: 45}
+  - {x: -1.6, y: 1, z: 45}
+  - {x: 1.6, y: 1, z: 70}
+  - {x: -1.6, y: 1, z: 70}
+  - {x: 1.6, y: 1, z: 95}
+  - {x: -1.6, y: 1, z: 95}
   HighwayPoints:
   - {x: -10, y: 1, z: 20}
   - {x: -6, y: 1, z: 20}

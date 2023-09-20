@@ -10,7 +10,7 @@ namespace Traffic
 
         private void Start()
         {
-            _speed = Random.Range(5.0f, 10.0f);
+            _speed = Random.Range(5.0f, 5.5f);
             State = TrafficCarState.Rides;
         }
 
