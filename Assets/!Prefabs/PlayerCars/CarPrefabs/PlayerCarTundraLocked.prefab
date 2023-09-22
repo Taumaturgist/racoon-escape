@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: -603158850229641492}
   - component: {fileID: 8662433363287228873}
   - component: {fileID: 7583957033510607630}
+  - component: {fileID: -6903704523760329015}
   m_Layer: 0
   m_Name: PlayerCarTundraLocked
   m_TagString: Player
@@ -534,6 +535,18 @@ MonoBehaviour:
   carModel: 1
   carLevel: 0
   carPurchasePrice: 1
+--- !u!114 &-6903704523760329015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328153484271297579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f2ee6b17c5d334598ff8dc94c321de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0

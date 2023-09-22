@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a69742445e1475ebb272c3118f51a56, type: 3}
+  m_Name: AudioConfig
+  m_EditorClassIdentifier: 
+  WoodKick:
+  - {fileID: 8300000, guid: ea76a7fbaf8887d43a7f3d42503a62d9, type: 3}
+  - {fileID: 8300000, guid: 1739118a8d4360f40824aecdff326e53, type: 3}
+  - {fileID: 8300000, guid: ddd1dc2cffff6b642b5472e717abca3c, type: 3}
+  - {fileID: 8300000, guid: f928d6de4ee7fe34998a5cf9e7c87124, type: 3}
+  MetalKick:
+  - {fileID: 8300000, guid: 5cb939d43644a7c4eab5fa476aa92385, type: 3}
+  - {fileID: 8300000, guid: 7cf4807a740b9ae4bb6ffa8539b669ad, type: 3}
+  - {fileID: 8300000, guid: b508a4135add2aa4f9f801c5936334da, type: 3}
+  HeavyMetalKick:
+  - {fileID: 8300000, guid: 5dcdc8a5b8d14eb44bad29c4c3a2ef6a, type: 3}
+  - {fileID: 8300000, guid: 0133d36ef26081b4e8696ac44c55d354, type: 3}
+  RockKick:
+  - {fileID: 8300000, guid: 94990d8ea47519d47be44b5c655cc8a3, type: 3}
+  - {fileID: 8300000, guid: cfa08d5d3d3aed04cb9a80d03448cd98, type: 3}
+  CactusCrush:
+  - {fileID: 8300000, guid: 24a6f7fa0f9e434439f5c3dec3150622, type: 3}
+  - {fileID: 8300000, guid: 4443d626cb318e64c852d503ce84d757, type: 3}

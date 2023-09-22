@@ -17,7 +17,7 @@ public class PlayerActiveCar : MonoBehaviour
 	private Rigidbody _carRigidbody;
 	private Collider _carCollider;
 
-	private Vector3 _startPosition;	
+	private Vector3 _startPosition;
 	
 	private float _motorForce;
 	private float _currentMotorForce;

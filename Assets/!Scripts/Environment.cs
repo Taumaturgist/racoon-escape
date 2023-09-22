@@ -16,7 +16,7 @@ public class Environment : MonoBehaviour
 
         var shop = Instantiate(_environmentConfig.Shop, Vector3.zero, Quaternion.Euler(Vector3.zero));
 
-        var audioContorller = Instantiate(_environmentConfig.AudioController, Vector3.zero, Quaternion.Euler(Vector3.zero));
+        var audioController = Instantiate(_environmentConfig.AudioController, Vector3.zero, Quaternion.Euler(Vector3.zero));
 
         var UI = Instantiate(_environmentConfig.UIController, Vector3.zero, Quaternion.Euler(Vector3.zero));
 
