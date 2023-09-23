@@ -279,6 +279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 77
@@ -345,6 +349,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 93
@@ -455,9 +463,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -473,6 +489,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -539,6 +559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (3)
@@ -605,6 +629,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 110
@@ -715,9 +743,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -733,6 +769,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 89
@@ -843,9 +883,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -923,6 +971,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 92
@@ -989,6 +1041,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -1055,6 +1111,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 70
@@ -1121,6 +1181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 118
@@ -1187,6 +1251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 68
@@ -1253,6 +1321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -1319,6 +1391,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 103
@@ -1385,6 +1461,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -1451,6 +1531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -1517,6 +1601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 116
@@ -1583,6 +1671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -1649,6 +1741,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (10)
@@ -1777,6 +1873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -1843,6 +1943,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -1909,6 +2013,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 91
@@ -1975,6 +2083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -2041,6 +2153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 122
@@ -2107,6 +2223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 96
@@ -2173,6 +2293,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (1)
@@ -2301,6 +2425,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 94
@@ -2411,9 +2539,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -2435,7 +2571,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2182128061691129947, guid: 5220111b55a8a6b479ffdc441b8a04cf, type: 3}
       propertyPath: m_TagString
-      value: Wood
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670097133781922006, guid: 5220111b55a8a6b479ffdc441b8a04cf, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9210258067043930017, guid: 5220111b55a8a6b479ffdc441b8a04cf, type: 3}
       propertyPath: m_RootOrder
@@ -2495,6 +2635,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 99
@@ -2561,6 +2705,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 100
@@ -2671,9 +2819,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -2689,6 +2845,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 88
@@ -2799,9 +2959,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -2817,6 +2985,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -2883,6 +3055,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -2949,6 +3125,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (6)
@@ -3015,6 +3195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -3143,6 +3327,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -3209,6 +3397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 74
@@ -3275,6 +3467,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -3403,6 +3599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 87
@@ -3469,13 +3669,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4369941649470331792, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_TagString
-      value: HeavyMetal
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -3535,6 +3739,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (5)
@@ -3601,6 +3809,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -3667,6 +3879,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 130
@@ -3777,9 +3993,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -3795,13 +4019,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4369941649470331792, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_TagString
-      value: HeavyMetal
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -3923,6 +4151,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -4055,6 +4287,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -4121,6 +4357,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 69
@@ -4231,9 +4471,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -4293,9 +4541,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -4355,9 +4611,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -4373,6 +4637,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -4489,7 +4757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6120187763902378556, guid: 311ce3e904d1ced4bbe139e7cb0757eb, type: 3}
       propertyPath: m_TagString
-      value: Wood
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541002110979838004, guid: 311ce3e904d1ced4bbe139e7cb0757eb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 311ce3e904d1ced4bbe139e7cb0757eb, type: 3}
@@ -4505,6 +4777,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 84
@@ -4633,6 +4909,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -4699,13 +4979,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4369941649470331792, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_TagString
-      value: HeavyMetal
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -4765,6 +5049,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 79
@@ -4831,13 +5119,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4369941649470331792, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_TagString
-      value: HeavyMetal
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -4897,13 +5189,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4369941649470331792, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_TagString
-      value: HeavyMetal
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -5007,9 +5303,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -5025,6 +5329,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 124
@@ -5091,6 +5399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -5157,6 +5469,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 78
@@ -5223,6 +5539,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (11)
@@ -5289,6 +5609,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 86
@@ -5479,13 +5803,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4369941649470331792, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2
       objectReference: {fileID: 0}
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_TagString
-      value: HeavyMetal
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -5545,6 +5873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -5611,6 +5943,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 85
@@ -5677,6 +6013,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 102
@@ -5743,6 +6083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -5817,6 +6161,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wood
       objectReference: {fileID: 0}
+    - target: {fileID: 6670097133781922006, guid: 5220111b55a8a6b479ffdc441b8a04cf, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 9210258067043930017, guid: 5220111b55a8a6b479ffdc441b8a04cf, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5875,6 +6223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 97
@@ -5941,6 +6293,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 126
@@ -6007,6 +6363,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (4)
@@ -6073,6 +6433,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 132
@@ -6139,6 +6503,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -6205,6 +6573,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 114
@@ -6315,9 +6687,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -6333,6 +6713,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 76
@@ -6399,6 +6783,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (8)
@@ -6527,6 +6915,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -6593,6 +6985,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -6659,6 +7055,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (2)
@@ -6769,9 +7169,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -6787,6 +7195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -6853,6 +7265,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1
@@ -6919,6 +7335,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -7029,9 +7449,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -7047,6 +7475,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -7113,6 +7545,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 112
@@ -7179,6 +7615,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 80
@@ -7245,6 +7685,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 120
@@ -7311,6 +7755,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -7377,6 +7825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -7443,6 +7895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -7571,6 +8027,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -7637,6 +8097,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 1903516991721598829, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 128
@@ -7703,6 +8167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -7819,6 +8287,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6120187763902378556, guid: 311ce3e904d1ced4bbe139e7cb0757eb, type: 3}
       propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541002110979838004, guid: 311ce3e904d1ced4bbe139e7cb0757eb, type: 3}
+      propertyPath: m_TagString
       value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7835,6 +8307,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 95
@@ -7901,6 +8377,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 98
@@ -8011,9 +8491,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -8029,6 +8517,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 75
@@ -8095,6 +8587,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (7)
@@ -8161,6 +8657,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4173278240561573924, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5483449299990507590, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_RootOrder
       value: 101
@@ -8227,6 +8727,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 6831898973588521577, guid: bbd48cc5806971c41bc64b735cb57273, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7876173080195188289, guid: bbd48cc5806971c41bc64b735cb57273, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8289,6 +8793,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 993298883972714764, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (9)
@@ -8355,6 +8863,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -8421,6 +8933,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -8487,6 +9003,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 71
@@ -8553,6 +9073,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 4843636501873214356, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752606702802415321, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -8619,6 +9143,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -8729,9 +9257,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -8791,9 +9327,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -8933,6 +9477,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 690133400358717604, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2371327977771769550, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_RootOrder
       value: 90
@@ -9043,9 +9591,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3725791081999124731, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}

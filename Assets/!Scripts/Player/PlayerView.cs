@@ -8,8 +8,8 @@ public class PlayerView : MonoBehaviour
     public UnityEvent OnHeavyMetalKick;
     public UnityEvent OnRockKick;
     public UnityEvent OnCactusCrashed;
-    
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision other)
     {
         switch (other.transform.gameObject.tag)
         {
