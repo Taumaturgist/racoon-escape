@@ -50,7 +50,7 @@ MonoBehaviour:
   ambientDesert: {fileID: 8300000, guid: 0a923748fe3cf104786079f2e85eb064, type: 3}
   ambientHighway: {fileID: 8300000, guid: 2f5fdf2cf4e6b5744a15e37721877bb9, type: 3}
   audioSource: {fileID: 9057729302944089663}
-  _volumeScaleForSounds: 0.05
+  volumeScaleForSounds: 0.05
 --- !u!82 &9057729302944089663
 AudioSource:
   m_ObjectHideFlags: 0
