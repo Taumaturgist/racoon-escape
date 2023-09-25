@@ -10,9 +10,9 @@ public class TileSpawner : MonoBehaviour
     private Tile[] _tiles;
     private Tile[] _tileSet;
     private Tile _transitionTile;
-
+    
     private eBlockType _blockType;
-
+    private bool _isFirstTile;
     private const int MaxBlockAmountInScene = 2;
 
     public void Launch(
@@ -22,13 +22,14 @@ public class TileSpawner : MonoBehaviour
         Block block,
         ref eBlockType previousBlockType,
         ref eBlockType nextBlockType,
-        ref Vector3 pos, Quaternion rot)
+        ref Vector3 pos, Quaternion rot,
+        bool isFirstBlock)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
         _trafficConfig = trafficConfig;
         _blockType = block.BlockType;
-
+        _isFirstTile = isFirstBlock;
         CreateTiles(block, ref previousBlockType, ref nextBlockType, ref pos, rot);
     }
 
@@ -58,11 +59,25 @@ public class TileSpawner : MonoBehaviour
         int randomIndex;
         for (int i = 0; i < _tiles.Length - 1; i++)
         {
+            
             randomIndex = Random.Range(0, _tileSet.Length);
+            if (_isFirstTile)
+            {
+                _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
+                
+                _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig, _blockType, _isFirstTile);
+
+                if (randomIndex == _blockSpawnConfig.CrossroadNumberInCity)
+                    crossroadCount++;
+                _isFirstTile = false;
+                pos.z += _blockSpawnConfig.OffsetZ;
+                continue;
+            }
+            
             if (crossroadCount < MaxBlockAmountInScene)
             {
                 _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
-
+                
                 _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
 
                 if (randomIndex == _blockSpawnConfig.CrossroadNumberInCity)

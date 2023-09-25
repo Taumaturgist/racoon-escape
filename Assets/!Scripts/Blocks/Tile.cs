@@ -6,7 +6,10 @@ public class Tile : MonoBehaviour
     private BuildingSpawner _buildingSpawner;
     private TrafficController _trafficController;
 
-    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig, eBlockType blockType)
+    [HideInInspector] 
+    public bool IsFirstTile;
+    
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig, eBlockType blockType, bool isFirstTile = false)
     {
         _buildingSpawner = GetComponent<BuildingSpawner>();
 
@@ -15,6 +18,7 @@ public class Tile : MonoBehaviour
             _buildingSpawner.Launch(buildingSpawnConfig);
         }
 
+        IsFirstTile = isFirstTile;
         _trafficController = new TrafficController(trafficConfig, blockType, this);
     }
 }

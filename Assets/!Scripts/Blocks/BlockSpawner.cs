@@ -54,7 +54,6 @@ public class BlockSpawner : MonoBehaviour, IDisposable
         if (_isFirstBlock)
         {
             block.GetFirstBlockParameters();
-            _isFirstBlock = false;
         }
         else
             block.GetBlockParameters(_nextBlockType);
@@ -72,11 +71,12 @@ public class BlockSpawner : MonoBehaviour, IDisposable
             ref _previousBlockType,
             ref _nextBlockType,
             ref _pos,
-            _rot);
-
+            _rot,
+            _isFirstBlock);
+        
+        _isFirstBlock = false;
         _blocks.Add(block);
         _blockCount = _blocks.Count;
-
         _transitionTileColliders[transitionTileNumber] = tileSpawner.GetTransitionTileCollider();
         CheckTrigger(_transitionTileColliders[transitionTileNumber]);
     }
