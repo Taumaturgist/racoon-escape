@@ -57,7 +57,7 @@ public class UIShopScreen : UIScreen
     private void OnCarSwitchLogic()
     {
         SetCarName(_shop.GetCurrentCarName());
-        _isPurchased = _shop.GetCurrentCarPurchaseStatus();        
+        _isPurchased = _shop.GetCurrentCarPurchaseStatus();
         SetCarPrice();
         SetCarOption();
     }

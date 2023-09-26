@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269363650662816718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRenderers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4774590588451263702}
   - component: {fileID: 4977163331300282068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264977660446201541}
   - component: {fileID: 3489707925690132784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4398447487056268152}
   - component: {fileID: 1294718424561195657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5138206773554386231}
   - component: {fileID: 5494661074676197550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 807832898099118385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565603247166494486}
   - component: {fileID: 2909777468520030869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9127973585847142940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: -603158850229641492}
   - component: {fileID: 8662433363287228873}
   - component: {fileID: 7583957033510607630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCarBenzL3
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -533,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carModel: 4
   carLevel: 3
+  carPurchasePrice: 0
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3952850220972425104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2487153840946446217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286803125161239176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791547797790831892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277911185607359746}
   - component: {fileID: 1737424946818786561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +739,7 @@ GameObject:
   - component: {fileID: 1258579295447687215}
   - component: {fileID: 658644029470904708}
   - component: {fileID: 8732147835851392611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NitroLightMock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6333167234194080230}
   - component: {fileID: 4765053799145019187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,6 +973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mercedes Benz G-Class Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
 --- !u!4 &2605360167804226182 stripped
@@ -1033,6 +1038,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
       propertyPath: m_Name
       value: Mercedes Benz G-Class Wheel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
@@ -1096,6 +1105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mercedes Benz G-Class Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
 --- !u!4 &5970167450410533911 stripped
@@ -1110,9 +1123,77 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4328153484271297578}
     m_Modifications:
+    - target: {fileID: 503622983382310101, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 681945460653773144, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 850848328994214731, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 996509688901806721, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165146459018873397, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313155684365865067, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608974293280569919, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697860029697542626, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731373976832161303, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779939031500427702, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805248754929455486, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896019086639952182, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929941670685878282, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213366631121052349, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387692126856843688, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471620708748382030, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2515979562634652366, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
       propertyPath: m_Name
       value: BenzL3Visual
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515979562634652366, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2515979562634652367, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
       propertyPath: m_RootOrder
@@ -1157,6 +1238,130 @@ PrefabInstance:
     - target: {fileID: 2515979562634652367, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578414806414490946, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036149704114950558, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055600280490748549, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524236899855108847, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775886419862043343, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851331126802878544, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941214911168541011, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243480010958563826, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602115372005984491, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743952591619143702, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753156119414257358, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147730523045721899, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221880318355515211, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333542171613022517, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524871260529647731, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837050412544376058, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926342616559168646, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612303602892686096, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309306489909168151, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606559500919762552, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615563789510530645, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780111428676512673, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095364512270359176, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145309795716275427, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155863018516581009, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245412636273693692, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8679845534793773010, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684332403352589861, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955321956629816807, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010142210385367763, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166359797894042036, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ea7e6694f4997448b7749d415b672c8, type: 3}
@@ -1219,6 +1424,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
       propertyPath: m_Name
       value: Mercedes Benz G-Class Wheel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51a37ee29dc68134090ce7d1614634d6, type: 3}

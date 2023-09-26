@@ -59,7 +59,7 @@ public readonly struct OnCarsAssortmentLoadedMessage
 
 public class PlayerAccount : MonoBehaviour
 {
-    private Game _game;    
+    private Game _game;
 
     private PlayerAccountConfig _playerAccountConfig;
     private Serializer _serializer;
@@ -90,9 +90,8 @@ public class PlayerAccount : MonoBehaviour
         _game = GetComponent<Game>();
         
         _playerAccountConfig = GetComponent<ApplicationStartUp>().PlayerAccountConfig;
-        _serializer = GetComponent<Serializer>(); 
+        _serializer = GetComponent<Serializer>();
         _money = GetComponent<PlayerMoney>();
-
 
         _camera = Instantiate(_playerAccountConfig.Camera);
 
@@ -106,7 +105,7 @@ public class PlayerAccount : MonoBehaviour
                 MessageBroker
                 .Default
                 .Publish(new OnDeclareCarIDMessage(_activeCar.GetComponent<PlayerCarShopView>().GetCarModelID()));
-            });        
+            });
 
         MessageBroker
             .Default
@@ -240,5 +239,5 @@ public class PlayerAccount : MonoBehaviour
     private void OnApplicationQuit()
     {
         SavePlayerData();
-    }    
+    }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2533951117993019421}
   - component: {fileID: 5200025378674828693}
   - component: {fileID: -3228108307972865063}
-  - component: {fileID: -3489297008341564400}
   m_Layer: 0
   m_Name: DesertTile1
   m_TagString: Untagged
@@ -48,7 +47,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 200, y: 0.1, z: 200}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!114 &-3228108307972865063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,25 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f528c8498405a49961fa94bb1dd6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3489297008341564400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2533951117993019420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d15ea5f3099614ca0d8a35618935c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trafficCarPrefab: {fileID: 329700437931056342, guid: 12416de20f0619a4aaaf1cbf7e6179ea, type: 3}
-  trafficCarsSpawnPoints:
-  - {x: 2, y: 0, z: -75}
-  - {x: -2, y: 0, z: -25}
-  - {x: 2, y: 0, z: 0}
-  - {x: 2, y: 0, z: 25}
-  - {x: -2, y: 0, z: 75}
 --- !u!1 &7706864121905546964
 GameObject:
   m_ObjectHideFlags: 0

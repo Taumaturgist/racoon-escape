@@ -3,11 +3,11 @@ using UniRx;
 
 public readonly struct OnBalanceDiffMessage
 {
-    public readonly int Diff;    
+    public readonly int Diff;
 
     public OnBalanceDiffMessage(int diff)
     {
-        Diff = diff;        
+        Diff = diff;
     }
 }
 public class PlayerMoney : MonoBehaviour
@@ -19,7 +19,7 @@ public class PlayerMoney : MonoBehaviour
     private int _moneyPer100Meters;
 
     private int _earnedMoneyInCurrentRide;
-    private int _earnedMoneyForDistance;    
+    private int _earnedMoneyForDistance;
 
     private bool _isEarningMoney;
 
@@ -45,7 +45,7 @@ public class PlayerMoney : MonoBehaviour
             {
                 _earnedMoneyInCurrentRide = 0;
                 _earnedMoneyForDistance = 0;
-                _isEarningMoney = true;                
+                _isEarningMoney = true;
             });
 
         MessageBroker
@@ -78,5 +78,4 @@ public class PlayerMoney : MonoBehaviour
     {
         _earnedMoneyForDistance = _moneyPer100Meters * (_activeCar.GetCurrentRideDistance() / 100);
     }
-
 }

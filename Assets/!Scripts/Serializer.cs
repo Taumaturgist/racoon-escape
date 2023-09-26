@@ -39,7 +39,7 @@ public class Serializer : MonoBehaviour
     public PlayerData Load()
     {
         var dictString = PlayerPrefs.HasKey("carsDict") ?
-            PlayerPrefs.GetString("carsDict") :        
+            PlayerPrefs.GetString("carsDict") :
             "ChevroletCamaroSS1969,Lvl1;ToyotaTundra,Locked;NissanSkylineGT,Locked;DodgeViperGTS,Locked;MercedesBenzGCLass,Locked;LamborghiniHuracanLP700,Locked;";
         
 
@@ -54,7 +54,7 @@ public class Serializer : MonoBehaviour
             {
                 carsDict.Add(Enum.Parse<eCarModel>(carInfo[0]),
                          Enum.Parse<eCarLevel>(carInfo[1]));
-            }                
+            }
         }
 
         var odometer = PlayerPrefs.HasKey("odometer") ?

@@ -70,10 +70,10 @@ public class UIController : MonoBehaviour
     }
 
     public void Launch(
-        Shop shop, 
-        ShopCarModelsConfig shopConfig, 
-        PlayerAccountConfig playerAccountConfig, 
-        PlayerAccount playerAccount, 
+        Shop shop,
+        ShopCarModelsConfig shopConfig,
+        PlayerAccountConfig playerAccountConfig,
+        PlayerAccount playerAccount,
         ColorsConfig colorsConfig)
     {
         MessageBroker

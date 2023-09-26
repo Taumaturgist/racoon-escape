@@ -1,26 +1,24 @@
+using Traffic;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
     private BuildingSpawner _buildingSpawner;
-    private TrafficCarsSpawner _trafficCarsSpawner;
-    private BuildingSpawnConfig _buildingSpawnConfig;
-    private TrafficSpawnConfig _trafficSpawnConfig;
-    public void Launch() { }
+    private TrafficController _trafficController;
 
-    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficSpawnConfig trafficSpawnConfig)
+    [HideInInspector] 
+    public bool IsFirstTile;
+    
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig, eBlockType blockType, bool isFirstTile = false)
     {
-        _buildingSpawnConfig = buildingSpawnConfig;
-        _trafficSpawnConfig = trafficSpawnConfig;
-
         _buildingSpawner = GetComponent<BuildingSpawner>();
-        _trafficCarsSpawner = GetComponent<TrafficCarsSpawner>();
-
 
         if (_buildingSpawner != null)
-            _buildingSpawner.Launch(_buildingSpawnConfig);
-        
-        if (_trafficCarsSpawner != null)
-            _trafficCarsSpawner.Launch(_trafficSpawnConfig);
+        {
+            _buildingSpawner.Launch(buildingSpawnConfig);
+        }
+
+        IsFirstTile = isFirstTile;
+        _trafficController = new TrafficController(trafficConfig, blockType, this);
     }
 }
