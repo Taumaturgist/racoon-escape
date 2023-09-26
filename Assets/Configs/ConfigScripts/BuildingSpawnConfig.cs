@@ -7,6 +7,8 @@ public class BuildingSpawnConfig : ScriptableObject
     public int MinFloorsAmount;
     public int MaxFloorsAmount;
 
+    public GameObject Bank;
+
     [Header("FirstFloors")]
     public List<GameObject> BigFirstFloorsList;
     public List<GameObject> SmallFirstFloorsList;

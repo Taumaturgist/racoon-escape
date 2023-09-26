@@ -1,4 +1,4 @@
-/* 
+/*
  *      Unsubscribing after losing _disposableTrigger.Clear();
  */
 
@@ -26,7 +26,8 @@ public class BlockSpawner : MonoBehaviour
     private int _blockCount;
     private bool _isFirstBlock;
 
-    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig, TrafficSpawnConfig trafficSpawnConfig)
+    public void Launch(BlockSpawnConfig blockSpawnConfig, BuildingSpawnConfig buildingSpawnConfig,
+        TrafficSpawnConfig trafficSpawnConfig)
     {
         _blockSpawnConfig = blockSpawnConfig;
         _buildingSpawnConfig = buildingSpawnConfig;
@@ -41,7 +42,7 @@ public class BlockSpawner : MonoBehaviour
         for (int i = 0; i < 2; i++)
             CreateBlock(i);
     }
-    
+
     private void CreateBlock(int transitionTileNumber)
     {
         var block = Instantiate(_blockSpawnConfig.Block, _pos, _rot, transform);
@@ -50,13 +51,22 @@ public class BlockSpawner : MonoBehaviour
         if (_isFirstBlock)
         {
             block.GetFirstBlockParameters();
-            _isFirstBlock = false;
         }
         else
             block.GetBlockParameters(_nextBlockType);
 
         var tileSpawner = Instantiate(_blockSpawnConfig.TileSpawner, _pos, _rot, block.transform);
-        tileSpawner.Launch(_blockSpawnConfig, _buildingSpawnConfig, _trafficSpawnConfig, block, ref _previousBlockType, ref _nextBlockType, ref _pos, _rot);
+        tileSpawner.Launch(
+            _blockSpawnConfig,
+            _buildingSpawnConfig,
+            _trafficSpawnConfig,
+            block,
+            ref _previousBlockType,
+            ref _nextBlockType,
+            ref _pos, _rot,
+            _isFirstBlock);
+        
+        _isFirstBlock = false;
 
         _blocks.Add(block);
         _blockCount = _blocks.Count;
@@ -64,6 +74,7 @@ public class BlockSpawner : MonoBehaviour
         _transitionTileColliders[transitionTileNumber] = tileSpawner.GetTransitionTileCollider();
         CheckTrigger(_transitionTileColliders[transitionTileNumber]);
     }
+
     private void CheckTrigger(Collider trigger)
     {
         trigger.OnTriggerEnterAsObservable()
@@ -71,15 +82,16 @@ public class BlockSpawner : MonoBehaviour
             .Subscribe(other =>
             {
                 MessageBroker
-                .Default
-                .Publish(new OnAmbientThemeSwitchMessage(
-                    _blocks.Count > 2 ? _blocks[2].BlockType : _blocks[1].BlockType
+                    .Default
+                    .Publish(new OnAmbientThemeSwitchMessage(
+                        _blocks.Count > 2 ? _blocks[2].BlockType : _blocks[1].BlockType
                     ));
 
                 CheckBlockRemoval();
                 CreateBlock(0);
             }).AddTo(_disposable);
     }
+
     private void CheckBlockRemoval()
     {
         if (_blockCount > 2)

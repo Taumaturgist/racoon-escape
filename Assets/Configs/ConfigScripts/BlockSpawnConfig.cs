@@ -21,6 +21,7 @@ public class BlockSpawnConfig : ScriptableObject
     public int MaxTilesCount;
 
     [Header("Tiles")]
+    public Tile FirstTileInFirstBlock;
     public Tile[] CityTiles;
     public Tile[] DesertTiles;
     public Tile[] ForestTiles;

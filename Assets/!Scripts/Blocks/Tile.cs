@@ -8,7 +8,7 @@ public class Tile : MonoBehaviour
     private TrafficSpawnConfig _trafficSpawnConfig;
     public void Launch() { }
 
-    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficSpawnConfig trafficSpawnConfig)
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficSpawnConfig trafficSpawnConfig, bool isFirstTile)
     {
         _buildingSpawnConfig = buildingSpawnConfig;
         _trafficSpawnConfig = trafficSpawnConfig;
@@ -18,7 +18,7 @@ public class Tile : MonoBehaviour
 
 
         if (_buildingSpawner != null)
-            _buildingSpawner.Launch(_buildingSpawnConfig);
+            _buildingSpawner.Launch(_buildingSpawnConfig, isFirstTile);
         
         if (_trafficCarsSpawner != null)
             _trafficCarsSpawner.Launch(_trafficSpawnConfig);
