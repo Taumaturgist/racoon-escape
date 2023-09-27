@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - BlockStorage
+  - Metal
+  - Wood
+  - HeavyMetal
+  - Rock
+  - Cactus
   layers:
   - Default
   - TransparentFX

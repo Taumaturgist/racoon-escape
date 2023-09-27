@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 6184303328607887305}
   m_Layer: 0
   m_Name: NPC_Coupe
-  m_TagString: Untagged
+  m_TagString: HeavyMetal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

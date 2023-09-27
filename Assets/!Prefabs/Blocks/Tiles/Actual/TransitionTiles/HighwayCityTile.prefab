@@ -318,6 +318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &2379888047718489990 stripped
@@ -441,6 +445,10 @@ PrefabInstance:
     - target: {fileID: 8471570681923036549, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
       propertyPath: m_Name
       value: Lamppost1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471570681923036549, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
@@ -628,6 +636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &2815885107605260133 stripped
@@ -645,6 +657,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -752,6 +768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost3
       objectReference: {fileID: 0}
+    - target: {fileID: 8109504716969191822, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
 --- !u!4 &1568727839717038622 stripped
@@ -814,6 +834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &3104566314325200957 stripped
@@ -831,6 +855,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -1008,6 +1036,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireHydrant1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
 --- !u!4 &8723782201703159808 stripped
@@ -1069,6 +1101,10 @@ PrefabInstance:
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -1194,6 +1230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8109504716969191822, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
 --- !u!4 &671823337054273708 stripped
@@ -1211,6 +1251,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -1281,6 +1325,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -1396,6 +1444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &4156958257488068209 stripped
@@ -1413,6 +1465,10 @@ PrefabInstance:
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 3761290624824826042, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_RootOrder
@@ -1520,6 +1576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3450480068311047507, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
 --- !u!4 &4023944666036557149 stripped
@@ -1582,6 +1642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3450480068311047507, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
 --- !u!4 &3830929212571262138 stripped
@@ -1599,6 +1663,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -1661,6 +1729,10 @@ PrefabInstance:
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -1768,6 +1840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost1
       objectReference: {fileID: 0}
+    - target: {fileID: 8471570681923036549, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
 --- !u!4 &7935023814367968447 stripped
@@ -1785,6 +1861,10 @@ PrefabInstance:
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 3761290624824826042, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_RootOrder
@@ -1847,6 +1927,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -1953,6 +2037,10 @@ PrefabInstance:
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -2078,6 +2166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost3 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8109504716969191822, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
 --- !u!4 &4175516623128039167 stripped
@@ -2095,6 +2187,10 @@ PrefabInstance:
     - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_Name
       value: Sing2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582230783445844556, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 7989586062447633154, guid: e7e23c3cbf40d16459f97c896b47a88e, type: 3}
       propertyPath: m_RootOrder
@@ -2157,6 +2253,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -2263,6 +2363,10 @@ PrefabInstance:
     - target: {fileID: 8109504716969191822, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
       propertyPath: m_Name
       value: Lamppost3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109504716969191822, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
@@ -2388,6 +2492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &587775437087013553 stripped
@@ -2449,6 +2557,10 @@ PrefabInstance:
     - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_Name
       value: FireHydrant1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
@@ -2512,6 +2624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bench1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7619620865358183967, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
 --- !u!4 &2059091386063663076 stripped
@@ -2529,6 +2645,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -2592,6 +2712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal2 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
       value: 93
@@ -2653,6 +2777,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -2759,6 +2887,10 @@ PrefabInstance:
     - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_Name
       value: FireHydrant1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
@@ -2884,6 +3016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &1340006481315998431 stripped
@@ -2945,6 +3081,10 @@ PrefabInstance:
     - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_Name
       value: FireHydrant1 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
@@ -3008,6 +3148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &1619999158717174585 stripped
@@ -3069,6 +3213,10 @@ PrefabInstance:
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -3194,6 +3342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &1658838076822169648 stripped
@@ -3256,6 +3408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bench1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7619620865358183967, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
 --- !u!4 &375785348038278412 stripped
@@ -3317,6 +3473,10 @@ PrefabInstance:
     - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_Name
       value: FenceMetal1 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
@@ -3690,6 +3850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8471570681923036549, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
 --- !u!4 &1024482991903148847 stripped
@@ -3751,6 +3915,10 @@ PrefabInstance:
     - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_Name
       value: FenceMetal1 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
@@ -3814,6 +3982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &7201046131435808765 stripped
@@ -3876,6 +4048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3450480068311047507, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
 --- !u!4 &7899015864958403308 stripped
@@ -3893,6 +4069,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -4000,6 +4180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &7612664085869385777 stripped
@@ -4061,6 +4245,10 @@ PrefabInstance:
     - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_Name
       value: FireHydrant1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
@@ -4124,6 +4312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3450480068311047507, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee6b82fe4438b949b8777ccb083f394, type: 3}
 --- !u!4 &7011744898097765141 stripped
@@ -4185,6 +4377,10 @@ PrefabInstance:
     - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_Name
       value: FireHydrant1 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
@@ -4372,6 +4568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bench1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7619620865358183967, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
 --- !u!4 &8966489522291654861 stripped
@@ -4496,6 +4696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireHydrant1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
 --- !u!4 &4048787939576649709 stripped
@@ -4557,6 +4761,10 @@ PrefabInstance:
     - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_Name
       value: FenceMetal1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
@@ -4638,6 +4846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashCan1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 3761290624824826042, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -4699,6 +4911,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -4868,6 +5084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bench1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7619620865358183967, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
 --- !u!4 &7702960688888011519 stripped
@@ -4885,6 +5105,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -4999,6 +5223,10 @@ PrefabInstance:
     - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
       propertyPath: m_Name
       value: FireHydrant1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
@@ -5186,6 +5414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MailBox1 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
 --- !u!4 &8935179233694434894 stripped
@@ -5248,6 +5480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost3 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8109504716969191822, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
 --- !u!4 &4842435383975949414 stripped
@@ -5309,6 +5545,10 @@ PrefabInstance:
     - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_Name
       value: FenceMetal1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
@@ -5389,6 +5629,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -5495,6 +5739,10 @@ PrefabInstance:
     - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
       propertyPath: m_Name
       value: MailBox1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
@@ -5682,6 +5930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireHydrant1 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
 --- !u!4 &1032413251929997845 stripped
@@ -5744,6 +5996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &4973930288060137894 stripped
@@ -5761,6 +6017,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -5824,6 +6084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal2 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
       value: 104
@@ -5885,6 +6149,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -5992,6 +6260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &5331677919626268002 stripped
@@ -6009,6 +6281,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -6071,6 +6347,10 @@ PrefabInstance:
     - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_Name
       value: Lamppost2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114656125394648447, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
       objectReference: {fileID: 0}
     - target: {fileID: 4734155103564949797, guid: 5cf59e86f8ef7fc41932bbcd5b76ce9e, type: 3}
       propertyPath: m_RootOrder
@@ -6178,6 +6458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &5571802542817655435 stripped
@@ -6195,6 +6479,10 @@ PrefabInstance:
     - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_Name
       value: TrashCan1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713556883688675472, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 3761290624824826042, guid: 8fbbb11e09715b24780ed5708eb3b496, type: 3}
       propertyPath: m_RootOrder
@@ -6302,6 +6590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8471570681923036549, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a1ef75e6657864e8d19de0da5c181b, type: 3}
 --- !u!4 &2459826255886071356 stripped
@@ -6364,6 +6656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireHydrant1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8296852238266532128, guid: d37db5878e452f046b8f17792579df0f, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37db5878e452f046b8f17792579df0f, type: 3}
 --- !u!4 &1984079599735643785 stripped
@@ -6425,6 +6721,10 @@ PrefabInstance:
     - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_Name
       value: FenceMetal1 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
@@ -6674,6 +6974,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &6215685315681167771 stripped
@@ -6753,6 +7057,10 @@ PrefabInstance:
     - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_Name
       value: FenceMetal2 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250072441228940964, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6262523097650571731, guid: afafe8fa04cfeed4491531ed474335d2, type: 3}
       propertyPath: m_RootOrder
@@ -6860,6 +7168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MailBox1 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 8671880700562068929, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d0045a2f481334a911b7e6a61b3e09, type: 3}
 --- !u!4 &6445944445622743528 stripped
@@ -6921,6 +7233,10 @@ PrefabInstance:
     - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_Name
       value: FenceMetal1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
@@ -7108,6 +7424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceMetal1 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
 --- !u!4 &6729957034470313383 stripped
@@ -7170,6 +7490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamppost3 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8109504716969191822, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
+      propertyPath: m_TagString
+      value: HeavyMetal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b22c4476a69e5643b232409cffdda4a, type: 3}
 --- !u!4 &7002955199357915987 stripped
@@ -7231,6 +7555,10 @@ PrefabInstance:
     - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
       propertyPath: m_Name
       value: FenceMetal1 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169796160849774644, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e7eea5099eb9143bbc085e2f5a7037, type: 3}

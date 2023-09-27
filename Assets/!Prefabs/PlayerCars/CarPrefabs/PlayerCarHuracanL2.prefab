@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: -603158850229641492}
   - component: {fileID: 8662433363287228873}
   - component: {fileID: 3154559454780343831}
+  - component: {fileID: 6002675646938454006}
   m_Layer: 0
   m_Name: PlayerCarHuracanL2
   m_TagString: Player
@@ -533,6 +534,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carModel: 5
   carLevel: 2
+  carPurchasePrice: 0
+--- !u!114 &6002675646938454006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328153484271297579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f2ee6b17c5d334598ff8dc94c321de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4582239726507025671
 GameObject:
   m_ObjectHideFlags: 0
