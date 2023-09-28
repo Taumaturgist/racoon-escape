@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 8762049809995068488}
   - component: {fileID: 3199879608773821151}
   m_Layer: 0
-  m_Name: CityTile1
+  m_Name: FirstTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,12 +240,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingSpawnPoints:
+  - {x: 50, y: 0, z: 66}
   - {x: -50, y: 0, z: -65}
   - {x: -50, y: 0, z: 0}
   - {x: -50, y: 0, z: 65}
   - {x: 50, y: 0, z: -65}
   - {x: 50, y: 0, z: 0}
-  - {x: 50, y: 0, z: 65}
   buildingPrefab: {fileID: -7081646534055728397, guid: d559fd0f5c5a9c243a6a22b66e587aa7, type: 3}
   smallBuildingIndexes: 
 --- !u!114 &3199879608773821151
@@ -3503,14 +3503,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
-    - target: {fileID: 2305433409406519124, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2305433409406519124, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 130
@@ -5805,10 +5797,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
-    - target: {fileID: 2305433409406519124, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 132
@@ -7297,6 +7285,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156936979386331769}
     m_Modifications:
+    - target: {fileID: 2305433409406519124, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3660678544589067114, guid: 7a056ef79da6b824b8dcca6f26ea97db, type: 3}
       propertyPath: m_RootOrder
       value: 128

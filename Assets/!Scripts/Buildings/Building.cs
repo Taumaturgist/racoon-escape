@@ -38,8 +38,16 @@ public class Building : MonoBehaviour
     private const int _indexBuildNumber3 = 2;
     private const int _indexBuildNumber4 = 3;
 
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig)
+    {
+        _buildingSpawnConfig = buildingSpawnConfig;
+        
+        var bank = Instantiate(_buildingSpawnConfig.Bank, transform.position, transform.rotation, transform);
+        bank.transform.Rotate(0f, 180f, 0f);
+    }
 
-    public void Launch(BuildingSpawnConfig buildingSpawnConfig, List<int> smallBuildingsIndexes, int buildingNumber, bool isOnLeftStreetSide)
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig, List<int> smallBuildingsIndexes, int buildingNumber,
+        bool isOnLeftStreetSide)
     {
         _buildingSpawnConfig = buildingSpawnConfig;
         _smallBuildingsIndexesList = smallBuildingsIndexes;
@@ -76,6 +84,7 @@ public class Building : MonoBehaviour
 
         SetTransform();
     }
+
     private void CreateFirstFloor()
     {
         Delegate createSmallFirstFloor = CreateSmallFirstFloor;
@@ -83,6 +92,7 @@ public class Building : MonoBehaviour
 
         ActionDependingBuildingSize(createSmallFirstFloor, createBigFirstFloor);
     }
+
     private void CreateBigFirstFloor()
     {
         _isBigBuilding = true;
@@ -92,6 +102,7 @@ public class Building : MonoBehaviour
 
         _randomIndex = randomInt;
     }
+
     private void CreateSmallFirstFloor()
     {
         _isBigBuilding = false;
@@ -124,27 +135,31 @@ public class Building : MonoBehaviour
         {
             if (_randomIndex == _indexBuildNumber3)
             {
-                Instantiate(_bigLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                Instantiate(_bigLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation,
+                    transform);
                 _heightMiddleFloor += _offset;
             }
 
             if (_randomIndex == _indexBuildNumber4)
             {
-                Instantiate(_bigLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                Instantiate(_bigLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation,
+                    transform);
                 _heightMiddleFloor += _offset;
             }
-         }
+        }
         else
         {
             if (_randomIndex == _indexBuildNumber3)
             {
-                Instantiate(_smallLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                Instantiate(_smallLastFloorForBuildNumber3, transform.position + _heightMiddleFloor, transform.rotation,
+                    transform);
                 _heightMiddleFloor += _offset;
             }
 
             if (_randomIndex == _indexBuildNumber4)
             {
-                Instantiate(_smallLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation, transform);
+                Instantiate(_smallLastFloorForBuildNumber4, transform.position + _heightMiddleFloor, transform.rotation,
+                    transform);
                 _heightMiddleFloor += _offset;
             }
         }
@@ -158,9 +173,11 @@ public class Building : MonoBehaviour
     private void CreateRoof(bool isBigBuilding)
     {
         if (isBigBuilding)
-            Instantiate(_bigRoofList[_randomIndex], transform.position + _heightMiddleFloor, transform.rotation, transform);
+            Instantiate(_bigRoofList[_randomIndex], transform.position + _heightMiddleFloor, transform.rotation,
+                transform);
         else
-            Instantiate(_smallRoofList[_randomIndex], transform.position + _heightMiddleFloor, transform.rotation, transform);
+            Instantiate(_smallRoofList[_randomIndex], transform.position + _heightMiddleFloor, transform.rotation,
+                transform);
     }
 
     private void SetTransform()
@@ -170,6 +187,7 @@ public class Building : MonoBehaviour
 
         ActionDependingBuildingSize(actionBasedOnSmallBuildingsIndexesCount, transformBigBuilding);
     }
+
     private void ActionBasedOnSmallBuildingsIndexesCount()
     {
         int[] pointsIndexes;
@@ -186,6 +204,7 @@ public class Building : MonoBehaviour
                 break;
         }
     }
+
     private void TransformSmallBuilding(int[] pointsIndexes)
     {
         if (_buildingNumber == pointsIndexes[0])
@@ -196,6 +215,7 @@ public class Building : MonoBehaviour
                 transform.localScale.y,
                 transform.localScale.z);
         }
+
         if (_buildingNumber == pointsIndexes[1])
         {
             transform.localScale = new Vector3(
@@ -203,14 +223,17 @@ public class Building : MonoBehaviour
                 transform.localScale.y,
                 transform.localScale.z);
         }
+
         if (_buildingNumber == pointsIndexes[2])
             transform.Rotate(0, 180, 0);
     }
+
     private void TransformBigBuilding()
     {
         _angleY = _isOnLeftStreetSide ? 0 : 180;
         transform.Rotate(0, _angleY, 0);
     }
+
     private void ActionDependingBuildingSize(Delegate action1, Delegate action2)
     {
         if (_smallBuildingsIndexesList.Count > 0)

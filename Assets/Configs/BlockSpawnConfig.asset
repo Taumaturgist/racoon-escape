@@ -22,6 +22,7 @@ MonoBehaviour:
   TilesCountInFirstBlock: 15
   MinTilesCount: 8
   MaxTilesCount: 12
+  FirstTileInFirstBlock: {fileID: 3543692409055551638, guid: 52659a0b039de734e9c7b69baa165895, type: 3}
   CityTiles:
   - {fileID: 3543692409055551638, guid: 1db4df91f5140504896e2b9ffd1c17a1, type: 3}
   - {fileID: 4742352018725668564, guid: 449463f19403dbc4faf93879a614d290, type: 3}
