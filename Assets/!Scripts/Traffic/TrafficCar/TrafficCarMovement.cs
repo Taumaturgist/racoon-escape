@@ -6,7 +6,7 @@ namespace Traffic
 {
     public class TrafficCarMovement : MonoBehaviour
     {
-        [HideInInspector] public TrafficCarState State;
+        private TrafficCarState State;
         private float _speed;
         private float _slowSpeed;
         private float _rayDistance = 2.0f;

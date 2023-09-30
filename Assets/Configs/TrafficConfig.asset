@@ -13,114 +13,30 @@ MonoBehaviour:
   m_Name: TrafficConfig
   m_EditorClassIdentifier: 
   CityTraffic:
-  - TrafficCarName: 0
-    TrafficCar: {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
-  - TrafficCarName: 1
-    TrafficCar: {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
-  - TrafficCarName: 2
-    TrafficCar: {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
-  - TrafficCarName: 3
-    TrafficCar: {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
-  - TrafficCarName: 4
-    TrafficCar: {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
-  - TrafficCarName: 5
-    TrafficCar: {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
+  - {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
+  - {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
+  - {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
+  - {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
+  - {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
+  - {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
   DesertTraffic:
-  - TrafficCarName: 0
-    TrafficCar: {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
-  - TrafficCarName: 1
-    TrafficCar: {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
-  - TrafficCarName: 2
-    TrafficCar: {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
-  - TrafficCarName: 3
-    TrafficCar: {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
-  - TrafficCarName: 4
-    TrafficCar: {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
-  - TrafficCarName: 5
-    TrafficCar: {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
+  - {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
+  - {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
+  - {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
+  - {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
+  - {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
+  - {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
   ForestTraffic:
-  - TrafficCarName: 0
-    TrafficCar: {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
-  - TrafficCarName: 1
-    TrafficCar: {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
-  - TrafficCarName: 2
-    TrafficCar: {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
-  - TrafficCarName: 3
-    TrafficCar: {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
-  - TrafficCarName: 4
-    TrafficCar: {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
-  - TrafficCarName: 5
-    TrafficCar: {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
+  - {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
+  - {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
+  - {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
+  - {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
+  - {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
+  - {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
   HighwayTraffic:
-  - TrafficCarName: 0
-    TrafficCar: {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
-  - TrafficCarName: 1
-    TrafficCar: {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
-  - TrafficCarName: 2
-    TrafficCar: {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
-  - TrafficCarName: 3
-    TrafficCar: {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
-  - TrafficCarName: 4
-    TrafficCar: {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
-  - TrafficCarName: 5
-    TrafficCar: {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}
-  CityPoints:
-  - {x: 1.85, y: 1, z: 20}
-  - {x: 6.3, y: 1, z: 20}
-  - {x: -1.85, y: 1, z: 20}
-  - {x: -6.3, y: 1, z: 20}
-  - {x: 1.85, y: 1, z: 45}
-  - {x: 6.3, y: 1, z: 45}
-  - {x: -1.85, y: 1, z: 45}
-  - {x: -6.3, y: 1, z: 45}
-  - {x: 1.85, y: 1, z: 70}
-  - {x: 6.3, y: 1, z: 70}
-  - {x: -1.85, y: 1, z: 70}
-  - {x: -6.3, y: 1, z: 70}
-  - {x: 1.85, y: 1, z: 95}
-  - {x: 6.3, y: 1, z: 95}
-  - {x: -1.85, y: 1, z: 95}
-  - {x: -6.3, y: 1, z: 95}
-  DesertPoints:
-  - {x: 2, y: 1, z: 20}
-  - {x: -2, y: 1, z: 20}
-  - {x: 2, y: 1, z: 45}
-  - {x: -2, y: 1, z: 45}
-  - {x: 2, y: 1, z: 70}
-  - {x: -2, y: 1, z: 70}
-  - {x: 2, y: 1, z: 95}
-  - {x: -2, y: 1, z: 95}
-  ForestPoints:
-  - {x: 1.6, y: 1, z: 20}
-  - {x: -1.6, y: 1, z: 20}
-  - {x: 1.6, y: 1, z: 45}
-  - {x: -1.6, y: 1, z: 45}
-  - {x: 1.6, y: 1, z: 70}
-  - {x: -1.6, y: 1, z: 70}
-  - {x: 1.6, y: 1, z: 95}
-  - {x: -1.6, y: 1, z: 95}
-  HighwayPoints:
-  - {x: -10, y: 1, z: 20}
-  - {x: -6, y: 1, z: 20}
-  - {x: -2, y: 1, z: 20}
-  - {x: 10, y: 1, z: 20}
-  - {x: 2, y: 1, z: 20}
-  - {x: 6, y: 1, z: 20}
-  - {x: -10, y: 1, z: 45}
-  - {x: -6, y: 1, z: 45}
-  - {x: -2, y: 1, z: 45}
-  - {x: 2, y: 1, z: 45}
-  - {x: 6, y: 1, z: 45}
-  - {x: 10, y: 1, z: 45}
-  - {x: -6, y: 1, z: 70}
-  - {x: -2, y: 1, z: 70}
-  - {x: -10, y: 1, z: 70}
-  - {x: 10, y: 1, z: 70}
-  - {x: 6, y: 1, z: 70}
-  - {x: 2, y: 1, z: 70}
-  - {x: 2, y: 1, z: 95}
-  - {x: 6, y: 1, z: 95}
-  - {x: 10, y: 1, z: 95}
-  - {x: -10, y: 1, z: 95}
-  - {x: -2, y: 1, z: 95}
-  - {x: -6, y: 1, z: 95}
+  - {fileID: -4070708869388294269, guid: 912399416774c774ebbd1927199c6192, type: 3}
+  - {fileID: 8419321882373260875, guid: 52b0d76c0565c4b42b640e112cb9ebde, type: 3}
+  - {fileID: 3841047025622422356, guid: 7e75f3f9deb78ca4bb5b7e3854e7d09d, type: 3}
+  - {fileID: -508285618689638551, guid: 620716f1383e82a4f949fcb489c69265, type: 3}
+  - {fileID: 3320617395072030956, guid: cae29aa17e8e8d842b1d9f43a4a512d8, type: 3}
+  - {fileID: -6121277261670010477, guid: 6cdc429392b9e7c448348527ee7876d2, type: 3}

@@ -1,15 +1,13 @@
+using System;
 using Traffic;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
     private BuildingSpawner _buildingSpawner;
-    private TrafficController _trafficController;
+    private TrafficCarSpawner _trafficCarSpawner;
 
-    [HideInInspector] 
-    public bool IsFirstTile;
-    
-    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig, eBlockType blockType, bool isFirstTile = false)
+    public void Launch(BuildingSpawnConfig buildingSpawnConfig, TrafficConfig trafficConfig, eBlockType blockType)
     {
         _buildingSpawner = GetComponent<BuildingSpawner>();
 
@@ -17,8 +15,13 @@ public class Tile : MonoBehaviour
         {
             _buildingSpawner.Launch(buildingSpawnConfig);
         }
-
-        IsFirstTile = isFirstTile;
-        _trafficController = new TrafficController(trafficConfig, blockType, this);
+        
+        _trafficCarSpawner = GetComponent<TrafficCarSpawner>();
+        
+        if (trafficConfig != null)
+        {
+            _trafficCarSpawner?.Launch(trafficConfig, blockType);
+        }
     }
+    
 }

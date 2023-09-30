@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Traffic
@@ -7,30 +8,24 @@ namespace Traffic
     public class TrafficConfig : ScriptableObject
     {
         [Header("TrafficCars")]
-        public CityTraffic[] CityTraffic;
-        public DesertTraffic[] DesertTraffic;
-        public ForestTraffic[] ForestTraffic;
-        public HighwayTraffic[] HighwayTraffic;
-
-        [Header("SpawnPoints")]
-        public Vector3[] CityPoints;
-        public Vector3[] DesertPoints;
-        public Vector3[] ForestPoints;
-        public Vector3[] HighwayPoints;
+        public List<TrafficCar> CityTraffic;
+        public List<TrafficCar> DesertTraffic;
+        public List<TrafficCar> ForestTraffic;
+        public List<TrafficCar> HighwayTraffic;
     }
 
-    public enum eTrafficCar
-    {
-        Coupe,
-        Minivan,
-        Pickup,
-        Sedan,
-        Suv,
-        Taxi,
-        Police
-    }
+    // public enum eTrafficCar
+    // {
+    //     Coupe,
+    //     Minivan,
+    //     Pickup,
+    //     Sedan,
+    //     Suv,
+    //     Taxi,
+    //     Police
+    // }
 
-    [Serializable]
+    /*[Serializable]
     public struct CityTraffic
     {
         public eTrafficCar TrafficCarName;
@@ -53,5 +48,5 @@ namespace Traffic
     {
         public eTrafficCar TrafficCarName;
         public TrafficCar TrafficCar;
-    }
+    }*/
 }

@@ -65,7 +65,7 @@ public class TileSpawner : MonoBehaviour
             {
                 _tiles[i] = Instantiate(_tileSet[randomIndex], pos, rot, transform);
                 
-                _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig, _blockType, _isFirstTile);
+                _tiles[i].Launch(_buildingSpawnConfig, _trafficConfig, _blockType);
 
                 if (randomIndex == _blockSpawnConfig.CrossroadNumberInCity)
                     crossroadCount++;

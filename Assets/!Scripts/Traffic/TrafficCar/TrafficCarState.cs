@@ -2,7 +2,9 @@
 {
     public enum TrafficCarState
     {
-        Standing,
-        Rides
+        Driving,
+        SlowDown,
+        Stopped,
+        
     }
 }
