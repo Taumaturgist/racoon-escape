@@ -110,7 +110,10 @@ public class PlayerActiveCar : MonoBehaviour
 	}
 
 	public void FreezeRotation(bool value)
-    {
+	{
+		if (_carRigidbody != null)
+			return;
+		
 		_carRigidbody.freezeRotation = value;
     }
 	

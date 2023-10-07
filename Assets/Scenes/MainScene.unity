@@ -183,6 +183,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3f8cceed8e72f7041a538e3ff5b14f06, type: 2}
     - target: {fileID: 5406610483859203975, guid: 2b50baceb24069740800d35c94d9d998, type: 3}
+      propertyPath: isDevelopMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406610483859203975, guid: 2b50baceb24069740800d35c94d9d998, type: 3}
       propertyPath: trafficConfig
       value: 
       objectReference: {fileID: 11400000, guid: 16f023595205ca64d933a282faf78fc9, type: 2}

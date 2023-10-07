@@ -272,7 +272,7 @@ MonoBehaviour:
   - {fileID: 3608500437372284490}
   - {fileID: 2160019082320087266}
   - {fileID: 1600991636190675285}
-  amountSpawns: 12
+  amountSpawns: 40
 --- !u!1001 &281104401970617
 PrefabInstance:
   m_ObjectHideFlags: 0
